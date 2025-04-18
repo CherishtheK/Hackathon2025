@@ -1,0 +1,3194 @@
+[
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 1,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Annual Review of Biomedical Data Science\nEthical Machine Learning\nin Healthcare",
+    "page": 1,
+    "bbox": [
+      216.71,
+      92.86,
+      449.55,
+      162.65
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Irene Y. Chen,1 Emma Pierson,2 Sherri Rose,3",
+    "page": 1,
+    "bbox": [
+      216.71,
+      175.42,
+      449.09,
+      192.24
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "Shalmali Joshi,4 Kadija Ferryman,5",
+    "page": 1,
+    "bbox": [
+      216.71,
+      190.36,
+      391.51,
+      207.18
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "and Marzyeh Ghassemi1,6",
+    "page": 1,
+    "bbox": [
+      216.71,
+      208.36,
+      345.9,
+      222.13
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "1Department of Electrical Engineering and Computer Science, Massachusetts Institute of\nTechnology, Cambridge, Massachusetts 02139, USA; email: iychen@mit.edu",
+    "page": 1,
+    "bbox": [
+      216.71,
+      228.97,
+      480.89,
+      246.23
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "2Microsoft Research, Cambridge, Massachusetts 02143, USA",
+    "page": 1,
+    "bbox": [
+      216.71,
+      249.9,
+      396.71,
+      258.18
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "3Center for Health Policy and Center for Primary Care and Outcomes Research, Stanford\nUniversity, Stanford, California 94305, USA",
+    "page": 1,
+    "bbox": [
+      216.71,
+      261.85,
+      483.11,
+      279.1
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "4Vector Institute, Toronto, Ontario M5G 1M1, Canada",
+    "page": 1,
+    "bbox": [
+      216.71,
+      282.78,
+      379.89,
+      291.06
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "5Department of Technology, Culture, and Society, Tandon School of Engineering, New York\nUniversity, Brooklyn, New York 11201, USA",
+    "page": 1,
+    "bbox": [
+      216.71,
+      294.73,
+      490.24,
+      311.98
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "6Institute for Medical and Evaluative Sciences, Massachusetts Institute of Technology,\nCambridge, Massachusetts 02139, USA",
+    "page": 1,
+    "bbox": [
+      216.71,
+      315.65,
+      469.76,
+      332.9
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Annu. Rev. Biomed. Data Sci. 2021. 4:123–44",
+    "page": 1,
+    "bbox": [
+      46.35,
+      455.25,
+      179.59,
+      462.53
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "First published as a Review in Advance on\nMay 6, 2021",
+    "page": 1,
+    "bbox": [
+      46.35,
+      470.19,
+      169.93,
+      486.45
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "The Annual Review of Biomedical Data Science is\nonline at biodatasci.annualreviews.org",
+    "page": 1,
+    "bbox": [
+      46.35,
+      494.11,
+      183.37,
+      510.35
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "https://doi.org/10.1146/annurev-biodatasci-092820-\n114757",
+    "page": 1,
+    "bbox": [
+      46.35,
+      518.02,
+      201.08,
+      534.26
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Keywords",
+    "page": 1,
+    "bbox": [
+      216.71,
+      455.54,
+      261.5,
+      465.98
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "machine learning, bias, ethics, health, healthcare, health disparities",
+    "page": 1,
+    "bbox": [
+      216.71,
+      472.28,
+      467.42,
+      481.64
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Abstract",
+    "page": 1,
+    "bbox": [
+      216.71,
+      491.4,
+      254.64,
+      501.84
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "The use of machine learning (ML) in healthcare raises numerous ethical\nconcerns, especially as models can amplify existing health inequities. Here,\nwe outline ethical considerations for equitable ML in the advancement of\nhealthcare. Specifically, we frame ethics of ML in healthcare through the\nlens of social justice. We describe ongoing efforts and outline challenges\nin a proposed pipeline of ethical ML in health, ranging from problem\nselection to postdeployment considerations. We close by summarizing\nrecommendations to address these challenges.",
+    "page": 1,
+    "bbox": [
+      216.71,
+      508.14,
+      500.98,
+      601.19
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 2,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Machine learning\n(ML): the study of\ncomputer algorithms\nthat improve\nautomatically through\nexperience",
+    "page": 2,
+    "bbox": [
+      31.4,
+      58.07,
+      105.92,
+      116.23
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "ML model: an\nalgorithm that has\nbeen trained on data\nfor a specific use case",
+    "page": 2,
+    "bbox": [
+      31.4,
+      123.82,
+      102.51,
+      162.06
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Algorithm: a finite\nsequence of well-\ndefined instructions\nused to solve a class of\nproblems",
+    "page": 2,
+    "bbox": [
+      31.4,
+      169.65,
+      106.21,
+      217.85
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Algorithmic fairness:\nthe study of definitions\nand methods related to\nthe justice of models",
+    "page": 2,
+    "bbox": [
+      31.4,
+      225.44,
+      108.88,
+      263.68
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Bioethics: the study of\nethical issues emerging\nfrom advances in\nbiology and medicine",
+    "page": 2,
+    "bbox": [
+      31.4,
+      271.26,
+      109.12,
+      309.5
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Ethical pipeline:\nthe model\ndevelopment process\nand the corresponding\nethical considerations",
+    "page": 2,
+    "bbox": [
+      31.4,
+      317.09,
+      107.26,
+      365.29
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Justice: the principle\nthat obligates\nequitably distributed\nbenefits, risks, costs,\nand resources",
+    "page": 2,
+    "bbox": [
+      31.4,
+      372.88,
+      102.54,
+      421.08
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Beneficence: the\nprinciple that requires\ncare be provided with\nthe intent of doing\ngood for the patient\ninvolved",
+    "page": 2,
+    "bbox": [
+      31.4,
+      428.67,
+      106.08,
+      486.83
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Nonmaleficence: the\nprinciple that forbids\nharm or injury to the\npatient, either through\nacts of commission or\nomission",
+    "page": 2,
+    "bbox": [
+      31.4,
+      494.42,
+      107.87,
+      552.58
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Model outcome: the\noutput of interest for\npredictive models",
+    "page": 2,
+    "bbox": [
+      31.4,
+      560.17,
+      104.17,
+      588.45
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "1. INTRODUCTION",
+    "page": 2,
+    "bbox": [
+      121.06,
+      39.56,
+      223.09,
+      50.0
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "# "
+  },
+  {
+    "text": "As machine learning (ML) models proliferate into many aspects of our lives, there is growing\nconcern regarding their ability to inflict harm. In medicine, excitement about human-level per-\nformance (1) of ML for health is balanced against ethical concerns, such as the potential for these\ntools to exacerbate existing health disparities (2–5). For instance, recent work has demonstrated\nthat state-of-the-art clinical prediction models underperform on women, ethnic and racial mi-\nnorities, and those with public insurance (6). Other research has shown that when popular con-\ntextual language models are trained on scientific articles, they complete clinical note templates\nto recommend hospitals for violent white patients and prison for violent Black patients (7). Even\nmore worrisome, healthcare models designed to optimize referrals to long-term care management\nprograms for millions of patients have been found to exclude Black patients with similar health\nconditions compared to white patients from care management programs (8).",
+    "page": 2,
+    "bbox": [
+      121.06,
+      56.3,
+      485.71,
+      185.22
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "A growing body of literature wrestles with the social implications of ML and technology. Some\nof this work, termed critical data studies, is from a social science perspective (9, 10), whereas other\nwork leads with a technical and computer science perspective (11–13). While there is scholarship\naddressing social implications and algorithmic fairness in general, there has been less work at the\nintersection of health, ML, and fairness (14–16), despite the potential life-or-death impacts of ML\nmodels (8, 17).",
+    "page": 2,
+    "bbox": [
+      121.06,
+      187.81,
+      485.7,
+      256.95
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "While researchers looking to develop ethical ML models for health can begin by drawing\non bioethics principles (18, 19), these principles are designed to inform research and clinical\ncare practices. How these principles could inform the ML model development ethical pipeline\nremains understudied. We note that there has been significant work on other important ethical\nissues that relate to ML and health, including reviews of consent and privacy (20), which we do\nnot address here. Instead, we focus on equity in ML models that operate on health data. We\nfocus primarily on differences between groups induced by, or related to, the model development\npipeline, drawing on both the bioethics principle of justice and the established social justice\ncentering of public health ethics (21). Unjust differences in quality and outcomes of healthcare\nbetween groups often reflect existing societal disparities for disadvantaged groups. We consider\nother bioethics principles such as beneficence and nonmaleficence, but focus them primarily on\ngroups of patients rather than on individuals.",
+    "page": 2,
+    "bbox": [
+      121.06,
+      259.54,
+      485.69,
+      400.41
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "We organize this review by describing the ethical considerations that arise at each step of the\npipeline during model development for ML in health (Figure 1), from research funding to post-\ndeployment. Here, we motivate the ethical considerations in the pipeline with a case study of\nBlack mothers in the United States, who die in childbirth at a rate three times higher than white\nwomen (22). This inequity is unjust because it connects to a history of reproductive injustices faced\nby Black women in the United States, from gynecological experimentation on enslaved women to\nforced sterilizations (23, 24).",
+    "page": 2,
+    "bbox": [
+      121.06,
+      403.01,
+      485.7,
+      484.1
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "1. Problem selection: This disparity occurs in part during problem selection because maternal",
+    "page": 2,
+    "bbox": [
+      133.01,
+      494.2,
+      485.69,
+      503.56
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "mortality is an understudied problem (25).\n2. Data collection: Even after accounting for problem selection, data collection from hospitals",
+    "page": 2,
+    "bbox": [
+      133.01,
+      506.15,
+      485.7,
+      527.48
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "may differ in quality and quantity. For example, 75% of Black women give birth at hospitals\nthat serve predominantly Black patients (26), but Black-serving hospitals have higher rates\nof maternal complications than other hospitals (27).\n3. Outcome definition: Once data are collected, the choice of outcome definition can obscure",
+    "page": 2,
+    "bbox": [
+      133.01,
+      530.07,
+      485.7,
+      575.29
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "underlying issues, e.g., differences in clinical practice. General model outcome definitions\nfor maternal health complications might overlook conditions specific to Black mothers, e.g.,\nfibroids (28).",
+    "page": 2,
+    "bbox": [
+      144.64,
+      577.89,
+      486.03,
+      611.16
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "124\nChen et al.",
+    "page": 2,
+    "bbox": [
+      97.49,
+      627.1,
+      152.73,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 3,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Confounding: the\ncondition in which a\nfeature influences both\nthe dependent variable\nand independent\nvariable, causing a\nspurious association",
+    "page": 3,
+    "bbox": [
+      422.94,
+      452.59,
+      499.98,
+      520.71
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Risk score:\na calculated number\ndenoting the\nlikelihood of adverse\nevent",
+    "page": 3,
+    "bbox": [
+      422.94,
+      528.3,
+      492.61,
+      576.5
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "A focus on convenient\nsamples can exacerbate",
+    "page": 3,
+    "bbox": [
+      148.5,
+      128.28,
+      219.48,
+      143.68
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "existing disparities in",
+    "page": 3,
+    "bbox": [
+      152.6,
+      145.08,
+      215.37,
+      152.08
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "marginalized and",
+    "page": 3,
+    "bbox": [
+      157.87,
+      153.48,
+      210.1,
+      160.48
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "underserved \npopulations, violating \ndo-no-harm principles.",
+    "page": 3,
+    "bbox": [
+      149.93,
+      161.88,
+      218.04,
+      185.68
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Biased clinical \nknowledge, implicit \npower differentials, and",
+    "page": 3,
+    "bbox": [
+      238.74,
+      128.28,
+      309.23,
+      152.08
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "social disparities of the",
+    "page": 3,
+    "bbox": [
+      240.07,
+      153.48,
+      307.9,
+      160.48
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "healthcare system",
+    "page": 3,
+    "bbox": [
+      246.79,
+      161.88,
+      301.18,
+      168.88
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "encode bias in \noutcomes that violate",
+    "page": 3,
+    "bbox": [
+      241.41,
+      170.28,
+      306.56,
+      185.68
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "justice principles.",
+    "page": 3,
+    "bbox": [
+      248.07,
+      187.08,
+      299.9,
+      194.08
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Default practices, like \nevaluating performance",
+    "page": 3,
+    "bbox": [
+      328.21,
+      128.28,
+      399.76,
+      143.68
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "on large populations, \nviolate beneficence and",
+    "page": 3,
+    "bbox": [
+      328.45,
+      145.08,
+      399.52,
+      160.48
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "justice principles when \nalgorithms do not work",
+    "page": 3,
+    "bbox": [
+      329.06,
+      161.88,
+      398.92,
+      177.28
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "for subpopulations.",
+    "page": 3,
+    "bbox": [
+      334.81,
+      178.68,
+      391.68,
+      185.68
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Targeted, spot-check",
+    "page": 3,
+    "bbox": [
+      422.6,
+      128.58,
+      485.37,
+      135.58
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "audits and a lack of \nmodel documentation \nignore systematic shifts \nin populations risks and",
+    "page": 3,
+    "bbox": [
+      418.7,
+      136.98,
+      489.27,
+      169.18
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "patient safety, \nfurthering risk to \nunderserved groups.",
+    "page": 3,
+    "bbox": [
+      423.01,
+      170.58,
+      483.48,
+      194.38
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Disparities in funding \nand problem selection \npriorities are an ethical \nviolation of principles of",
+    "page": 3,
+    "bbox": [
+      58.11,
+      128.28,
+      129.86,
+      160.48
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "justice.",
+    "page": 3,
+    "bbox": [
+      83.05,
+      161.88,
+      103.43,
+      168.88
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Problem\nselection\n1\nData\ncollection\n2\nOutcome\ndefinition\n3\nAlgorithm\ndevelopment\n4\nPostdeployment\nconsiderations\n5",
+    "page": 3,
+    "bbox": [
+      73.22,
+      42.85,
+      490.33,
+      59.85
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Figure 1",
+    "page": 3,
+    "bbox": [
+      46.35,
+      207.27,
+      77.06,
+      215.62
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "We motivate the five steps in the ethical pipeline for healthcare model development. Each stage contains considerations for machine\nlearning where ignoring technical challenges violates the bioethical principle of justice, either by exacerbating existing social injustices\nor by creating the potential for new injustices between groups. Although this review’s ethical focus is on social justice, the challenges\nthat we highlight may also violate ethical principles such as justice and beneficence. We highlight a few in this illustration.",
+    "page": 3,
+    "bbox": [
+      46.35,
+      220.35,
+      496.49,
+      258.56
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "4. Algorithm development: During algorithm development, models may not be able to ac-",
+    "page": 3,
+    "bbox": [
+      58.3,
+      275.15,
+      410.97,
+      284.51
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "count for the confounding presence of societal bias. Black mothers in the wealthiest neigh-\nborhoods in Brooklyn, New York have worse outcomes than white, Hispanic, and Asian\nmothers in the poorest ones, demonstrating a gap despite factors that should improve Black\nmothers’ outcomes—living in the same place and having a higher income—likely due to\nsocietal bias that impacts Black women (29).\n5. Postdeployment considerations: Finally, after a model is trained, postdeployment consider-",
+    "page": 3,
+    "bbox": [
+      58.3,
+      287.11,
+      411.0,
+      356.24
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "ations may not fully consider the impact of deploying a biased prediction model into clinical\nsettings that have large Black populations. Because Black women have a heightened risk of\npregnancy-related death across income and education levels (30), a biased prediction model\ncould potentially automate policies or risk scores that disadvantage Black mothers.",
+    "page": 3,
+    "bbox": [
+      69.93,
+      358.84,
+      410.99,
+      404.06
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "We organize the rest of this review sequentially expanding on each of the five steps in the\npipeline described above and in Figure 1. First, we look at problem selection, and explain how\nfunding for ML for health research can lead to injustice. We then examine how data collection\nprocesses in funded research can amplify inequity and unfairness. We follow this by exploring\noutcome definition and algorithm building, listing the multitude of factors that can impact model\nperformance and explaining how these differences in performance relate to issues of justice. We\nclose with audits that should be considered for more robust and just deployments of models in\nhealth, as well as recommendations to practitioners for ethical, fair, and just ML deployments.",
+    "page": 3,
+    "bbox": [
+      46.35,
+      416.81,
+      410.98,
+      509.85
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "2. PROBLEM SELECTION",
+    "page": 3,
+    "bbox": [
+      46.35,
+      530.25,
+      177.55,
+      540.69
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "# "
+  },
+  {
+    "text": "There are many factors that influence the selection of a research problem,from interest to available\nfunding. However, problem selection can also be a matter of justice if the research questions that\nare proposed, and ultimately funded, focus on the health needs of advantaged groups. Below we\nprovide examples of how disparities in research teams and funding priorities exacerbate existing\nsocioeconomic, racial, and gender injustices.",
+    "page": 3,
+    "bbox": [
+      46.35,
+      547.0,
+      410.99,
+      604.18
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "www.annualreviews.org • Ethical Machine Learning in Healthcare\n125",
+    "page": 3,
+    "bbox": [
+      212.75,
+      626.5,
+      434.55,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 4,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Global South:\ncountries on one side\nof the North–South\ndivide, the other side\nbeing the countries of\nthe Global North",
+    "page": 4,
+    "bbox": [
+      31.4,
+      70.02,
+      105.05,
+      128.19
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "2.1. Global Health Injustice",
+    "page": 4,
+    "bbox": [
+      121.06,
+      39.56,
+      247.46,
+      50.0
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "The so-called 10/90 gap refers to the fact that the vast majority of health research dollars are\nspent on problems that affect a small fraction of the global population (31, 32). Diseases that\nare most common in lower-income countries receive far less funding than diseases that are most\ncommon in high-income countries (33) (relative to the number of individuals they affect). As an\nexample, 26 poverty-related diseases account for 14% of the global disease burden, but receive\nonly 1.3% of global health-related research and development expenditure. Nearly 60% of the\nburden of poverty-related neglected diseases occurs in western and eastern sub-Saharan Africa, as\nwell as South Asia. Malaria, tuberculosis, and HIV/AIDS all have shares of global health-related\nresearch and development expenditure that are at least five times smaller than their share of global\ndisease burden (33). This difference in rates of funding represents an injustice because it further\nexacerbates the disadvantages faced by populations in the Global South. While efforts like the\n“All Of Us” Research Program (34) and 23andMe’s call for collaboration (35) seek to collect more\ninclusive data, these efforts have come under criticism for not reflecting global health concerns,\nparticularly among Indigenous groups (36).",
+    "page": 4,
+    "bbox": [
+      121.06,
+      56.3,
+      486.02,
+      221.08
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "2.2. Racial Injustice",
+    "page": 4,
+    "bbox": [
+      121.06,
+      237.99,
+      210.38,
+      248.43
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "Racial bias affects which health problems are prioritized and funded. For example, sickle cell dis-\nease and cystic fibrosis are both genetic disorders of similar severity, but sickle cell disease is more\ncommon in Black patients, while cystic fibrosis is more common in white patients. In the United\nStates, however, cystic fibrosis receives 3.4 times more funding per affected individual from the\nUS National Institutes of Health (NIH), the largest funder of US clinical research, and hundreds\nof times more private funding (37). The disparities in funding persist despite the 1972 Sickle Cell\nAnemia Control Act, which recognizes that sickle cell has been neglected by the wider research\ncommunity. Further, screening for sickle cell disease is viewed by some as unfair targeting (38),\nand Black patients with the disease who seek treatment are often maligned as drug abusers (39).",
+    "page": 4,
+    "bbox": [
+      121.06,
+      254.74,
+      486.03,
+      359.74
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "2.3. Gender Injustice",
+    "page": 4,
+    "bbox": [
+      121.06,
+      376.65,
+      217.43,
+      387.09
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "Women’s health conditions like endometriosis are poorly understood; as a consequence, even ba-\nsic statistics like the prevalence of endometriosis remain unknown, with estimates ranging from\n1% to 10% of the population (40, 41). Similarly, the menstrual cycle is stigmatized and understud-\nied (40, 42), producing a dearth of understanding that undermines the health of half the global\npopulation. Basic facts about the menstrual cycle—including which menstrual experiences are\nnormal and which are predictive of pathology—remain unknown (40). This lack of focus on the\nmenstrual cycle propagates into clinical practice and data collection despite evidence that it affects\nmany aspects of health and disease (43, 44). Menstrual cycles are also not often recorded in clinical\nrecords and global health data (40). In fact, until 2019 the NIH did not have an R01 grant, the\nNIH’s original and historically oldest grant mechanism, relating to the influence of sex and gender\non health and disease (45). Notably, recent work has moved to target such understudied problems\nvia ambulatory women’s health-tracking mobile apps. These crowd-sourcing efforts stand to ac-\ncelerate women’s health research by collecting data from cohorts that are orders of magnitude\nlarger than those used in previous studies (40).",
+    "page": 4,
+    "bbox": [
+      121.06,
+      393.39,
+      485.7,
+      558.18
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "2.4. Diversity of the Scientific Workforce",
+    "page": 4,
+    "bbox": [
+      121.06,
+      575.08,
+      306.93,
+      585.52
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "The diversity of the scientific workforce profoundly influences the problems studied and con-\ntributes to biases in problem selection (46). Research shows that scientists from underrepresented",
+    "page": 4,
+    "bbox": [
+      121.06,
+      591.83,
+      485.67,
+      613.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "126\nChen et al.",
+    "page": 4,
+    "bbox": [
+      97.49,
+      627.1,
+      152.73,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 5,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Training data:\ninformation that a ML\nmodel fits to and\nlearns patterns from",
+    "page": 5,
+    "bbox": [
+      422.94,
+      70.02,
+      499.38,
+      108.26
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Population-specific\ndata loss: the process\nwhereby data can be\nlost in collection due\nto the features of the\npopulation",
+    "page": 5,
+    "bbox": [
+      422.94,
+      115.85,
+      495.98,
+      174.01
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Heterogeneous data\nloss: the process\nwhereby data can be\nlost in collection due\nto the data type",
+    "page": 5,
+    "bbox": [
+      422.94,
+      181.6,
+      496.74,
+      229.8
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Data noise:\nmeaningless\ninformation added to\ndata that obscures the\nunderlying\ninformation of the data",
+    "page": 5,
+    "bbox": [
+      422.94,
+      237.39,
+      500.65,
+      295.55
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Missingness:\nthe manner in which\ndata are absent from a\nsample of the\npopulation",
+    "page": 5,
+    "bbox": [
+      422.94,
+      303.14,
+      497.14,
+      351.34
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "racial and gender groups tend to prioritize different research topics. They produce more novel\nresearch, but their innovations are taken up at lower rates (47). Female scientists tend to study\ndifferent scientific subfields, even within the same larger field [for example, within sociology, they\nhave been historically better represented on papers about sociology of the family or early child-\nhood (48)], and express different opinions about ethical dilemmas in computer science (49). Pro-\nposals from white researchers in the United States are more likely to be funded by the NIH than\nproposals from Black researchers (50, 51), which in turns affects what topics are given prefer-\nence. For example, a higher fraction of NIH proposals from Black scientists study community and\npopulation-level health (50). Overall, this evidence suggests that diversifying the scientific work-\nforce will lead to problem selection that more equitably represents the interests and needs of the\npopulation as a whole.",
+    "page": 5,
+    "bbox": [
+      46.35,
+      39.8,
+      410.99,
+      168.72
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "3. DATA COLLECTION",
+    "page": 5,
+    "bbox": [
+      46.35,
+      187.99,
+      163.43,
+      198.43
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "# "
+  },
+  {
+    "text": "The role of health data is ever-expanding, with new data sources routinely being integrated into\ndecision-making around health policy and design. This wealth of high-quality data, coupled with\nadvancements in ML models, has played a significant role in accelerating the use of computation-\nally informed policy and practice to strengthen healthcare and delivery platforms. Unfortunately,\ndata can be biased in ways that have (or can lead to) disproportionate negative impacts on already\nmarginalized groups. First, data on group membership can be completely absent. For instance,\ncountries such as Canada and France do not record race and ethnicity in their nationalized health\ndatabases (52, 53), making it impossible to study race-based disparities and hypotheses around\nassociations of social determinants of health. Second, data can be imbalanced. Recent work on\nacute kidney injury achieved state-of-the-art prediction performance in a large dataset of 703,782\nadult patients using 620,000 features; however, the authors noted that model performance was\nlower in female patients since they make up 6.38% of patients in the training data (54). Other\nwork has indicated that this issue cannot be simply addressed by pretraining a model in a more\nbalanced data setting prior to fine-tuning on an imbalanced dataset (55). This indicates that a\nmodel cannot be initialized with a balanced baseline representation that ameliorates issues of\nimbalance in downstream tasks, and it suggests that we must solve this problem at the root, be it\nwith more balanced comprehensive data, specialty learning algorithms, or combinations thereof.\nFinally, while some sampling biases can be recognized and possibly corrected, others may be\ndifficult to correct. For example, work in medical imaging has demonstrated that models may\noverlook unforeseen stratification of conditions, like rare manifestations of diseases, which can\nresult in harm in clinical settings (16, 56).",
+    "page": 5,
+    "bbox": [
+      46.35,
+      204.74,
+      411.32,
+      453.2
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "In this section, we discuss common biases in data collection. We consider two types of processes\nthat result in a loss of data. First, we examine processes that affect what kind of information is\ncollected (heterogenous data loss) across varying input types. Examples include clinical trials with\naggressive inclusion criteria or social media data that reflect those with access to devices hosting\nsocial media apps. Second, we examine processes that affect whether an individual’s information is\ncollected due to the individual’s population type (population-specific data losses), often across data\ninput categories. For example, undocumented immigrants may fear deportation if they participate\nin healthcare systems.",
+    "page": 5,
+    "bbox": [
+      46.35,
+      455.8,
+      411.0,
+      548.85
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "3.1. Heterogeneous Data Losses",
+    "page": 5,
+    "bbox": [
+      46.35,
+      564.13,
+      193.83,
+      574.57
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "Some data loss is specific to the data type, due to assumptions about noise that may have been\npresent during the collection process. However, data noise and missingness can cause unjust in-\nequities that impact populations in different ways. We cover four main data types: randomized",
+    "page": 5,
+    "bbox": [
+      46.35,
+      580.87,
+      410.99,
+      614.14
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "www.annualreviews.org • Ethical Machine Learning in Healthcare\n127",
+    "page": 5,
+    "bbox": [
+      212.75,
+      626.5,
+      434.55,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 6,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Randomized\ncontrolled trial\n(RCT): a study in\nwhich subjects are\nallocated by chance to\nreceive one of several\ninterventions",
+    "page": 6,
+    "bbox": [
+      31.4,
+      70.02,
+      105.77,
+      138.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Electronic health\nrecord (EHR): digital\nversion of a patient’s\nclinical history that is\nmaintained by the\nprovider over time",
+    "page": 6,
+    "bbox": [
+      31.4,
+      145.74,
+      107.28,
+      203.9
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Intervention:\na treatment,\nprocedure, or other\naction taken to prevent\nor treat disease or\nimprove health in\nother ways",
+    "page": 6,
+    "bbox": [
+      31.4,
+      211.49,
+      109.02,
+      279.62
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "controlled trials (RCTs), electronic health records (EHRs), administrative health data, and social\nmedia data.",
+    "page": 6,
+    "bbox": [
+      121.06,
+      39.8,
+      485.68,
+      61.12
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "3.1.1. Randomized controlled trials. RCTs are often run specifically to gather unbiased ev-\nidence of treatment effects. However, RCTs have notoriously aggressive exclusion (or inclusion)\ncriteria (57), which create study cohorts that are not representative of general patient popula-\ntions (58). In one study of RCTs used to define asthma treatment, an estimated 94% of the\nadult asthmatic population would not have been eligible for the trials (59). There is a growing\nmethodological literature designing methods to generalize RCT treatment effects to other popu-\nlations (60). However, current empirical evidence indicates that such generalizations can be chal-\nlenging given available data or may require strong assumptions in practice.",
+    "page": 6,
+    "bbox": [
+      121.06,
+      78.65,
+      485.7,
+      171.74
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "3.1.2. Electronic health records. Much recent work in ML also leverages large EHR data.\nEHR data are a complex reflection of patient health, healthcare systems, and providers, where\ndata missingness is a known, and meaningful, problem (61). As one salient example, a large study of\nlaboratory tests to model three-year survival found that healthcare process features had a stronger\npredictive value than the patient’s physiological features (62). Further, not all treatments investi-\ngated in RCTs can be easily approximated in EHRs (63).",
+    "page": 6,
+    "bbox": [
+      121.06,
+      189.26,
+      486.01,
+      258.43
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "Biases in EHR data may arise due to differences in patient populations, access to care, or the\navailability of EHR systems (64). As an example, the widely used MIMIC-III EHR dataset in-\ncludes most patients who receive care at the intensive care units in Beth Israel Deaconess Medical\nCenter (BIDMC), but this sample is obviously limited by which individuals have access to care\nat BIDMC, which has a largely white patient population (14). In the United States, uninsured\nBlack and Hispanic or Latin(o/x) patients, as well as Hispanic or Latin(o/x) Medicaid patients, are\nless likely to have primary care providers with EHR systems, as compared to white patients with\nprivate insurance (65). Other work has shown that gender discrimination in healthcare access has\nnot been systematically studied in India, primarily due to a lack of reliable data (66).",
+    "page": 6,
+    "bbox": [
+      121.06,
+      261.03,
+      485.7,
+      366.03
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "3.1.3. Administrative health records. In addition to RCTs and EHRs,healthcare billing claims\ndata, clinical registries, and linked health survey data are also common data sources in population\nhealth and health policy research (67, 68), with known biases concerning which populations are\nfollowed and who is able to participate. Translating such research into practice is a crucial part\nof maintaining healthcare quality, and limited participation of minority populations by sexual ori-\nentation and gender identity (69), race and ethnicity (70), and language (71) can lead to health\ninterventions and policies that are not inclusive and can create new injustices for these already\nmarginalized groups.",
+    "page": 6,
+    "bbox": [
+      121.06,
+      383.55,
+      485.7,
+      476.64
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "3.1.4. Social media data. Data from social media platforms and search-based research naturally\nconsist of only individuals with internet access (72). Even small choices like limiting samples to\nthose from desktop versus mobile platforms constitute a problematic distinction in non–North\nAmerican contexts (73). Beyond concerns about access to resources or geographic limitations,\ndata collection and scraping pipelines for most social media cohorts do not yield a random sample\nof individuals. Further, the common practice of limiting analysis to those satisfying a specified\nthreshold of occurrence can lead to skewed data. As an example, when processing the large volume\nof Twitter data (7.6 billion tweets), researchers may first restrict to users who can be mapped to a\nUS county (1.78 billion), then to those Tweets that contain only English (1.64 billion tweets), and\nfinally to users who made more than 30 posts (1.53 billion) (74).",
+    "page": 6,
+    "bbox": [
+      121.06,
+      494.16,
+      486.03,
+      611.16
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "128\nChen et al.",
+    "page": 6,
+    "bbox": [
+      97.49,
+      627.1,
+      152.73,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 7,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Censoring:\nthe mechanism\nthrough which data\nvalues are removed\nfrom observation",
+    "page": 7,
+    "bbox": [
+      422.94,
+      70.02,
+      488.62,
+      118.22
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "3.2. Population-Specific Data Losses",
+    "page": 7,
+    "bbox": [
+      46.35,
+      39.56,
+      212.08,
+      50.0
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "As with data types, the modern data deluge does not apply equally to all communities. Histor-\nically underserved groups are often underrepresented, misrepresented, or entirely missing from\nhealth data that inform consequential health policy decisions. When individuals from disadvan-\ntaged communities appear in observational datasets, they are less likely to be accurately captured\ndue to errors in data collection and systemic discrimination. Larger genomics datasets often target\nEuropean populations, producing genetic risk scores that are more accurate in individuals of Eu-\nropean ancestry than other ancestries (75). We note four specific examples of populations that are\ncommonly impacted: low- and middle-income nationals, transgender and gender nonconforming\nindividuals, undocumented migrants, and pregnant women.",
+    "page": 7,
+    "bbox": [
+      46.35,
+      56.3,
+      410.99,
+      161.31
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "3.2.1. Low- and middle-income nationals. Health data are infrequently collected due to re-\nsource constraints, and even basic disease statistic data such as prevalence of mortality rates can\nbe challenging to find for low- and middle-income nations (73). When data are collected, they are\nnot digitized and often contain errors. In 2001, the World Health Organization found that only\n9 out of the 46 member states in sub-Saharan Africa could produce death statistics for a global\nassessment of the burden of disease, with data coverage often less than 60% in these countries (76).",
+    "page": 7,
+    "bbox": [
+      46.35,
+      180.68,
+      411.3,
+      249.86
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "3.2.2. Transgender and gender-nonconforming individuals. The healthcare needs and ex-\nperiences of transgender and gender-nonconforming individuals are not well documented in\ndatasets (77) because documented sex, not gender identity, is what is usually available. How-\never, documented sex is often discordant with gender identity for transgender and gender-\nnonconforming individuals. Apart from health documentation concerns, transgender people are\noften concerned about their basic physical safety when reporting their identities. In the United\nStates, it was only in 2016, with the release of the US Transgender Survey, that there was a mean-\ningfully sized dataset—28,000 respondents—to enable significant analysis and quantification of\ndiscrimination and violence that transgender people face (77).",
+    "page": 7,
+    "bbox": [
+      46.35,
+      269.24,
+      410.99,
+      374.28
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "3.2.3. Undocumented immigrants. Safety concerns are important in data collection for un-\ndocumented migrants, where sociopolitical environments can lead to individuals feeling unsafe\nduring reporting opportunities. When immigration policies limit access to public services for im-\nmigrants and their families, these restrictions lead to spillover effects on clinical diagnoses. As\none salient example, autism diagnoses for Hispanic children in California fell following aggressive\nfederal anti-immigrant policies requiring citizenship verification at hospitals (78).",
+    "page": 7,
+    "bbox": [
+      46.35,
+      393.66,
+      410.99,
+      462.83
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "3.2.4. Pregnant women. Despite pregnancy being neither rare nor an illness, the United States\ncontinues to experience rising maternal mortality and morbidity rates. In the United States, the\nmaternal mortality rate has more than doubled from 9.8 per 100,000 live births in 2000 to 21.5 in\n2014 (79). Importantly, disclosure protocols recommend suppression of information in nationally\navailable datasets when the number of cases or events in a data cell is low, in order to reduce the\nlikelihood of a breach of confidentiality. For example, the US Centers for Disease Control and\nPrevention suppresses numbers for counties with fewer than 10 deaths for a given disease (80).\nAlthough these data omissions occur because of patient privacy, such censoring on the dependent\nvariable introduces particularly pernicious statistical bias, and as a result, much remains to be\nunderstood about what community, health facility, patient, and provider-level factors drive high\nmortality rates.",
+    "page": 7,
+    "bbox": [
+      46.35,
+      482.21,
+      411.3,
+      611.16
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "www.annualreviews.org • Ethical Machine Learning in Healthcare\n129",
+    "page": 7,
+    "bbox": [
+      212.75,
+      626.5,
+      434.55,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 8,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Diagnosis code:\na label in patient\nrecords of disease\noccurrence, which may\nbe subject to\nmisclassification, used\nprimarily for billing\npurposes",
+    "page": 8,
+    "bbox": [
+      31.4,
+      70.02,
+      108.73,
+      148.11
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Label noise: errors or\notherwise obscuring\ninformation that\naffects the quality of\nthe labels",
+    "page": 8,
+    "bbox": [
+      31.4,
+      155.7,
+      107.12,
+      203.9
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "4. OUTCOME DEFINITION",
+    "page": 8,
+    "bbox": [
+      121.06,
+      39.56,
+      261.49,
+      50.0
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "# "
+  },
+  {
+    "text": "The next step in the model pipeline is to define the outcome of interest for a healthcare task. Even\nseemingly straightforward tasks like defining whether a patient has a disease can be skewed by how\nprevalent diseases are or how they manifest in some patient populations. For example, a model\npredicting if a patient will develop heart failure will need labeled examples both of patients who\nhave heart failure and of patients without heart failure. Choosing these patients can rely on parts\nof the EHR that may be skewed due to lack of access to care or due to abnormalities in clinical\ncare: For example, economic incentives may alter diagnosis code logging (81), clinical protocol\naffects the frequency and observation of abnormal tests (62), historical racial mistrust may delay\ncare and affect patient outcomes (82), and naive data collection can yield inconsistent labels in\nchest X-rays (56). Such biased labels, and the resulting models, may cause clinical practitioners to\nallocate resources poorly.",
+    "page": 8,
+    "bbox": [
+      121.06,
+      56.3,
+      485.7,
+      185.22
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "We discuss social justice considerations in two examples of commonly modeled healthcare out-\ncomes: clinical diagnosis and healthcare costs.In each example,it is essential that model developers\nchoose a reliable proxy and account for noise in the outcome labels, as these choices can have a\nlarge impact on performance and equity of the resulting model.",
+    "page": 8,
+    "bbox": [
+      121.06,
+      187.81,
+      485.7,
+      233.04
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "4.1. Clinical Diagnosis",
+    "page": 8,
+    "bbox": [
+      121.06,
+      254.52,
+      223.1,
+      264.96
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "Clinical diagnosis is a fundamental task for clinical prediction models, e.g., models for computer-\naided diagnosis from medical imaging. In clinical settings, researchers often select patient disease\noccurrence as the prediction label for models. However, there are many options for the choice of\na disease occurrence label. For example, the outcome label for developing cardiovascular disease\ncould be defined through the occurrence of specific phrases in clinical notes. However, women can\nmanifest symptoms of acute coronary syndrome differently (83) and receive delayed care as a re-\nsult (84), which may then manifest in diagnosis labels derived from the clinical notes being gender\nskewed. Because differences in label noise result in disparities in model impact, researchers have\nthe responsibility to choose and improve disease labels so that these inequalities do not further\nexacerbate disparities in health.",
+    "page": 8,
+    "bbox": [
+      121.06,
+      271.26,
+      485.7,
+      388.22
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Additionally,it is important to consider the healthcare system in which disease labels are logged.\nFor example, healthcare providers leverage diagnosis codes for billing purposes, not clinical re-\nsearch. As a result, diagnosis codes can create ambiguities because of overlap and hierarchy in\ncodes. Moreover, facilities have incentives to underreport (81) and overreport (85, 86) outcomes,\nyielding differences in model representations.",
+    "page": 8,
+    "bbox": [
+      121.06,
+      390.81,
+      486.04,
+      448.0
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Recent advances in improving disease labels target statistical corrections based on estimates of\nthe label noise. For instance, a positive label may be reliable, but the omission of a positive label\ncould indicate either a negative label (i.e., no disease) or merely a missed positive label. Methods to\naddress the positive-unlabeled setting use estimated noise rates (87) or hand-curated labels from\nclinicians that are strongly correlated with positive labels, known also as silver-standard labels (88).\nClinical analysis of sources of error in disease labels can also guide improvements (89) and identify\naffected groups (56).",
+    "page": 8,
+    "bbox": [
+      121.06,
+      450.59,
+      486.02,
+      531.68
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "4.2. Healthcare Costs",
+    "page": 8,
+    "bbox": [
+      121.06,
+      553.17,
+      219.26,
+      563.61
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "Developers of clinical models may choose to predict healthcare costs, meaning the ML model\nseeks to predict which patients will cost the healthcare provider more in the future. Some model\ndevelopers may use healthcare costs as a proxy for future health needs to guide accurate targeting",
+    "page": 8,
+    "bbox": [
+      121.06,
+      569.91,
+      485.7,
+      603.19
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "130\nChen et al.",
+    "page": 8,
+    "bbox": [
+      97.49,
+      627.1,
+      152.73,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 9,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Loss function:\nthe relation that\ndetermines the error\nbetween algorithm\noutput and a given\nlabel, which the\nalgorithm uses to\noptimize",
+    "page": 9,
+    "bbox": [
+      422.94,
+      70.02,
+      492.45,
+      148.11
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Deployment:\nthe process through\nwhich an ML model is\nintegrated into an\nexisting production\nenvironment",
+    "page": 9,
+    "bbox": [
+      422.94,
+      155.7,
+      498.79,
+      213.86
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Tuning parameters:\nalgorithm components\nused for prediction\nthat are tuned toward\nsolving an\noptimization problem",
+    "page": 9,
+    "bbox": [
+      422.94,
+      221.45,
+      499.39,
+      279.62
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Sensitive attribute:\na specified patient\nfeature (e.g., race,\ngender) that is\nconsidered important\nfor fairness\nconsiderations",
+    "page": 9,
+    "bbox": [
+      422.94,
+      287.2,
+      495.25,
+      355.33
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "of interventions (8), with the underlying assumption that addressing patients with future health\nneeds will limit future costs. Others may explicitly want to understand patients who will have\nhigh healthcare costs to reduce the total cost of healthcare (90). However, because socioeconomic\nfactors affect both access to healthcare and access to financial resources, these models may yield\npredictions that exacerbate inequities.",
+    "page": 9,
+    "bbox": [
+      46.35,
+      39.8,
+      411.0,
+      96.99
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "For model developers seeking to optimize for health needs, healthcare costs can deviate from\nhealth needs on an individual level because of patient socioeconomic factors. For instance, in a\nmodel used to allocate care management program slots to high-risk patients, the choice of fu-\nture healthcare costs as a predictive outcome led to racial disparities in patient allocation to the\nprogram (8). Healthcare costs can differ from health needs on an institutional level due to under-\ninsurance and undertreatment within the patient population (91). After defining health dispari-\nties as all differences except those due to clinical need and preferences, researchers have found\nracial disparities in mental healthcare. Specifically, white patients had higher rates of initiation of\ntreatment for mental health compared to Black and Hispanic or Latin(o/x) patients. Because the\nanalysis controls for health needs, the disparities are solely a result of differences in healthcare\naccess and systemic discrimination (92).",
+    "page": 9,
+    "bbox": [
+      46.35,
+      99.58,
+      411.0,
+      228.5
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Addressing issues that arise from the use of healthcare costs depends on the setting of the\nML model. In cases where health need is of highest importance, a natural solution is to choose\nanother outcome definition besides healthcare costs, e.g., the number of chronic diseases as a\nmeasure of health needs. If a model developer is most concerned with cost, it is possible to correct\nfor health disparities in predicting healthcare costs by building fairness considerations directly\ninto the predictive model objective function (93). Building these types of algorithmic procedures\nis further discussed in Section 5.",
+    "page": 9,
+    "bbox": [
+      46.35,
+      231.09,
+      410.99,
+      312.18
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "5. ALGORITHM DEVELOPMENT",
+    "page": 9,
+    "bbox": [
+      46.35,
+      329.96,
+      215.36,
+      340.4
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "# "
+  },
+  {
+    "text": "Algorithm development considers the construction of the underlying computation for the ML\nmodel and presents a major vulnerability and opportunity for ethical ML in healthcare. Just as\ndata are not neutral, algorithms are also not neutral. A disproportionate amount of power lies\nwith research teams that, after determining the research questions, make decisions about criti-\ncal components of an algorithm such as the loss function (46, 94). In the case of loss functions,\ncommon choices like the L1 absolute-error loss and L2 squared-error loss do not target the same\nconditional functions of the outcome but instead minimize the error in the median and mean,\nrespectively. Using a surrogate loss (e.g., hinge loss for the error rate) can provide computational\nefficiency,but it may not reflect the ethical criteria that we truly care about.Recent work has shown\nthat models trained with a surrogate loss may exhibit approximation errors that disproportionately\naffect undersampled groups in the training data (95). Similarly, one might choose to optimize the\nworst-case error across groups as opposed to the average overall error. Such choices may seem\npurely technical but reflect value statements about what should be optimized, potentially leading\nto differences in performance among marginalized groups (96).",
+    "page": 9,
+    "bbox": [
+      46.35,
+      346.7,
+      411.31,
+      511.49
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "In this section, we review several crucial factors in model development that potentially impact\nethical deployment capacity: understanding (and accounting for) confounding, feature selection,\ntuning parameters, and the definition of “fairness” itself.",
+    "page": 9,
+    "bbox": [
+      46.35,
+      514.08,
+      411.32,
+      547.35
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "5.1. Understanding Confounding",
+    "page": 9,
+    "bbox": [
+      46.35,
+      565.12,
+      196.81,
+      575.56
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "Developing models that use sensitive attributes without a clear causal understanding of\ntheir relationship to outcomes of interest can significantly affect model performance and",
+    "page": 9,
+    "bbox": [
+      46.35,
+      581.86,
+      410.98,
+      603.19
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "www.annualreviews.org • Ethical Machine Learning in Healthcare\n131",
+    "page": 9,
+    "bbox": [
+      212.75,
+      626.5,
+      434.55,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 10,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Test data: unseen\ninformation that a\nmodel predicts on and\nis evaluated against",
+    "page": 10,
+    "bbox": [
+      31.4,
+      70.02,
+      106.36,
+      108.26
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Stepwise regression:\na method of estimation\nwhereby each feature\nis sequentially\nconsidered by addition\nor subtraction to the\nexisting feature set",
+    "page": 10,
+    "bbox": [
+      31.4,
+      115.85,
+      109.12,
+      183.97
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "interpretation. This is relevant to algorithmic problems focused on prediction, not just causal in-\nference. Confounding features—i.e., those features that influence both the independent variables\nand the dependent variable—require careful attention. The vast majority of models learn patterns\nbased on observed correlations between training data, even when such correlations do not occur\nin test data. For instance, recent work has demonstrated that classification models designed to\ndetect hair color learn gender-biased decision boundaries when trained on confounded data, i.e.,\nif women are primarily blond in training data, the model incorrectly associates gender with the\nhair label in test samples (97).",
+    "page": 10,
+    "bbox": [
+      121.06,
+      39.8,
+      485.99,
+      132.86
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "As ML methods are increasingly used for clinical decision support, it is critical to account for\nconfounding features. In one canonical example, asthmatic patients presenting with pneumonia\nare given aggressive interventions that ultimately improve their chances of survival over nonasth-\nmatic patients (98). When the hospital protocol assigned additional treatment to patients with\nasthma, those patients had improved outcomes. Thus the treatment policy was a confounding\nfactor in a seemingly straightforward prediction task by altering the data such that patients with\nasthma were erroneously predicted by models to have lower risk of dying from pneumonia.",
+    "page": 10,
+    "bbox": [
+      121.06,
+      135.45,
+      485.7,
+      216.54
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Simply controlling for confounding features by including them as features in classification or\nregression models may be insufficient to train reliable models because features can have a medi-\nating or moderating effect (posttreatment effect on outcomes of interest) and have to be incorpo-\nrated differently into model design (99).",
+    "page": 10,
+    "bbox": [
+      121.06,
+      219.14,
+      485.7,
+      264.37
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Modern ML and causal discovery techniques can identify sources of confounding at scale (100),\nalthough validation of such methods can be challenging because of the lack of counterfactual data.\nML methods have also been proposed to estimate causal effects from observational data (101,\n102). In practice, when potential hidden confounding is suspected, either mediating features or\nproxies can be leveraged (99, 103) or sensitivity analysis methods can be used to determine po-\ntential sources of errors in effect estimates (104). Data-augmentation and sampling methods may\nalso be used to mitigate effects of model confounding. For example, augmenting X-ray images\nwith rotated and translated variants can help train a model that is not sensitive to orientation of\nan image (105).",
+    "page": 10,
+    "bbox": [
+      121.06,
+      266.96,
+      486.05,
+      371.96
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "5.2. Feature Selection",
+    "page": 10,
+    "bbox": [
+      121.06,
+      393.77,
+      219.83,
+      404.21
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "With large-scale digitization of EHRs and other sources, sensitive attributes like race and ethnic-\nity may be increasingly available (although prone to misclassification and missingness). However,\nblindly incorporating factors like race and gender in a predictive model may exacerbate inequities\nfor a wide range of diagnostics and treatments (106). These resulting inequities can lead to un-\nintended and permanent embedding of biases in algorithms used for clinical care. For example,\nvaginal birth after cesarean (VBAC) scores are used to predict success of trial of labor of pregnant\nwomen with a prior cesarean section; however, these scores explicitly include a race component\nas an input, which reduces the chance of VBAC success for Black and Hispanic women. Although\nresearchers found that previous observational studies showed correlation between racial identity\nand success of trial of labor (107), the underlying cause of this association is not well understood.\nSuch naive inclusion of race information could exacerbate disparities in maternal mortality. This\nambiguity calls into question race-based correction in scores like VBAC (106).",
+    "page": 10,
+    "bbox": [
+      121.06,
+      410.51,
+      486.02,
+      551.38
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Automation in feature selection does not eliminate the need for contextual understanding. For\nexample, stepwise regression is commonly used and taught as a technique for feature selection de-\nspite known limitations (108). While specific methods have varying initialization (e.g., start with\nan empty set of features or a full set of features) and processing steps (e.g., deletion versus addition\nof features), most rely on p-values, R2, or other global fit metrics to select features. Weaknesses",
+    "page": 10,
+    "bbox": [
+      121.06,
+      553.98,
+      485.7,
+      611.3
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "132\nChen et al.",
+    "page": 10,
+    "bbox": [
+      97.49,
+      627.1,
+      152.73,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 11,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Generalizability:\nthe ability of a model\nto apply in a setting\ndifferent from the one\nin which it was trained",
+    "page": 11,
+    "bbox": [
+      422.94,
+      70.02,
+      498.94,
+      118.22
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Performance metric:\nscore or other\nquantitative\nrepresentation of a\nmodel’s quality and\nability to achieve goals",
+    "page": 11,
+    "bbox": [
+      422.94,
+      125.81,
+      498.92,
+      183.97
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "AUC: a measure of the\nsensitivity and\nspecificity of a model\nfor each decision\nthreshold",
+    "page": 11,
+    "bbox": [
+      422.94,
+      191.56,
+      500.63,
+      239.76
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "AUPRC: a measure of\nprecision and recall of\na model for each\ndecision threshold",
+    "page": 11,
+    "bbox": [
+      422.94,
+      247.35,
+      499.02,
+      285.59
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Calibration:\na measure of how well\nML risk estimates\nreflect true risk",
+    "page": 11,
+    "bbox": [
+      422.94,
+      293.18,
+      497.46,
+      331.42
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Group fairness:\na principle whereby\npredefined patient\ngroups should receive\nsimilar model\nperformance",
+    "page": 11,
+    "bbox": [
+      422.94,
+      339.0,
+      496.13,
+      397.17
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "of stepwise regressions include the misleading nature of p-values and the fact that the final set\ndepends on if and when features were considered (109). In ML, penalized regressions like lasso\nregression are popular for automated feature selection, but the lasso trades potential increases in\nestimation bias for reductions in variance by shrinking some feature coefficients to zero. Features\nselected by lasso may be colinear with other features not selected (110). Over-interpretation of\nthe selected features in any automated procedures should therefore be avoided in practice given\nthese pitfalls. Researchers should also consider the humans-in-the-loop framework, whereby in-\ncorporation of automated procedures is blended with investigator knowledge (111).",
+    "page": 11,
+    "bbox": [
+      46.35,
+      39.8,
+      411.0,
+      132.86
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "5.3. Tuning Parameters",
+    "page": 11,
+    "bbox": [
+      46.35,
+      150.62,
+      152.33,
+      161.06
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "There are many tuning parameters that may be set a priori or selected via cross-validation (110).\nThese range from the learning rate in a neural network to the minimum size of the terminal leaves\nin a random forest. In the latter example, default settings in R for classification will allow trees to\ngrow until there is just one observation in a terminal leaf. This can lead to overfitting the model to\nthe training data and a loss of generalizability to the target population. Lack of generalizability is\na central concern for ethical ML given the previously discussed issues in data collection and study\ninclusion. When data lack diversity and are not representative of the target population where the\nmodel would be deployed, overfitting algorithms to this data has the potential to disproportion-\nately harm marginalized groups (112). Using cross-validation to select tuning parameters does not\nautomatically solve these problems, as cross-validation still operates with respect to an a priori–\nchosen optimization target.",
+    "page": 11,
+    "bbox": [
+      46.35,
+      167.36,
+      411.29,
+      296.28
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "5.4. Performance Metrics",
+    "page": 11,
+    "bbox": [
+      46.35,
+      314.03,
+      161.53,
+      324.47
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "There are many commonly used performance metrics for model evaluation, such as area under\nthe receiver operating characteristic curve (AUC), area under the precision-recall curve (AUPRC),\nand calibration (113). However, the appropriate metrics to optimize depend on the intended use\ncase and relative value of true positives, false positives, true negatives, and false negatives. Not\nonly can AUC be misleading when considering other global fit metrics (e.g., high AUC masking\na weak true positive rate) but it also does not describe the impact of the model across selected\ngroups. Furthermore, even so-called objective metrics and scores can be deeply flawed and lead\nto over- or undertreatment of minorities if blindly applied (114). Note that robust reporting of\nresults should include an explicit statement of other nonoptimized metrics, including the original\nintended use case, the training cohort and case, or the level of model uncertainty.",
+    "page": 11,
+    "bbox": [
+      46.35,
+      330.78,
+      411.31,
+      447.74
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "5.5. Group Fairness Definition",
+    "page": 11,
+    "bbox": [
+      46.35,
+      465.5,
+      185.16,
+      475.94
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "The specific definition of fairness for a given application often impacts the choice of a loss func-\ntion, and therefore the underlying algorithm. Individual fairness imposes classifier performance\nrequirements that operate over pairs of individuals; e.g., similar individuals should be treated sim-\nilarly (115). Group fairness operates over protected groups (based on some sensitive attribute)\nby requiring that a classifier performance metric be balanced across those groups (116, 117). For\ninstance, a model may be partially assessed by calculating the true positive rate separately among\nrural and urban populations to ensure risk score similarity. Regressions subject to group fairness\nconstraints or penalties optimizing toward joint global and group fit considerations have also been\ndeveloped (93, 118, 119).",
+    "page": 11,
+    "bbox": [
+      46.35,
+      482.24,
+      410.99,
+      587.25
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Recent work has focused on identifying and mitigating violations of fairness definitions in\nhealthcare settings. While most of these algorithms have emerged outside the field of healthcare,",
+    "page": 11,
+    "bbox": [
+      46.35,
+      589.84,
+      411.28,
+      611.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "www.annualreviews.org • Ethical Machine Learning in Healthcare\n133",
+    "page": 11,
+    "bbox": [
+      212.75,
+      626.5,
+      434.55,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 12,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Model auditing:\nthe postdeployment\ninspection of model\nperformance on\ngroups and outcomes",
+    "page": 12,
+    "bbox": [
+      31.4,
+      70.02,
+      103.13,
+      118.22
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "researchers have designed penalized and constrained regressions to improve the performance of\nhealth insurance plan payment.This payment system impacts tens of millions of lives in the United\nStates and is known to undercompensate insurers for individuals with certain health conditions,in-\ncluding mental health and substance use disorders, in part because billing codes do not accurately\ncapture diagnoses (120). Undercompensation creates incentives for insurers exclude individuals\nwith these health conditions from enrollment, limiting their access to care. Regressions subject to\ngroup fairness constraints or penalties have been successful in removing nearly all undercompen-\nsation for a single group with negligible impacts on global fit (93). Subsequent work incorporating\nmultiple groups into the loss function also saw improvements in undercompensation for the ma-\njority of groups not included (121).",
+    "page": 12,
+    "bbox": [
+      121.06,
+      39.8,
+      485.7,
+      156.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "6. POSTDEPLOYMENT CONSIDERATIONS",
+    "page": 12,
+    "bbox": [
+      121.06,
+      174.53,
+      340.76,
+      184.97
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "# "
+  },
+  {
+    "text": "Often the goal of model training is to ultimately deploy it in a clinical, epidemiological, or policy\nservice. However, deployed models can have lasting ethical impact beyond the model performance\nmeasured in development: For example, in the inclusion of race in the clinical risk scores described\nabove that may lead to chronic over- or undertreatment (106). Here we outline considerations\nfor robust deployment by highlighting the need for careful performance reporting and auditing\ngeneralizability, documentation, and regulation.",
+    "page": 12,
+    "bbox": [
+      121.06,
+      191.27,
+      485.7,
+      260.4
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "6.1. Quantifying Impact",
+    "page": 12,
+    "bbox": [
+      121.06,
+      278.16,
+      229.54,
+      288.6
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "Unlike in other settings with high-stakes decisions (e.g., aviation), clinical staff performance is not\naudited by an external body (122). Instead, clinicians are often a self-governing body, relying on\nclinicians themselves to determine when a colleague is underperforming or in breach of ethical\npractice principles, e.g., through such tools as surgical morbidity and mortality conferences (123).\nClinical staff can also struggle to keep abreast of what current best practice recommendations are,\nas these can change dramatically over time; one study found that more than 400 previously routine\npractices were later contradicted in leading clinical journals (124).",
+    "page": 12,
+    "bbox": [
+      121.06,
+      294.91,
+      486.02,
+      376.01
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Hence, it is important to measure and address the downstream impact of models though au-\ndits for bias and examination of clinical impact (6). Regular model auditing postdeployment, i.e.,\ndetailed inspection of model performance on various groups and outcomes, may reveal the impact\nof models on different populations (8) and identify areas of potential concern. Some recent work\nhas targeted causal models in dynamic systems in order to reduce the severity of bias (125). Others\nhave targeted bias reduction through model construction with explicit guarantees about balanced\nperformance (16) or by specifying groups that must have equal performance (126). Additionally,\nthere is the possibility that models may help to debias current clinical care by reducing known\nbiases against minorities (127) and disadvantaged majorities (128).",
+    "page": 12,
+    "bbox": [
+      121.06,
+      378.6,
+      486.02,
+      483.61
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "6.2. Model Generalizability",
+    "page": 12,
+    "bbox": [
+      121.06,
+      501.36,
+      245.03,
+      511.8
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "As has been raised in previous sections, a crucial concern with model deployment is generalization.\nAny shifts in data distributions can significantly impact model performance when the settings for\ndevelopment and for deployment differ. For example, chest X-ray diagnosis models can have high\nperformance on test data drawn from the same hospital but degrade rapidly on data from another\nhospital (129). Other work in gender bias on chest X-ray data has demonstrated both that small\nproportions of female chest X-rays degrade diagnostic performance accuracy in female patients\n(130) and that this is not simply addressed in all cases by adding in more female X-rays (131).",
+    "page": 12,
+    "bbox": [
+      121.06,
+      518.11,
+      486.03,
+      599.2
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "134\nChen et al.",
+    "page": 12,
+    "bbox": [
+      97.49,
+      627.1,
+      152.73,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 13,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Data artifact: a flaw in\ndata caused by\nequipment, techniques,\nor conditions that is\nunrelated to model\noutput",
+    "page": 13,
+    "bbox": [
+      422.94,
+      70.02,
+      500.95,
+      128.19
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Even within a single hospital, models trained on data from an initial EHR system data deteriorated\nsignificantly when tested on data from a new EHR system (132). Finally, data artifacts that induce\nstrong priors in what patterns ML models are sensitive to have the potential to perpetrate harms\nwhen used without awareness (133). For example, patients with dark skin can have morphological\nvariation and disease manifestations that are not easily detected under the defaults that are set by\npredominantly white-skinned patients (134).",
+    "page": 13,
+    "bbox": [
+      46.35,
+      39.8,
+      410.98,
+      108.94
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Several algorithms have recently been proposed to account for distribution shifts in data (135,\n136). However, these algorithms have significant limitations, as they typically require assumptions\nabout the nature or amount of distributional shift an algorithm can accommodate. Some, like that\nof Reference 136, may require a clear indication of which distributions in a healthcare pipeline\nare expected to change, and may develop models for prediction accordingly. Many of these as-\nsumptions may be verifiable. If not, periodically monitoring for data shifts (137) and potentially\nretraining models when performance deteriorates due to such shifts are imperative deployment\nconsiderations with significant ethical implications.",
+    "page": 13,
+    "bbox": [
+      46.35,
+      111.54,
+      411.3,
+      204.59
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "6.3. Model and Data Documentation",
+    "page": 13,
+    "bbox": [
+      46.35,
+      220.37,
+      213.16,
+      230.81
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "Clear documentation enables insight into the model development and data collection. Good\nmodel documentation should include clinically specific features of model development that can\nbe assessed and recorded beforehand, such as logistics within the clinical setting, potential unin-\ntended consequences, and trade-offs between bias and performance (138). In addition to raising\nethical concerns in the pipeline, the process of co-designing checklists with clinical practitioners\nformalizes ad hoc procedures and empowers individual advocates (139). Standardized reporting\nof model performance—such as the one-page summary model cards for model reporting (140)—\ncan empower clinical practitioners to understand model limitations and future model developers\nto identify areas of improvement. Similarly, better documentation of the data supporting initial\nmodel training can help expose sources of discrimination in the collected data. Modelers could\nuse datasheets for datasets to detail the conditions of data collection (141).",
+    "page": 13,
+    "bbox": [
+      46.35,
+      237.11,
+      411.0,
+      366.03
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "6.4. Regulation",
+    "page": 13,
+    "bbox": [
+      46.35,
+      381.81,
+      115.58,
+      392.25
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "In the United States, the Food and Drug Administration (FDA) bears responsibility for the reg-\nulation of healthcare ML models. As there does not exist comprehensive guidance for healthcare\nmodel research and subsequent deployment, the opportunity is ripe to create a comprehensive\nframework to audit and regulate models. Currently, the FDA’s proposed ML-specific modifi-\ncations to the software as a medical device regulations draw a distinction between models that\nare trained and then frozen prior to clinical deployment and models that continue to learn on\nobserved outcomes. Although models in the latter class can leverage larger, updated datasets, they\nalso face additional risk due to model drift and may need additional audits (142). Such frameworks\nshould explicitly account for health disparities across the stages of ML development in health\nand ensure health equity audits as part of postmarket evaluation (143). We also note that there\nare many potential legal implications, e.g., in malpractice and liability suits, that will require new\nsolutions (144).",
+    "page": 13,
+    "bbox": [
+      46.35,
+      398.55,
+      410.99,
+      539.42
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Researchers have proposed additional frameworks to guide clinical model development, which\ncould inspire future regulation. ML model regulation could draw from existing regulatory frame-\nworks: An RCT for ML models would assess patient benefit compared to a control cohort of\nstandard clinical practice (145), and a drug development pipeline for ML models would define\na protocol for adverse events and model recalls (146). The clinical interventions accompanying",
+    "page": 13,
+    "bbox": [
+      46.35,
+      542.02,
+      411.0,
+      599.2
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "www.annualreviews.org • Ethical Machine Learning in Healthcare\n135",
+    "page": 13,
+    "bbox": [
+      212.75,
+      626.5,
+      434.55,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 14,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "the clinical ML model should be analyzed to contextualize the use of the model in the clinical\nsetting (147).",
+    "page": 14,
+    "bbox": [
+      121.06,
+      39.8,
+      485.66,
+      61.12
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "7. RECOMMENDATIONS",
+    "page": 14,
+    "bbox": [
+      121.06,
+      84.64,
+      247.95,
+      95.08
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "# "
+  },
+  {
+    "text": "In this review, we have described the ethical considerations at each step of the ML model devel-\nopment pipeline we introduced. While most researchers will address known challenges such as\ndeployed task accuracy and outcome distribution shift, they are unlikely to be aware of the full\nmagnitude of the hidden challenges such as existing health inequities or outcome label bias. As\nseen in Figure 2, many hidden pipeline challenges can go unaddressed in a typical ML health\nproject, but they have serious ethical repercussions. With these challenges in mind, we propose\nfive general recommendations that span the pipeline stages:",
+    "page": 14,
+    "bbox": [
+      121.06,
+      101.38,
+      485.7,
+      182.47
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "1. Problems should be tackled by diverse teams and using frameworks that increase the proba-",
+    "page": 14,
+    "bbox": [
+      133.01,
+      192.34,
+      485.68,
+      201.71
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "bility that equity will be achieved.Further,historically understudied problems are important\ntargets to practitioners looking to perform high-impact work.\n2. Data collection should be framed as an important front-of-mind concern in the ML mod-",
+    "page": 14,
+    "bbox": [
+      133.01,
+      204.3,
+      485.67,
+      237.57
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "eling pipeline, clear disclosures should be made about imbalanced datasets, and researchers\nshould engage with domain experts to ensure that data reflecting the needs of underserved\nand understudied populations are gathered.\n3. Outcome choice should reflect the task at hand and should preferably be unbiased. If the",
+    "page": 14,
+    "bbox": [
+      133.01,
+      240.16,
+      485.7,
+      285.39
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "outcome label has ethical bias, the source of inequity should be accounted for in ML model\ndesign, leveraging literature that attempts to remove ethical biases during preprocessing, or\nwith use of a reasonable proxy.\n4. Reflection on the goals of the model is essential during development and should be artic-",
+    "page": 14,
+    "bbox": [
+      133.01,
+      287.99,
+      485.69,
+      333.22
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "ulated in a preanalysis plan. In addition to technical choices like loss function, researchers",
+    "page": 14,
+    "bbox": [
+      144.64,
+      335.81,
+      485.7,
+      345.17
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Off-the-shelf algorithms and assumptions",
+    "page": 14,
+    "bbox": [
+      347.17,
+      401.68,
+      472.91,
+      408.68
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Naive inclusion of \nsensitive attributes",
+    "page": 14,
+    "bbox": [
+      179.77,
+      534.35,
+      237.7,
+      549.75
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Lack of clinical\nalgorithm regulation",
+    "page": 14,
+    "bbox": [
+      146.54,
+      445.25,
+      209.64,
+      460.65
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Lack of model and\ndata documentation",
+    "page": 14,
+    "bbox": [
+      158.96,
+      503.25,
+      220.95,
+      518.65
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Conflicting algorithmic",
+    "page": 14,
+    "bbox": [
+      143.87,
+      472.15,
+      213.43,
+      479.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "fairness definitions",
+    "page": 14,
+    "bbox": [
+      149.91,
+      480.55,
+      207.39,
+      487.55
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Visible pipeline",
+    "page": 14,
+    "bbox": [
+      36.91,
+      369.52,
+      44.91,
+      424.58
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "challenges\nHidden  pipeline challenges",
+    "page": 14,
+    "bbox": [
+      41.71,
+      377.94,
+      54.51,
+      550.72
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Imbalanced or skewed datasets",
+    "page": 14,
+    "bbox": [
+      362.56,
+      371.81,
+      457.52,
+      378.81
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Deployed task accuracy",
+    "page": 14,
+    "bbox": [
+      135.86,
+      401.01,
+      207.18,
+      408.01
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Confounding bias",
+    "page": 14,
+    "bbox": [
+      83.22,
+      523.0,
+      137.14,
+      530.0
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Outcome distribution shift\nFunding and\npublication feasibility",
+    "page": 14,
+    "bbox": [
+      92.56,
+      371.81,
+      308.1,
+      387.21
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Understudied targets\ndue to lack of funding",
+    "page": 14,
+    "bbox": [
+      68.61,
+      445.25,
+      134.81,
+      460.65
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "and publication",
+    "page": 14,
+    "bbox": [
+      77.84,
+      462.05,
+      125.58,
+      469.05
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Outcome label bias",
+    "page": 14,
+    "bbox": [
+      77.76,
+      491.9,
+      135.89,
+      498.9
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Problem selection bias\nExisting health",
+    "page": 14,
+    "bbox": [
+      338.86,
+      445.25,
+      475.03,
+      456.45
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "inequities",
+    "page": 14,
+    "bbox": [
+      346.3,
+      453.65,
+      376.33,
+      460.65
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Nonrepresentative",
+    "page": 14,
+    "bbox": [
+      335.54,
+      472.15,
+      392.49,
+      479.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "research teams",
+    "page": 14,
+    "bbox": [
+      341.14,
+      480.55,
+      386.9,
+      487.55
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Choice of\nethical framework",
+    "page": 14,
+    "bbox": [
+      409.69,
+      534.35,
+      464.58,
+      549.75
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Differences in patient",
+    "page": 14,
+    "bbox": [
+      410.74,
+      472.15,
+      475.71,
+      479.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "treatment",
+    "page": 14,
+    "bbox": [
+      427.93,
+      480.55,
+      458.52,
+      487.55
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Model generalizability\nacross health institutions",
+    "page": 14,
+    "bbox": [
+      324.14,
+      499.05,
+      399.98,
+      514.45
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "and across time",
+    "page": 14,
+    "bbox": [
+      338.41,
+      515.85,
+      385.71,
+      522.85
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Group fairness metrics",
+    "page": 14,
+    "bbox": [
+      409.7,
+      507.45,
+      477.66,
+      514.45
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Population-specific",
+    "page": 14,
+    "bbox": [
+      321.77,
+      534.35,
+      380.08,
+      541.35
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "data loss",
+    "page": 14,
+    "bbox": [
+      337.59,
+      542.75,
+      364.26,
+      549.75
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Figure 2",
+    "page": 14,
+    "bbox": [
+      31.39,
+      577.34,
+      62.11,
+      585.69
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "The model development pipeline contains many challenges for ethical machine learning for healthcare. We highlight both visible and\nhidden challenges.",
+    "page": 14,
+    "bbox": [
+      31.39,
+      590.42,
+      480.39,
+      608.71
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "136\nChen et al.",
+    "page": 14,
+    "bbox": [
+      97.49,
+      627.1,
+      152.73,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 15,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "must interrogate how, and whether, a model should be developed to best answer a research\nquestion, as well as what caveats are included.\n5. Audits should be designed to identify specific harms and should be paired with methods and\nprocedures. Harms should be examined group by group, rather than at a population level.\nML ethical design checklists are one possible tool to systematically enumerate and consider\nsuch ethical concerns prior to declaring success in a project.",
+    "page": 15,
+    "bbox": [
+      58.3,
+      39.8,
+      411.3,
+      108.94
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Finally, we note that ML also could and should be harnessed to create shifts in power in health-\ncare systems (148). This might mean actively selecting problems for the benefit of underserved\npatients, designing methods to target systemic interventions for improved access to care and treat-\nments, or enforcing evaluations with the explicit purpose of preserving patient autonomy. In one\nsalient example, the state of California reduced disparities in rates of obstetric hemorrhage (and\ntherefore maternal mortality for women of color) by weighing blood loss sponges, i.e., making\naccess to treatment consistent and unbiased for all women (149). Models could similarly be har-\nnessed to learn and recommend consistent rules, potentially giving researchers an opportunity to\ndebias current clinical care (150), measure racial disparities and mistrust in end-of-life care (82),\nand improve known biases against minorities (127) and disadvantaged majorities (128). Ultimately,\nthe responsibility for ethical models and behavior lies with a broad community, but it begins with\ntechnical researchers fulfilling an obligation to engage with patients, clinical researchers, staff, and\nadvocates to build ethical models.",
+    "page": 15,
+    "bbox": [
+      46.35,
+      116.51,
+      411.31,
+      269.34
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "FUTURE ISSUES",
+    "page": 15,
+    "bbox": [
+      58.3,
+      296.69,
+      142.98,
+      307.14
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "# "
+  },
+  {
+    "text": "1. How can we combat urgent global health crises that exacerbate existing patterns of health\ninjustices?",
+    "page": 15,
+    "bbox": [
+      58.3,
+      313.44,
+      398.99,
+      334.75
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "2. How can we encourage machine learning (ML) model developers to build ethical con-\nsiderations into the pipeline from the very beginning? Currently, when egregious cases\nof injustice are discovered only after clinical impact has already occurred, what can de-\nvelopers do to engage?",
+    "page": 15,
+    "bbox": [
+      58.3,
+      340.34,
+      399.0,
+      385.57
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "3. How can evaluation and audits of ML systems be translated into meaningful clinical\npractice when, in many countries, clinicians themselves are subject to only limited exter-\nnal evaluations or audits?",
+    "page": 15,
+    "bbox": [
+      58.3,
+      391.15,
+      399.03,
+      424.42
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "4. When, if ever, should sensitive attributes like race be used in analysis? How should we\nincorporate socially constructed features into models and audits?",
+    "page": 15,
+    "bbox": [
+      58.3,
+      430.0,
+      399.01,
+      451.32
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "5. How can ML be used to shift power from, e.g., well-known institutions, privileged pa-\ntients, and wealthy multinational corporations to the patients most in need?",
+    "page": 15,
+    "bbox": [
+      58.3,
+      456.9,
+      399.01,
+      478.22
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "DISCLOSURE STATEMENT",
+    "page": 15,
+    "bbox": [
+      46.35,
+      513.82,
+      187.56,
+      524.26
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "# "
+  },
+  {
+    "text": "The authors are not aware of any affiliations, memberships, funding, or financial holdings that\nmight be perceived as affecting the objectivity of this review.",
+    "page": 15,
+    "bbox": [
+      46.35,
+      530.56,
+      410.97,
+      551.89
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "ACKNOWLEDGMENTS",
+    "page": 15,
+    "bbox": [
+      46.35,
+      573.09,
+      166.72,
+      583.53
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "# "
+  },
+  {
+    "text": "The authors thank Rediet Abebe for helpful discussions and contributions to an early draft and\nPeter Szolovits, Pang Wei Koh, Leah Pierson, Berk Ustun, and Tristan Naumann for useful",
+    "page": 15,
+    "bbox": [
+      46.35,
+      589.84,
+      410.96,
+      611.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "www.annualreviews.org • Ethical Machine Learning in Healthcare\n137",
+    "page": 15,
+    "bbox": [
+      212.75,
+      626.5,
+      434.55,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 16,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "comments and feedback. This work was supported in part by an NIH (National Institutes\nof Health) Director’s New Innovator Award (DP2MD012722) (to S.R.), a CIFAR (Canadian\nInstitute for Advanced Research) AI Chair at the Vector Institute (to M.G.), and a Microsoft\nResearch grant (to M.G.).",
+    "page": 16,
+    "bbox": [
+      121.06,
+      39.8,
+      485.68,
+      85.04
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "LITERATURE CITED",
+    "page": 16,
+    "bbox": [
+      121.06,
+      107.45,
+      218.96,
+      116.84
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "# "
+  },
+  {
+    "text": "1. Topol EJ. 2019. High-performance medicine: the convergence of human and artificial intelligence. Nat.\nMed. 25:44–56\n2. Ferryman K, Winn RA. 2018. Artificial intelligence can entrench disparities—Here’s what we must do.\nThe Cancer Letter, Nov. 16. https://cancerletter.com/articles/20181116_1/\n3. Wiens J, Saria S, Sendak M, Ghassemi M, Liu VX, et al. 2019. Do no harm: a roadmap for responsible\nmachine learning for health care. Nat. Med. 25:1337–40\n4. Ghassemi M, Naumann T, Schulam P, Beam AL, Chen IY, Ranganath R. 2020. A review of challenges\nand opportunities in machine learning for health. AMIA Summits Transl. Sci. Proc. 2020:191–200\n5. Ghassemi M, Naumann T, Schulam P, Beam AL, Chen IY, Ranganath R. 2019. Practical guidance on\nartificial intelligence for health-care data. Lancet Digital Health 1:e157–59\n6. Chen IY, Szolovits P, Ghassemi M. 2019. Can AI help reduce disparities in general medical and mental\nhealth care? AMA J. Ethics 21:167–79\n7. Zhang H, Lu AX, Abdalla M, McDermott M, Ghassemi M. 2020. Hurtful words: quantifying biases\nin clinical contextual word embeddings. In Proceedings of the ACM Conference on Health, Inference, and\nLearning, pp. 110–20. New York: Assoc. Comput. Mach.\n8. Obermeyer Z, Powers B, Vogeli C, Mullainathan S. 2019. Dissecting racial bias in an algorithm used to\nmanage the health of populations. Science 366:447–53\n9. boyd d, Crawford K. 2012. Critical questions for big data: provocations for a cultural, technological, and\nscholarly phenomenon. Inform. Commun. Soc. 15:662–79\n10. Dalton CM, Taylor L, Thatcher J. 2016. Critical data studies: a dialog on data and space. Big Data Soc.\n3(1). https://doi.org/10.1177/2053951716648346\n11. Zliobaite I. 2015. A survey on measuring indirect discrimination in machine learning. arXiv:1511.00148\n[cs.CY]\n12. Barocas S, Hardt M, Narayanan A. 2018. Fairness and machine learning. Online Book, fairmlbook.org.\nhttp://www.fairmlbook.org\n13. Corbett-Davies S, Goel S. 2018. The measure and mismeasure of fairness: a critical review of fair ma-\nchine learning. arXiv:1808.00023 [cs.CY]\n14. Chen I, Johansson FD, Sontag D. 2018. Why is my classifier discriminatory? In Proceedings of the 31st\nInternational Conference on Advances in Neural Information Processing Systems (NIPS 2018), ed. S Bengio,\nH Wallach, H Larochelle, K Grauman, N Cesa-Bianchi, R Garnett, pp. 3539–50. https://proceedings.\nneurips.cc/paper/2018/file/1f1baa5b8edac74eb4eaa329f14a0361-Paper.pdf\n15. Rajkomar A, Hardt M, Howell MD, Corrado G, Chin MH. 2018. Ensuring fairness in machine learning\nto advance health equity. Ann. Intern. Med. 169:866–72\n16. Ustun B, Liu Y, Parkes D. 2019. Fairness without harm: decoupled classifiers with preference guarantees.\nProc. Mach. Learn. Res. 97:6373–82\n17. Benjamin R. 2019. Assessing risk, automating racism. Science 366:421–22\n18. Veatch RM, Guidry-Grimes LK. 2019. The Basics of Bioethics. New York: Routledge. 4th ed.\n19. Vayena E, Blasimme A, Cohen IG. 2018. Machine learning in medicine: addressing ethical challenges.\nPLOS Med. 15:e1002689\n20. Kaye J. 2012. The tension between data sharing and the protection of privacy in genomics research.\nAnnu. Rev. Genom. Hum. Genet. 13:415–31\n21. Powers M, Faden R. 2006. Social Justice: The Moral Foundations of Public Health and Health Policy.\nNew York: Oxford Univ. Press\n22. Berg CJ, Atrash HK, Koonin LM, Tucker M. 1996. Pregnancy-related mortality in the United States,\n1987–1990. Obstet. Gynecol. 88:161–67",
+    "page": 16,
+    "bbox": [
+      125.19,
+      124.19,
+      486.02,
+      611.01
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "138\nChen et al.",
+    "page": 16,
+    "bbox": [
+      97.49,
+      627.1,
+      152.73,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 17,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "23. Roberts DE. 1999. Killing the Black Body: Race, Reproduction, and the Meaning of Liberty. New York: Vintage\nBooks\n24. Berry DR. 2017. The Price for their Pound of Flesh: The Value of the Enslaved, from Womb to Grave, in the\nBuilding of a Nation. Boston: Beacon\n25. Fisk N, Atun R. 2009. Systematic analysis of research underfunding in maternal and perinatal health.\nBJOG 116:347–56\n26. Howell EA, Egorova N, Balbierz A, Zeitlin J, Hebert PL. 2016. Black-white differences in severe ma-\nternal morbidity and site of care. Am. J. Obstet. Gynecol. 214:122.e1–122.e7\n27. Creanga AA, Bateman BT, Mhyre JM, Kuklina E, Shilkrut A, Callaghan WM. 2014. Performance\nof racial and ethnic minority-serving hospitals on delivery-related indicators. Am. J. Obstet. Gynecol.\n211:647.e1–647.e16\n28. Eltoukhi HM, Modi MN, Weston M, Armstrong AY, Stewart EA. 2014. The health disparities of uterine\nfibroid tumors for African American women: a public health issue. Am. J. Obstet. Gynecol. 210:194–99\n29. Hoffman KM, Trawalter S, Axt JR, Oliver MN. 2016. Racial bias in pain assessment and treatment\nrecommendations, and false beliefs about biological differences between blacks and whites. PNAS\n113:4296–301\n30. Creanga AA, Berg CJ, Ko JY, Farr SL, Tong VT, et al. 2014. Maternal mortality and morbidity in the\nUnited States: Where are we now? J. Women’s Health 23:3–9\n31. Vidyasagar D. 2006. Global notes: the 10/90 gap disparities in global health research. J. Perinatol. 26:55–\n56\n32. Pierson L, Millum J. 2019. Grant reviews and health research priority setting: Do research funders uphold widely\nendorsed ethical principles? Paper presented at Global Health Bioeth. Conf., Oxford, 1–2 July\n33. Von Philipsborn P, Steinbeis F, Bender ME, Regmi S, Tinnemann P. 2015. Poverty-related and ne-\nglected diseases–an economic and epidemiological analysis of poverty relatedness and neglect in research\nand development. Glob. Health Action 8:25818\n34. All Us Res. Prog. Investig. 2019. The “All of Us” research program. New Engl. J. Med. 381:668–76\n35. 23andme. 2019. 23andme’s call for collaborations to study underrepresented populations. 23andme-\nBlog, Feb. 28. https://blog.23andme.com/23andme-research/23andmes-call-for-collaborations-\nto-study-underrepresented-populations/\n36. Tsosie KS, Yracheta JM, Dickenson D. 2019. Overvaluing individual consent ignores risks to tribal par-\nticipants. Nat. Rev. Genet. 20:497–98\n37. Farooq F, Strouse JJ. 2018. Disparities in foundation and federal support and development of new ther-\napeutics for sickle cell disease and cystic fibrosis. Blood 132:4687–87\n38. Park M. 2010. NCAA genetic screening rule sparks discrimination concerns. CNN, Aug. 4. https://\nwww.cnn.com/2010/HEALTH/08/04/ncaa.sickle.genetic.screening/index.html\n39. Rouse C. 2009. Uncertain Suffering: Racial Health Care Disparities and Sickle Cell Disease. Berkeley: Univ.\nCalif. Press\n40. Chakradhar S. 2018. Discovery cycle. Nat. Med. 24:1082–86\n41. Eisenberg V, Weil C, Chodick G, Shalev V. 2018. Epidemiology of endometriosis: a large population-\nbased database study from a healthcare provider with 2 million members. BJOG 125:55–62\n42. Pierson E, Althoff T, Thomas D, Hillard P, Leskovec J. 2021. Daily, weekly, seasonal and menstrual cy-\ncles in women’s mood, behaviour and vital signs. Nat. Human Behav. https://doi.org/10.1038/S41562-\n020-01046-9\n43. Hillard PJA. 2014. Menstruation in adolescents: What do we know? And what do we do with the infor-\nmation? J. Pediatr. Adolesc. Gynecol. 27:309–19\n44. Am. Acad. Pediatr. Comm. Adolesc., Am. Coll. Obstet. Gynecol. Comm. Adolesc. Health Care. 2006.\nMenstruation in girls and adolescents: using the menstrual cycle as a vital sign. Pediatrics 118:2245–50\n45. NIH (Natl. Inst. Health). 2020. NIH offers its first research project grant (R01) on sex and gender.\nIn the Spotlight, Oct. 8. https://orwh.od.nih.gov/in-the-spotlight/all-articles/nih-offers-its-first-\nresearch-project-grant-r01-sex-and-gender\n46. Kasy M, Abebe R. 2020. Fairness, equality, and power in algorithmic decision making. Work. Pap., Oct. 8.\nhttps://maxkasy.github.io/home/files/papers/fairness_equality_power.pdf",
+    "page": 17,
+    "bbox": [
+      50.48,
+      39.81,
+      411.29,
+      610.88
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "www.annualreviews.org • Ethical Machine Learning in Healthcare\n139",
+    "page": 17,
+    "bbox": [
+      212.75,
+      626.5,
+      434.55,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 18,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "47. Hofstra B,Kulkarni VV,Galvez SMN,He B,Jurafsky D,McFarland DA.2020.The diversity–innovation\nparadox in science. PNAS 117:9284–91\n48. West JD, Jacquet J, King MM, Correll SJ, Bergstrom CT. 2013. The role of gender in scholarly author-\nship. PLOS ONE 8:e66212\n49. Pierson\nE.\n2017.\nDemographics\nand\ndiscussion\ninfluence\nviews\non\nalgorithmic\nfairness.\narXiv:1712.09124 [cs.CY]\n50. Hoppe TA, Litovitz A, Willis KA, Meseroll RA, Perkins MJ, et al. 2019. Topic choice contributes to the\nlower rate of NIH awards to African-American/black scientists. Sci. Adv. 5:eaaw7238\n51. Ginther DK, Schaffer WT, Schnell J, Masimore B, Liu F, et al. 2011. Race, ethnicity, and NIH research\nawards. Science 333:1015–19\n52. CIHI (Can. Inst. Health Info.). 2020. Proposed standards for race-based and indigenous identity data collection\nand health reporting in Canada. Data Stand., Can. Inst. Health Info., Ottawa, Ont.\n53. Léonard MN. 2014. Census and racial categorization in France: invisible categories and color-blind\npolitics. Humanit. Soc. 38:67–88\n54. Tomašev N, Glorot X, Rae JW, Zielinski M, Askham H, et al. 2019. A clinically applicable approach to\ncontinuous prediction of future acute kidney injury. Nature 572:116–19\n55. McDermott MBA, Nestor B, Kim E, Zhang W, Goldenberg A, et al. 2020. A comprehensive evaluation\nof multi-task learning and multi-task pre-training on EHR time-series data. arXiv:2007.10185 [cs.LG]\n56. Oakden-Rayner L, Dunnmon J, Carneiro G, Ré C. 2020. Hidden stratification causes clinically mean-\ningful failures in machine learning for medical imaging. In Proceedings of the ACM Conference on Health,\nInference, and Learning, pp. 151–59. New York: Assoc. Comput. Mach.\n57. Rothwell PM. 2005. External validity of randomised controlled trials: “To whom do the results of this\ntrial apply?” Lancet 365:82–93\n58. Courtright K. 2016. Point: Do randomized controlled trials ignore needed patient populations? Yes.\nChest 149:1128–30\n59. Travers J, Marsh S, Williams M, Weatherall M, Caldwell B, et al. 2007. External validity of randomised\ncontrolled trials in asthma: To whom do the results of the trials apply? Thorax 62:219–23\n60. Stuart EA, Bradshaw CP, Leaf PJ. 2015. Assessing the generalizability of randomized trial results to\ntarget populations. Prev. Sci. 16:475–85\n61. Wells BJ, Chagin KM, Nowacki AS, Kattan MW. 2013. Strategies for handling missing data in electronic\nhealth record derived data. eGEMS 1(3):7\n62. Agniel D, Kohane IS, Weber GM. 2018. Biases in electronic health record data due to processes within\nthe healthcare system: retrospective observational study. BMJ 361:k1479\n63. Bartlett VL, Dhruva SS, Shah ND, Ryan P, Ross JS. 2019. Feasibility of using real-world data to replicate\nclinical trial evidence. JAMA Netw. Open 2:e1912869\n64. Ferryman K, Pitcan M. 2018. Fairness in precision medicine. Res. Proj., Data & Society. https://\ndatasociety.net/research/fairness-precision-medicine/\n65. Hing E, Burt CW. 2009. Are there patient disparities when electronic health records are adopted?\nJ. Health Care Poor Underserved 20:473–88\n66. Kapoor M, Agrawal D, Ravi S, Roy A, Subramanian S, Guleria R. 2019. Missing female patients: an\nobservational analysis of sex ratio among outpatients in a referral tertiary care public hospital in India.\nBMJ Open 9:e026850\n67. Haneuse SJA, Shortreed SM. 2017. On the use of electronic health records. In Methods in Comparative\nEffectiveness Research, ed. C Gatsonis, SC Morton, pp. 469–502. New York: Chapman & Hall/CRC\n68. Wing C, Simon K, Bello-Gomez RA. 2018. Designing difference in difference studies: best practices for\npublic health policy research. Annu. Rev. Public Health 39:453–69\n69. Callahan EJ, Hazarian S, Yarborough M, Sánchez JP. 2014. Eliminating LGBTIQQ health disparities:\nthe associated roles of electronic health records and institutional culture. Hastings Center Rep. 44:S48–52\n70. López MM, Bevans M, Wehrlen L, Yang L, Wallen G. 2017. Discrepancies in race and ethnicity docu-\nmentation: a potential barrier in identifying racial and ethnic disparities. J. Racial Ethnic Health Disparities\n4:812–18\n71. Klinger EV, Carlini SV, Gonzalez I, Hubert SS, Linder JA, et al. 2015. Accuracy of race, ethnicity, and\nlanguage preference in an electronic health record. J. Gen. Intern. Med. 30:719–23",
+    "page": 18,
+    "bbox": [
+      125.19,
+      39.81,
+      486.0,
+      611.0
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "140\nChen et al.",
+    "page": 18,
+    "bbox": [
+      97.49,
+      627.1,
+      152.73,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 19,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "72. Dredze M. 2012. How social media will change public health. IEEE Intell. Syst. 27:81–84\n73. Abebe R, Hill S, Vaughan JW, Small PM, Schwartz HA. 2019. Using search queries to understand health\ninformation needs in Africa.In Proceedings of the Thirteenth International AAAI Conference on Web and Social\nMedia, pp. 3–14. Palo Alto, CA: AAAI\n74. Giorgi S, Preo¸tiuc-Pietro D, Buffone A, Rieman D, Ungar L, Schwartz HA. 2018. The remarkable\nbenefit of user-level aggregation for lexical-based population-level predictions. In Proceedings of the 2018\nConference on Empirical Methods in Natural Language Processing, pp. 1167–72. Stroudsburg, PA: Assoc.\nComput. Linguist.\n75. Martin AR, Kanai M, Kamatani Y, Okada Y, BM Neale, Daly MJ. 2019. Clinical use of current polygenic\nrisk scores may exacerbate health disparities. Nat. Genet. 51:584–91\n76. Jamison DT, Feacham RG, Makgoba MW, Bos ER, Baingana FK, et al. 2006. Disease and Mortality in\nSub-Saharan Africa. Washington, DC: World Bank. 2nd ed.\n77. James S, Herman J, Rankin S, Keisling M, Mottet L, Anafi M. 2016. The report of the 2015 US transgender\nsurvey. Washington, DC: Natl. Cent. Transgend. Equal.\n78. Fountain C, Bearman P. 2011. Risk as social context: immigration policy and autism in California. Sociol.\nForum 26:215–40\n79. Collier AY, Molina RL. 2019. Maternal mortality in the United States: updates on trends, causes, and\nsolutions. NeoReviews 20:e561–74\n80. Tiwari C, Beyer K, Rushton G. 2014. The impact of data suppression on local mortality rates: the case\nof CDC WONDER. Am. J. Public Health 104:1386–88\n81. Kesselheim AS, Brennan TA. 2005. Overbilling versus downcoding—the battle between physicians and\ninsurers. New Engl. J. Med. 352:855–57\n82. Boag W, Suresh H, Celi LA, Szolovits P, Ghassemi M. 2018. Racial disparities and mistrust in end-of-life\ncare. arXiv:1808.03827 [stat.AP]\n83. Canto JG, Goldberg RJ, Hand MM, Bonow RO, Sopko G, et al. 2007. Symptom presentation of women\nwith acute coronary syndromes: myth versus reality. Arch. Intern. Med. 167:2405–13\n84. Bugiardini R, Ricci B, Cenko E, Vasiljevic Z, Kedev S, et al. 2017. Delayed care and mortality among\nwomen and men with myocardial infarction. J. Am. Heart Assoc. 6:e005968\n85. Rose S. 2016. A machine learning framework for plan payment risk adjustment. Health Serv. Res.\n51:2358–74\n86. Geruso M, Layton T. 2015. Upcoding: evidence from Medicare on squishy risk adjustment. J. Pol. Econ.\n128(3). https://doi.org/10.1086/704756\n87. Natarajan N, Dhillon IS, Ravikumar PK, Tewari A. 2013. Learning with noisy labels. In Proceedings of the\n26th International Conference on Advances in Neural Information Processing Systems (NIPS 2013), ed. CJC\nBurges, L Bottou, M Welling, Z Ghahramani, KQ Weinberger, pp. 1196–204. https://papers.nips.cc/\npaper/2013/file/3871bd64012152bfb53fdf04b401193f-Paper.pdf\n88. Halpern Y, Horng S, Choi Y, Sontag D. 2016. Electronic medical record phenotyping using the anchor\nand learn framework. J. Am. Med. Inform. Assoc. 23:731–40\n89. Oakden-Rayner L. 2020. Exploring large-scale public medical image datasets. Acad. Radiol. 27:106–12\n90. Tamang S, Milstein A, Sørensen HT, Pedersen L, Mackey L, et al. 2017. Predicting patient ‘cost blooms’\nin Denmark: a longitudinal population-based study. BMJ Open 7:e011580\n91. Cook BL,McGuire TG,Zaslavsky AM.2012.Measuring racial/ethnic disparities in health care: methods\nand practical issues. Health Serv. Res. 47:1232–54\n92. Cook BL, Zuvekas SH, Carson N, Wayne GF, Vesper A, McGuire TG. 2014. Assessing racial/ethnic\ndisparities in treatment across episodes of mental health care. Health Serv. Res. 49:206–29\n93. Zink A, Rose S. 2020. Fair regression for health care spending. Biometrics 76:973–82\n94. Guillory D. 2020. Combating anti-blackness in the AI community. arXiv:2006.16879 [cs.CY]\n95. Lohaus M, Perrot M, von Luxburg U. 2020. Too relaxed to be fair. Proc. Mach. Learn. Res. 119:6360–69\n96. Sagawa S, Koh PW, Hashimoto TB, Liang P. 2020. Distributionally robust neural network. Paper presented\nat the Eighth International Conference on Learning Representations (ICLR 2020), Apr. 26–May 1.\nhttps://openreview.net/pdf?id=ryxGuJrFvS\n97. Joshi S, Koyejo O, Kim B, Ghosh J. 2018. xGEMS: generating examplars to explain black-box models.\narXiv:1806.08867 [cs.LG]",
+    "page": 19,
+    "bbox": [
+      50.48,
+      39.81,
+      411.3,
+      610.89
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "www.annualreviews.org • Ethical Machine Learning in Healthcare\n141",
+    "page": 19,
+    "bbox": [
+      212.75,
+      626.5,
+      434.55,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 20,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "98. Caruana R, Lou Y, Gehrke J, Koch P, Sturm M, Elhadad N. 2015. Intelligible models for healthcare:\npredicting pneumonia risk and hospital 30-day readmission. In Proceedings of the 21th ACM SIGKDD\nInternational Conference on Knowledge Discovery and Data Mining, pp. 1721–30. New York: Assoc. Comput.\nMach.\n99. Hernán MA, Robins JM. 2010. Causal Inference: What If. Boca Raton, FL: Chapman & Hall/CRC\n100. Glymour C, Zhang K, Spirtes P. 2019. Review of causal discovery methods based on graphical models.\nFront. Genet. 10:524\n101. Van der Laan MJ, Rose S. 2011. Targeted Learning: Causal Inference for Observational and Experimental\nData. New York: Springer-Verlag\n102. Chernozhukov V,Chetverikov D,Demirer M,Duflo E,Hansen C,et al.2018.Double/debiased machine\nlearning for treatment and structural parameters. Econom. J. 21(1):C1–68\n103. Miao W, Geng Z, Tchetgen Tchetgen EJ. 2018. Identifying causal effects with proxy variables of an\nunmeasured confounder. Biometrika 105:987–93\n104. Franks A, D’Amour A, Feller A. 2019. Flexible sensitivity analysis for observational studies without ob-\nservable implications. J. Am. Stat. Assoc. 115(532):1730–76\n105. Little MA, Badawy R. 2019. Causal bootstrapping. arXiv:1910.09648 [cs.LG]\n106. Vyas DA,Eisenstein LG,Jones DS.2020.Hidden in plain sight—reconsidering the use of race correction\nin clinical algorithms. N. Engl. J. Med. 383:874–82\n107. Grobman WA, Lai Y, Landon MB, Spong CY, Leveno KJ, et al. 2007. Development of a nomogram for\nprediction of vaginal birth after cesarean delivery. Obstet. Gynecol. 109:806–12\n108. Thompson B. 1995. Stepwise regression and stepwise discriminant analysis need not apply here: a guide-\nlines editorial. Educ. Psychol. Meas. 55(4):525–34\n109. Harrell FE Jr. 2015. Regression Modeling Strategies: With Applications to Linear Models, Logistic and Ordinal\nRegression, and Survival Analysis. New York: Springer. 2nd ed.\n110. James G, Witten D, Hastie T, Tibshirani R. 2013. An Introduction to Statistical Learning: With Applications\nin R. New York: Springer-Verlag\n111. Koh PW, Nguyen T, Tang YS, Mussmann S, Pierson E, et al. 2020. Concept bottleneck models. Proc.\nMach. Learn. Res. 119:5338–48\n112. Sagawa S, Raghunathan A, Koh PW, Liang P. 2020. An investigation of why overparameterization ex-\nacerbates spurious correlations. Proc. Mach. Learn. Res. 119:8346–56\n113. Flach PA. 2003. The geometry of ROC space: understanding machine learning metrics through ROC\nisometrics. In Proceedings of the 20th International Conference on Machine Learning, ed. T Fawcett, N\nMishra, pp. 194–201. Palo Alto, CA: AAAI\n114. Vyas DA,Eisenstein LG,Jones DS.2020.Hidden in plain sight—reconsidering the use of race correction\nin clinical algorithms. New Engl. J. Med. 383:874–82\n115. Dwork C, Hardt M, Pitassi T, Reingold O, Zemel R. 2012. Fairness through awareness. In Proceedings\nof the 3rd Innovations in Theoretical Computer Science Conference, pp. 214–26. New York: Assoc. Comput.\nMach.\n116. Dwork C, Ilvento C. 2018. Fairness under composition. arXiv:1806.06122 [cs.LG]\n117. Chouldechova A, Roth A. 2020. A snapshot of the frontiers of fairness in machine learning. Commun.\nACM 63:82–89\n118. Calders T, Karim A, Kamiran F, Ali W, Zhang X. 2013. Controlling attribute effect in linear regression.\nIn 2013 IEEE 13th International Conference on Data Mining, pp. 71–80. Los Alamitos, CA: IEEE Comput.\nSoc.\n119. Zafar MB, Valera I, Rogriguez MG, Gummadi KP. 2017. Fairness constraints: mechanisms for fair clas-\nsification. Proc. Mach. Learn. Res. 54:962–70\n120. Montz E, Layton T, Busch AB, Ellis RP, Rose S, McGuire TG. 2016. Risk-adjustment simulation: Plans\nmay have incentives to distort mental health and substance use coverage. Health Aff. 35:1022–28\n121. McGuire TG, Zink AL, Rose S. 2020. Simplifying and improving the performance of risk adjustment systems.\nWork. Pap., Natl. Bur. Econ. Res., Cambridge, MA\n122. Helmreich RL. 2000. On error management: lessons from aviation. BMJ 320:781–85\n123. Murayama KM, Derossis AM, DaRosa DA, Sherman HB, Fryer JP. 2002. A critical evaluation of the\nmorbidity and mortality conference. Am. J. Surg. 183:246–50",
+    "page": 20,
+    "bbox": [
+      121.06,
+      39.81,
+      486.01,
+      611.01
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "142\nChen et al.",
+    "page": 20,
+    "bbox": [
+      97.49,
+      627.1,
+      152.73,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 21,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "124. Herrera-Perez D, Haslam A, Crain T, Gill J, Livingston C, et al. 2019. Meta-research: a comprehensive\nreview of randomized clinical trials in three medical journals reveals 396 medical reversals.eLife 8:e45183\n125. Creager E, Madras D, Pitassi T, Zemel R. 2019. Causal modeling for fairness in dynamical systems.\narXiv:1909.09141 [cs.LG]\n126. Noseworthy PA, Attia ZI, Brewer LC, Hayes SN, Yao X, et al. 2020. Assessing and mitigating bias in\nmedical artificial intelligence: the effects of race and ethnicity on a deep learning model for ECG analysis.\nCirc. Arrhythm. Electrophysiol. 13:e007988\n127. Inst. Med. 2002. Unequal Treatment: Confronting Racial and Ethnic Disparities in Health Care. Washington,\nDC: Natl. Acad. Press\n128. Perez CC. 2019. Invisible Women: Exposing Data Bias in a World Designed for Men. New York: Abrams\n129. Zech JR, Badgeley MA, Liu M, Costa AB, Titano JJ, Oermann EK. 2018. Variable generalization per-\nformance of a deep learning model to detect pneumonia in chest radiographs: a cross-sectional study.\nPLOS Med. 15:e1002683\n130. Larrazabal AJ, Nieto N, Peterson V, Milone DH, Ferrante E. 2020. Gender imbalance in medical imag-\ning datasets produces biased classifiers for computer-aided diagnosis. PNAS 117:12592–94\n131. Seyyed-Kalantari L, Liu G, McDermott M, Ghassemi M. 2020. CheXclusion: fairness gaps in deep chest\nX-ray classifiers. arXiv:2003.00827 [cs.CV]\n132. Nestor B, McDermott M, Boag W, Berner G, Naumann T, et al. 2019. Feature robustness in non-\nstationary health records: caveats to deployable model performance in common clinical machine learn-\ning tasks. Proc. Mach. Learn. Res. 106:381–405\n133. Bissoto A, Fornaciali M, Valle E, Avila S. 2019. (De)constructing bias on skin lesion datasets. In\nProceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops. https://\nopenaccess.thecvf.com/content_CVPRW_2019/html/ISIC/Bissoto_DeConstructing_Bias_on_\nSkin_Lesion_Datasets_CVPRW_2019_paper.html\n134. Kundu RV, Patterson S. 2013. Dermatologic conditions in skin of color: part I. Special considerations\nfor common skin disorders. Am. Family Phys. 87:850–56\n135. Rabanser S, Günnemann S, Lipton Z. 2019. Failing loudly: an empirical study of methods for detect-\ning dataset shift. In Proceedings of the 32nd International Conference on Advances in Neural Information\nProcessing Systems (NIPS 2019), ed. H Wallach, H Larochelle, A Beygelzimer, F d’Alché Buc, E Fox,\nR Garnett, pp. 1396–408. https://papers.nips.cc/paper/2019/file/846c260d715e5b854ffad5f70a\n516c88-Paper.pdf\n136. Subbaswamy A, Saria S. 2020. From development to deployment: dataset shift, causality, and shift-stable\nmodels in health AI. Biostatistics 21:345–52\n137. Davis SE, Lasko TA, Chen G, Siew ED, Matheny ME. 2017. Calibration drift in regression and machine\nlearning models for acute kidney injury. J. Am. Med. Inform. Assoc. 24:1052–61\n138. Saleh S, Boag W, Erdman L, Naumann T. 2020. Clinical collabsheets: 53 questions to guide a clinical\ncollaboration. Proc. Mach. Learn. Res. 126:783–812\n139. Madaio MA, Stark L, Wortman Vaughan J, Wallach H. 2020. Co-designing checklists to understand or-\nganizational challenges and opportunities around fairness in AI. In Proceedings of the 2020 CHI Conference\non Human Factors in Computing Systems, Pap. 318. New York: Assoc. Comput. Mach.\n140. Mitchell M, Wu S, Zaldivar A, Barnes P, Vasserman L, et al. 2019. Model cards for model reporting.\nIn Proceedings of the Conference on Fairness, Accountability, and Transparency, pp. 220–29. New York: Assoc.\nComput. Mach.\n141. Gebru T, Morgenstern J, Vecchione B, Vaughan JW, Wallach H, et al. 2018. Datasheets for datasets.\narXiv:1803.09010 [cs.DB]\n142. FDA (US Food Drug Admin.). 2021. Artificial intelligence and machine learning in software as a medi-\ncal device. Web Resour., FDA, Silver Spring, MD. https://www.fda.gov/medical-devices/software-\nmedical-device-samd/artificial-intelligence-and-machine-learning-software-medical-device\n143. Ferryman K. 2020. Addressing health disparities in the Food and Drug Administration’s artificial intel-\nligence and machine learning regulatory framework. J. Am. Med. Inform. Assoc. 27(12):2016–19\n144. Sullivan HR, Schweikart SJ. 2019. Are current tort liability doctrines adequate for addressing injury\ncaused by AI? AMA J. Ethics 21:160–66",
+    "page": 21,
+    "bbox": [
+      46.35,
+      39.81,
+      411.3,
+      611.01
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "www.annualreviews.org • Ethical Machine Learning in Healthcare\n143",
+    "page": 21,
+    "bbox": [
+      212.75,
+      626.5,
+      434.55,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "Downloaded from www.annualreviews.org.  Guest (guest) IP:  67.160.193.16 On: Wed, 16 Apr 2025 00:37:25",
+    "page": 22,
+    "bbox": [
+      3.4,
+      134.85,
+      14.39,
+      522.15
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  },
+  {
+    "text": "145. Liu X, Rivera SC, Faes L, Di Ruffano LF, Yau C, et al. 2019. Reporting guidelines for clinical trials\nevaluating artificial intelligence interventions are needed. Nat. Med. 25:1467–68\n146. Coravos A, Chen I, Gordhandas A, Stern AD. 2019. We should treat algorithms like prescription\ndrugs. Quartz, Feb. 19. https://qz.com/1540594/treating-algorithms-like-prescription-drugs-\ncould-reduce-ai-bias/\n147. Parikh RB, Obermeyer Z, Navathe AS. 2019. Regulation of predictive analytics in medicine. Science\n363:810–12\n148. Mohamed S, Png MT, Isaac W. 2020. Decolonial AI: decolonial theory as sociotechnical foresight in\nartificial intelligence. Philos. Technol. 33:659–84\n149. Lyndon A, McNulty J, VanderWal B, Gabel K, Huwe V, Main E. 2015. Cumulative quantitative as-\nsessment of blood loss. In CMQCC Obstet. Hemorrhage Toolkit Vers. 2, pp. 80–85. Stanford, CA: Calif.\nMatern.Qual.Care Collab.https://www.cmqcc.org/content/cumulative-quantitative-assessment-\nblood-loss\n150. Chen IY, Joshi S, Ghassemi M. 2020. Treating health disparities with artificial intelligence. Nat. Med.\n26:16–17",
+    "page": 22,
+    "bbox": [
+      121.06,
+      39.81,
+      485.98,
+      201.56
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": "## "
+  },
+  {
+    "text": "144\nChen et al.",
+    "page": 22,
+    "bbox": [
+      97.49,
+      627.1,
+      152.73,
+      634.77
+    ],
+    "source_pdf": "annurev-biodatasci-092820-114757.pdf",
+    "markdown": ""
+  }
+]
