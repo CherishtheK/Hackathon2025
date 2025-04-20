@@ -1,68 +1,131 @@
+/* 基础样式设置 */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color: #213547; /* 默认使用深灰色文本 */
+  background-color: #f8f9fa; /* 浅灰色背景 */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* 确保HTML、BODY和Root元素占满整个视口 */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
 
+/* 基础元素样式 */
 h1 {
-  font-size: 3.2em;
+  font-size: 2.5em;
   line-height: 1.1;
+  color: #1a56db; /* 标题使用蓝色 */
+  margin-bottom: 0.5em;
 }
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid #d1d5db;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #ffffff;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all 0.25s;
+  color: #1a56db;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+button:hover {
+  border-color: #1a56db;
+  background-color: #f0f5ff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 3px solid #d3e0fd;
+}
+
+/* Markdown内容样式 */
+.markdown-content {
+  line-height: 1.6;
+  color: #374151; /* 正文使用深灰色 */
+}
+
+.markdown-block {
+  margin-bottom: 1rem;
+  transition: background-color 0.3s;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+/* 高亮显示时的样式 */
+.markdown-block.highlighted {
+  background-color: #fef9c3; /* 淡黄色背景 */
+  border-left: 4px solid #facc15;
+  padding-left: 1rem;
+}
+
+/* Markdown标题样式 */
+.markdown-block h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2563eb; /* 蓝色，突出显示 */
+}
+
+.markdown-block h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #4b5563;
+}
+
+.markdown-block h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+/* 摘要容器样式 */
+.summary-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-content {
+  flex: 1;
+}
+
+.summary-content p {
+  transition: all 0.2s;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  margin-bottom: 0.5rem;
+  background-color: #f9fafb; /* 非常淡的灰色背景 */
+}
+
+.summary-content p:hover {
+  background-color: #f0f5ff; /* 淡蓝色背景 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* 当摘要段落被选中时 */
+.summary-content p.selected {
+  background-color: #e0f2fe; /* 淡蓝色背景 */
+  border-left: 3px solid #3b82f6;
+  font-weight: 500;
 }

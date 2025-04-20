@@ -1,3 +1,70 @@
+.App {
+  max-width: 98%;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: left;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dual-pane-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  height: calc(100vh - 80px);
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+}
+
+.pane {
+  flex: 1;
+  overflow: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.pane-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f3f4f6;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 10;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+  .dual-pane-container {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .pane {
+    height: calc(50vh - 60px);
+    margin-bottom: 1rem;
+  }
+}
+
+/* 超大屏幕优化 */
+@media (min-width: 1920px) {
+  .App {
+    max-width: 1900px;
+  }
+  
+  .pane {
+    padding: 1.5rem;
+  }
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -40,3 +107,4 @@
 .read-the-docs {
   color: #888;
 }
+
