@@ -21,16 +21,19 @@ const Summary = ({ onSentenceClick }) => {
       // const data = await response.json();
       
       // 模拟数据
-      const mockSummary = `本篇论文讨论了医疗健康领域中的伦理机器学习。
-机器学习模型在医疗预测中存在偏见，可能加剧健康不平等。
-作者提出了一个基于社会公正的ML伦理框架。
-该研究分析了ML在健康领域的问题，从数据选择到部署后监控。
-文章总结了实现公平ML的建议，强调了跨学科合作的重要性。`;
+      const mockSummary = `Ethical Machine Learning in Healthcare. 
+ in healthcare raises numerous ethical concerns.
+Machine learning (ML): the study of computer algorithms that improve automatically through experience ML model: an algorithm that has been trained on data for a specific use case.
+Machine learning models can amplify existing health inequities.
+Keywords.
+Abstract`;
       
       setSummary(mockSummary);
       // 将摘要分割成句子
       const sentenceList = mockSummary.split(/(?<=[.。!！?？])\s*/);
       setSentences(sentenceList);
+      
+      console.log('摘要句子列表:', sentenceList);
       
     } catch (err) {
       setError("生成摘要时出错，请重试");
@@ -47,7 +50,7 @@ const Summary = ({ onSentenceClick }) => {
 
   // 处理句子点击
   const handleSentenceClick = (sentence, index) => {
-    // 更新选中的索引
+    console.log('摘要句子被点击:', sentence);
     setSelectedIndex(index);
     
     if (onSentenceClick) {

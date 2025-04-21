@@ -11,7 +11,8 @@ function App() {
   // 当用户点击摘要中的句子时调用此函数
   // 这个函数将被传递给Summary组件，并在那里调用
   const handleSentenceClick = (sentence) => {
-    setSelectedSentence(sentence); // 更新选中的句子状态
+    console.log('App收到的句子:', sentence);
+    setSelectedSentence(sentence);
   };
 
   return (
