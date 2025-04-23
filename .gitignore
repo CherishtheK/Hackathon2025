@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# API keys and sensitive files
+vite.config.js
+src/setupProxy.js
+vite.config.js

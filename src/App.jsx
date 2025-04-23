@@ -1,19 +1,45 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import MarkdownViewer from "./components/MarkdownViewer";
 import Summary from "./components/Summary";
+import axios from 'axios';
 
 function App() {
   // 创建状态来跟踪当前选中的句子
   // 初始值为null，表示没有选中任何句子
   const [selectedSentence, setSelectedSentence] = useState(null);
+  const [citedBlockIndices, setCitedBlockIndices] = useState([]);
   
   // 当用户点击摘要中的句子时调用此函数
   // 这个函数将被传递给Summary组件，并在那里调用
-  const handleSentenceClick = (sentence) => {
+  const handleSentenceClick = (sentence, citations = []) => {
     console.log('App收到的句子:', sentence);
+    console.log('App收到的引用索引:', citations);
     setSelectedSentence(sentence);
+    setCitedBlockIndices(citations);
   };
+
+  useEffect(() => {
+    // 简单测试API连接
+    async function testConnection() {
+      try {
+        const response = await axios.post(
+          '/openai/deployments/gpt-4/chat/completions?api-version=2025-01-01-preview',
+          {
+            messages: [
+              { role: "user", content: "返回数字1到5" }
+            ],
+            max_tokens: 10
+          }
+        );
+        console.log("API连接成功:", response.data);
+      } catch (error) {
+        console.error("API连接失败:", error);
+      }
+    }
+    
+    testConnection();
+  }, []);
 
   return (
     // 应用的主容器，样式在App.css中定义
@@ -36,7 +62,10 @@ function App() {
           {/* MarkdownViewer组件，显示PDF内容
               - 传入highlightText prop，告诉组件哪个句子需要高亮
           */}
-          <MarkdownViewer highlightText={selectedSentence} />
+          <MarkdownViewer 
+            highlightText={selectedSentence} 
+            citedBlockIndices={citedBlockIndices} 
+          />
         </div>
         
         {/* 右侧栏 - 显示AI生成的摘要 

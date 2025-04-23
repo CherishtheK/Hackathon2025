@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 
-const MarkdownViewer = ({ highlightText }) => {
+const MarkdownViewer = ({ highlightText, citedBlockIndices = [] }) => {
   // 顶部定义清理函数
   const cleanText = (text) => {
     if (!text) return '';
@@ -35,12 +35,36 @@ const MarkdownViewer = ({ highlightText }) => {
   // 当highlightText变化时，查找匹配的文本块
   useEffect(() => {
     console.log('MarkdownViewer收到的highlightText:', highlightText);
+    console.log('MarkdownViewer收到的引用索引:', citedBlockIndices);
     
-    if (!highlightText) {
+    if (!highlightText && citedBlockIndices.length === 0) {
       setHighlightedBlocks([]);
       return;
     }
 
+    // 如果有引用索引，优先使用索引
+    if (citedBlockIndices.length > 0) {
+      const citedBlocks = citedBlockIndices
+        .map(idx => blocks[idx]?.text)
+        .filter(Boolean);
+      
+      console.log('基于引用索引找到的块:', citedBlocks);
+      setHighlightedBlocks(citedBlocks);
+      
+      // 滚动到第一个引用块
+      setTimeout(() => {
+        if (citedBlockIndices.length > 0) {
+          const firstCitedIdx = citedBlockIndices[0];
+          const ref = highlightedRefs.current[firstCitedIdx];
+          if (ref) {
+            ref.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+      }, 100);
+      return;
+    }
+
+    // 如果没有引用索引，回退到现有的文本匹配
     const cleanedHighlightText = cleanText(highlightText);
     console.log('清理后的搜索文本:', cleanedHighlightText);
     
@@ -85,34 +109,22 @@ const MarkdownViewer = ({ highlightText }) => {
         }
       }
     }, 100);
-  }, [highlightText, blocks]);
+  }, [highlightText, citedBlockIndices, blocks]);
 
   return (
     <div className="markdown-content">
       {blocks.map((block, idx) => {
-        // 使用相同的清理函数判断是否需要高亮
-        const shouldHighlight = highlightText && (() => {
-          const cleanedBlockText = cleanText(block.text);
-          const cleanedHighlightText = cleanText(highlightText);
-          const searchTerms = cleanedHighlightText.split(' ').filter(term => term.length > 3);
-          const matchedTerms = searchTerms.filter(term => 
-            cleanedBlockText.includes(term)
-          );
-          return matchedTerms.length >= Math.ceil(searchTerms.length * 0.5);
-        })();
+        // 使用两种高亮判断方式
+        const isHighlightedByIndex = citedBlockIndices.includes(idx);
+        const isHighlightedByText = highlightText && 
+          cleanText(block.text).includes(cleanText(highlightText));
         
-        // 对第一个块进行额外调试
-        if (idx === 0) {
-          console.log('第一个块是否高亮:', shouldHighlight);
-          console.log('清理后的块文本:', cleanText(block.text));
-          console.log('清理后的搜索文本:', cleanText(highlightText));
-        }
+        const shouldHighlight = isHighlightedByIndex || isHighlightedByText;
         
         return (
           <div 
             key={idx} 
             className={`markdown-block ${shouldHighlight ? 'highlighted' : ''}`}
-            // 如果是高亮块，存储其引用
             ref={el => {
               if (shouldHighlight) {
                 highlightedRefs.current[idx] = el;
