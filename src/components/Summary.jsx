@@ -11,9 +11,14 @@ const Summary = ({ onSentenceClick }) => {
   const [error, setError] = useState(null);
   // 追踪当前选中的句子索引
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  // 添加一个状态追踪是否已经初始化，防止多次调用
+  const [initialized, setInitialized] = useState(false);
 
   // 生成摘要的函数
   const generateSummary = async () => {
+    // 防止重复调用
+    if (loading) return;
+    
     setLoading(true);
     setError(null);
     setSelectedIndex(-1);
@@ -105,11 +110,6 @@ const Summary = ({ onSentenceClick }) => {
       setLoading(false);
     }
   };
-
-  // 组件加载时自动生成摘要
-  // useEffect(() => {
-  //   generateSummary();
-  // }, []);
 
   // 处理句子点击
   const handleSentenceClick = (sentence, index) => {

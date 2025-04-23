@@ -29,5 +29,5 @@
     "http-proxy-middleware": "^3.0.5",
     "vite": "^6.3.1"
   },
-  "proxy": "https://你的azure-endpoint.openai.azure.com"
+  "proxy": "https://hackathonsummarytest.openai.azure.com"
 }
