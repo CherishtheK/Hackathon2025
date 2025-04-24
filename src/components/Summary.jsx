@@ -24,7 +24,7 @@ const Summary = ({ onSentenceClick }) => {
   const [showConfig, setShowConfig] = useState(false);
   const [blockLimit, setBlockLimit] = useState(30);
   const [maxTokens, setMaxTokens] = useState(2500);
-  const [processFullDocument, setProcessFullDocument] = useState(false);
+  const [processFullDocument, setProcessFullDocument] = useState(true);
 
   // 生成摘要的函数
   const generateSummary = async (force = false) => {
@@ -38,7 +38,9 @@ const Summary = ({ onSentenceClick }) => {
     try {
       // 获取PDF数据
       const response = await fetch("/annurev-biodatasci-092820-114757_structured.json");
+      console.log("JSON请求状态:", response.status, response.statusText);
       const blocks = await response.json();
+      console.log("JSON第一个块内容:", blocks[0]);
       
       console.log(`文档总块数: ${blocks.length}`);
       
@@ -93,16 +95,16 @@ const Summary = ({ onSentenceClick }) => {
           messages: [
             { 
               role: "system", 
-              content: `生成全面的段落式摘要，确保涵盖文档的所有主要内容和观点。每个段落应包含丰富的内容和深入的分析。
-              每个段落后清晰地标明引用的原文段落索引。
-              不要限制段落数量，应根据内容的复杂性和丰富度生成足够数量的段落，确保完整覆盖全文的关键点。
-              
-              输出格式示例：
-              1. 第一段摘要内容...[相关段落索引]
-              2. 第二段摘要内容...[相关段落索引]
-              ...以此类推，直到完整覆盖文档的所有重要内容。
-              
-              确保根据原文内容自然划分段落主题，而不是人为限制段落数量。` 
+              content: `生成全面的段落式摘要，确保涵盖文档的所有主要内容和观点,采用科普有趣的语言风格。
+注意：摘要必须严格按照以下格式：
+1. 第一段内容... [引用段落索引，如0,1,2]
+2. 第二段内容... [引用段落索引，如3,4,5]
+3. 第三段内容... [引用段落索引]
+...
+
+每个段落后必须紧跟方括号中的引用索引，不允许有无引用的段落。
+引用格式必须是数字加逗号的形式，如[0,1,2]。
+请至少生成5-10个段落，确保全面覆盖文档内容。` 
             },
             { 
               role: "user", 
@@ -111,7 +113,7 @@ const Summary = ({ onSentenceClick }) => {
             }
           ],
           max_tokens: maxTokens,  // 使用用户配置的token上限
-          temperature: 0.4   // 稍微提高温度以增加多样性
+          temperature: 0.7   // 增加变化性，可能产生更多内容
         }
       ));
       
@@ -121,26 +123,27 @@ const Summary = ({ onSentenceClick }) => {
       // 解析带引用的句子
       const parseWithCitations = (text) => {
         const result = [];
-        // 改进正则表达式，更好地匹配段落式摘要
-        // 可以匹配 "1. 这是一段详细的摘要内容，包含多个句子。这也是同一段的内容。[0,1,2]" 格式
-        const regex = /(\d+\.\s*.*?)(?=\s*\[|\d+\.\s*|$)(\s*\[([0-9,\s]+)\])?/gs;
         
+        // 先尝试常规格式匹配
+        const regex = /(\d+\.\s*.*?)(?=\s*\[|\d+\.\s*|$)(\s*\[([0-9,\s]+)\])?/gs;
         let match;
+        let foundAny = false;
         
         while ((match = regex.exec(text)) !== null) {
-          // 句子文本（可能包含多个句子）
+          foundAny = true;
           const paragraphText = match[1].trim();
-          // 引用索引部分
           const citationText = match[2] || '';
-          
-          console.log("匹配的段落:", paragraphText);
-          console.log("引用部分:", citationText);
           
           // 提取引用索引
           const citationsMatch = /\[([0-9,\s]+)\]/.exec(citationText);
-          const citations = citationsMatch 
-            ? citationsMatch[1].split(',').map(idx => parseInt(idx.trim()))
-            : [];
+          let citations = [];
+          
+          if (citationsMatch) {
+            citations = citationsMatch[1].split(',').map(idx => parseInt(idx.trim()));
+          } else {
+            console.log("段落未找到引用:", paragraphText.substring(0, 50) + "...");
+            citations = [0]; // 默认引用第一段
+          }
           
           result.push({
             text: paragraphText,
@@ -148,15 +151,41 @@ const Summary = ({ onSentenceClick }) => {
           });
         }
         
-        // 如果没有找到匹配项，则按照段落分割文本
-        if (result.length === 0) {
-          // 分割成段落，每个段落可能包含多个句子
-          const paragraphs = text.split(/\n+/).filter(p => p.trim());
-          return paragraphs.map(p => ({ text: p, citations: [] }));
+        // 如果标准格式没有匹配到任何内容，尝试备用解析方法
+        if (!foundAny) {
+          console.log("未能匹配标准格式，尝试备用解析");
+          // 简单按段落分割
+          const paragraphs = text.split(/\n\n+/);
+          
+          paragraphs.forEach((para, index) => {
+            // 尝试查找末尾的引用格式 [x,y,z]
+            const citationMatch = para.match(/\s*\[([0-9,\s]+)\]$/);
+            let citations = [0]; // 默认引用
+            let paraText = para;
+            
+            if (citationMatch) {
+              citations = citationMatch[1].split(',').map(idx => parseInt(idx.trim()));
+              paraText = para.replace(/\s*\[([0-9,\s]+)\]$/, '');
+            }
+            
+            result.push({
+              text: paraText.trim(),
+              citations: citations
+            });
+          });
         }
         
-        console.log("解析出的段落数:", result.length);
-        return result;
+        // 打印详细的解析结果以便调试
+        console.log("API返回的原始文本:", text.substring(0, 200) + "...");
+        console.log("总共解析了", result.length, "个段落");
+        result.forEach((item, i) => {
+          console.log(`段落${i+1}: ${item.text.substring(0, 50)}... 引用:${item.citations.join(',')}`);
+        });
+        
+        console.log("完整的API响应文本:", text);
+        console.log("正则表达式匹配结果:", match);
+        
+        return result.length > 0 ? result : [{text: "无法解析摘要内容，请重试", citations: [0]}];
       };
 
       const parsedSentences = parseWithCitations(summaryText);
@@ -281,7 +310,19 @@ const Summary = ({ onSentenceClick }) => {
         </div>
       )}
 
-      <div className="summary-content flex-1 overflow-y-auto pr-2">
+      <div className="text-xs text-gray-500 mb-3">
+        <span className="inline-flex items-center bg-blue-100 text-blue-800 px-2 py-1 rounded">
+          <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+          </svg>
+          已启用全文总结
+        </span>
+      </div>
+
+      <div 
+        className="summary-content flex-1 overflow-y-auto pr-2"
+        style={{height: "100%"}}
+      >
         {loading ? (
           <div className="text-center p-4">正在生成详细摘要，这可能需要一点时间...</div>
         ) : sentences.length > 0 ? (

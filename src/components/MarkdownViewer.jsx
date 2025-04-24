@@ -112,7 +112,7 @@ const MarkdownViewer = ({ highlightText, citedBlockIndices = [] }) => {
   }, [highlightText, citedBlockIndices, blocks]);
 
   return (
-    <div className="markdown-content">
+    <div className="markdown-content h-full overflow-auto">
       {blocks.map((block, idx) => {
         // 使用两种高亮判断方式
         const isHighlightedByIndex = citedBlockIndices.includes(idx);
