@@ -3,6 +3,7 @@ import { List, Grid, ChevronLeft } from "lucide-react";
 import YourMarkdownViewer from "./MarkdownViewer";
 import YourSummary from "./Summary";
 import { throttledOpenAI, callWithRetry } from '../utils/apiUtils';
+import Chat from "./Chat";
 
 // WindowShell: Wrapper component for PWA-like window frame
 function WindowShell({ children, title }) {
@@ -32,6 +33,8 @@ export default function SummaryViewerWireframe() {
   const [expandedProject, setExpandedProject] = useState(null);
   const [selectedSentence, setSelectedSentence] = useState(null);
   const [citedBlockIndices, setCitedBlockIndices] = useState([]);
+  const [blocks, setBlocks] = useState([]);
+  const [documentText, setDocumentText] = useState("");
 
   const pdfPages = [
     { id: "ref-1", text: `--- Page 1 ---\nOriginal Investigation | Infectious Diseases\nSex Differences in Long COVID...` },
@@ -76,6 +79,23 @@ export default function SummaryViewerWireframe() {
     };
     
     initSummary();
+  }, [activeView]);
+
+  useEffect(() => {
+    const fetchDocument = async () => {
+      if (activeView === "detail") {
+        try {
+          const response = await fetch("/annurev-biodatasci-092820-114757_structured.json");
+          const blocks = await response.json();
+          setBlocks(blocks);
+          setDocumentText(blocks.map(block => block.text).join("\n"));
+        } catch (error) {
+          console.error("获取文档失败:", error);
+        }
+      }
+    };
+    
+    fetchDocument();
   }, [activeView]);
 
   return (
@@ -196,31 +216,9 @@ export default function SummaryViewerWireframe() {
                   </div>
                 </div>
                 <div className="w-1/3 flex flex-col h-full bg-gray-50">
-                  <div className="flex-1 overflow-auto p-4">
-                    <h3 className="text-lg font-medium mb-2">Chat with AI</h3>
-                    <div className="space-y-2">
-                      <div className="flex justify-end">
-                        <div className="bg-blue-100 text-blue-900 px-4 py-2 rounded-lg max-w-xs">
-                          Q: What does "RR 1.31" mean here?
-                        </div>
-                      </div>
-                      <div className="flex justify-start">
-                        <div className="bg-gray-200 text-gray-900 px-4 py-2 rounded-lg max-w-xs">
-                          A: RR stands for Risk Ratio. An RR of 1.31 means women are 31% more likely than men to experience long COVID.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-4 border-t space-y-2">
-                    <label className="flex items-center text-xs text-gray-600 gap-1">
-                      <input type="checkbox" className="rounded border-gray-300" />
-                      Search within original content only
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Ask something..."
-                      className="w-full px-3 py-2 border rounded text-sm focus:outline-none focus:ring"
-                    />
+                  <h3 className="text-lg font-medium p-4 border-b flex-shrink-0">Chat with AI</h3>
+                  <div className="flex-1 overflow-hidden" style={{height: "calc(100vh - 200px)"}}>
+                    <Chat documentContent={documentText} />
                   </div>
                 </div>
               </div>
