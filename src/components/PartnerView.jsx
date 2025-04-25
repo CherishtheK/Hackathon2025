@@ -4,6 +4,8 @@ import YourMarkdownViewer from "./MarkdownViewer";
 import YourSummary from "./Summary";
 import { throttledOpenAI, callWithRetry } from '../utils/apiUtils';
 import Chat from "./Chat";
+import { storeDocument, createProject, getAllProjects, getUnsortedDocuments, getProjectDocuments } from '../utils/dbUtils';
+import UploadDialog from './UploadDialog';
 
 // WindowShell: Wrapper component for PWA-like window frame
 function WindowShell({ children, title }) {
@@ -35,6 +37,9 @@ export default function SummaryViewerWireframe() {
   const [citedBlockIndices, setCitedBlockIndices] = useState([]);
   const [blocks, setBlocks] = useState([]);
   const [documentText, setDocumentText] = useState("");
+  const [showUploadDialog, setShowUploadDialog] = useState(false);
+  const [projects, setProjects] = useState([]);
+  const [unsortedDocs, setUnsortedDocs] = useState([]);
 
   const pdfPages = [
     { id: "ref-1", text: `--- Page 1 ---\nOriginal Investigation | Infectious Diseases\nSex Differences in Long COVID...` },
@@ -98,8 +103,55 @@ export default function SummaryViewerWireframe() {
     fetchDocument();
   }, [activeView]);
 
+  const loadData = async () => {
+    if (activeView === "library") {
+      const projectList = await getAllProjects();
+      console.log("加载的项目:", projectList);
+      setProjects(projectList);
+      
+      const docList = await getUnsortedDocuments();
+      console.log("加载的文档:", docList);
+      setUnsortedDocs(docList);
+    }
+  };
+
+  const handleUpload = async (data) => {
+    try {
+      if (data.type === 'project') {
+        await createProject(data.name, data.description);
+        console.log("项目创建成功:", data.name);
+      } else if (data.type === 'document') {
+        await storeDocument(data.file);
+        console.log("文档上传成功:", data.file.name);
+      }
+      
+      setShowUploadDialog(false);
+      setShowFabMenu(false);
+      
+      // 添加短延迟确保数据库操作完成
+      setTimeout(async () => {
+        await loadData();
+        console.log("数据重新加载完成");
+      }, 300);
+    } catch (error) {
+      console.error("上传/创建失败:", error);
+      alert("操作失败，请重试");
+    }
+  };
+
+  useEffect(() => {
+    loadData();
+  }, [activeView]);
+
   return (
     <WindowShell title="Knowledge Bridge">
+      {showUploadDialog && (
+        <UploadDialog 
+          onClose={() => setShowUploadDialog(false)} 
+          onUpload={handleUpload}
+          showProjectCreation={true}
+        />
+      )}
       <div className="flex h-full w-full">
         {activeView === "library" && (
           <aside className="w-64 border-r p-4 overflow-auto relative">
@@ -248,26 +300,22 @@ export default function SummaryViewerWireframe() {
                   <div className="flex-1 h-px bg-gray-300"></div>
                 </div>
                 <div className={`${viewMode === "grid" ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" : "space-y-3"}`}>                    
-                  {[
-                    { title: "Quantum Mechanics 101", desc: "An introductory course to quantum theory.", count: 3 },
-                    { title: "Health & Biology Facts", desc: "Key insights from modern biology.", count: 5 },
-                    { title: "Historical Research Archive", desc: "Primary sources from 18th century.", count: 7 }
-                  ].map((proj, idx) => (
+                  {projects.map((proj) => (
                     <div
-                      key={idx}
+                      key={proj.id}
                       className={`border rounded ${viewMode === "grid" ? "p-4 shadow-sm hover:shadow-md" : "py-2 px-3 flex justify-between items-center"} cursor-pointer`}
                       onClick={() => setActiveView("detail")}
                     >
                       {viewMode === "grid" ? (
                         <>
-                          <h3 className="text-md font-semibold truncate">{proj.title}</h3>
-                          <p className="text-sm text-gray-600 mt-1 truncate">{proj.desc}</p>
-                          <p className="text-xs text-gray-400 mt-2">{proj.count} PDFs</p>
+                          <h3 className="text-md font-semibold truncate">{proj.name}</h3>
+                          <p className="text-sm text-gray-600 mt-1 truncate">{proj.description || ""}</p>
+                          <p className="text-xs text-gray-400 mt-2">{proj.documentCount || 0} PDFs</p>
                         </>
                       ) : (
                         <>
-                          <span className="text-sm font-medium text-gray-800 truncate">{proj.title}</span>
-                          <span className="text-xs text-gray-500">{proj.count} PDFs</span>
+                          <span className="text-sm font-medium text-gray-800 truncate">{proj.name}</span>
+                          <span className="text-xs text-gray-500">{proj.documentCount || 0} PDFs</span>
                         </>
                       )}
                     </div>
@@ -280,14 +328,16 @@ export default function SummaryViewerWireframe() {
                   <div className="flex-1 h-px bg-gray-300"></div>
                 </div>
                 <div className={`${viewMode === "grid" ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" : "space-y-3"}`}>                  
-                  {[1, 2].map((i) => (
+                  {unsortedDocs.map((doc) => (
                     <div
-                      key={i}
+                      key={doc.id}
                       className="border rounded p-4 bg-gray-50 hover:bg-gray-100 cursor-pointer"
-                      onClick={() => i === 1 && setActiveView("detail")}
+                      onClick={() => setActiveView("detail")}
                     >
-                      <h3 className="text-sm font-medium truncate">{i === 1 ? "Sex Differences in Long COVID" : `Document ${i}.pdf`}</h3>
-                      <p className="text-xs text-gray-500 mt-1">Uploaded 2 days ago</p>
+                      <h3 className="text-sm font-medium truncate">{doc.name}</h3>
+                      <p className="text-xs text-gray-500 mt-1">
+                        上传于 {new Date(doc.uploadDate).toLocaleDateString()}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -300,12 +350,25 @@ export default function SummaryViewerWireframe() {
                   </button>
                   {showFabMenu && (
                     <div className="absolute bottom-16 right-0 flex flex-col space-y-2 bg-white border rounded shadow-md p-2 text-sm">
-                      <button className="px-4 py-2 hover:bg-gray-100 text-left w-40">Create Project</button>
-                      <button className="px-4 py-2 hover:bg-gray-100 text-left w-40">Upload Document</button>
+                      <button 
+                        className="px-4 py-2 hover:bg-gray-100 text-left w-40"
+                        onClick={() => {
+                          setShowUploadDialog(true);
+                          setShowFabMenu(false);
+                        }}
+                      >
+                        上传文档/创建项目
+                      </button>
                     </div>
                   )}
                 </div>
               </section>
+              <button 
+                onClick={loadData}
+                className="text-sm px-3 py-1 bg-blue-100 rounded"
+              >
+                刷新数据
+              </button>
             </>
           )}
         </main>
