@@ -207,3 +207,43 @@ export const getDocumentContent = async (docId) => {
     throw error;
   }
 };
+
+// 更新文档
+export const updateDocumentInDB = async (docId, updates) => {
+  try {
+    const db = await openDatabase();
+    
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction("documents", "readwrite");
+      const store = tx.objectStore("documents");
+      
+      // 首先获取现有文档
+      const getRequest = store.get(docId);
+      
+      getRequest.onsuccess = () => {
+        const existingDoc = getRequest.result;
+        if (!existingDoc) {
+          reject(new Error('Document not found'));
+          return;
+        }
+        
+        // 合并更新
+        const updatedDoc = {
+          ...existingDoc,
+          ...updates
+        };
+        
+        // 保存更新后的文档
+        const putRequest = store.put(updatedDoc);
+        putRequest.onsuccess = () => resolve(updatedDoc);
+        putRequest.onerror = () => reject(putRequest.error);
+      };
+      
+      getRequest.onerror = () => reject(getRequest.error);
+      tx.oncomplete = () => db.close();
+    });
+  } catch (error) {
+    console.error("更新文档时出错:", error);
+    throw error;
+  }
+};

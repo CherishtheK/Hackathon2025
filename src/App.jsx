@@ -128,10 +128,31 @@
 
 // export default App
 // src/App.jsx
+import React, { useState } from 'react';
 import PartnerView from './components/PartnerView';
 
 function App() {
-  return <PartnerView />;
+  // 创建一个状态来存储当前文档信息
+  const [currentDocument, setCurrentDocument] = useState({
+    title: "My Document",  // 默认标题
+    filename: null,     // 文件名
+    file: null         // 文件对象
+  });
+
+  // 添加更新文档信息的方法
+  const updateDocument = (updates) => {
+    setCurrentDocument(prev => ({
+      ...prev,
+      ...updates
+    }));
+  };
+
+  return (
+    <PartnerView 
+      initialDocument={currentDocument}
+      onUpdateDocument={updateDocument}
+    />
+  );
 }
 
 export default App;

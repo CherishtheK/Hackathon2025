@@ -13,22 +13,34 @@ function UploadDialog({ onClose, onUpload, showProjectCreation = false }) {
     }
   };
 
-  const handleSubmit = () => {
-    if (createProject && showProjectCreation) {
-      if (!projectName) {
-        alert('请输入项目名称');
-        return;
+  const handleSubmit = async () => {
+    if (selectedFile) {
+      const formData = new FormData();
+      formData.append('pdf', selectedFile);
+
+      try {
+        const uploadResponse = await fetch('http://localhost:3000/upload', {
+          method: 'POST',
+          body: formData,
+          credentials: 'include',
+        });
+
+        if (!uploadResponse.ok) {
+          throw new Error(`HTTP error! status: ${uploadResponse.status}`);
+        }
+
+        const uploadResult = await uploadResponse.json();
+        console.log('Upload successful:', uploadResult);
+        onUpload({
+          type: 'document',
+          file: selectedFile,
+          filename: uploadResult.filename,
+          title: uploadResult.title || selectedFile.name
+        });
+      } catch (error) {
+        console.error('Error uploading file:', error);
+        alert('上传失败：' + error.message);
       }
-      onUpload({
-        type: 'project',
-        name: projectName,
-        description: projectDescription
-      });
-    } else if (selectedFile) {
-      onUpload({
-        type: 'document',
-        file: selectedFile
-      });
     } else {
       alert('请选择要上传的文件');
     }

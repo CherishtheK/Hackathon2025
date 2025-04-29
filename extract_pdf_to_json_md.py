@@ -355,7 +355,7 @@ def extract_blocks_from_pdf(pdf_path):
     """
     doc = fitz.open(pdf_path)
     blocks_data = []
-    
+
     # 首先分析文档结构
     structure_info = analyze_document_structure(doc)
     
@@ -433,7 +433,7 @@ def extract_blocks_from_pdf(pdf_path):
         for block_index, block in enumerate(page_blocks):
             bbox = block[:4]  # 提取文字块的位置信息
             text = block[4]
-            
+
             markdown_tag = ""
             
             # 特殊处理：如果这个块是主标题
@@ -445,13 +445,13 @@ def extract_blocks_from_pdf(pdf_path):
             else:
                 markdown_tag = guess_markdown_tag(text, page_num + 1, block_index, total_blocks, page_blocks, bbox)
 
-            blocks_data.append({
-                "text": text.strip(),
-                "page": page_num + 1,
-                "bbox": [round(x, 2) for x in bbox],
-                "source_pdf": os.path.basename(pdf_path),
-                "markdown": markdown_tag
-            })
+                blocks_data.append({
+                    "text": text.strip(),
+                    "page": page_num + 1,
+                    "bbox": [round(x, 2) for x in bbox],
+                    "source_pdf": os.path.basename(pdf_path),
+                    "markdown": markdown_tag
+                })
 
     doc.close()
     return blocks_data

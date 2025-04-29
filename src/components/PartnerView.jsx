@@ -4,11 +4,18 @@ import YourMarkdownViewer from "./MarkdownViewer";
 import YourSummary from "./Summary";
 import { throttledOpenAI, callWithRetry } from '../utils/apiUtils';
 import Chat from "./Chat";
-import { storeDocument, createProject, getAllProjects, getUnsortedDocuments, getProjectDocuments } from '../utils/dbUtils';
+import { 
+  storeDocument, 
+  createProject, 
+  getAllProjects, 
+  getUnsortedDocuments, 
+  getProjectDocuments,
+  updateDocumentInDB 
+} from '../utils/dbUtils';
 import UploadDialog from './UploadDialog';
 
 // WindowShell: Wrapper component for PWA-like window frame
-function WindowShell({ children, title }) {
+function WindowShell({ children, title = "Knowledge Bridge" }) {
   return (
     <div className="bg-gray-200 h-screen w-screen flex items-center justify-center">
       <div className="w-[1280px] h-[800px] bg-white rounded-xl shadow-lg overflow-hidden border border-gray-300 flex flex-col">
@@ -27,19 +34,24 @@ function WindowShell({ children, title }) {
   );
 }
 
-export default function SummaryViewerWireframe() {
+export default function PartnerView({ initialDocument, onUpdateDocument }) {
   const [viewMode, setViewMode] = useState("grid");
   const [activeView, setActiveView] = useState("library");
   const [showFabMenu, setShowFabMenu] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [expandedProject, setExpandedProject] = useState(null);
-  const [selectedSentence, setSelectedSentence] = useState(null);
+  const [selectedSentence, setSelectedSentence] = useState("");
   const [citedBlockIndices, setCitedBlockIndices] = useState([]);
   const [blocks, setBlocks] = useState([]);
   const [documentText, setDocumentText] = useState("");
   const [showUploadDialog, setShowUploadDialog] = useState(false);
   const [projects, setProjects] = useState([]);
   const [unsortedDocs, setUnsortedDocs] = useState([]);
+  const [currentDocument, setCurrentDocument] = useState(initialDocument);
+  const [isEditingTitle, setIsEditingTitle] = useState(false);
+  const [editedTitle, setEditedTitle] = useState("");
+  const [documentSummaries, setDocumentSummaries] = useState({});
+  const [currentSummary, setCurrentSummary] = useState(null);
 
   const pdfPages = [
     { id: "ref-1", text: `--- Page 1 ---\nOriginal Investigation | Infectious Diseases\nSex Differences in Long COVID...` },
@@ -56,35 +68,193 @@ export default function SummaryViewerWireframe() {
     }
   };
 
-  const handleYourSentenceClick = (sentence, citations = []) => {
-    console.log('点击的句子:', sentence);
-    console.log('引用索引:', citations);
-    setSelectedSentence(sentence);
-    setCitedBlockIndices(citations);
+  const updateDocumentTitle = async (newTitle) => {
+    if (!currentDocument?.id) return;
+    
+    try {
+      await updateDocumentInDB(currentDocument.id, { title: newTitle });
+      
+      const updatedDoc = {
+        ...currentDocument,
+        title: newTitle,
+      };
+      setCurrentDocument(updatedDoc);
+      
+      setUnsortedDocs(prev => 
+        prev.map(doc => 
+          doc.id === currentDocument.id 
+            ? { ...doc, title: newTitle }
+            : doc
+        )
+      );
+      
+      onUpdateDocument(updatedDoc);
+      
+      setIsEditingTitle(false);
+    } catch (error) {
+      console.error('更新标题失败:', error);
+    }
   };
 
-  // 当组件首次加载时自动生成摘要
+  const titleEditingSection = (
+    <div className="flex items-center">
+      <input
+        type="text"
+        value={editedTitle}
+        onChange={(e) => setEditedTitle(e.target.value)}
+        className="text-2xl font-semibold px-2 py-1 border rounded"
+        autoFocus
+        onBlur={() => {
+          if (editedTitle.trim()) {
+            updateDocumentTitle(editedTitle.trim());
+          }
+        }}
+        onKeyPress={(e) => {
+          if (e.key === 'Enter' && editedTitle.trim()) {
+            updateDocumentTitle(editedTitle.trim());
+          }
+        }}
+      />
+    </div>
+  );
+
+  // 添加新的函数来处理summary的事件绑定
+  const bindSummaryEvents = (container) => {
+    if (!container) return;
+    
+    const summaryElements = container.querySelectorAll('[data-sentence]');
+    summaryElements.forEach(element => {
+      // 移除现有的点击事件
+      const clone = element.cloneNode(true);
+      element.parentNode.replaceChild(clone, element);
+      
+      // 添加新的点击事件
+      clone.addEventListener('click', (e) => {
+        e.preventDefault();
+        const sentence = clone.getAttribute('data-sentence');
+        const citationsAttr = clone.getAttribute('data-citations');
+        const citations = citationsAttr ? JSON.parse(citationsAttr) : [];
+        
+        // 更新视觉反馈
+        summaryElements.forEach(el => el.classList.remove('selected-sentence'));
+        clone.classList.add('selected-sentence');
+        
+        // 触发高亮
+        handleYourSentenceClick(sentence, citations);
+      });
+    });
+  };
+
+  const handleYourSentenceClick = (sentence, citations = []) => {
+    if (!currentDocument?.id) return;
+    
+    // 清除所有现有高亮
+    const prevHighlights = document.querySelectorAll('.highlight-text');
+    prevHighlights.forEach(el => {
+      el.classList.remove('highlight-text');
+      el.style.backgroundColor = '';
+    });
+
+    // 添加新的高亮
+    if (citations && citations.length > 0) {
+      citations.forEach(index => {
+        const element = document.querySelector(`[data-block-index="${index}"]`);
+        if (element) {
+          element.classList.add('highlight-text');
+          element.style.backgroundColor = '#FFEB3B';
+          // 滚动到第一个高亮元素
+          if (index === citations[0]) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+      });
+    }
+
+    const summaryContainer = document.querySelector('.summary-container');
+    
+    // 保存状态
+    const summaryData = {
+      sentence,
+      citations,
+      content: summaryContainer?.innerHTML || '',
+      selectedSentence: sentence
+    };
+    
+    setDocumentSummaries(prev => ({
+      ...prev,
+      [currentDocument.id]: summaryData
+    }));
+    
+    setSelectedSentence(sentence);
+    setCitedBlockIndices(citations);
+    setCurrentSummary(summaryData);
+  };
+
+  // 修改摘要初始化效果
   useEffect(() => {
     const initSummary = async () => {
-      if (activeView === "detail") {
-        console.log("初始化摘要");
-        // 延长时间等待组件完全加载
-        setTimeout(() => {
-          // 更精确地选择生成摘要按钮
-          const summaryButton = document.querySelector('.summary-container button:first-child');
-          console.log("找到摘要按钮:", summaryButton);
-          if (summaryButton) {
-            summaryButton.click();
-            console.log("已点击摘要按钮");
-          } else {
-            console.error("未找到摘要按钮");
+      if (activeView === "detail" && currentDocument?.id) {
+        const existingSummary = documentSummaries[currentDocument.id];
+        if (existingSummary) {
+          const summaryContainer = document.querySelector('.summary-container');
+          if (summaryContainer) {
+            // 恢复摘要内容
+            summaryContainer.innerHTML = existingSummary.content;
+            
+            // 设置一个观察器来监视DOM变化
+            const observer = new MutationObserver((mutations) => {
+              // 当DOM变化时重新绑定事件
+              bindSummaryEvents(summaryContainer);
+              
+              // 如果有选中的句子，恢复高亮
+              if (existingSummary.selectedSentence) {
+                const selectedElement = summaryContainer.querySelector(
+                  `[data-sentence="${existingSummary.selectedSentence}"]`
+                );
+                if (selectedElement) {
+                  selectedElement.classList.add('selected-sentence');
+                }
+              }
+              
+              // 恢复原文高亮
+              if (existingSummary.citations) {
+                existingSummary.citations.forEach(index => {
+                  const element = document.querySelector(`[data-block-index="${index}"]`);
+                  if (element) {
+                    element.classList.add('highlight-text');
+                    element.style.backgroundColor = '#FFEB3B';
+                  }
+                });
+              }
+            });
+            
+            // 开始观察
+            observer.observe(summaryContainer, {
+              childList: true,
+              subtree: true,
+              characterData: true
+            });
+            
+            // 立即绑定一次事件
+            bindSummaryEvents(summaryContainer);
+            
+            // 清理函数
+            return () => observer.disconnect();
           }
-        }, 1000); // 增加到1秒
+        } else {
+          console.log("初始化摘要");
+          setTimeout(() => {
+            const summaryButton = document.querySelector('.summary-container button:first-child');
+            if (summaryButton) {
+              summaryButton.click();
+            }
+          }, 1000);
+        }
       }
     };
     
     initSummary();
-  }, [activeView]);
+  }, [activeView, currentDocument?.id]);
 
   useEffect(() => {
     const fetchDocument = async () => {
@@ -123,12 +293,20 @@ export default function SummaryViewerWireframe() {
       } else if (data.type === 'document') {
         await storeDocument(data.file);
         console.log("文档上传成功:", data.file.name);
+        const newDoc = {
+          id: Date.now().toString(),
+          title: data.title || data.file.name,
+          name: data.title || data.file.name,
+          file: data.file,
+          filename: data.filename
+        };
+        setCurrentDocument(newDoc);
+        setActiveView("detail");
       }
       
       setShowUploadDialog(false);
       setShowFabMenu(false);
       
-      // 添加短延迟确保数据库操作完成
       setTimeout(async () => {
         await loadData();
         console.log("数据重新加载完成");
@@ -143,8 +321,53 @@ export default function SummaryViewerWireframe() {
     loadData();
   }, [activeView]);
 
+  const renderDocumentItem = (doc) => (
+    <div
+      key={doc.id}
+      className="border rounded p-4 bg-gray-50 hover:bg-gray-100 cursor-pointer"
+      onClick={() => {
+        setCurrentDocument(doc);
+        setActiveView("detail");
+      }}
+    >
+      <h3 className="text-sm font-medium truncate">{doc.title || doc.name}</h3>
+      <p className="text-xs text-gray-500 mt-1">
+        上传于 {new Date(doc.uploadDate).toLocaleDateString()}
+      </p>
+    </div>
+  );
+
+  // 添加样式
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      .highlight-text {
+        background-color: #FFEB3B !important;
+        transition: background-color 0.3s ease;
+      }
+      .selected-sentence {
+        background-color: #E3F2FD !important;
+        border-radius: 4px;
+        padding: 2px 4px;
+        cursor: pointer;
+      }
+      .summary-container [data-sentence] {
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+      .summary-container [data-sentence]:hover {
+        background-color: #F5F5F5;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
   return (
-    <WindowShell title="Knowledge Bridge">
+    <WindowShell title={currentDocument?.title || currentDocument?.name || "Knowledge Bridge"}>
       {showUploadDialog && (
         <UploadDialog 
           onClose={() => setShowUploadDialog(false)} 
@@ -152,90 +375,57 @@ export default function SummaryViewerWireframe() {
           showProjectCreation={true}
         />
       )}
-      <div className="flex h-full w-full">
-        {activeView === "library" && (
-          <aside className="w-64 border-r p-4 overflow-auto relative">
-            <nav className="space-y-2 text-sm">
-              {[
-                { title: "Quantum Mechanics 101", files: ["Entanglement and Measurement", "Double-Slit Revisited"] },
-                { title: "Health & Biology Facts", files: ["Gut Microbiome Trends"] },
-                { title: "Historical Research Archive", files: ["Maritime Trade Records"] }
-              ].map((proj, idx) => (
-                <div key={idx}>
+      <div className="flex h-full">
+        <nav className="w-48 bg-gray-50 p-4 flex flex-col relative">
+          <div className="flex-1 space-y-4">
+            {/* Projects Section */}
+            <div>
+              <h3 className="text-xs font-semibold text-gray-500 mb-2">Projects</h3>
+              <div className="space-y-1">
+                {projects.map((proj) => (
                   <button
-                    onClick={() => setExpandedProject(idx === expandedProject ? null : idx)}
-                    className="group w-full text-left flex items-center gap-2 font-medium text-gray-700 hover:text-black"
+                    key={proj.id}
+                    className="w-full text-left flex items-center gap-2 text-gray-700 hover:text-black"
+                    onClick={() => setActiveView('detail')}
                   >
-                    <span className="inline-block w-4 h-4">
-                      {expandedProject === idx ? "▼" : "▶"}
+                    <span className="inline-block w-4 h-4">📁</span>
+                    <span className="truncate w-full" title={proj.name}>
+                      {proj.name}
                     </span>
-                    <span className="truncate w-full" title={proj.title}>{proj.title}</span>
                   </button>
-                  {expandedProject === idx && (
-                    <div className="ml-6 mt-1 space-y-1 text-gray-600 text-xs">
-                      {proj.files.map((file, j) => (
-                        <button key={j} className="w-full text-left flex items-center gap-2 hover:text-black">
-                          <span className="inline-block w-4 h-4">📄</span>
-                          <span className="truncate w-full" title={file}>{file}</span>
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-              {[
-                "Sex Differences in Long COVID",
-                "Document 2.pdf"
-              ].map((file, i) => (
-                <button
-                  key={i}
-                  className="w-full text-left flex items-center gap-2 text-gray-700 hover:text-black"
-                  onClick={() => setActiveView(file === "Sex Differences in Long COVID" ? "detail" : "library")}
-                >
-                  <span className="inline-block w-4 h-4">📄</span>
-                  <span className="truncate w-full" title={file}>{file}</span>
-                </button>
-              ))}
-              <button
-                className="absolute bottom-4 left-4 text-xs font-medium text-gray-600 hover:text-gray-800"
-                onClick={() => setShowSettings(true)}
-              >
-                ⚙️ Settings
-              </button>
-            </nav>
-            {showSettings && (
-              <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex items-center justify-center z-50">
-                <div className="bg-white rounded-lg shadow-lg p-6 w-[400px] space-y-4">
-                  <div className="flex justify-between items-center">
-                    <h2 className="text-lg font-semibold">Settings</h2>
-                    <button onClick={() => setShowSettings(false)} className="text-gray-500 hover:text-gray-700">✕</button>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Preferred Language</label>
-                    <select className="w-full border rounded px-3 py-1 text-sm">
-                      <option>English</option>
-                      <option>中文</option>
-                      <option>Español</option>
-                    </select>
-                    <p className="text-xs text-gray-500 mt-1">
-                      This affects interface and generated summary language.
-                    </p>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Location to Save Documents</label>
-                    <div className="flex items-center space-x-2">
-                      <input className="flex-1 border rounded px-3 py-1 text-sm" placeholder="Select folder..." readOnly />
-                      <button className="text-xs bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded">Browse</button>
-                    </div>
-                    <p className="text-xs text-gray-500 mt-1">
-                      This folder stores PDFs, summaries, and saved AI insights.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
-            )}
-          </aside>
-        )}
+            </div>
+
+            {/* Unsorted Documents Section */}
+            <div>
+              <h3 className="text-xs font-semibold text-gray-500 mb-2">Unsorted PDFs</h3>
+              <div className="space-y-1">
+                {unsortedDocs.map((doc) => (
+                  <button
+                    key={doc.id}
+                    className="w-full text-left flex items-center gap-2 text-gray-700 hover:text-black"
+                    onClick={() => {
+                      setCurrentDocument(doc);
+                      setActiveView('detail');
+                    }}
+                  >
+                    <span className="inline-block w-4 h-4">📄</span>
+                    <span className="truncate w-full" title={doc.title || doc.name}>
+                      {doc.title || doc.name}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+          <button
+            className="absolute bottom-4 left-4 text-xs font-medium text-gray-600 hover:text-gray-800"
+            onClick={() => setShowSettings(true)}
+          >
+            ⚙️ Settings
+          </button>
+        </nav>
         <main className="flex-1 p-6 flex flex-col overflow-hidden">
           {activeView === "detail" ? (
             <section className="flex-1 flex flex-col">
@@ -243,7 +433,18 @@ export default function SummaryViewerWireframe() {
                 <button onClick={() => setActiveView("library")}> 
                   <ChevronLeft size={20} className="text-gray-700 hover:text-black" />
                 </button>
-                <h2 className="text-2xl font-semibold">Sex Differences in Long COVID</h2>
+                {isEditingTitle ? titleEditingSection : (
+                  <h2 
+                    className="text-2xl font-semibold cursor-pointer hover:text-blue-600"
+                    onClick={() => {
+                      setEditedTitle(currentDocument?.title || currentDocument?.name || "");
+                      setIsEditingTitle(true);
+                    }}
+                  >
+                    {currentDocument?.title || currentDocument?.name}
+                    <span className="text-sm text-gray-400 ml-2">✎</span>
+                  </h2>
+                )}
               </div>
               <div className="flex flex-1 border border-gray-200 rounded overflow-hidden divide-x">
                 <div className="w-1/3 h-full overflow-auto bg-gray-50 p-4 flex flex-col">
@@ -328,18 +529,7 @@ export default function SummaryViewerWireframe() {
                   <div className="flex-1 h-px bg-gray-300"></div>
                 </div>
                 <div className={`${viewMode === "grid" ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" : "space-y-3"}`}>                  
-                  {unsortedDocs.map((doc) => (
-                    <div
-                      key={doc.id}
-                      className="border rounded p-4 bg-gray-50 hover:bg-gray-100 cursor-pointer"
-                      onClick={() => setActiveView("detail")}
-                    >
-                      <h3 className="text-sm font-medium truncate">{doc.name}</h3>
-                      <p className="text-xs text-gray-500 mt-1">
-                        上传于 {new Date(doc.uploadDate).toLocaleDateString()}
-                      </p>
-                    </div>
-                  ))}
+                  {unsortedDocs.map(renderDocumentItem)}
                 </div>
                 <div className="absolute bottom-6 right-6">
                   <button
