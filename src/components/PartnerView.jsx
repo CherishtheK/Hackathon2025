@@ -287,19 +287,28 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
 
   const handleUpload = async (data) => {
     try {
+      console.log('开始处理上传:', data);
       if (data.type === 'project') {
         await createProject(data.name, data.description);
         console.log("项目创建成功:", data.name);
       } else if (data.type === 'document') {
-        await storeDocument(data.file);
-        console.log("文档上传成功:", data.file.name);
+        // 创建 File 对象
+        const file = new File([data.file], data.name, {
+          type: 'application/pdf'
+        });
+        console.log('准备存储文件:', file);
+        
+        const docId = await storeDocument(file);
+        console.log("文档上传成功，ID:", docId);
+        
         const newDoc = {
-          id: Date.now().toString(),
-          title: data.title || data.file.name,
-          name: data.title || data.file.name,
-          file: data.file,
-          filename: data.filename
+          id: docId,
+          title: data.name,
+          name: data.name,
+          uploadDate: new Date().toISOString()
         };
+        console.log('设置当前文档:', newDoc);
+        
         setCurrentDocument(newDoc);
         setActiveView("detail");
       }
@@ -307,13 +316,12 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
       setShowUploadDialog(false);
       setShowFabMenu(false);
       
-      setTimeout(async () => {
-        await loadData();
-        console.log("数据重新加载完成");
-      }, 300);
+      console.log('准备重新加载数据...');
+      await loadData();
+      console.log("数据重新加载完成");
     } catch (error) {
       console.error("上传/创建失败:", error);
-      alert("操作失败，请重试");
+      alert("操作失败：" + error.message);
     }
   };
 

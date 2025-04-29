@@ -15,30 +15,40 @@ function UploadDialog({ onClose, onUpload, showProjectCreation = false }) {
 
   const handleSubmit = async () => {
     if (selectedFile) {
-      const formData = new FormData();
-      formData.append('pdf', selectedFile);
-
+      console.log('开始处理文件上传:', selectedFile.name);
       try {
-        const uploadResponse = await fetch('http://localhost:3000/upload', {
-          method: 'POST',
-          body: formData,
-          credentials: 'include',
-        });
-
-        if (!uploadResponse.ok) {
-          throw new Error(`HTTP error! status: ${uploadResponse.status}`);
-        }
-
-        const uploadResult = await uploadResponse.json();
-        console.log('Upload successful:', uploadResult);
-        onUpload({
-          type: 'document',
-          file: selectedFile,
-          filename: uploadResult.filename,
-          title: uploadResult.title || selectedFile.name
-        });
+        // 使用 FileReader 读取文件内容
+        const reader = new FileReader();
+        reader.onload = async (e) => {
+          console.log('文件读取完成，准备上传到 IndexedDB');
+          const fileData = e.target.result;
+          console.log('文件大小:', fileData.byteLength, '字节');
+          
+          // 调用父组件的 onUpload 函数存储到 IndexedDB
+          try {
+            await onUpload({
+              type: 'document',
+              name: selectedFile.name,
+              file: fileData,
+              uploadDate: new Date().toISOString()
+            });
+            console.log('文件成功存储到 IndexedDB');
+            onClose(); // 上传成功后关闭对话框
+          } catch (uploadError) {
+            console.error('存储到 IndexedDB 失败:', uploadError);
+            alert('存储文件失败：' + uploadError.message);
+          }
+        };
+        
+        reader.onerror = (error) => {
+          console.error('读取文件失败:', error);
+          alert('读取文件失败');
+        };
+        
+        console.log('开始读取文件...');
+        reader.readAsArrayBuffer(selectedFile);
       } catch (error) {
-        console.error('Error uploading file:', error);
+        console.error('处理上传过程中出错:', error);
         alert('上传失败：' + error.message);
       }
     } else {
