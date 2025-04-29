@@ -4,7 +4,7 @@ import { throttledOpenAI, callWithRetry } from '../utils/apiUtils';
 // 在组件外部定义缓存对象
 const summaryCache = {};
 
-const Summary = ({ onSentenceClick }) => {
+const Summary = ({ onSentenceClick, currentDocument }) => {
   const [summary, setSummary] = useState("");
   const [sentences, setSentences] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -29,19 +29,33 @@ const Summary = ({ onSentenceClick }) => {
   // 生成摘要的函数
   const generateSummary = async (force = false) => {
     // 防止重复调用
-    if (loading) return;
+    if (loading || !currentDocument) return;
     
     setLoading(true);
     setError(null);
     setSelectedIndex(-1);
     
     try {
-      // 获取PDF数据
-      const response = await fetch("/annurev-biodatasci-092820-114757_structured.json");
-      console.log("JSON请求状态:", response.status, response.statusText);
-      const blocks = await response.json();
-      console.log("JSON第一个块内容:", blocks[0]);
+      // 构建JSON文件路径
+      const jsonFilename = currentDocument.name.replace(/\.pdf$/, '_structured.json');
+      const jsonPath = `/json/${jsonFilename}`;
+      console.log("尝试加载JSON文件:", jsonPath);
       
+      // 获取PDF数据
+      const response = await fetch(jsonPath);
+      console.log("JSON请求状态:", response.status, response.statusText);
+      if (!response.ok) {
+        throw new Error(`加载JSON失败: ${response.status} ${response.statusText}`);
+      }
+      
+      const data = await response.json();
+      console.log("加载的JSON数据:", data);
+      
+      if (!data.content || !Array.isArray(data.content)) {
+        throw new Error("JSON数据格式不正确，缺少content数组");
+      }
+      
+      const blocks = data.content;
       console.log(`文档总块数: ${blocks.length}`);
       
       // 根据配置决定处理多少文本块
@@ -76,8 +90,10 @@ const Summary = ({ onSentenceClick }) => {
       }
       
       // 生成缓存键
-      const cacheKey = (processFullDocument ? "full-" : "") + 
-                       limitedBlocks.map(b => b.text.substring(0, 20)).join('') + maxTokens;
+      const cacheKey = currentDocument.id + "-" + 
+                      (processFullDocument ? "full-" : "") + 
+                      limitedBlocks.length + "-" + 
+                      maxTokens;
       
       // 检查缓存
       if (summaryCache[cacheKey] && !force) {
@@ -175,16 +191,6 @@ const Summary = ({ onSentenceClick }) => {
           });
         }
         
-        // 打印详细的解析结果以便调试
-        console.log("API返回的原始文本:", text.substring(0, 200) + "...");
-        console.log("总共解析了", result.length, "个段落");
-        result.forEach((item, i) => {
-          console.log(`段落${i+1}: ${item.text.substring(0, 50)}... 引用:${item.citations.join(',')}`);
-        });
-        
-        console.log("完整的API响应文本:", text);
-        console.log("正则表达式匹配结果:", match);
-        
         return result.length > 0 ? result : [{text: "无法解析摘要内容，请重试", citations: [0]}];
       };
 
@@ -197,8 +203,8 @@ const Summary = ({ onSentenceClick }) => {
         sentences: parsedSentences
       };
     } catch (err) {
-      setError("生成摘要时出错，请重试");
-      console.error(err);
+      console.error("生成摘要时出错:", err);
+      setError(err.message || "生成摘要时出错，请重试");
     } finally {
       setLoading(false);
     }
@@ -227,12 +233,14 @@ const Summary = ({ onSentenceClick }) => {
           <button 
             className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 mr-2"
             onClick={() => generateSummary(false)}
+            disabled={!currentDocument || loading}
           >
-            生成详细摘要
+            {loading ? "生成中..." : "生成详细摘要"}
           </button>
           <button 
             className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300"
             onClick={() => generateSummary(true)}
+            disabled={!currentDocument || loading}
           >
             强制重新生成
           </button>
@@ -248,117 +256,90 @@ const Summary = ({ onSentenceClick }) => {
       {showConfig && (
         <div className="mb-4 p-3 bg-gray-100 rounded border border-gray-300">
           <h3 className="text-sm font-medium mb-2">调整处理参数</h3>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="space-y-2">
             <div>
-              <label className="block text-xs text-gray-600 mb-1">处理文本块数量</label>
-              <div className="flex items-center">
-                <input 
-                  type="range" 
-                  min="5" 
-                  max="50" 
-                  value={blockLimit} 
-                  onChange={e => setBlockLimit(parseInt(e.target.value))} 
-                  className="w-2/3 mr-2"
-                  disabled={processFullDocument}
-                />
-                <span className="text-xs">{processFullDocument ? "全文" : blockLimit}</span>
-              </div>
+              <label className="block text-sm text-gray-600">
+                处理块数限制 ({blockLimit} 块)
+              </label>
+              <input
+                type="range"
+                min="10"
+                max="100"
+                value={blockLimit}
+                onChange={(e) => setBlockLimit(parseInt(e.target.value))}
+                className="w-full"
+              />
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">输出Token上限</label>
-              <div className="flex items-center">
-                <input 
-                  type="range" 
-                  min="500" 
-                  max="4000" 
-                  step="100"
-                  value={maxTokens} 
-                  onChange={e => setMaxTokens(parseInt(e.target.value))} 
-                  className="w-2/3 mr-2"
-                />
-                <span className="text-xs">{maxTokens}</span>
-              </div>
+              <label className="block text-sm text-gray-600">
+                最大Token数 ({maxTokens})
+              </label>
+              <input
+                type="range"
+                min="1000"
+                max="4000"
+                value={maxTokens}
+                onChange={(e) => setMaxTokens(parseInt(e.target.value))}
+                className="w-full"
+              />
             </div>
-          </div>
-          <div className="mt-3">
-            <label className="flex items-center">
-              <input 
-                type="checkbox" 
-                checked={processFullDocument} 
-                onChange={e => setProcessFullDocument(e.target.checked)}
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                checked={processFullDocument}
+                onChange={(e) => setProcessFullDocument(e.target.checked)}
                 className="mr-2"
               />
-              <span className="text-xs text-gray-700">处理全文（警告：可能增加处理时间和API消耗）</span>
-            </label>
-          </div>
-          <p className="text-xs text-gray-500 mt-2">提示: 增加文本块可处理更多内容，增加Token上限可生成更长摘要。</p>
-        </div>
-      )}
-      
-      {processedTextInfo.blockCount > 0 && (
-        <div className="text-xs text-gray-500 mb-3 border-b pb-2">
-          <div>
-            处理信息: {processedTextInfo.blockCount} / {processedTextInfo.totalBlocks} 个文本块 
-            ({Math.round(processedTextInfo.blockCount / processedTextInfo.totalBlocks * 100)}%)
-          </div>
-          <div>
-            约 {processedTextInfo.wordCount} 个词 | {processedTextInfo.characterCount} 个字符
-          </div>
-          <div className="text-xs mt-1 italic">
-            注: 一般每1000字符约消耗2-3个token
-          </div>
-        </div>
-      )}
-
-      <div className="text-xs text-gray-500 mb-3">
-        <span className="inline-flex items-center bg-blue-100 text-blue-800 px-2 py-1 rounded">
-          <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-          </svg>
-          已启用全文总结
-        </span>
-      </div>
-
-      <div 
-        className="summary-content flex-1 overflow-y-auto pr-2"
-        style={{height: "100%"}}
-      >
-        {loading ? (
-          <div className="text-center p-4">正在生成详细摘要，这可能需要一点时间...</div>
-        ) : sentences.length > 0 ? (
-          sentences.map((sentence, index) => (
-            <div 
-              key={index}
-              className={`mb-4 p-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow
-                        ${selectedIndex === index ? 'border-blue-500 ring-2 ring-blue-200' : ''}`}
-              onClick={() => handleSentenceClick(sentence, index)}
-            >
-              <p className="text-gray-800 leading-relaxed">
-                {typeof sentence === 'object' ? sentence.text : sentence}
-              </p>
-              {typeof sentence === 'object' && sentence.citations && sentence.citations.length > 0 && (
-                <div className="mt-2 text-xs text-gray-500">
-                  引用段落: 
-                  <span className="ml-1 font-mono bg-gray-100 px-1 py-0.5 rounded">
-                    {sentence.citations.join(', ')}
-                  </span>
-                </div>
-              )}
+              <label className="text-sm text-gray-600">
+                处理全文 (可能较慢)
+              </label>
             </div>
-          ))
-        ) : error ? (
-          <div className="text-center p-4 text-red-500">
-            {error}
-            <button 
-              className="ml-2 px-3 py-1 bg-blue-500 text-white rounded"
-              onClick={() => generateSummary(true)}
-            >
-              重试
-            </button>
+          </div>
+        </div>
+      )}
+
+      {error && (
+        <div className="text-red-500 mb-4 p-3 bg-red-50 rounded">
+          {error}
+        </div>
+      )}
+
+      {processedTextInfo.blockCount > 0 && (
+        <div className="text-xs text-gray-500 mb-4">
+          处理信息: {processedTextInfo.blockCount}/{processedTextInfo.totalBlocks} 块 | 
+          {processedTextInfo.wordCount} 词 | 
+          {Math.round(processedTextInfo.characterCount/1024)}KB
+        </div>
+      )}
+
+      <div className="flex-1 overflow-auto">
+        {loading ? (
+          <div className="text-center py-4">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto mb-2"></div>
+            <p className="text-gray-500">正在生成摘要，请稍候...</p>
+          </div>
+        ) : sentences.length > 0 ? (
+          <div className="space-y-4">
+            {sentences.map((sentence, index) => (
+              <div
+                key={index}
+                className={`p-3 rounded cursor-pointer transition-colors ${
+                  selectedIndex === index ? 'bg-blue-50 border border-blue-200' : 'hover:bg-gray-50'
+                }`}
+                onClick={() => handleSentenceClick(sentence, index)}
+                data-sentence={sentence.text}
+                data-citations={JSON.stringify(sentence.citations)}
+              >
+                <p className="text-gray-800">{sentence.text}</p>
+                <div className="text-xs text-gray-500 mt-1">
+                  引用段落: {sentence.citations.join(', ')}
+                </div>
+              </div>
+            ))}
           </div>
         ) : (
-          <div className="text-center p-4 text-gray-500">
-            点击上方按钮生成详细摘要
+          <div className="text-center py-4 text-gray-500">
+            {currentDocument ? '点击"生成详细摘要"开始处理文档' : '请先选择一个文档'}
           </div>
         )}
       </div>

@@ -1,0 +1,142 @@
+{
+  "title": "Weijia KANG_Resume_2025",
+  "processed_date": "2025-04-29T21:18:48.266610",
+  "content": [
+    {
+      "text": "Weijia Kang\n408-592-3732 | cherishkangwj@gmail.com | linkedin.com/in/weijiakang2024 | Available: Apr- Dec, 2025\n",
+      "page": 1,
+      "bbox": [
+        81.44,
+        33.84,
+        530.57,
+        69.67
+      ]
+    },
+    {
+      "text": "Education\n",
+      "page": 1,
+      "bbox": [
+        36.0,
+        83.24,
+        98.86,
+        95.19
+      ]
+    },
+    {
+      "text": "Northeastern University – Silicon Valley Campus\nSan Jose, CA\nMS in Computer Science, GPA: 3.83/4.0\nSep. 2023 – Dec. 2025\n",
+      "page": 1,
+      "bbox": [
+        46.8,
+        104.57,
+        570.61,
+        128.82
+      ]
+    },
+    {
+      "text": "• Relevant Coursework: Computer Systems, Algorithm, Object-Oriented Design, Discrete Structures, Mobile\nApplication Development, Cloud Computing, Computing Networks, Fundamentals to Artificial Intelligence\n",
+      "page": 1,
+      "bbox": [
+        61.53,
+        131.52,
+        538.11,
+        154.74
+      ]
+    },
+    {
+      "text": "Experience\n",
+      "page": 1,
+      "bbox": [
+        46.8,
+        169.5,
+        114.88,
+        181.46
+      ]
+    },
+    {
+      "text": "Funded Research Fellow in Software Development\nJul. – Aug. 2024\nHarvard University\nCambridge, MA\n∗Engineered a full-stack MMFS (Miniature Magnetic Field Sensor) control system used to track field variations in\nMRI (Magnetic Resonance Imaging)\n∗Developed a cross-platform GUI application with PyInstaller, employed Matplotlib and NumPy to process and\nplot the captured data, and demonstrate in a paralleled mode.\n∗Implemented FPGA-based data acquisition using ZYNQ platform, and designed TCP/IP communication\nprotocols with LwIP.\n∗Crafted an automated clock configuration and parameter management system using C, removed manual\nconfiguration overhead and improved test efficiency by 50 percent.\n",
+      "page": 1,
+      "bbox": [
+        57.6,
+        199.38,
+        581.42,
+        316.86
+      ]
+    },
+    {
+      "text": "Projects\n",
+      "page": 1,
+      "bbox": [
+        46.8,
+        328.63,
+        101.55,
+        340.59
+      ]
+    },
+    {
+      "text": "Vacation Home Rental Platform | React, Node.js, GCP, AWS\nNov. – Dec. 2024\n∗Built a full-stack web application enabling user registration, login, accommodation search, booking and\nmanagement via Spring boot framework in Java. Deployed front-end with Netlify and back-end with Render\n∗Strored the data in MongoDB by utilizing the flexible schema and indexing capabilities to optimize performance\nand scalability and created a geo-index with Elasticsearch to support geo-based accommodation searches,\naccelerating the searching efficiency by 30 percent\n∗Implemented secure image file storage using Google Cloud Storage for file upload and retrieval\n",
+      "page": 1,
+      "bbox": [
+        57.6,
+        360.48,
+        581.39,
+        439.94
+      ]
+    },
+    {
+      "text": "AI-empowered Carbidder | Python, Django, GCP, MySQL, ChatGPT API\nMay – Aug. 2024\n∗Implemented a full-stack web application for a vehicle auction platform, focusing on user authentication, bid\nmanagement, and real-time auction updates. Employed Python and Django for back-end functionalities and\nJavaScript for an interactive front-end experience.\n∗Designed and Implemented MySQL database system hosted on Google Cloud Platform, and engineered SQL\nprocedures, triggers and events to implement an automatic countdown mechanism.\n∗Leveraged ChatGPT API for developing an AI-enhanced chatbot, interpreting user queries and displaying\ndynamically generated responses from MySQL database\n",
+      "page": 1,
+      "bbox": [
+        57.6,
+        455.33,
+        581.41,
+        546.74
+      ]
+    },
+    {
+      "text": "Rental Property Searching Website | React, Node.js, Git, REST API, AWS\nJan. – Mar. 2024\n∗Built and constructed full stack for users to search properties based on location, price, living space, etc.\n∗Generated RESTful APIs that enabled fill functions CRUD, with data-backed on PostgreSQL database\n∗Designed backend with Node.js, enhanced frontend with React and Bootstrap, and deployed AWS\n",
+      "page": 1,
+      "bbox": [
+        57.6,
+        562.13,
+        581.41,
+        605.72
+      ]
+    },
+    {
+      "text": "Employee Management System | Redis, Quartz, Git, REST API\nNov. – Dec. 2023\n∗Created staff management system based on microservice architecture using Spring Boot and REST API.\n∗Integrated the notification system with Redis and Quartz for email and SMS sending\n",
+      "page": 1,
+      "bbox": [
+        57.6,
+        621.1,
+        581.39,
+        652.75
+      ]
+    },
+    {
+      "text": "Technical Skills\n",
+      "page": 1,
+      "bbox": [
+        46.8,
+        664.52,
+        149.51,
+        676.47
+      ]
+    },
+    {
+      "text": "Languages: Java, Python, C/C++, SQL, JavaScript, HTML/CSS, Swift\nFrameworks: React, Node.js, Flask, JUnit, FastAPI\nDeveloper Tools: Git, Docker, Google Cloud Platform, VS Code, Visual Studio, PyCharm, IntelliJ\nLibraries:NumPy, Matplotlib, PyInstaller\n",
+      "page": 1,
+      "bbox": [
+        57.6,
+        691.05,
+        498.88,
+        736.87
+      ]
+    }
+  ],
+  "metadata": {
+    "filename": "Weijia KANG_Resume_2025.pdf",
+    "file_size": 135149,
+    "page_count": 13,
+    "created_at": "2025-04-29T21:18:48.266824"
+  }
+}

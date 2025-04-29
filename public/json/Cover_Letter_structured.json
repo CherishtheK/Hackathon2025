@@ -1,0 +1,72 @@
+{
+  "title": "Cover_Letter",
+  "processed_date": "2025-04-29T21:38:23.884069",
+  "content": [
+    {
+      "text": "Dear Hiring Manager,\n",
+      "page": 1,
+      "bbox": [
+        90.0,
+        70.18,
+        261.29,
+        98.23
+      ]
+    },
+    {
+      "text": "I am writing to express my strong interest in the\nposition. As a Computer Science student from\nNortheastern University with research experience\nat Harvard SEAS, I believe my technical skills and\nproblem-solving abilities align well with your team's\nneeds.\n",
+      "page": 1,
+      "bbox": [
+        90.0,
+        105.7,
+        503.28,
+        241.03
+      ]
+    },
+    {
+      "text": "During my research internship at Harvard SEAS, I\ndeveloped and optimized a high-performance data\nprocessing system and designed and implemented\na cross-platform visualization application for real-\ntime data analysis, demonstrating my ability to\ncreate robust, user-centric software solutions. This\nexperience honed my skills in system architecture\ndesign, performance optimization, and full-stack\ndevelopment.\n",
+      "page": 1,
+      "bbox": [
+        90.0,
+        248.5,
+        500.72,
+        448.39
+      ]
+    },
+    {
+      "text": "I believe the internship experience will be an\nexcellent opportunity for me to apply all my\nacademic knowledge and also to improve my soft-\npower skills by working with top practitioners in the\nindustry. Thank you for considering my application.\n",
+      "page": 1,
+      "bbox": [
+        90.0,
+        455.74,
+        502.58,
+        569.71
+      ]
+    },
+    {
+      "text": "Best regards,\n",
+      "page": 1,
+      "bbox": [
+        90.0,
+        577.18,
+        197.97,
+        605.23
+      ]
+    },
+    {
+      "text": "Weijia Kang\n",
+      "page": 1,
+      "bbox": [
+        90.0,
+        612.58,
+        184.93,
+        640.63
+      ]
+    }
+  ],
+  "metadata": {
+    "filename": "Cover_Letter.pdf",
+    "file_size": 19093,
+    "block_count": 6,
+    "created_at": "2025-04-29T21:38:23.884225"
+  }
+}

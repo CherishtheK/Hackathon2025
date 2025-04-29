@@ -1,0 +1,1172 @@
+{
+  "title": "encyclopedia-01-00021-v2",
+  "processed_date": "2025-04-29T21:43:13.880895",
+  "content": [
+    {
+      "text": "Entry\nMachine Learning in Healthcare Communication\n",
+      "page": 1,
+      "bbox": [
+        35.69,
+        102.78,
+        437.43,
+        133.83
+      ]
+    },
+    {
+      "text": "Sarkar Siddique 1 and James C. L. Chow 2,3,*\n",
+      "page": 1,
+      "bbox": [
+        36.0,
+        148.67,
+        239.58,
+        162.25
+      ]
+    },
+    {
+      "text": "\u0001\u0002\u0003\u0001\u0004\u0005\u0006\u0007\b\n\u0001\u0002\u0003\u0004\u0005\u0006\u0007\n",
+      "page": 1,
+      "bbox": [
+        55.52,
+        425.13,
+        86.09,
+        440.15
+      ]
+    },
+    {
+      "text": "Citation: Siddique, S.; Chow, J.C.L.\n",
+      "page": 1,
+      "bbox": [
+        36.0,
+        451.49,
+        146.32,
+        458.53
+      ]
+    },
+    {
+      "text": "Machine Learning in Healthcare\n",
+      "page": 1,
+      "bbox": [
+        36.0,
+        463.48,
+        135.4,
+        470.46
+      ]
+    },
+    {
+      "text": "Communication. Encyclopedia 2021, 1,\n",
+      "page": 1,
+      "bbox": [
+        36.0,
+        475.29,
+        151.49,
+        482.38
+      ]
+    },
+    {
+      "text": "220–239. https://doi.org/10.3390/\n",
+      "page": 1,
+      "bbox": [
+        36.0,
+        487.33,
+        145.7,
+        494.31
+      ]
+    },
+    {
+      "text": "encyclopedia1010021\n",
+      "page": 1,
+      "bbox": [
+        36.0,
+        499.26,
+        101.02,
+        506.23
+      ]
+    },
+    {
+      "text": "Academic Editor: Masa Noguchi\n",
+      "page": 1,
+      "bbox": [
+        35.73,
+        523.14,
+        136.8,
+        530.11
+      ]
+    },
+    {
+      "text": "Received: 5 January 2021\n",
+      "page": 1,
+      "bbox": [
+        36.0,
+        547.02,
+        113.03,
+        553.99
+      ]
+    },
+    {
+      "text": "Accepted: 8 February 2021\n",
+      "page": 1,
+      "bbox": [
+        35.73,
+        558.94,
+        117.68,
+        565.92
+      ]
+    },
+    {
+      "text": "Published: 14 February 2021\n",
+      "page": 1,
+      "bbox": [
+        36.0,
+        570.87,
+        123.36,
+        577.84
+      ]
+    },
+    {
+      "text": "Publisher’s Note: MDPI stays neutral\n",
+      "page": 1,
+      "bbox": [
+        36.0,
+        596.18,
+        153.09,
+        603.22
+      ]
+    },
+    {
+      "text": "with regard to jurisdictional claims in\n",
+      "page": 1,
+      "bbox": [
+        35.71,
+        608.17,
+        153.09,
+        615.14
+      ]
+    },
+    {
+      "text": "published maps and institutional afﬁl-\n",
+      "page": 1,
+      "bbox": [
+        35.79,
+        620.1,
+        154.25,
+        627.07
+      ]
+    },
+    {
+      "text": "iations.\n",
+      "page": 1,
+      "bbox": [
+        36.0,
+        632.02,
+        58.39,
+        638.99
+      ]
+    },
+    {
+      "text": "Copyright: © 2021 by the authors.\n",
+      "page": 1,
+      "bbox": [
+        36.0,
+        684.79,
+        154.31,
+        691.83
+      ]
+    },
+    {
+      "text": "Licensee MDPI, Basel, Switzerland.\n",
+      "page": 1,
+      "bbox": [
+        36.0,
+        696.79,
+        154.31,
+        703.76
+      ]
+    },
+    {
+      "text": "This article is an open access article\n",
+      "page": 1,
+      "bbox": [
+        35.78,
+        708.71,
+        153.09,
+        715.68
+      ]
+    },
+    {
+      "text": "distributed\nunder\nthe\nterms\nand\n",
+      "page": 1,
+      "bbox": [
+        36.0,
+        720.64,
+        153.09,
+        727.61
+      ]
+    },
+    {
+      "text": "conditions of the Creative Commons\n",
+      "page": 1,
+      "bbox": [
+        36.0,
+        732.56,
+        153.09,
+        739.54
+      ]
+    },
+    {
+      "text": "Attribution (CC BY) license (https://\n",
+      "page": 1,
+      "bbox": [
+        35.73,
+        744.49,
+        154.36,
+        751.46
+      ]
+    },
+    {
+      "text": "creativecommons.org/licenses/by/\n",
+      "page": 1,
+      "bbox": [
+        36.0,
+        756.41,
+        146.46,
+        763.39
+      ]
+    },
+    {
+      "text": "4.0/).\n",
+      "page": 1,
+      "bbox": [
+        36.0,
+        768.34,
+        53.01,
+        775.31
+      ]
+    },
+    {
+      "text": "1\nDepartment of Physics, Ryerson University, Toronto, ON M5B 2K3, Canada; sarkar.siddique@ryerson.ca\n2\nPrincess Margaret Cancer Centre, Radiation Medicine Program, Department of Medical Physics,\nUniversity Health Network, Toronto, ON M5G 1X6, Canada\n3\nDepartment of Radiation Oncology, University of Toronto, Toronto, ON M5T 1P5, Canada\n*\nCorrespondence: james.chow@rmp.uhn.ca; Tel.: +1-416-946-4501\n",
+      "page": 1,
+      "bbox": [
+        166.56,
+        182.03,
+        546.29,
+        234.51
+      ]
+    },
+    {
+      "text": "Deﬁnition: Machine learning (ML) is a study of computer algorithms for automation through experi-\nence. ML is a subset of artiﬁcial intelligence (AI) that develops computer systems, which are able\nto perform tasks generally having need of human intelligence. While healthcare communication is\nimportant in order to tactfully translate and disseminate information to support and educate patients\nand public, ML is proven applicable in healthcare with the ability for complex dialogue management\nand conversational ﬂexibility. In this topical review, we will highlight how the application of ML/AI\nin healthcare communication is able to beneﬁt humans. This includes chatbots for the COVID-19\nhealth education, cancer therapy, and medical imaging.\n",
+      "page": 1,
+      "bbox": [
+        167.26,
+        251.46,
+        560.77,
+        351.31
+      ]
+    },
+    {
+      "text": "Keywords: artiﬁcial intelligence; machine learning; healthcare communication; chatbot\n",
+      "page": 1,
+      "bbox": [
+        167.26,
+        367.19,
+        511.63,
+        376.24
+      ]
+    },
+    {
+      "text": "1. Introduction\n",
+      "page": 1,
+      "bbox": [
+        167.26,
+        416.56,
+        235.38,
+        426.52
+      ]
+    },
+    {
+      "text": "Artiﬁcial intelligence (AI) is a computer program’s capability to perform a speciﬁc\ntask or reasoning processes that we generally associate with intelligence in human beings.\nPrimarily, it has to do with making the right decision with vagueness, uncertainty, or\nlarge data. A large quantity of data in the healthcare ﬁeld, from clinical symptoms to\nimaging features, requires machine learning algorithms for classiﬁcation [1]. Machine\nlearning is a technique that utilizes pattern recognition. AI has been implemented in\nseveral applications in the clinical ﬁeld, such as diagnostics, therapeutic and population\nhealth management. AI has a considerable impact on cell immunotherapy, cell biology\nand biomarker discovery, regenerative medicine and tissue engineering, and radiology.\nMachine learning in healthcare applications are drug detection and analysis; disease\ndiagnosis; smart health records; remote health monitoring; assistive technologies; medical\nimaging diagnosis; crowdsourced data collection and outbreak prediction; and clinical trial\nand research [2]. A large quantity of data, also known as big data, is now available to train\nalgorithms [3]. Several algorithms consisting of Convolution Neural Network (CNN) of\nmore than a 100 layers have been used to diagnose pneumonia conditions. Several studies\nshow that several algorithms can perform at the same level as a clinician and in some cases\noutperform clinicians. Specialists are still needed, however, as they can ensure safety and\nmonitor AI output. AI does not hope to replace clinicians but to assist them and make\ntheir job more efﬁcient. Facial analysis technologies have the capability to perform at the\nsame level as clinicians with the help of deep learning. The Food and Drug Administration\n(FDA) has granted approval for a signiﬁcant number of proprietary algorithms intended\nto be used for image analysis and interpretation; a prominent example would be Aidoc\nused in radiology to detect intracranial hemorrhage [4]. AI is used heavily in medical\nimaging to help in rendering medical diagnoses. Machine learning in medical imaging\ntypically starts with algorithms looking for image features it believes to be important\nand will yield better predictions. A decision tree is an algorithm system, it identiﬁes\nthe best combination of features to classify the image or compute speciﬁc metrics for\n",
+      "page": 1,
+      "bbox": [
+        166.94,
+        432.13,
+        561.02,
+        768.57
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1, 220–239. https://doi.org/10.3390/encyclopedia1010021\nhttps://www.mdpi.com/journal/encyclopedia\n",
+      "page": 1,
+      "bbox": [
+        35.75,
+        814.78,
+        557.28,
+        822.88
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n221\n",
+      "page": 2,
+      "bbox": [
+        35.75,
+        53.76,
+        559.67,
+        61.87
+      ]
+    },
+    {
+      "text": "the image region. Several methods are also used for this purpose where each has its\nown weaknesses or strengths [5]. AI needs to be evaluated for stability and safety before\nit can be implemented in clinical settings. There have been many research papers on\nevaluating AI’s decision-making and clinical decision support. The recent advances in\nAI and the introduction of PyTorch, DeepLearning4J, TensorFlow, and Keras have led to\nthe development of numerous algorithms that is available to clinicians to implement in\nmany applications [6]. Machine learning allows us to make informed clinical decisions\nthrough insights from past data and is the core of evidence-based medicine. AI provides\ntechniques to analyze and reveal complex associations that are difﬁcult to convert into\nan equation [7]. A neural network is a model aspiring to mimic how the human brain\nworks. It is composed of large numbers of interconnected neurons. Machine learning can\nutilize this to solve complex problems by analyzing evidence to provide an appropriate\nconclusion. Machine learning can simultaneously observe and process at a very fast pace\nwith almost limitless inputs. It carries a transformation pattern to healthcare supported by\nclinical data’s extensive availability and recent advancement in analytics systems. Machine\nlearning technique mimics medical practitioners in complicated problem solving through\ncautiously considering proof to make valid decisions [8]. AI and deep learning have\nbeen enabled by labelled big data and improvements in cloud storage modalities, and\nenhancement in computing power. In medicine, it has a signiﬁcant impact at three levels:\nfor the health system by improving workﬂow and the potential for reducing medical errors;\nfor clinicians primarily through rapid, accurate image interpretation; and for patients by\nhaving the ability to process data, which ultimately promotes health [9]. Chatbots have\nhigh potential in a clinical setting, but for them to be used safely in clinical settings, they\nﬁrst need to be evaluated like a novel medical device or like a new drug [10]. Two very\nimportant factors in terms of patient care for physicians are knowledge and experience;\nhowever, in terms of gaining knowledge by cumulating data, humans are limited, but\nmachine learning can excel in that area [11]. Machine learning can generally be classiﬁed\ninto two categories: supervised learning and unsupervised learning [12].\n",
+      "page": 2,
+      "bbox": [
+        166.85,
+        96.45,
+        560.52,
+        445.42
+      ]
+    },
+    {
+      "text": "2. Machine Learning Technology\n2.1. Natural Language Processing (NLP)\n",
+      "page": 2,
+      "bbox": [
+        167.26,
+        457.78,
+        333.36,
+        481.11
+      ]
+    },
+    {
+      "text": "Machine learning is computer-based, and its primary objective is to analyze free form\ntext or speech that follows a predeﬁned set of theories and technologies such as linguistic\nand statistical methods, which obtains rules and patterns from the analyzed data. It can\nconvert the text into a structured format that follows a hierarchy. The itemized elements\nhave a ﬁxed organization and standardized terminology for each element. These texts are\neasily queried and manipulated. Pattern similarity and linguistic analyses are the primary\nNLP technologies used. Pattern matching is a straightforward and fundamental text\nsearching technique. It is essential to form complex NLP. Stemming is always used in NLP\nthat uses language morphology knowledge to convert a given word down to its simplest\nform or root. Stemming is, therefore, suitable for agglutinative languages, while other\nlanguages need lemmatization. Breaking texts into tokens or chucks is another application\nof pattern matching, also known as tokenizing. Linguistic NLP systems read words as a\nsymbol combined based on grammatical rules, and usually rely on the assumption that\nwords forming sentences/expression/texts are conceptual and meaningful. A computer\nalgorithm uses both syntactic and semantic knowledge to infer what concept modiﬁes\nanother concept. With the era of deep neural networks, word n-gram features are replaced\nwith the word or sentence embedding; however, similarity obtained from linguistics NLP as\na feature in classiﬁcation algorithm often gives better results [13]. Natural language systems\nare used in many important clinical and research tasks such as NLP-based computational\nphenotyping, like clinical trial screening, pharmacogenomics, diagnosis categorization,\nnovel phenotype discovery, the interaction between drugs, and detection of adverse drug\nevents [14]. Several natural language processing systems that are developed for clinical\nuse are shown in Table 1 [15]:\n",
+      "page": 2,
+      "bbox": [
+        166.85,
+        486.91,
+        560.52,
+        772.99
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n222\n",
+      "page": 3,
+      "bbox": [
+        35.75,
+        53.76,
+        559.28,
+        61.87
+      ]
+    },
+    {
+      "text": "Table 1. Natural language processing (NLP) application system [15].\n",
+      "page": 3,
+      "bbox": [
+        166.97,
+        97.94,
+        438.11,
+        106.99
+      ]
+    },
+    {
+      "text": "System Name\nBrief Description\n",
+      "page": 3,
+      "bbox": [
+        173.24,
+        119.02,
+        382.62,
+        127.99
+      ]
+    },
+    {
+      "text": "ASLForm\nIt is an adaptive learning system that has some fundamental\nrules for ﬁnding a target text. As a user selects output, it\ncontinuously and simultaneously updates.\n",
+      "page": 3,
+      "bbox": [
+        173.24,
+        134.87,
+        550.27,
+        165.75
+      ]
+    },
+    {
+      "text": "COAT\nIt is a clinical note processing system that is rule-based and\nuses machine learning (through WEKA) components with the\nintegration of MetaMap Transfer.\n",
+      "page": 3,
+      "bbox": [
+        173.24,
+        172.54,
+        553.24,
+        203.43
+      ]
+    },
+    {
+      "text": "LEXIMER\nIt was implemented to render medical imaging and has the\nability to ﬁnd signiﬁcant recommendations and clinical\nﬁndings from CT and MRI reports.\n",
+      "page": 3,
+      "bbox": [
+        173.24,
+        210.22,
+        545.8,
+        241.11
+      ]
+    },
+    {
+      "text": "Barrett et al. (unnamed)\nIt can identify 17 serious sentinel events such as sepsis,\ndyspnea, and delirium in palliative carte consult letters.\n",
+      "page": 3,
+      "bbox": [
+        173.24,
+        247.9,
+        532.47,
+        267.82
+      ]
+    },
+    {
+      "text": "Martinez et al. (unnamed)\nIt takes NegEx, Genia Tagger, and MetaMap as input and can\nclassify cancer staging pathology reports.\n",
+      "page": 3,
+      "bbox": [
+        173.24,
+        274.63,
+        553.3,
+        294.54
+      ]
+    },
+    {
+      "text": "Otal et al. 2013 (unnamed)\nIt can detect T cancer staging classiﬁcation. It uses WEKA.\n",
+      "page": 3,
+      "bbox": [
+        173.24,
+        301.34,
+        542.37,
+        310.3
+      ]
+    },
+    {
+      "text": "Wieneke et al. 2015 (unnamed)\nIt can extract results, laterality and procedure from breast\npathology reports, and if high NPV and high PPV classiﬁers\ndo not agree, then it is sent for manual review.\n",
+      "page": 3,
+      "bbox": [
+        173.24,
+        317.1,
+        549.42,
+        347.98
+      ]
+    },
+    {
+      "text": "NLP is used to translate or map phrases or words onto concepts by tokenizing, lemma-\ntizing, and mapping each lemma. By taking each token as a weighted linear combination\nof topics, like a generalized linear model as a dependent variable, which is a weighted\nlinear combination of independent variables. It is called Latent Dirichlet Allocation, also\nknown as topic modeling. Application of NLP in Free Open Access Medical Education\nis an excellent source of educational materials. Free Open Access Medical Education’s\nresource includes websites, blog posts, or podcasts. Those interested in medical care\ncan comment, discuss and provide insight to content relative to medical care. NLP can\nhelp organize Free Open Access Medical Education by identifying which topics are most\nprevalent. An algorithm can automatically rate each website, enhances Academic Life in\nEmergency Medicine, which relies on a panel of experts who review blog posts individu-\nally [16]. Gene name normalization involves list-wise learning, conditional random ﬁelds,\ngraph-based normalization, regression-based methods, and semantic similarity techniques.\nThe different application uses different methods. Some examples are using naïve Bayes\nmachine learning system to link SNIMED to keywords or phrases from clinical records;\nKate normalized clinical phrases to uniﬁed medical language system (UMLS) IDs using\nthe pattern distance calculation method. Other applications use MetaMap, Knowledge\nExtraction System (cTAKES), or clinical text analysis to extract and map a term to concepts\nin UMLS. In 2015, the Clinical TempEval challenge was to extract temporal information\nfrom the clinical note. All of the systems used supervised classiﬁers to solve the challenge,\nand all of them outperformed the rule-based systems. Marine Health information exchange\nEMR database’s clinical notes were used to train and test an NLP system. The system can\nﬁnd congestive heart failure cases with an F-score of 0.753. Machine learning was used\nto analyze electronic health records to evaluate the risk of suicide dependent on physical\nillness. Medicare providers and Centers for Medicaid have tried to evaluate patients that\nare at high risk for readmissions. These patients are followed up to receive appropriate\nintervention [17]. Shared task organized for the advancement of NLP in clinical data was\nformed to provide a good source of resources for future training purposes. It allows the\nglobal research community to take on challenges that would otherwise be out of reach.\nClinical NLP shared task utilized social media data such as forum posts; Twitter, journal\narticles such as PubMed, and electronic health records such as psychiatric evaluation\nrecords, pathology reports, and nursing admission notes; and other health-related docu-\nments such as drug labels [18]. Clinical notes in neurology or in the ﬁeld of cardiology\n",
+      "page": 3,
+      "bbox": [
+        166.96,
+        364.7,
+        561.02,
+        776.31
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n223\n",
+      "page": 4,
+      "bbox": [
+        35.75,
+        53.76,
+        559.28,
+        61.87
+      ]
+    },
+    {
+      "text": "are useful for deriving metadata in the development of downstream machine learning\napplications. A pipeline was constructed using the clinical NLP system, UMLS, cTAKES,\nMetathesaurus, Semantic Network, and learning algorithms. The pipeline was used to\nextract features from two datasets. The study shows that a supervised learning based\nNLP approach is beneﬁcial for developing medical subdomain classiﬁers [19]. A new\nprototype NLPPReViz was designed for clinical researchers to review, train, and revise\nNLP models. The prototype study involved nine physicians. The study group built and\nreviewed models with two colonoscopy quality variables. Using the initial training set as\nsmall as ten documents led to a ﬁnal F1 scores variable between 0.78 and 0.91 [20]. The\nmedical literature relevant to germline genetics is increasing at a rapid pace. As a tool that\nhelps monitor and prioritizes literature to understand pathogenic genetic variants, their\nclinical implications are very beneﬁcial. A study developed and evaluated two machine\nlearning models to classify abstracts that are correlated to cancer proliferation for germline\nmutation carriers or the normality of germline genetic mutations. The ﬁrst model utilizes a\nsupport vector machine (SVM) that learns a decision rule that is linear based on the bag of\nn-gram representation of each abstract and title. The second model is a CNN that learns a\nset of parameters based on the raw abstract and title [21]. Bao’s study proposed a clinical\ntext classiﬁcation model. The model utilizes knowledge guided deep learning. The trigger\nphrases or words were found using rules, and they were used to label an example set.\nThe example set was then later used to train a CNN. The result showed the CNN models\neffectively capture the knowledge of the domain and can learn hidden features by utilizing\nthe target words and concept unique identiﬁer (CUI) embeddings. Their model was able\nto outperform the state of the art methods in the i2b2 obesity challenge [22]. In maternal\ndeath, suicide can be prevented if quick appropriate action is taken to mitigate risk. A\nstudy was done to use NLP in electronic medical records to evaluate and ﬁnd pregnant\nwomen with suicidal behavior. Three algorithms were validated to classify the suicidal\nbehavior and obtain-curated features [23]. NLP in other languages is challenging because\nit is not as extensively explored as it in the English language; however, it offers many\nbeneﬁcial advantages such as text mining from the health record of non-English speaking\ncountries. It also allows the chatbot to communicate with participants that do not speak\nEnglish. Some of the languages where NLP has been explored are French, German, Spanish,\nJapanese, Chinese, Dutch, Swedish, Portuguese, and others. Jacob used deep learning to\ndetect health-related infection in Swedish patient records. Lopprich described a system\nusing NLP for the German language to classify multiple myeloma patients, and the study\nwas conducted at Heidelberg University Hospital. Metzger showed that the development\nof machine learning-based classiﬁers that make use of free-text data could identify suicide\nattempts. The study was done in a French Emergency department, and the study result\nshows promising results [24]. A variety of NLP methods, with an overall shift towards\ndeep learning, were observed in the last four years. Deep learning can automatically ﬁnd\nmathematically and computationally convenient phrases or abstracts from raw data that\ncan be used for classiﬁcation without having explicit deﬁned feature [25].\n",
+      "page": 4,
+      "bbox": [
+        166.85,
+        98.23,
+        561.02,
+        610.38
+      ]
+    },
+    {
+      "text": "2.2. Deep Neural Network (DNN)\n",
+      "page": 4,
+      "bbox": [
+        167.26,
+        622.66,
+        306.23,
+        632.62
+      ]
+    },
+    {
+      "text": "The computational power of deep learning has revolutionized modern AI. It led to the\nstart of many new research companies in recent years [26]. Deep learning can automatically\ndetermine the parameters that are deep in a network-based, which is based on experience.\nNeural networks have multiple hidden layers that have been discovered for a long time\nbut never have been explored to this degree before. In the 1980s, it was a popular idea in\nthe ﬁeld of cognitive science and frequently used in the ﬁeld of engineering [27]. DNN\ncan operate with supervision or no supervision. In machine learning, data complexity is\noften reduced to highlight the correlated patterns. DNN can achieve that, and it has the\nability to learn input data order representation independently and generally requires a\nhigh volume [28]. Deep learning is artiﬁcial neural networks (ANN) having one or more\nhidden layers. It resembles the human brain due to how it functions. Deep learning can\n",
+      "page": 4,
+      "bbox": [
+        167.26,
+        638.45,
+        561.02,
+        773.89
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n224\n",
+      "page": 5,
+      "bbox": [
+        35.75,
+        53.76,
+        559.28,
+        61.87
+      ]
+    },
+    {
+      "text": "achieve higher accuracy if trained on big data, especially in the medical ﬁeld. Useful\nand important information from big data can be extracted with deep learning. ANN is\nthe fundamental base of DNN. ANN is a classiﬁcation and a regression algorithm and\nquite popular. It has multiple layers and computes by mimicking the transmission signal\nand has a human brain like neuron architecture and synapses. ANN is composed of\nartiﬁcial neurons that are interconnected. Each neuron uses activation functions to output\na decision signal according to the weighted sum. In ANN, many computing units are\nmerged. DNN is composed of stacked layers assembled in a series. The ﬁrst layer is for\ninput, while the last layer is for output, with hidden layers from the second layer to as\nmany layers as required. DNN extends the depth of layers and yields improved prediction\nand performance with more complex layers in recognition studies [29]. Deep learning is\nused heavily for gene expression and classiﬁcation. Forest DNN is a new classiﬁer that\nwas introduced, which integrates the DNN architecture with a supervised forest detector.\nIt can overcome the overﬁtting problem by learning sparse feature representations and\nuploading the data into a neural network [30]. DNN is used in the prediction of protein\ninteraction using primary sequences [31]. Deep learning is used in many areas of radiology.\nCheXNeXt based on CNN was developed to simultaneously detect 14 different pathologies,\nincluding pleural effusion, pneumonia, pulmonary masses, and nodules in frontal-view\nchest radiographs [32]. A DeepNAT, which is a 3D Deep CNN, was introduced to be\nused in T1 weighted magnetic resonance images to auto segment neuroanatomy. It learns\nabstraction feature and multiclass classiﬁcation in brain segmentation by utilizing an end-\nto-end approach [33]. The structured report enhances communication between radiologists\nand providers. In order to convert unstructured computed tomography (CT) pulmonary\nangiography reports into a structured format, a deep learning algorithm was employed.\nThe algorithm converted free text conclusion into structured reports efﬁciently and yielded\nhigh accuracy. Overall, it increases communication between radiologists and clinicians\nwithout any common major downfall such as losing productivity. It provides enhanced\nstructured data for research and data mining applications [34]. Public health monitoring\nand management is an important aspect of government administration. It provides insights\ninto the best strategies to implement. Health status monitoring and investigation has\ntraditionally been conducted through surveys and responses from targeted participants;\nhowever, it is very costly and time consuming. Social media based public generated content\nrelated to health can be used to predict health outcome at a population level. It makes\nuse of linguistic features to analyze text data. It also makes use of visual features by\nutilizing deep neural networks. Two large-scale online social networks were used for data\ncollection: Foursquare and Flicker, in order to predict U.S. health indices. The experimental\nresult concluded the prediction made from social data yields comparable results and\noutperform textual information [35]. For a majority of the people, speech is the primary\nmethod of communication and the use of a microphone sensor allows computer–human\ninteraction. Using speech signals to quantify emotions is an emerging area of research in\nhuman–computer interaction. It can be applied to multiple applications such as virtual\nreality, healthcare, human reboot interaction, behaviour assessment, and emergency call\ncenters, where being able to determine the speaker’s emotional state from just speech is\nvery beneﬁcial. A system that is able to learn discriminative and salient features from\nspectrogram of speech signals using deep convolutional network was developed. Local\nhidden patterns are learned in convolutional layers that have special strides to down\nsample the feature maps rather than pooling layers, and full-connected layers are used\nto learn discriminative features. A SoftMax classiﬁer was used to classify emotions in\nspeech [36]. A bidirectional recurrent neural network containing the attention layer was\nused to develop a chatbot with Tensorﬂow, capable of taking a sentence input with many\ntokens and replicate it with a more appropriate conversation [37].\n",
+      "page": 5,
+      "bbox": [
+        166.85,
+        98.23,
+        561.02,
+        735.91
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n225\n",
+      "page": 6,
+      "bbox": [
+        35.75,
+        53.76,
+        559.28,
+        61.87
+      ]
+    },
+    {
+      "text": "3. Application of Machine Learning in Healthcare Communication\n3.1. Overview of Chatbot\n",
+      "page": 6,
+      "bbox": [
+        167.26,
+        98.2,
+        469.46,
+        121.54
+      ]
+    },
+    {
+      "text": "A chatbot is a form of a computer system that lets humans use natural human lan-\nguage to interact with computers. Some examples of modern chatbot systems are AliMe,\nDeepProbe, SuperAgent, MILABOT, and RubyStar [38]. ELIZA is the ﬁrst chatbot de-\nveloped by Professor Joseph Weizenbaum at the Massachusetts Institute of Technology.\nELIZA showed that communication with a computer is possible by utilizing language\nconversion. Key features of ELIZA were keyword spotting and pattern matching with\n200 stimulus-response pairs. A.L.I.C.E. was developed as a modern version of ELIZA that\nﬁrst surfaced in 1995. A.L.I.C.E. had quite a lot of interesting features, such as case-based\nreasoning that extracts the correct context of ambiguous words, knowledge base both tem-\nporal and spatial, random sentence generator, spell checker, and 45,000 stimulus-response\npairs. VPbot was later introduced as a SQL based chatbot to be used for medical appli-\ncations. VPbot uses a relational data model to store “language rules”. VPbot focused on\na targeted topic of conversation. The VPbot algorithm takes three input parameters, a\nvpid (unique identiﬁer of each VPbot instance), the current topic, and a sentence. The\nVPbot exports a new sentence and a new topic [39]. A chatbot can recognize the user input\nthrough many forms and access information to provide a predeﬁned acknowledgment [40].\n",
+      "page": 6,
+      "bbox": [
+        166.91,
+        127.22,
+        561.02,
+        325.55
+      ]
+    },
+    {
+      "text": "3.2. Patient Care\n",
+      "page": 6,
+      "bbox": [
+        167.26,
+        337.83,
+        235.76,
+        347.79
+      ]
+    },
+    {
+      "text": "Healthcare chatbots have high potential in medical communication by improving\ncommunication between clinic–patient and doctor–patient. It can help fulﬁll the high\ndemand for health services through remote testing, monitoring of medication follow-up,\nor telephone consultations. A chatbot can conduct fast and easy health surveys, set up\npersonal health-related reminders, communicate with clinical teams, book appointments,\nand retrieve and analyze health data. Chatbots can provide fast or instant responses to\npatients’ healthcare-related questions while looking for speciﬁc symptoms or patterns in\npredicting disease. An example would be the Internet-based Doc-Bot, which operates\nvia mobile phone or Messenger. The bot can be tailored for speciﬁc health conditions,\npopulations, or behaviors [41]. Chatbots’ bidirectional exchange of information with\npatients can be used to screen treatment adherence or to collect data. They can be applied\nthrough several methods, such as text-based services like chat rooms, text messaging,\nmobile applications, or audio services, such as Alexa, Siri, Google Assistant, or Cortana.\nThe iDecide chatbot can deliver information about prostate cancer, such as risk factors,\nepidemiology, treatment options, and side effects. A study was done to observe the\neffect of iDecide on prostate cancer knowledge on African American men aged 40 years\nand over with a prior history of prostate cancer. The study result showed signiﬁcant\nimprovement in prostate cancer knowledge after using the iDecide bot. A signiﬁcant\nnumber of cancer patients are likely to face severe anxiety or depression. A web-based\nchatbot, Woebot, for cognitive-behavioral therapeutics was studied. The study’s objective\nwas to determine the acceptability, feasibility, and preliminary efﬁcacy of a fully automated\nconversational agent to deliver a self-help program for people with anxiety and depression\nsymptoms. The result showed the patients that engaged with Woebot signiﬁcantly reduced\nsuppressed depression during the study period, where the control group showed no\nchange in depression levels. In radiation, an oncology chatbot can collect patient-reported\noutcomes during and after the treatment in a convenient manner. Algorithms can be used\nto red-ﬂag the most at-risk patients or trigger an additional consultation with the physician\nand enroll in supportive care treatments [42]. To live a healthy life, accessibility to good\nhealthcare is essential. Sometimes it is not easy to consult with a doctor due to availability\nand cost. A medial chatbot was proposed to provide a solution without having to consult\na doctor. Chatbots can act as a medical reference book that can provide patients with\nfurther information about their disease and appropriate short-term preventive measures.\nFor the chatbot to be viable, it is vital that the chatbot can diagnose all kinds of diseases\nand provide the necessary information. The bot interacts with patients and obtains their\n",
+      "page": 6,
+      "bbox": [
+        166.85,
+        353.47,
+        561.02,
+        777.77
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n226\n",
+      "page": 7,
+      "bbox": [
+        35.75,
+        53.76,
+        559.28,
+        61.87
+      ]
+    },
+    {
+      "text": "medical issue through conversation and gives personalized diagnosis that corresponds to\ntheir symptoms. It will allow them to have the right protection [43]. A chatbot was used\nas a medical consultant. It used doctorME application to gather treatment records and\nsymptoms information [44]. Another chatbot design that was proposed can provide an\nanswer for any query based on the FAQs using Latent Semantic Analysis and Artiﬁcial\nIntelligence Markup Language (AIML). The answers were primarily accurate and efﬁcient.\nAIML was used to answer general questions like greetings, which follows a template, and\nservice-based questions were answered using latent semantic analysis [45]. Mandy is a\nprimary care chatbot that can automate the patient intake procedure and help healthcare\nstaff. The chatbot carries out an interview, tries to understand the patient’s complaints,\nand provides reports to the doctors or healthcare professional for further analysis. The\nsystem provides a mobile app to the patients, which is a diagnostic unit and a doctor’s\ninterface that can be used to access patient information. The diagnostic unit has three\nmain parts: an analysis engine that takes the patient’s symptom information and analyzes\nthem, a symptom-to-cause mapper for reasoning about potential cause, and a question\ncreator to produce further questions. The system is a knowledge-powered data-driven\nnatural language processing modality [46]. Chatbots function similarly to how a search\nengine works; however, the chatbot provides one answer where search engine provides\nmultiple outputs. The chatbot is focused on becoming a search engine for the next task,\nwhich correlates to the previous task, which makes its input processing efﬁcient. What\nmakes a chatbot efﬁcient and gives the feeling of an actual human is its extension and\nprerequisite enabled relations between responses. A chatbot can provide various responses\nto match the chat context [47]. Traditional chatbots lack the capability to have conversations\nwith respect to the social context. Dialog considers both social and individual processes.\nAugello proposed a chatbot model that is able to choose the most suitable dialogue plans\naccording to appropriate social practice [48]. The research in human–computer interaction\non the chatbot dialogue system equipped with an audio-video interface shows promising\nresults. They are equipped with catchy interfaces using human-like avatars capable of\nadapting their behavior to match the conversation context. They can vocally communicate\nwith users through a text to speech systems and automatic speech recognition. The visual\naspect of interaction gives it the ability to synchronize speech with an animated face\nmodel. It plays an important role in human–computer interaction. These kinds of systems\nare called talking heads [49]. A chatbot often acts as a virtual assistant. It can have its\nvirtualization. Its conversational skills and other behavior are simulated through AI [50].\nChatbot technology generally uses pattern matching to analyze the user’s input. It uses\ntemplates to ﬁnd and release output. Conversational interfaces these days are built to\ncommunicate like a human and try to mimic human conversation as much as possible.\nThe automated online assistant is designed to assist, or even replace humans in some\ncases, and provide the service on its own [51]. The ability to connect with patients with\na proper understanding of their situation is very important in AI development. There\nis a study regarding breast cancer patients communicate and respond to chatbot Vik.\nVik communicates via text message and responds to any concerns or fears and gives\nprescription reminders. Human companionship and empathy is not replaceable but of\nthe 4737 patients studied, 93.95% of the patients recommended Vik to their companions.\nThis study shows that patients desire personalized focused support and care [52]. Kbot is\na knowledge enabled personalized chatbot introduced for asthma self-management [53].\nNurse Chatbot can provide chronic disease self-management support. It can simulate\nanatomy (judgement) by super positioning. It has the ability to exhibit self-organization,\ncognitive and emotional response and makes communicative healthcare management\npossible. Some of its functions are setting goals for modifying behavior based on self-\nefﬁcacy. It can offer options to make the patient adhere to medications and suggests healthy\nbehaviors based on prediction. Laranjo’s review of healthcare chatbots shows a signiﬁcant\neffect of depression reduction due to the use of a chatbot. Patients that received chatbot\ncare are expected to follow medication regimen better, healthy behaviors, and control\n",
+      "page": 7,
+      "bbox": [
+        166.85,
+        98.3,
+        561.02,
+        773.6
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n227\n",
+      "page": 8,
+      "bbox": [
+        35.75,
+        53.76,
+        559.48,
+        61.87
+      ]
+    },
+    {
+      "text": "the symptoms better. According to Tanioka’s review, humanoid robots can be a viable\noption to care if they can deeply empathize, observe, understand/judge, and be responsive\nto condition change, and have the ability to personalize care, normalize the discourses\nrelated to safety and ethical problems. The latest chatbots running on neural network\ncan achieve real human response due to their dialogue being a hybrid of rule-based and\ngeneration-based model. AI in nurse chatbot is inspired by Froes’s view of biological\ncognition. It had a pre-reﬂective process acting on the training data sets similar to text\ncorpus, feedbacks, and chat. Deep learning function is used to extract patterns and their\noccurrence was predicted using a recurrent neural network algorithm. Reﬂective, on the\nother hand, is used in NLP, where text inputs were lemmatized by removing preﬁxes\nwithout changing the core meaning [54]. PARRY was another chatbot that was developed,\nwhich can simulate a paranoid patient [55]. Interest in mental health chatbots has gained\nconsiderable attention where many companies labeled them “the future of therapy” [56].\nA digital chatbot to support nurses and prevent risk of hospitalization for older adults was\nalso explored and the study shows promising result [57].\n",
+      "page": 8,
+      "bbox": [
+        166.85,
+        98.23,
+        561.02,
+        284.0
+      ]
+    },
+    {
+      "text": "3.3. Radiology and Radiotherapy\n",
+      "page": 8,
+      "bbox": [
+        167.26,
+        296.28,
+        299.3,
+        306.25
+      ]
+    },
+    {
+      "text": "An AI-based online support group was proposed that uses machine learning NLP to\nautomatically cluster patient data. Patient behaviors, demographics, decisions, emotions,\nclinical factors, and social interaction were extracted and analyzed. Patient-centered infor-\nmation about all medical illnesses and conditions are resourced into online support groups.\nA recent study shows that a majority of the people, approximately more than 80% of the\nuser with Internet access, look for medical-related information through online medical\nresources or social media. Online support groups provide comfortable virtual spaces with\nanimosity for patients, careers, and general information seekers. It allows them to obtain\nadvice, express emotions, and share experiences. Online support group discussions are\ndiscussion threads. The thread starts with a question, experience, or comment related\nto a patient’s health issue. In online support group posts, patients often mention their\nclinical information, relevant decision factors, demographics, decision-making process,\nand emotion. The timeframe of emotional and clinical information is stored in the post’s\ntimestamp and generally mentioned in the post content. This information in social media\nposts is often hidden in a large amount of unstructured text data. Advanced machine\nlearning, deep learning, and NLP can offer solutions to this problem. A Patient-Reported\nInformation Multidimensional Exploration framework was proposed to automatically\nanalyze patient behaviors, patient emotions related to diagnosis, clinical factors, and treat-\nment and recovery [58]. Radiology educational post on social media is beneﬁcial. A study\nwas conducted with 2,100 responders from 124 countries, with most of them aged below\n40. The study result shows that the participants have found that the radiology education\nposts on social media was useful [59]. An oncology-based chatbot, OntBot, was developed.\nOntBot uses suitable mapping techniques to transform knowledge and ontologies into a\nrational database and then use the database to run the chat. This approach overcomes\nseveral traditional chatbot hurdles, such as the use of chatbot speciﬁc language (AIML),\nhigh bot master interference, and premature technology. OntBot has an easy interface\nthat makes use of natural language and great support for the user [60]. Cloud computing\nis a set of technologies that offers storage and computing service. This highly popular\ncomputing system can signiﬁcantly enhance dose calculation efﬁciency using Monte Carlo\nsimulation in radiation treatment planning that involves complex and intensive mathe-\nmatical computation [61]. A graphical user interface using Monte Carlo simulation for\nthe external beam treatment planning was studied and showed brilliant machine learning\nimplementation. The Monte Carlo simulation was carried out in parallel using multiple\nnodes in a high-performance computing cluster [62]. Different imaging modalities, such as\ncomputed tomography (CT), magnetic resonance imaging (MRI), single-photon emission\ncomputed tomography (SPECT), and positron emission tomography (PET) data integration\nwill yield more accurate and detailed images. It will be very beneﬁcial to have the modali-\n",
+      "page": 8,
+      "bbox": [
+        166.85,
+        312.0,
+        561.02,
+        773.85
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n228\n",
+      "page": 9,
+      "bbox": [
+        35.75,
+        53.76,
+        559.28,
+        61.87
+      ]
+    },
+    {
+      "text": "ties automatically recognize the patient’s organ in the treatment using various machine\nlearning techniques, such as pattern recognition. Such a smart machine learning algorithm\ncan be developed using minded data. Machine learning methods can take advantage of\nthe big data cloud. Deep learning allows large-scale image recognition tasks, and it is\ndone through a series of pooling, classiﬁcation, and convolutions. In treatment planning, a\nknowledge-light adaptation idea was explored using case-based reasoning system. The\nidea was tested on 3D conformal treatment planning for breast cancer patients. The study\nresult showed the neural networks based system increased the success rate by 12% while\nthe adaptation-guided retrieval of the case for beam number improved the success rate of\nthe system by 29% [63]. An app for smartphones or tablets to calculate the monitoring unit\nin superﬁcial and orthovoltage skin therapy was developed with the frontend window as\nshown in Figure 1. The app can run on both Android and Windows operating systems and\ncan calculate the monitor unit. It takes advantage of all-natural features of the Internet,\nsuch as live communication, access to the Internet, data sharing, and transfer. The app\nloads the available mean energies. The app uploads and displays the available cones\nor applicators compatible with the selected energy. The user needs to input the desired\ncone from the availability list, prescribed dose, and number of fractions the dose will be\ndelivered in. The app will ﬁnd and provide the treatment faction dose or daily dose [64].\nMachine learning can predict dose-volume parameters, such as the dose distribution index\nin radiation treatment planning quality assurance. In order to determine the parameter\nefﬁciently and effectively, the machine learning algorithm needs to be selected appropri-\nately with performance, as shown in Table 2 [65]. Telehealth or telemedicine is health\nresources or services administered through telecommunications or electronic information\ntechnologies. It supports long-distance professional and patient health-related education\nand clinical health care. Telehealth allows remote bidirectional information ﬂow and visual\nand audio interaction with patients. Telephone follow-up can be used to address the\npsychological aspect of disease and treatment. Studies in various cancer subgroups are\nacceptable to have telephone follow-up in prostate, brain, endometrial, colorectal, and\nbladder cancer. Potential cost beneﬁts studies also studied the impact of telehealth and how\nit can help to manage cost in healthcare and overall improve quality of life for patients. One\nstudy has examined remote symptom monitoring in 405 cancer patients with depression or\ncancer-related pain or both. With the use of a telehealth system, patients with depression\nhad greater improvements combating depression and patients with cancer-related pain had\nimpactful brief pain relief compared to control [66]. Vivibot is another chatbot developed\nto deliver positive psychology skills and inﬂuence a healthy lifestyle in young people after\ncancer treatment [67]. It is another chatbot that was introduced to promote physical activity\nand a healthy diet was [68].\n",
+      "page": 9,
+      "bbox": [
+        166.97,
+        98.23,
+        561.02,
+        560.17
+      ]
+    },
+    {
+      "text": "3.4. Education and Knowledge Transfer System\n",
+      "page": 9,
+      "bbox": [
+        167.26,
+        572.45,
+        358.18,
+        582.41
+      ]
+    },
+    {
+      "text": "In order to provide a practical collaborative healthcare workforce, interprofessional\neducation is essential. Interprofessional education occurs when more than one profession\nlearns with, or from, or about each other. Its main purpose is to increase collaboration and\nimprove healthcare quality. It provides a collaborative framework and provides insight\ninto how each discipline contributes without losing its own identity [69]. Text mining and\ncomputational linguistics are two computationally intensive ﬁelds where more options\nare becoming available to study large text corpora and implement corpora for various\npurposes. In these systems, the analysis of text does not require a deep understanding\ntechnique. AIML is the assembly language for the AI conversational agent, such as a\nchatbot in most cases. A study uses corpora seed to extract relevant keywords, glossary\nbuilding, text patterns, and multiword expressions to build AIML knowledge and use it to\nbuild an interactive conversational system [70]. High-quality information can be extracted\nfrom an online discussion forum that can be used to construct a chatbot. In one of the\nstudies, the replies that were logically related to the thread title of the root message are\nobtained with a SVM classiﬁer from all the replies based on correlation. Then the extracted\n",
+      "page": 9,
+      "bbox": [
+        166.97,
+        588.11,
+        559.66,
+        773.84
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n229\n",
+      "page": 10,
+      "bbox": [
+        35.75,
+        53.76,
+        559.28,
+        61.87
+      ]
+    },
+    {
+      "text": "pairs were ranked based on content qualities. Finally, the top N pairs were obtained to be\nused as chatbot knowledge [71]. In the last few years, there was a rapid increase in chatbots\nin various ﬁelds, such as health care, education, marketing, cultural heritage, supporting\nsystem, entertainment, and many others. The chatbot in the educational domain has high\npotential, especially when delivering medical science knowledge. Fabio’s paper shows the\nimplementation of such a chatbot as a teaching medium and demonstrated its utility [72]. A\nchatbot can be used in instructional situations for educational purposes due to its interactive\nability as opposed to traditional e-learning modules. Students can continuously interact\nwith the chatbot. They can ask questions related to a speciﬁc ﬁeld. A chatbot can also be\nused to learn or study a new language. It can be used to visualize a corpus’s content, a tool\nto access information systems, and a tool to give answers to questions in a speciﬁc domain.\nSome chatbots can be trained in any language or any text [73]. Chatbots have high potential\nin distance education. A chatbot named Freudbot was introduced. It was constructed with\nthe open-source AIML, and its main purpose was to increase student interaction in distant\neducation. Fifty-three students in a psychology class completed a study where they chatted\nwith Freudbot for 10 min via the web. They then provided feedback about their experience\nwith the chatbot and demographic description. The questionnaire result shows a neutral\nevaluation of the chat experience. However, the participants positively encouraged the\nfurther exploration of chatbot technology. They also provided clear feedback for efﬁcient\nfuture development and improvement. The chatbot shows high potential in distance\neducation [74]. Chatbots are also used in other domains, like a dialogue-based natural\nlanguage chatbot that can act as an undergraduate advisor [75]. As a computer simulation\nin a scholarly communication system, its primary goal is to provide a virtual chatting\ncompanion. It generated a communicative response corresponding to the user input. The\ndialogue context is generated from its personality knowledge, inference knowledge, and\ncommon sense knowledge [76]. A stress management chatbot was introduced to deliver a\nbrief motivational interview in web-based text massaging format to relieve stress [77].\n",
+      "page": 10,
+      "bbox": [
+        166.85,
+        98.3,
+        561.02,
+        434.64
+      ]
+    },
+    {
+      "text": " \n",
+      "page": 10,
+      "bbox": [
+        537.38,
+        712.28,
+        539.89,
+        722.46
+      ]
+    },
+    {
+      "text": "(a) \n(b) \n(c) \n",
+      "page": 10,
+      "bbox": [
+        133.66,
+        728.18,
+        451.51,
+        738.36
+      ]
+    },
+    {
+      "text": "Figure 1. Android version of the app showing inputs of the (a) prescription, (b) beam setup, and (c) calculation factors and\nhow the app automatically updates as information is input by user [64].\n",
+      "page": 10,
+      "bbox": [
+        57.26,
+        747.7,
+        538.02,
+        769.57
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n230\n",
+      "page": 11,
+      "bbox": [
+        35.75,
+        53.76,
+        559.28,
+        61.87
+      ]
+    },
+    {
+      "text": "Table 2. Table summarizing the root mean square error (RMSE), R-squared, prediction speed, and\ntraining time of models created in the Regression Learning App available in the MATLAB’s Machine\nLearning and Statistical Toolbox, using ﬁve dose-volume points from each dose-volume histogram\n(DVH) with 4-fold cross validation. They are ordered from the best performance to worst [65].\n",
+      "page": 11,
+      "bbox": [
+        166.97,
+        97.94,
+        559.28,
+        145.46
+      ]
+    },
+    {
+      "text": "Machine Learning Algorithm\nRMSE\nR-Squared\nPrediction Speed\n(Observation/s)\nTraining Time (s)\n",
+      "page": 11,
+      "bbox": [
+        174.71,
+        157.16,
+        551.29,
+        174.6
+      ]
+    },
+    {
+      "text": "Square Exponential GPR\n0.0038\n0.99\n4100\n0.18\n",
+      "page": 11,
+      "bbox": [
+        184.61,
+        180.97,
+        527.05,
+        188.94
+      ]
+    },
+    {
+      "text": "Matern 5/2 GPR\n0.0038\n0.99\n3800\n0.21\n",
+      "page": 11,
+      "bbox": [
+        198.7,
+        195.23,
+        527.04,
+        203.21
+      ]
+    },
+    {
+      "text": "Rational Quadratic GPR\n0.0038\n0.99\n2700\n0.23\n",
+      "page": 11,
+      "bbox": [
+        185.45,
+        209.5,
+        527.04,
+        217.47
+      ]
+    },
+    {
+      "text": "Linear Regression\n0.0045\n0.98\n1700\n0.37\n",
+      "page": 11,
+      "bbox": [
+        196.45,
+        223.77,
+        527.05,
+        231.74
+      ]
+    },
+    {
+      "text": "Exponential GPR\n0.0125\n0.87\n3900\n0.18\n",
+      "page": 11,
+      "bbox": [
+        197.74,
+        238.03,
+        527.05,
+        246.0
+      ]
+    },
+    {
+      "text": "Linear SVM\n0.0123\n0.87\n4500\n0.21\n",
+      "page": 11,
+      "bbox": [
+        206.94,
+        252.3,
+        527.04,
+        260.27
+      ]
+    },
+    {
+      "text": "Quadratic SVM\n0.0151\n0.81\n3400\n0.13\n",
+      "page": 11,
+      "bbox": [
+        200.57,
+        266.57,
+        527.04,
+        274.54
+      ]
+    },
+    {
+      "text": "Cubic SVM\n0.0193\n0.68\n4700\n0.11\n",
+      "page": 11,
+      "bbox": [
+        207.97,
+        280.83,
+        527.04,
+        288.8
+      ]
+    },
+    {
+      "text": "Fine Tree\n0.0218\n0.60\n4600\n0.10\n",
+      "page": 11,
+      "bbox": [
+        212.06,
+        295.1,
+        527.05,
+        303.07
+      ]
+    },
+    {
+      "text": "Medium Tree\n0.0305\n0.21\n4600\n0.42\n",
+      "page": 11,
+      "bbox": [
+        204.47,
+        309.36,
+        527.04,
+        317.33
+      ]
+    },
+    {
+      "text": "Coarse Tree\n0.0344\n0.00\n5600\n0.09\n",
+      "page": 11,
+      "bbox": [
+        207.5,
+        323.63,
+        527.04,
+        331.6
+      ]
+    },
+    {
+      "text": "AI has much potential, but it can also have profound health effects due to sample\nsize and misclassiﬁcation, underestimation, and measurement error [78]. If an AI is not\nsafe, it should not be trusted. To assess trust, safety, interfaces, procedures, oversight,\nand system-level workﬂow, collaboration is needed between AI systems, administrators,\npatients, and clinicians. At the current state, conversational AI is not ready to completely\nreplace human therapists anytime soon. Training the AI model for psychotherapy sessions\nis a difﬁcult task. Psychotherapy sessions are rarely recorded, and if they are recorded,\nthey pose a considerable risk to the patient. Not just in psychotherapy but also with\nany medical data, conﬁdentiality is a big problem since a breach of conﬁdentiality could\nseriously harm the patient. AI can reduce costs signiﬁcantly and make the therapy sessions\nmore engaging to people who experience stigmatization from talk therapy. It also allows\neasy access to healthcare in rural areas. In psychotherapy, clinician–patient relationship\nis signiﬁcantly important. It is essential for the patient to feel comfortable engaging in a\nconversation with AI. The responses need to be very critical since inappropriate responses\ncan signiﬁcantly impact a patient’s health. Suppose the patients do trust the AI and engage\nin a conversation—in that case, they are more likely to disclose sensitive information to AI,\nwhich they might not feel comfortable disclosing to a human or unresponsive clinician. In\nthose situations, AI has the potential to outperform clinician [79]. A study was conducted\nto evaluate one year of conversation between breast cancer patients and a chatbot. The\nresult shows it is possible to obtain support through a chatbot since the chatbot improved\nthe medication adherence rate of the patient [80]. A supportive chatbot is also being studied\nin other health areas, such as a supportive chatbot for smoking control [81].\n",
+      "page": 11,
+      "bbox": [
+        166.85,
+        346.01,
+        560.52,
+        619.66
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n231\n",
+      "page": 12,
+      "bbox": [
+        35.75,
+        53.76,
+        559.67,
+        61.87
+      ]
+    },
+    {
+      "text": "3.5. Emergency Response and COVID-19\n",
+      "page": 12,
+      "bbox": [
+        167.26,
+        98.13,
+        335.58,
+        108.09
+      ]
+    },
+    {
+      "text": "In emergencies, a few minutes can save a life. Quicker health care and accessibility\nsystems can save many lives in many cases. A semi-automated emergency paramedical\nend-to-end response system was proposed. It can distribute medical supplies on-site in case\nof emergencies. This system utilizes decentralized distribution and does not involve any\nthird-party institutions to ensure security. The response system can be used in urban, semi-\nurban, and rural areas. It allows community hospitals to provide specialized healthcare\ndespite the absence of a specialized doctor. K-nearest neighbor, SVM, and ANN are\nsome of the classiﬁers that are used in the response system. The response system uses\ndrones to access remote areas that are difﬁcult for a human to access. The deep neural\nnetwork allows the drone to detect objects, making it more accurate and reducing failure\nsigniﬁcantly. The chatbot takes user responses and evaluates them, then, if need be, passes\nthem to the administration. The chatbot uses NLP to reﬁne input responses. The response\nsystem can also be utilized to detect stroke using CT scans. The model is trained using\npreviously identiﬁed data. The difference in the distribution of density and texture of\ntissue outlining the stroke region is used. The gray level Covariance matrix is the feature\nextraction algorithms that are used to extract the features [82]. With the introduction\nof surgical robots, remote telesurgery has been a strong motivator. The ability to deliver\nsurgery over long-distance gives rise to more availability for surgery and improved surgical\noutcomes. A large number of procedures are performed every year with this technology.\nThe majority of them are performed only over several meters; however, some surgeons\nhave to transition to a long-distance infrastructure with this system. The daVinci system\ncould be operated at distances as far as 4,000 km from the operating room [83]. HarborBot\nwas a chatbot introduced to assist patients with social needs in a critical situation in the\nemergency department. Most emergency departments do not have extra staff to administer\nscreeners, and response rates are low, especially for low health literacy patients. HarborBot\ncan facilitate engagement with low health literacy patients and provide a solution [84].\nCoronavirus disease 2019 (COVID-19) has become a major global concern since Jan-\nuary 2020. It primarily affects the cardiovascular system and requires sensitive, fast, and\nspeciﬁc tools to identify the disease early, and better preventative measures can be ap-\nplied [85]. COVID-19 is a worldwide crisis. Over 100 million people have been infected\nalready. It has caused over 2 million deaths worldwide. Many countries have overstretched\ntheir healthcare resources to mitigate the spread of the pandemic. AI was implemented to\nmonitor and control the COVID-19 pandemic in several critical areas. It was also used to\npredict the risk of developing the disease, hospital admission, and progression in those\nareas. AI was also used for early detection and diagnosis. DNN can be used in conjunction\nwith x-ray or CT to diagnose COVID-19 detection and automate the process to keep up\nwith the overwhelming demand [86]. AI played a signiﬁcant role in developing novel\ntext and data mining techniques to aid COVID-19 research. It was used in CRISPR-based\nCOVID-19 detection assay, the taxonomic classiﬁcation of COVID-19 genomes, discovering\npotential drug candidates against COVID-19, and survival prediction of severe COVID-19\npatients [87]. Machine learning can differentiate the critical group vs. the noncritical group\njust using patient data. It is essential for managing such a high demand for healthcare\nresources. Some of the algorithms used for analysis were random forest classiﬁcation,\nANN, classiﬁcation and regression tree [88]. The rapid spread of COVID-19 means the\ngovernment and health service providers had limited time to design and plan effective\nand efﬁcient response policies. It is important to quickly obtain an accurate prediction\nof the vulnerability of geographic regions, such as countries that are vulnerable to this\nvirus’ spread. AI was used to make that prediction by developing a three-stage model\nusing XGBoost, a machine learning algorithm that can estimate potential occurrences in\nunaffected countries and quantify the COVID-19 occurrence probability [89].\nOn 11 March 2020, the World Health Organization stated that the novel COVID-19\nis a pandemic. COOPERA is a chatbot based healthcare system designed to be used for\npersonalized smart prevention and care developed using the LINE app. It was used to\n",
+      "page": 12,
+      "bbox": [
+        166.85,
+        113.77,
+        561.02,
+        776.58
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n232\n",
+      "page": 13,
+      "bbox": [
+        35.75,
+        53.76,
+        559.28,
+        61.87
+      ]
+    },
+    {
+      "text": "evaluate the epidemiological situation in Japan. The result shows a signiﬁcant positive\ncorrelation between self-reported fevers and the reported frequency of COVID-19 cases. It\nsuggests that a large scale monitoring of fever will help estimate the COVID-19 epidemic\nscale in real-time [90]. To control the spread of COVID-19, many governments implemented\nphone hotlines for potential case prescreening. These hotlines were overloaded with callers’\nvolume, leading to a waiting time of several hours or even an inability to contact or receive\nhealth care at all. Symptoma is a digital health assistant program that can identify more\nthan 20,000 diseases with high accuracy (greater than 90%). Symptoma was tested to\nidentify COVID-19 using a set of clinical case reports of COVID-19. The study result\nshowed that Symptoma could accurately differentiate COVID-19 in 96.32% of clinical\ncases. Symptoma allows free text input in 36 languages. Combined with the result and\naccessibility give Symptoma the potential technology to ﬁght against COVID-19 [91].\nChatbots played a crucial role in combating COVID-19 (Figure 2). The chatbot takes\nthe user request and identiﬁes the massage pattern. Depending on the input response,\nAIML logic retrieves keywords related to the symptoms to analyze the existing medical\nconditions. The function of the chatbot can be split into two sections: request analysis\nand return response. First, the chatbot used predeﬁned questions and feedback to analyze\nand evaluate the virus severity. If the user fails to deﬁne a precise answer, the bot will\nfail to provide the correct response; however, if the user does provide a valid and precise\nresponse, the bot returns a response of the patient’s condition in the generic text. Render\nquestions can often help precisely understand the user’s request. The bot begins the\nconversation with an initiation question to engage the user in a natural conversation and\nidentify preliminary COVID-19 symptoms from the user’s location. Then, the bot displays\nwhether the person is likely to be affected or not. After the initiation chat, the bot will\nask for symptomatic information. After collecting the necessary information, the bot will\nﬁnd the severity percentage the user experienced and act accordingly either by contacting\nhealth specialists or providing information regarding immediate preventative measures.\nMost of the question is yes- or no-based question that can be easily implemented into\na decision tree. The data can be stored from the web using dynamic XML [92]. Several\nweb-based COVID-19 symptoms checkers and chatbots have been developed; however,\nsome studies show that their conclusion varies signiﬁcantly. A study was done to evaluate\nthe performance of these symptom checkers. The result shows different symptoms checkers\nshowing different strengths in terms of sensitivity and speciﬁcity. Only two checkers had\na harmonic balance between speciﬁcity and sensitivity [93]. With the advancement in\nNLP, the chatbot can answer the user’s questions automatically. However, these models\nare rarely evaluated and need to be fully explored before they can be implemented in\na clinical setting. A paper proposed to apply a language model that can qualitatively\nevaluate the user’s response and automatically answer COVID-19 related questions. They\napplied four different approaches: tf-idf, BERT, BioBERT, and USED to ﬁlter and retain\nrelevant sentences in the responses. With the help of two medical experts, the BERT and\nBioBERT, on average, have been found to outperform the other two in sentence ﬁltering\ntasks [94]. Deep learning is very beneﬁcial in the ﬁght against COVID-19; however, deep\nlearning requires massive data, which is problematic for the recent COVID-19 case. A study\nproposed a system that boosts COVID-19 detection; it uses a data augmentation model\nthat makes CNN more efﬁcient by increasing its learning capability [95]. Machine learning\nwas also used to examine COVID-19 related discussion, concerns, and sentiments using\n4 million Twitter messages related to the COVID-19 pandemic [96]. A study was done to\nobserve how people respond to COVID-19 screening chatbots. The study was done with\n371 individuals that participated in a COVID-19 screening session and concluded that the\nprimary factor that drove the user’s decision was whether they trust the capability of the\nchatbot or not. Overall, the chatbot providing high-quality service is critical [97]. As the\nCOVID-19 pandemic continues, the mental health of both the infected and noninfected is\nan important concern. A study administered survey data using a chatbot onLINE in Japan’s\nmost popular social networking service. It showed that people with COVID-19 patients\n",
+      "page": 13,
+      "bbox": [
+        166.85,
+        98.23,
+        561.22,
+        773.6
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n233\n",
+      "page": 14,
+      "bbox": [
+        35.75,
+        53.76,
+        559.28,
+        61.87
+      ]
+    },
+    {
+      "text": "in close settings had higher psychological distress levels than those without. Prioritizing\nmental health and psychosocial support implementation tailored to close relatives, family,\nand friends of COVID-19 patients is very important [98].\nPartners HealthCare (Mass General Brigham) implemented an automatic prehospital\nchatbot that directs the patient to an appropriate care setting before showing up at the\nemergency department and clinics. It saves resources, minimizes exposure to other patients\nand staff, and further exacerbates supply and demand mismatching. An AI chatbot was\ndeployed through a voice response message that the COVID-19 hotline caller received\nwhile on hold. It instructed the caller to visit the Mass General Brigham website hosting the\nchatbot with the workﬂow as shown in Figure 3. Educational material following Centers\nfor Disease Control and Prevention (CDC) guidelines was provided to the users with\nreassurance for the ﬁrst category of callers. The second category of callers was sent to\nfollow the instruction for further clinical evaluation. Being able to use a chatbot while\non hold increased the efﬁciency of the nurse-hotline. The nurse and the caller are able to\nhave an informed discussion, and it allows the nurse to operate efﬁciently and quickly to\ncome to a mutually agreeable plan. The chatbot was made available on the Mass General\nBrigham website so patients could access it before calling the hotline and decrease the call\nvolume [99].\n",
+      "page": 14,
+      "bbox": [
+        166.85,
+        98.26,
+        560.53,
+        321.66
+      ]
+    },
+    {
+      "text": "Figure 2. The COVID-19 Q&A Chatbot in Chow’s research project.\n",
+      "page": 14,
+      "bbox": [
+        167.26,
+        499.49,
+        430.78,
+        508.54
+      ]
+    },
+    {
+      "text": "Healthcare workers’ screening for COVID-19 symptoms and exposure before every\nshift is essential for the spread of infection control. In order for this to work, the screen-\ning process needs to be efﬁcient and straightforward. The University of California, San\nFrancisco Health designed and implemented an AI-based chatbot-based workﬂow. It\nconducted over 270,000 screens in the ﬁrst two months of use. It reduced the waiting\ntimes for employees entering the hospitals, yielded better physical distancing, prevented\npotentially infected individuals from coming to the hospital, and provided important live\ndata for decision making staff [100].\n",
+      "page": 14,
+      "bbox": [
+        166.97,
+        521.18,
+        560.93,
+        619.07
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n234\n",
+      "page": 15,
+      "bbox": [
+        35.75,
+        53.76,
+        559.28,
+        61.87
+      ]
+    },
+    {
+      "text": " \n",
+      "page": 15,
+      "bbox": [
+        533.91,
+        488.92,
+        536.16,
+        498.08
+      ]
+    },
+    {
+      "text": "Figure 3. Flowchart of the Mass General Brigham chatbot system [99].\n",
+      "page": 15,
+      "bbox": [
+        159.19,
+        508.39,
+        436.09,
+        517.44
+      ]
+    },
+    {
+      "text": "4. Conclusions\n",
+      "page": 15,
+      "bbox": [
+        167.27,
+        539.91,
+        234.26,
+        549.87
+      ]
+    },
+    {
+      "text": "Machine learning is a robust and powerful digital tool that can beneﬁt healthcare\ncommunication with a better patient care/education, faster decision making, and reduction\nof resource. To date, different ﬁelds in machine learning such as NLP and DNN have\nbeen studied and applied in various components of healthcare. The innovative AI-based\nchatbot takes an important role as a humanlike conversational agent between the user\nand service provider. This chatbot and response system has a signiﬁcant impact on our\nhealthcare system. With the continuous advancement in technology, it is expected to have\nmore inﬂuence in the future. AI can reduce healthcare costs and make research tasks more\nefﬁcient by introducing the latest advanced algorithm and is expected to assist clinical in\nmany areas.\n",
+      "page": 15,
+      "bbox": [
+        167.26,
+        555.47,
+        559.47,
+        678.48
+      ]
+    },
+    {
+      "text": "Author Contributions: Conceptualization, J.C.L.C.; methodology, J.C.L.C. and S.S.; resources, S.S.;\nwriting—original draft preparation, S.S.; writing—review and editing, J.C.L.C. and S.S.; visualization,\nJ.C.L.C. and S.S.; supervision, J.C.L.C.; project administration, J.C.L.C. All authors have read and\nagreed to the published version of the manuscript.\n",
+      "page": 15,
+      "bbox": [
+        166.89,
+        692.82,
+        560.4,
+        737.02
+      ]
+    },
+    {
+      "text": "Funding: J.C.L.C. received ﬁnancial support from the Planning and Dissemination Grants—Institute\nCommunity Support, Canadian Institute of Health Research, Canada.\n",
+      "page": 15,
+      "bbox": [
+        167.26,
+        745.66,
+        559.28,
+        766.43
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n235\n",
+      "page": 16,
+      "bbox": [
+        35.75,
+        53.76,
+        559.28,
+        61.87
+      ]
+    },
+    {
+      "text": "Acknowledgments: J.C.L.C. would like to acknowledge the ﬁnancial support from the Planning\nand Dissemination Grants—Institute Community Support, Canadian Institute of Health Research,\nCanada. J.C.L.C. would also like to thank the supports from Leslie Sanders and Kay Li from the York\nUniversity, Toronto, Canada.\n",
+      "page": 16,
+      "bbox": [
+        166.91,
+        98.93,
+        560.39,
+        143.13
+      ]
+    },
+    {
+      "text": "Conﬂicts of Interest: The authors declare no conﬂict of interest.\n",
+      "page": 16,
+      "bbox": [
+        167.26,
+        151.77,
+        418.96,
+        160.82
+      ]
+    },
+    {
+      "text": "Entry Link on the Encyclopedia Platform: https://encyclopedia.pub/8078.\n",
+      "page": 16,
+      "bbox": [
+        167.26,
+        169.46,
+        468.58,
+        178.51
+      ]
+    },
+    {
+      "text": "References\n",
+      "page": 16,
+      "bbox": [
+        36.0,
+        191.15,
+        85.8,
+        201.12
+      ]
+    },
+    {
+      "text": "1.\nPeyrou, B.; Vignaux, J.-J.; André, A. Artiﬁcial Intelligence and Health Care. In Digital Medicine; André, A., Ed.; Springer\nInternational Publishing: Cham, Switzerland, 2019; pp. 29–40. [CrossRef]\n2.\nSathya, D.; Sudha, V.; Jagadeesan, D. Application of Machine Learning Techniques in Healthcare. In Handbook of Research on\nApplications and Implementations of Machine Learning Techniques; IGI Global: Hershey, PA, USA, 2019; pp. 289–304. [CrossRef]\n3.\nHosny, A.; Parmar, C.; Quackenbush, J.; Schwartz, L.H.; Aerts, H.J.W.L. Artiﬁcial intelligence in radiology. Nat. Rev. Cancer 2018,\n18, 500–510. [CrossRef]\n4.\nDzobo, K.; Adotey, S.; Thomford, N.E.; Dzobo, W. Integrating Artiﬁcial and Human Intelligence: A Partnership for Responsible\nInnovation in Biomedical Engineering and Medicine. Omics J. Integr. Biol. 2020, 24, 247–263. [CrossRef] [PubMed]\n5.\nErickson, B.J.; Korﬁatis, P.; Akkus, Z.; Kline, T.L. Machine learning for medical imaging. Radiographics 2017, 37, 505–515. [CrossRef]\n6.\nMagrabi, F.; Ammenwerth, E.; Mcnair, J.B.; De Keizer, N.F.; Georgiou, A. Artiﬁcial Intelligence in Clinical Decision Support:\nChallenges for Evaluating AI and Practical Implications A Position Paper from the IMIA Technology Assessment & Quality\nDevelopment in Health Informatics Working Group and the EFMI Working Group for Assessment of Health Information Systems.\nYearb. Med. Inform. 2019, 28, 128–134. [PubMed]\n7.\nBuch, V.H.; Ahmed, I.; MaruthappuIs, M. Artiﬁcial intelligence in medicine: Current trends and future possibilities. Br. J. Gen.\nPract. 2018, 68, 143–144. [CrossRef]\n8.\nRayan, R. Artiﬁcial Intelligence Perspective on Healthcare. InICEAT 2019. [CrossRef]\n9.\nTopol, E.J. High-performance medicine: The convergence of human and artiﬁcial intelligence. Nat. Med. 2019, 25, 44–56.\n[CrossRef] [PubMed]\n10.\nBibault, J.E.; Chaix, B.; Guillemassé, A.; Cousin, S.; Escande, A.; Perrin, M.; Pienkowski, A.; Delamon, G.; Nectoux, P.; Brouard, B.\nA chatbot versus physicians to provide information for patients with breast cancer: Blind, randomized controlled noninferiority\ntrial. J. Med. Internet Res. 2019, 21, e15787. [CrossRef]\n11.\nMintz, Y.; Brodie, R. Introduction to artiﬁcial intelligence in medicine.\nMinim.\nInvasive Ther.\nAllied Technol.\n2019, 28,\n73–81. [CrossRef]\n12.\nBzdok, D.; Krzywinski, M.; Altman, N. Points of signiﬁcance: Machine learning: Supervised methods. Nat. Methods 2018, 15, 5–6.\n[CrossRef] [PubMed]\n13.\nCai, T.; Giannopoulos, A.A.; Yu, S.; Kelil, T.; Ripley, B.; Kumamaru, K.K.; Rybicki, F.J.; Mitsouras, D. Natural language processing\ntechnologies in radiology research and clinical applications. Radiographics 2016, 36, 176–191. [CrossRef] [PubMed]\n14.\nZeng, Z.; Deng, Y.; Li, X.; Naumann, T.; Luo, Y. Natural Language Processing for EHR-Based Computational Phenotyping.\nIEEE/ACM Trans. Comput. Biol. Bioinf. 2019, 16, 139–153. [CrossRef] [PubMed]\n15.\nKreimeyer, K.; Foster, M.; Pandey, A.; Arya, N.; Halford, G.; Jones, S.F.; Forshee, R.; Walderhaug, M.; Botsis, T. Natural language\nprocessing systems for capturing and standardizing unstructured clinical information: A systematic review. J. Biomed. Inform.\n2017, 73, 14–29. [CrossRef] [PubMed]\n16.\nChary, M.; Parikh, S.; Manini, A.F.; Boyer, E.W.; Radeos, M. A review of natural language processing in medical education. West.\nJ. Emerg. Med. 2019, 20, 78–86. [CrossRef]\n17.\nGonzalez-Hernandez, G.; Sarker, A.; O’Connor, K.; Savova, G. Capturing the Patient’s Perspective: A Review of Advances in\nNatural Language Processing of Health-Related Text. Yearb. Med. Inform. 2017, 26, 214–227. [CrossRef]\n18.\nFilannino, M.; Uzuner, Ö. Advancing the State of the Art in Clinical Natural Language Processing through Shared Tasks. Yearb.\nMed. Inform. 2018, 27, 184–192. [CrossRef]\n19.\nWeng, W.H.; Wagholikar, K.B.; McCray, A.T.; Szolovits, P.; Chueh, H.C. Medical subdomain classiﬁcation of clinical notes using a\nmachine learning-based natural language processing approach. BMC Med. Inform. Decis. Mak. 2017, 17, 1–13. [CrossRef]\n20.\nTrivedi, G.; Pham, P.; Chapman, W.W.; Hwa, R.; Wiebe, J.; Hochheiser, H. NLPReViz: An interactive tool for natural language\nprocessing on clinical text. J. Am. Med. Inform. Assoc. 2018, 25, 81–87. [CrossRef] [PubMed]\n21.\nBao, Y.; Deng, Z.; Wang, Y.; Kim, H.; Armengol, V.D.; Acevedo, F.; Ouardaoui, N.; Wang, C.; Parmigiani, G.; Barzilay, R.; et al.\nUsing machine learning and natural language processing to review and classify the medical literature on cancer susceptibility\ngenes. JCO Clin. Cancer Inform. 2019, 1–9. [CrossRef] [PubMed]\n22.\nVydiswaran, V.G.V.; Zhang, Y.; Wang, Y.; Xu, H. Special issue of BMC medical informatics and decision making on health natural\nlanguage processing. BMC Med. Inform. Decis. Mak. 2019, 19, 6–8. [CrossRef]\n23.\nZhong, Q.-Y.; Mittal, L.P.; Nathan, M.D.; Brown, K.M.; Knudson González, D.; Cai, T.; Finan, S.; Gelaye, B.; Avillach, P.;\nSmoller, J.W.; et al. Use of natural language processing in electronic medical records to identify pregnant women with suicidal\nbehavior: Towards a solution to the complex classiﬁcation problem. Eur. J. Epidemiol. 2019, 34, 153–162. [CrossRef]\n",
+      "page": 16,
+      "bbox": [
+        36.0,
+        206.24,
+        560.85,
+        779.26
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n236\n",
+      "page": 17,
+      "bbox": [
+        35.75,
+        53.76,
+        559.28,
+        61.87
+      ]
+    },
+    {
+      "text": "24.\nNévéol, A.; Dalianis, H.; Velupillai, S.; Savova, G.; Zweigenbaum, P. Clinical Natural Language Processing in languages other\nthan English: Opportunities and challenges. J. Biomed. Semant. 2018, 9, 1–13. [CrossRef]\n25.\nSavova, G.K.; Danciu, I.; Alamudun, F.; Miller, T.; Lin, C.; Bitterman, D.S.; Tourassi, G.; Warner, J.L. Use of Natural\nLanguage Processing to Extract Clinical Cancer Phenotypes from Electronic Medical Records.\nCancer Res.\n2019, 79,\n5463–5470. [CrossRef] [PubMed]\n26.\nGoodfellow, I. Deep learning(working version). Nat. Publ. Gr. 2011, 13, 35. [CrossRef]\n27.\nKriegeskorte, N.; Golan, T. Neural network models and deep learning. Curr. Biol. 2019, 29, R231–R236. [CrossRef] [PubMed]\n28.\nSiddique, S.; Chow, J.C.L. Artificial intelligence in radiotherapy. Rep. Pract. Oncol. Radiother. 2020, 25, 656–666. [CrossRef] [PubMed]\n29.\nLee, J.; Jun, S.; Cho, Y.; Lee, H.; Kim, G.B.; Seo, J.B.; Kim, N. Deep Learning in Medical Imaging: General Overview. Korean J.\nRadiol. 2017, 18, 570–584. [CrossRef]\n30.\nKong, Y.; Yu, T. A Deep Neural Network Model using Random Forest to Extract Feature Representation for Gene Expression Data\nClassiﬁcation. Sci. Rep. 2018, 8, 1–9. [CrossRef] [PubMed]\n31.\nLi, H.; Gong, X.J.; Yu, H.; Zhou, C. Deep neural network based predictions of protein interactions using primary sequences.\nMolecules 2018, 23, 1923. [CrossRef] [PubMed]\n32.\nRajpurkar, P.; Irvin, J.; Ball, R.L.; Zhu, K.; Yang, B.; Mehta, H.; Duan, T.; Ding, D.; Bagul, A.; Langlotz, C.P.; et al. Deep learning for\nchest radiograph diagnosis: A retrospective comparison of the CheXNeXt algorithm to practicing radiologists. PLoS Med. 2018,\n15, 1–17. [CrossRef] [PubMed]\n33.\nWachinger, C.; Reuter, M.; Klein, T. DeepNAT: Deep convolutional neural network for segmenting neuroanatomy. Neuroimage\n2018, 170, 434–445. [CrossRef] [PubMed]\n34.\nSpandorfer, A.; Branch, C.; Sharma, P.; Sahbaee, P.; Schoepf, U.J.; Ravenel, J.G.; Nance, J.W. Deep learning to convert unstructured\nCT pulmonary angiography reports into structured reports. Eur. Radiol. Exp. 2019, 37. [CrossRef] [PubMed]\n35.\nNguyen, H.; Nguyen, T.; Nguyen, D.T. An empirical study on prediction of population health through social media. J. Biomed.\nInform. 2019, 99, 103277. [CrossRef] [PubMed]\n36.\nMustaqeem; Kwon, S. A CNN-assisted enhanced audio signal processing for speech emotion recognition. Sensors 2020, 20,\n183. [CrossRef]\n37.\nDhyani, M.; Kumar, R. Since January 2020 Elsevier Has Created a COVID-19 Resource Centre with Free Information in English and\nMandarin on the Novel Coronavirus COVID-19. The COVID-19 Resource Centre Is Hosted on Elsevier Connect, the Company’s\nPublic News and Information Website. Elsevier Hereby Grants Permission to Make All Its COVID-19-Related Research That Is\nAvailable on the COVID-19 Resource Centre—Including This Research Content—Immediately Available in PubMed Central\nand Other Publicly Funded Repositories, Such as the WHO COVID Database with Rights for Unrestricted Research Re-Use and\nAnalyses in Any form or by Any Means with Acknowledgement of the Original Source. These Permissions Are Granted for Free\nby Elsevier for as Long as the COVID-19 Resource Centre Remains Active. An Intelligent Chatbot Using Deep Learning with\nBidirectional RNN and Attention Model. 2020. Available online: https://www.binasss.sa.cr/agocovid/4.pdf (accessed on 5\nJanuary 2021).\n38.\nLokman, A.S.; Ameedeen, M.A. Modern Chatbot Systems: A Technical Review. In Proceedings of the Future Technologies Conference\n(FTC) 2018; Arai, K., Bhatia, R., Kapoor, S., Eds.; Springer International Publishing: Cham, Switzerland, 2019; pp. 1012–1023.\n39.\nLokman, A.S.; Zain, J.M.; Komputer, F.S.; Perisian, K. Designing a Chatbot for diabetic patients. In Proceedings of the International\nConference on Software Engineering & Computer Systems (ICSECS’09), Pahang, Malaysia, 19–21 October 2009; pp. 19–21.\n40.\nDahiya, M. A Tool of Conversation: Chatbot. Int. J. Comput. Sci. Eng. 2017, 158–161. Available online: http://www.ijcseonline.\norg/pub_paper/27-IJCSE-02149.pdf (accessed on 5 January 2021).\n41.\nNadarzynski, T.; Miles, O.; Cowie, A.; Ridge, D. Acceptability of artiﬁcial intelligence (AI)-led chatbot services in healthcare: A\nmixed-methods study. Digit. Health 2019, 5, 1–12. [CrossRef]\n42.\nBibault, J.E.; Chaix, B.; Nectoux, P.; Pienkowsky, A.; Guillemasse, A.; Brouard, B. Healthcare ex Machina: Are conversational\nagents ready for prime time in oncology? Clin. Transl. Radiat. Oncol. 2019, 16, 55–59. [CrossRef] [PubMed]\n43.\nDivya, S.; Indumathi, V.; Ishwarya, S.; Priyasankari, M.; Kalpana Devi, S. A Self-Diagnosis Medical Chatbot Using Artiﬁcial\nIntelligence. J. Web Dev. Web Des. 2018, 3, 1–7. Available online: http://matjournals.in/index.php/JoWDWD/article/view/2334\n(accessed on 5 January 2021).\n44.\nRosruen, N.; Samanchuen, T. Chatbot Utilization for Medical Consultant System. In Proceedings of the 2018 3rd Technology\nInnovation Management and Engineering Science International Conference (TIMES-iCON), Bangkok, Thailand, 12–14 December\n2018; pp. 1–5. [CrossRef]\n45.\nRanoliya, B.R.; Raghuwanshi, N.; Singh, S. Chatbot for university related FAQs. In Proceedings of the 2017 International\nConference on Advances in Computing, Communications and Informatics, ICACCI 2017, Udupi, India, 13–16 September 2017;\npp. 1525–1530.\n46.\nNi, L.; Lu, C.; Liu, N.; Liu, J. MANDY: Towards a smart primary care chatbot application. Commun. Comput. Inf. Sci. 2017, 780,\n38–52. [CrossRef]\n47.\nSaliimi Lokman, A.; Mohamad Zain, J. Extension and Prerequisite: An Algorithm to Enable Relations Between Responses in\nChatbot Technology. J. Comput. Sci. 2010, 6, 1212–1218. Available online: http://thescipub.com/PDF/jcssp.2010.1212.1218.pdf\n(accessed on 5 January 2021). [CrossRef]\n",
+      "page": 17,
+      "bbox": [
+        36.0,
+        98.82,
+        560.84,
+        763.87
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n237\n",
+      "page": 18,
+      "bbox": [
+        35.75,
+        53.76,
+        559.48,
+        61.87
+      ]
+    },
+    {
+      "text": "48.\nAugello, A.; Gentile, M.; Weideveld, L.; Dignum, F. A Model of a Social Chatbot. In Proceedings of the Intelligent Interactive\nMultimedia Systems and Services 2016, Tenerife, Spain, 15–17 June 2016; Pietro, G., De Gallo, L., Howlett, R.J., Jain, L.C., Eds.;\nSpringer International Publishing: Cham, Switzerland, 2016; pp. 637–647.\n49.\nAugello, A.; Gambino, O.; Cannella, V.; Pirrone, R.; Gaglio, S.; Pilato, G. An Emotional Talking Head for a Humoristic Chatbot.\nAppl. Digit. Signal Process. 2011. [CrossRef]\n50.\nShaikh, A.; Phalke, G.; Il, P.P.; Bhosale, S.; Raghatwan, J. A Survey On Chatbot Conversational Systems. Int. J. Eng. Sci. 2016,\n6, 3117.\n51.\nMcTear, M.; Callejas, Z.; Griol, D. Creating a Conversational Interface Using Chatbot Technology. In The Conversational Interface:\nTalking to Smart Devices; Springer International Publishing: Cham, Switzerland, 2016; pp. 125–159. [CrossRef]\n52.\nMurphy, A.; Liszewski, B. Artiﬁcial Intelligence and the Medical Radiation Profession: How Our Advocacy Must 763 Inform\nFuture Practice. J. Med. Imaging Radiat Sci. 2019, 50, S15–S19. [CrossRef] [PubMed]\n53.\nKadariya, D.; Venkataramanan, R.; Yip, H.Y.; Kalra, M.; Thirunarayanan, K.; Sheth, A. kBot: Knowledge-enabled Personal-\nized Chatbot for Asthma Self-Management. In Proceedings of the 2019 IEEE International Conference on Smart Computing\n(SMARTCOMP), Washington, DC, USA, 12–15 June 2019; pp. 138–143. [CrossRef]\n54.\nHernandez, J.P.T. Network Diffusion and Technology Acceptance of A Nurse Chatbot for Chronic Disease Self-Management\nSupport: A Theoretical Perspective. J. Med. Investig. 2019, 66, 24–30. [CrossRef]\n55.\nShawar, B.A.; Atwell, E. A chatbot system as a tool to animate a corpus. ICAME J. 2005, 29, 5–24.\n56.\nVaidyam, A.N.; Wisniewski, H.; Halamka, J.D.; Kashavan, M.S.; Torous, J.B. Chatbots and Conversational Agents in Mental\nHealth: A Review of the Psychiatric Landscape. Can. J. Psychiatry 2019, 64, 456–464. [CrossRef]\n57.\nBott, N.; Wexler, S.; Drury, L.; Pollak, C.; Wang, V.; Scher, K.; Narducci, S. A protocol-driven, bedside digital conversational agent\nto support nurse teams and mitigate risks of hospitalization in older adults: Case control pre-post study. J. Med. Internet Res.\n2019, 21, 1–12. [CrossRef]\n58.\nDe Silva, D.; Ranasinghe, W.; Bandaragoda, T.; Adikari, A.; Mills, N.; Iddamalgoda, L.; Alahakoon, D.; Lawrentschuk, N.;\nPersad, R.; Osipov, E.; et al. Machine learning to support social media empowered patients in cancer care and cancer treatment\ndecisions. PLoS ONE 2018, 13, e0205855. [CrossRef]\n59.\nJarema, A.; Dixon, A. Radiology educational posts on social media. Are they effective? In Proceedings of the Annual Scientiﬁc\nMeeting, Washington, DC, USA, 6–8 April 2018.\n60.\nAl-Zubaide, H.; Issa, A.A. OntBot: Ontology based ChatBot. In Proceedings of the 2011 4th International Symposium on\nInnovations in Information and Communications Technology, ISIICT’2011, Amman, Jordan, 29 November–1 December 2011; pp.\n7–12. [CrossRef]\n61.\nChow, J.C.L. Application of Cloud Computing in Pre-clinical Radiation Treatment Planning. Int. J. Comput. Res. 2015, 22, 209–222.\n62.\nChow, J.C.L. Monte Carlo simulation on pre-clinical irradiation: A heterogeneous phantom study on monoenergetic kilovoltage\nphoton beams. J. Phys. Conf. Ser. 2012, 385. [CrossRef]\n63.\nChow, J.C.L. Internet-based computer technology on radiotherapy. Rep. Pract. Oncol. Radiother. 2017, 22, 455–462. [CrossRef]\n64.\nPearse, J.; Chow, J.C.L. An Internet of Things app for monitor unit calculation in superﬁcial and orthovoltage skin therapy. IOP\nSciNotes 2020, 1, 014002. [CrossRef]\n65.\nNg, F.; Jiang, R.; Chow, J.C.L. Predicting radiation treatment planning evaluation parameter using artiﬁcial intelligence and\nmachine learning. IOP SciNotes 2020, 1, 014003. [CrossRef]\n66.\nGarg, S.; Williams, N.L.; Ip, A.; Dicker, A.P. Clinical Integration of Digital Solutions in Health Care: An Overview of the Current\nLandscape of Digital Technologies in Cancer Care. JCO Clin. Cancer Inform. 2018, 1–9. [CrossRef]\n67.\nGreer, S.; Ramo, D.; Chang, Y.J.; Fu, M.; Moskowitz, J.; Haritatos, J. Use of the chatbot “vivibot” to deliver positive psychology\nskills and promote well-being among young people after cancer treatment: Randomized controlled feasibility trial. JMIR mHealth\nuHealth 2019, 7, 1–13. [CrossRef] [PubMed]\n68.\nZhang, J.; Oh, Y.J.; Lange, P.; Yu, Z.; Fukuoka, Y. Artiﬁcial intelligence chatbot behavior change model for designing\nartiﬁcial intelligence chatbots to promote physical activity and a healthy diet: Viewpoint.\nJ. Med.\nInternet Res.\n2020,\n22. [CrossRef] [PubMed]\n69.\nPiterman, L.; Newton, J.M.; Canny, B.J. Interprofessional education for interprofessional practice: Does it make a difference? Med.\nJ. Aust. 2010, 193, 92–93. [CrossRef] [PubMed]\n70.\nDe Gasperis, G.; Chiari, I.; Florio, N. AIML Knowledge Base Construction from Text Corpora. In Artiﬁcial Intelligence, Evolutionary\nComputing and Metaheuristics: In the Footsteps of Alan Turing; Yang, X.-S., Ed.; Springer: Berlin/Heidelberg, Germany, 2013; pp.\n287–318. [CrossRef]\n71.\nHuang, J.; Zhou, M.; Yang, D. Extracting chatbot knowledge from online discussion forums. IJCAI Int. Jt. Conf. Artif. Intell. 2007,\n7, 423–428.\n72.\nClarizia, F.; Colace, F.; Lombardi, M.; Pascale, F.; Santaniello, D. Chatbot: An Education Support System for Student. In Cyberspace\nSafety and Security; Springer: Cham, Switzerland, 2018; pp. 291–302. [CrossRef]\n73.\nBii, P. Chatbot technology: A possible means of unlocking student potential to learn how to learn. Educ. Res. 2013, 4, 218–221.\nAvailable online: http://psych.athabascau.ca/html/chatterbot/ChatAgent- (accessed on 5 January 2021).\n",
+      "page": 18,
+      "bbox": [
+        36.0,
+        98.95,
+        560.85,
+        752.36
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n238\n",
+      "page": 19,
+      "bbox": [
+        35.75,
+        53.76,
+        559.28,
+        61.87
+      ]
+    },
+    {
+      "text": "74.\nHeller, B.; Procter, M.; Mah, D. Freudbot: An investigation of chatbot technology in distance education. In Proceedings of the\nWorld Conference on Educational Multimedia, Hypermedia & Telecommunications, Montreal, QC, Canada, 27 June–2 July 2005;\npp. 3913–3918. Available online: http://www.editlib.org/index.cfm?fuseaction=Reader.ViewFullText&paper_id=20691 (accessed\non 5 January 2021).\n75.\nGhose, S.; Barua, J.J. Toward the implementation of a topic speciﬁc dialogue based natural language chatbot as an undergraduate\nadvisor. In Proceedings of the 2013 International Conference on Informatics, Electronics and Vision (ICIEV), Dhaka, Bangladesh,\n17–18 May 2013; pp. 1–5. [CrossRef]\n76.\nJia, J. CSIEC: A computer assisted English learning chatbot based on textual knowledge and reasoning. Knowl. Based Syst. 2009,\n22, 249–255. [CrossRef]\n77.\nPark, S.; Choi, J.; Lee, S.; Oh, C.; Kim, C.; La, S.; Lee, J.; Suh, B. Designing a chatbot for a brief motivational interview on stress\nmanagement: Qualitative case study. J. Med. Internet Res. 2019, 21. [CrossRef] [PubMed]\n78.\nGianfrancesco, M.A.; Tamang, S.; Yazdany, J.; Schmajuk, G. Potential Biases in Machine Learning Algorithms Using Electronic\nHealth Record Data. JAMA Intern. Med. 2018, 178, 1544–1547. [CrossRef] [PubMed]\n79.\nMiner, A.S.; Shah, N.; Bullock, K.D.; Arnow, B.A.; Bailenson, J.; Hancock, J. Key Considerations for Incorporating Conversational\nAI in Psychotherapy. Front. Psychiatry 2019, 10, 1–7. [CrossRef]\n80.\nChaix, B.; Bibault, J.E.; Pienkowski, A.; Delamon, G.; Guillemassé, A.; Nectoux, P.; Brouard, B. When chatbots meet patients:\nOne-year prospective study of conversations between patients with breast cancer and a chatbot. J. Med. Internet Res. 2019, 5,\ne12856. [CrossRef]\n81.\nPerski, O.; Crane, D.; Beard, E.; Brown, J. Does the addition of a supportive chatbot promote user engagement with a smoking\ncessation app? An experimental study. Digit. Health 2019, 5, 1–13. [CrossRef]\n82.\nSrivastava, M.; Suvarna, S.; Srivastava, A.; Bharathiraja, S. Automated emergency paramedical response system. Health Inf. Sci.\nSyst. 2018, 6, 1–16. [CrossRef] [PubMed]\n83.\nFriebe, M. Developments in Health Industry in the Future; Otto Von Guericke University Magdeburg: Magdeburg, Germany,\n2017. [CrossRef]\n84.\nKocielnik, R.; Agapie, E.; Argyle, A.; Hsieh, D.T.; Yadav, K.; Taira, B.; Hsieh, G. HarborBot: A Chatbot for Social Needs Screening.\nAMIA Annu. Symp. Proc. 2019, 2019, 552–561. [PubMed]\n85.\nZimmerman, A.; Kalra, D. Usefulness of machine learning in COVID-19 for the detection and prognosis of cardiovascular\ncomplications. Rev. Cardiovasc. Med. 2020, 21, 345–352. [CrossRef] [PubMed]\n86.\nSyeda, H.B.; Syed, M.; Sexton, K.W.; Syed, S.; Begum, S.; Syed, F.; Yu, F., Jr. The Role of Machine Learning Techniques to Tackle\nCOVID-19 Crisis: A Systematic Review. JMIR Med. Inform. 2020. [CrossRef]\n87.\nAlimadadi, A.; Aryal, S.; Manandhar, I.; Munroe, P.B.; Joe, B.; Cheng, X. Artiﬁcial intelligence and machine learning to ﬁght\nCOVID-19. Physiol. Genom. 2020, 52, 200–202. [CrossRef]\n88.\nAssaf, D.; Gutman, Y.; Neuman, Y.; Segal, G.; Amit, S.; Gefen-Halevi, S.; Shilo, N.; Epstein, A.; Mor-Cohen, R.; Biber, A.; et al.\nUtilization of machine-learning models to accurately predict the risk for critical COVID-19. Intern. Emerg. Med. 2020, 15,\n1435–1443. [CrossRef]\n89.\nMehta, M.; Julaiti, J.; Grifﬁn, P.; Kumara, S. Early Stage Machine Learning–Based Prediction of US County Vulnerability to the\nCOVID-19 Pandemic: Machine Learning Approach. JMIR Public Health Surveill. 2020, 6, e19446. [CrossRef] [PubMed]\n90.\nYoneoka, D.; Kawashima, T.; Tanoue, Y.; Nomura, S.; Ejima, K.; Shi, S.; Eguchi, A.; Taniguchi, T.; Sakamoto, H.;\nKunishima, H.; et al. Early SNS-based monitoring system for the covid-19 outbreak in Japan: A population-level obser-\nvational study. J. Epidemiol. 2020, 30, 362–370. [CrossRef] [PubMed]\n91.\nMartin, A.; Nateqi, J.; Gruarin, S.; Munsch, N.; Abdarahmane, I.; Zobel, M.; Knapp, B. An artiﬁcial intelligence-based ﬁrst-line\ndefence against COVID-19: Digitally screening citizens for risks via a chatbot. Sci. Rep. 2020, 10, 1–7. [CrossRef]\n92.\nBattineni, G.; Chintalapudi, N.; Amenta, F. AI Chatbot Design during an Epidemic like the Novel Coronavirus. Healthcare 2020, 8,\n154. [CrossRef]\n93.\nMunsch, N.; Martin, A.; Gruarin, S.; Nateqi, J.; Abdarahmane, I.; Weingartner-Ortner, R.; Knapp, B. Diagnostic accuracy of\nweb-based COVID-19 symptom checkers: Comparison study. J. Med. Internet Res. 2020, 22. [CrossRef] [PubMed]\n94.\nOniani, D.; Wang, Y. A Qualitative Evaluation of Language Models on Automatic Question-Answering for COVID-19. arXiv 2020,\narXiv:2006.10964.\n95.\nSedik, A.; Iliyasu, A.M.; El-Rahiem, B.A.; Abdel Samea, M.E.; Abdel-Raheem, A.; Hammad, M.; Peng, J.; Abd El-Samie, F.E.;\nAbd El-Latif, A.A. Deploying machine and deep learning models for efﬁcient data-augmented detection of COVID-19 infections.\nViruses 2020, 12, 769. [CrossRef] [PubMed]\n96.\nXue, J.; Chen, J.; Hu, R.; Chen, C.; Zheng, C.; Su, Y.; Zhu, T. Twitter Discussions and Emotions About the COVID-19 Pandemic:\nMachine Learning Approach. J. Med. Internet Res. 2020, 22, e20550. [CrossRef]\n97.\nDennis, A.R.; Kim, A.; Rahimi, M.; Ayabakan, S. User reactions to COVID-19 screening chatbots from reputable providers. J. Am.\nMed. Inform. Assoc. 2020, 27, 1727–1731. [CrossRef]\n98.\nTanoue, Y.; Nomura, S.; Yoneoka, D.; Kawashima, T.; Eguchi, A.; Shi, S.; Harada, N.; Miyata, H. Mental health of family, friends,\nand co-workers of COVID-19 patients in Japan. Psychiatry Res. 2020, 291, 113067. [CrossRef] [PubMed]\n",
+      "page": 19,
+      "bbox": [
+        36.0,
+        98.95,
+        560.85,
+        752.36
+      ]
+    },
+    {
+      "text": "Encyclopedia 2021, 1\n239\n",
+      "page": 20,
+      "bbox": [
+        35.75,
+        53.76,
+        559.28,
+        61.87
+      ]
+    },
+    {
+      "text": "99.\nLai, L.; Wittbold, K.A.; Dadabhoy, F.Z.; Sato, R.; Landman, A.B.; Schwamm, L.H.; He, S.; Patel, R.; Wei, N.; Zuccotti, G.; et al.\nDigital triage: Novel strategies for population health management in response to the COVID-19 pandemic. Healthcare 2020, 8,\n100493. [CrossRef] [PubMed]\n100. Judson, T.J.; Odisho, A.Y.; Young, J.J.; Bigazzi, O.; Steuer, D.; Gonzales, R.; Neinstein, A.B. Implementation of a digital chatbot to\nscreen health system employees during the COVID-19 pandemic. J. Am. Med. Inform. Assoc. 2020, 27, 1450–1455. [CrossRef] [PubMed]\n",
+      "page": 20,
+      "bbox": [
+        36.0,
+        98.95,
+        560.84,
+        153.98
+      ]
+    }
+  ],
+  "metadata": {
+    "filename": "encyclopedia-01-00021-v2.pdf",
+    "file_size": 1561529,
+    "block_count": 116,
+    "created_at": "2025-04-29T21:43:13.881167"
+  }
+}

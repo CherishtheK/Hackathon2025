@@ -247,3 +247,33 @@ export const updateDocumentInDB = async (docId, updates) => {
     throw error;
   }
 };
+
+export async function deleteDocument(docId) {
+  const db = await openDatabase();
+  const tx = db.transaction(['documents'], 'readwrite');
+  const store = tx.objectStore('documents');
+  
+  // 获取文档信息
+  const doc = await store.get(docId);
+  if (!doc) {
+    throw new Error('Document not found');
+  }
+  
+  // 删除数据库记录
+  await store.delete(docId);
+  
+  // 删除服务器端文件
+  try {
+    // 删除 JSON 文件
+    const jsonFilename = doc.name.replace(/\.pdf$/, '_structured.json');
+    await fetch(`/api/delete-file?filename=${encodeURIComponent(jsonFilename)}`, {
+      method: 'DELETE'
+    });
+    
+    console.log('Successfully deleted document:', doc.name);
+    return true;
+  } catch (error) {
+    console.error('Error deleting document files:', error);
+    throw error;
+  }
+}

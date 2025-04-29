@@ -1,0 +1,1112 @@
+{
+  "title": "CS5700 Final Exam",
+  "processed_date": "2025-04-29T20:51:38.808062",
+  "content": [
+    {
+      "text": "Final Exam\n",
+      "page": 1,
+      "bbox": [
+        266.64,
+        70.47,
+        345.18,
+        95.32
+      ]
+    },
+    {
+      "text": "CS 5700\n",
+      "page": 1,
+      "bbox": [
+        282.72,
+        99.33,
+        329.21,
+        118.02
+      ]
+    },
+    {
+      "text": "Weijia Kang NUID:002842458\n",
+      "page": 1,
+      "bbox": [
+        226.44,
+        122.85,
+        385.42,
+        141.54
+      ]
+    },
+    {
+      "text": "Questions: 5\n",
+      "page": 1,
+      "bbox": [
+        72.0,
+        145.84,
+        137.42,
+        163.77
+      ]
+    },
+    {
+      "text": "Points Possible: 130\n",
+      "page": 1,
+      "bbox": [
+        72.0,
+        168.4,
+        177.38,
+        186.32
+      ]
+    },
+    {
+      "text": "For all questions, your answers must be based on what was taught in class this semester.\nAnything else will get you points deducted, up to and including zero credit. You must complete\nthis exam individually.\n",
+      "page": 1,
+      "bbox": [
+        72.0,
+        191.31,
+        537.75,
+        236.85
+      ]
+    },
+    {
+      "text": "The expectation is that you show your work and complete these\nproblems similar to how the sample final exam was done. Failure to\ndo so will result in massive point deductions, up to and including\nreceiving zero credit.\n",
+      "page": 1,
+      "bbox": [
+        72.0,
+        240.94,
+        521.35,
+        319.05
+      ]
+    },
+    {
+      "text": "Also, you must submit your exam only in one of the following file formats: DOCX or PDF. Any\nother file format will result in an automatic 10 point deduction, and you will get zero\ncredit if I am unable to open and read your file. If you save your file in a different format and\njust change the file extension to docx or pdf, that is still not the proper format! You must either\nuse a Microsoft program (such as Word) to save your file as DOCX, or you must convert your\nsubmission file to a PDF.\n",
+      "page": 1,
+      "bbox": [
+        72.0,
+        323.08,
+        534.87,
+        412.65
+      ]
+    },
+    {
+      "text": "If you are writing out your answers, I recommend you give yourself about 15 minutes of buffer\ntime to scan your exam and upload/submit it to Canvas. Otherwise, if typing in your answer,\nyou should still give yourself enough time to save the document and upload/submit it to\nCanvas.\n",
+      "page": 1,
+      "bbox": [
+        72.0,
+        417.51,
+        531.17,
+        477.21
+      ]
+    },
+    {
+      "text": "First question starts on the next page.\n",
+      "page": 1,
+      "bbox": [
+        72.0,
+        482.19,
+        258.36,
+        499.41
+      ]
+    },
+    {
+      "text": "1. Using the example network given in the below figure, give the virtual circuit tables for all the\nswitches after each of the following connections is established. Assume that the sequence of\nconnections is cumulative; that is, the first connection is still up when the second connection is\nestablished, and so on. Also assume that the VCI assignment always picks the lowest unused\nVCI on each link, starting with 0, and that a VCI is consumed for both directions of a virtual\ncircuit.\n",
+      "page": 2,
+      "bbox": [
+        72.0,
+        115.11,
+        538.13,
+        203.12
+      ]
+    },
+    {
+      "text": "a.\n(10 points)\nHost J connects to Host B\n",
+      "page": 2,
+      "bbox": [
+        90.0,
+        230.31,
+        237.97,
+        261.69
+      ]
+    },
+    {
+      "text": "b. (10 points)\n",
+      "page": 2,
+      "bbox": [
+        90.0,
+        272.79,
+        159.34,
+        290.01
+      ]
+    },
+    {
+      "text": "Host I connects to Host A\n",
+      "page": 2,
+      "bbox": [
+        108.0,
+        286.95,
+        234.68,
+        304.17
+      ]
+    },
+    {
+      "text": "c.\n(10 points)\nHost F connects to Host D\n",
+      "page": 2,
+      "bbox": [
+        90.0,
+        315.27,
+        238.78,
+        346.65
+      ]
+    },
+    {
+      "text": "Fill out the below table with your answers, you can leave unused rows blank:\n",
+      "page": 2,
+      "bbox": [
+        72.0,
+        351.63,
+        447.85,
+        368.85
+      ]
+    },
+    {
+      "text": "Question\nYou’re\nAnswering\n",
+      "page": 2,
+      "bbox": [
+        72.0,
+        418.6,
+        127.62,
+        463.41
+      ]
+    },
+    {
+      "text": "Switch\nInput Port\nInput VCI\nOutput\nPort\nOutput VCI\n",
+      "page": 2,
+      "bbox": [
+        165.96,
+        425.32,
+        485.14,
+        456.57
+      ]
+    },
+    {
+      "text": "a (J-B)\n3\n1\n0\n3\n0\n",
+      "page": 2,
+      "bbox": [
+        72.0,
+        461.19,
+        497.9,
+        478.41
+      ]
+    },
+    {
+      "text": "b (I-A)\n",
+      "page": 2,
+      "bbox": [
+        72.0,
+        493.23,
+        101.57,
+        510.45
+      ]
+    },
+    {
+      "text": "3\n2\n0\n0\n0\n2\n0\n0\n3\n0\n1\n1\n0\n2\n0\n",
+      "page": 2,
+      "bbox": [
+        195.6,
+        477.27,
+        497.9,
+        526.41
+      ]
+    },
+    {
+      "text": "c (F-D)\n",
+      "page": 2,
+      "bbox": [
+        72.0,
+        541.23,
+        105.05,
+        558.45
+      ]
+    },
+    {
+      "text": "4\n2\n0\n3\n0\n2\n1\n0\n3\n1\n1\n1\n1\n0\n0\n",
+      "page": 2,
+      "bbox": [
+        195.6,
+        525.27,
+        497.9,
+        574.41
+      ]
+    },
+    {
+      "text": "For questions 2 and 3, refer to the following figure:\n",
+      "page": 3,
+      "bbox": [
+        72.0,
+        70.83,
+        319.97,
+        88.05
+      ]
+    },
+    {
+      "text": "2. (40 points)\n",
+      "page": 3,
+      "bbox": [
+        72.0,
+        339.03,
+        135.58,
+        356.25
+      ]
+    },
+    {
+      "text": "Give the datagram forwarding table for nodes A, C, D, and F. The links are labeled with relative\ncosts; your tables should forward each packet via the lowest-cost path to its destination. If\nthere is a tie in lowest-cost paths, break the tie with the path that has the least number of hops.\n",
+      "page": 3,
+      "bbox": [
+        72.0,
+        361.23,
+        543.04,
+        406.77
+      ]
+    },
+    {
+      "text": "Solution:\n",
+      "page": 3,
+      "bbox": [
+        72.0,
+        425.68,
+        118.24,
+        443.61
+      ]
+    },
+    {
+      "text": "Node: A\n",
+      "page": 3,
+      "bbox": [
+        76.44,
+        465.39,
+        116.36,
+        482.61
+      ]
+    },
+    {
+      "text": "Destination\nNext Hop\n",
+      "page": 3,
+      "bbox": [
+        76.44,
+        482.2,
+        221.06,
+        500.12
+      ]
+    },
+    {
+      "text": "B\nB\n",
+      "page": 3,
+      "bbox": [
+        76.44,
+        500.07,
+        179.77,
+        517.28
+      ]
+    },
+    {
+      "text": "C\nB\n",
+      "page": 3,
+      "bbox": [
+        76.44,
+        517.35,
+        179.77,
+        534.57
+      ]
+    },
+    {
+      "text": "D\nD\n",
+      "page": 3,
+      "bbox": [
+        76.44,
+        534.63,
+        179.98,
+        551.85
+      ]
+    },
+    {
+      "text": "E\nE\n",
+      "page": 3,
+      "bbox": [
+        76.44,
+        551.91,
+        178.95,
+        569.12
+      ]
+    },
+    {
+      "text": "F\nE\n",
+      "page": 3,
+      "bbox": [
+        76.44,
+        569.19,
+        178.95,
+        586.41
+      ]
+    },
+    {
+      "text": "Node: C\n",
+      "page": 3,
+      "bbox": [
+        76.44,
+        603.87,
+        117.18,
+        621.08
+      ]
+    },
+    {
+      "text": "Destination\nNext Hop\n",
+      "page": 3,
+      "bbox": [
+        76.44,
+        620.56,
+        221.06,
+        638.48
+      ]
+    },
+    {
+      "text": "A\nB\n",
+      "page": 3,
+      "bbox": [
+        76.44,
+        638.43,
+        179.77,
+        655.65
+      ]
+    },
+    {
+      "text": "B\nB\n",
+      "page": 3,
+      "bbox": [
+        76.44,
+        655.71,
+        179.77,
+        672.92
+      ]
+    },
+    {
+      "text": "D\nB\n",
+      "page": 3,
+      "bbox": [
+        76.44,
+        672.99,
+        179.77,
+        690.21
+      ]
+    },
+    {
+      "text": "E\nB\n",
+      "page": 3,
+      "bbox": [
+        76.44,
+        690.39,
+        179.77,
+        707.61
+      ]
+    },
+    {
+      "text": "F\nF\n",
+      "page": 4,
+      "bbox": [
+        76.44,
+        73.11,
+        178.54,
+        90.32
+      ]
+    },
+    {
+      "text": "Node: D\n",
+      "page": 4,
+      "bbox": [
+        76.44,
+        107.79,
+        116.98,
+        125.01
+      ]
+    },
+    {
+      "text": "Destination\nNext Hop\n",
+      "page": 4,
+      "bbox": [
+        76.44,
+        124.48,
+        221.06,
+        142.41
+      ]
+    },
+    {
+      "text": "A\nA\n",
+      "page": 4,
+      "bbox": [
+        76.44,
+        142.35,
+        179.36,
+        159.57
+      ]
+    },
+    {
+      "text": "B\nA\n",
+      "page": 4,
+      "bbox": [
+        76.44,
+        159.63,
+        179.36,
+        176.85
+      ]
+    },
+    {
+      "text": "C\nA\n",
+      "page": 4,
+      "bbox": [
+        76.44,
+        176.91,
+        179.36,
+        194.12
+      ]
+    },
+    {
+      "text": "E\nE\n",
+      "page": 4,
+      "bbox": [
+        76.44,
+        194.19,
+        178.95,
+        211.41
+      ]
+    },
+    {
+      "text": "F\nE\n",
+      "page": 4,
+      "bbox": [
+        76.44,
+        211.59,
+        178.95,
+        228.81
+      ]
+    },
+    {
+      "text": "Node: F\n",
+      "page": 4,
+      "bbox": [
+        76.44,
+        246.15,
+        115.54,
+        263.37
+      ]
+    },
+    {
+      "text": "Destination\nNext Hop\n",
+      "page": 4,
+      "bbox": [
+        76.44,
+        262.84,
+        221.06,
+        280.77
+      ]
+    },
+    {
+      "text": "A\nE\n",
+      "page": 4,
+      "bbox": [
+        76.44,
+        280.71,
+        178.95,
+        297.92
+      ]
+    },
+    {
+      "text": "B\nC\n",
+      "page": 4,
+      "bbox": [
+        76.44,
+        297.99,
+        180.18,
+        315.21
+      ]
+    },
+    {
+      "text": "C\nC\n",
+      "page": 4,
+      "bbox": [
+        76.44,
+        315.39,
+        180.18,
+        332.61
+      ]
+    },
+    {
+      "text": "D\nE\n",
+      "page": 4,
+      "bbox": [
+        76.44,
+        332.67,
+        178.95,
+        349.88
+      ]
+    },
+    {
+      "text": "E\nE\n",
+      "page": 4,
+      "bbox": [
+        76.44,
+        349.95,
+        178.95,
+        367.17
+      ]
+    },
+    {
+      "text": "3. For the above figure, give global distance vector tables when:\n",
+      "page": 5,
+      "bbox": [
+        72.0,
+        70.83,
+        386.31,
+        88.05
+      ]
+    },
+    {
+      "text": "a.\n(10 points)\nEach node knows only the distances to its immediate neighbors. Fill out the following\ntable as your answer:\n",
+      "page": 5,
+      "bbox": [
+        90.0,
+        93.03,
+        525.8,
+        138.57
+      ]
+    },
+    {
+      "text": "Distance to reach node\nInformation stored at\nnode\nA\nB\nC\nD\nE\nF\n",
+      "page": 5,
+      "bbox": [
+        72.0,
+        144.76,
+        468.07,
+        191.37
+      ]
+    },
+    {
+      "text": "A\n0\n2\n6\n1\n2\ninfinity\nB\n2\n0\n3\ninfinity\ninfinity\ninfinity\nC\n6\n3\n0\ninfinity\ninfinity\n5\nD\n1\ninfinity\ninfinity\n0\n1\ninfinity\nE\n2\ninfinity\ninfinity\n1\n0\n6\nF\ninfinity\ninfinity\n5\ninfinity\n6\n0\nb. (10 points)\n",
+      "page": 5,
+      "bbox": [
+        90.0,
+        188.68,
+        480.6,
+        301.52
+      ]
+    },
+    {
+      "text": "Each node has reported the information it had in the preceding step to its immediate\nneighbors. Fill out the following table as your answer:\n",
+      "page": 5,
+      "bbox": [
+        108.0,
+        298.47,
+        522.38,
+        329.85
+      ]
+    },
+    {
+      "text": "Distance to reach node\nInformation stored at\nnode\nA\nB\nC\nD\nE\nF\n",
+      "page": 5,
+      "bbox": [
+        72.0,
+        336.16,
+        468.07,
+        382.77
+      ]
+    },
+    {
+      "text": "A\n0\n2\n5\n1\n2\n8\nB\n2\n0\n3\ninfinity\ninfinity\n8\nC\n6\n3\n0\ninfinity\n11\n5\nD\n1\ninfinity\ninfinity\n0\n1\n7\nE\n2\ninfinity\n11\n1\n0\n6\nF\ninfinity\ninfinity\n5\ninfinity\n6\n0\n",
+      "page": 5,
+      "bbox": [
+        128.52,
+        379.24,
+        467.78,
+        476.37
+      ]
+    },
+    {
+      "text": "c.\n(10 points)\nStep (b) happens a second time. Fill out the following table as your answer:\n",
+      "page": 5,
+      "bbox": [
+        90.0,
+        496.35,
+        476.74,
+        527.61
+      ]
+    },
+    {
+      "text": "Distance to reach node\nInformation stored at\nnode\nA\nB\nC\nD\nE\nF\n",
+      "page": 5,
+      "bbox": [
+        72.0,
+        533.92,
+        468.07,
+        580.52
+      ]
+    },
+    {
+      "text": "A\n0\n2\n5\n1\n2\n8\nB\n2\n0\n3\ninfinity\n14\n8\nC\n6\n3\n0\n12\n11\n5\nD\n1\ninfinity\n12\n0\n1\n7\nE\n2\ninfinity\n11\n1\n0\n6\nF\ninfinity\ninfinity\n5\ninfinity\n6\n0\n",
+      "page": 5,
+      "bbox": [
+        128.52,
+        577.84,
+        467.78,
+        675.69
+      ]
+    },
+    {
+      "text": "4. (10 points)\n",
+      "page": 6,
+      "bbox": [
+        72.0,
+        70.83,
+        135.58,
+        88.05
+      ]
+    },
+    {
+      "text": "Suppose a congestion-control scheme results in a collection of competing flows that achieve\nthe following throughput rates:\n",
+      "page": 6,
+      "bbox": [
+        72.0,
+        93.03,
+        528.99,
+        124.41
+      ]
+    },
+    {
+      "text": "200 KBps, 3 MBps, 400 KBps, 1 MBps, 8 MBps\n",
+      "page": 6,
+      "bbox": [
+        72.0,
+        129.27,
+        308.04,
+        146.49
+      ]
+    },
+    {
+      "text": "Calculate the fairness index for this scheme. Show your work, otherwise, you will get zero\ncredit.\n",
+      "page": 6,
+      "bbox": [
+        72.0,
+        151.47,
+        511.63,
+        182.85
+      ]
+    },
+    {
+      "text": "Round your answer to two decimal places.\n",
+      "page": 6,
+      "bbox": [
+        72.0,
+        187.83,
+        281.61,
+        205.05
+      ]
+    },
+    {
+      "text": "Solution:\n",
+      "page": 6,
+      "bbox": [
+        72.0,
+        209.56,
+        118.24,
+        227.49
+      ]
+    },
+    {
+      "text": "n is equal to the number of flows, so in this case it’s 5.\n",
+      "page": 6,
+      "bbox": [
+        72.0,
+        232.47,
+        338.95,
+        249.69
+      ]
+    },
+    {
+      "text": "(200 + 3000 + 400 + 1000 + 8000) ^ 2 = 158760000\n",
+      "page": 6,
+      "bbox": [
+        72.0,
+        254.55,
+        325.19,
+        271.77
+      ]
+    },
+    {
+      "text": "5 *(200^ 2 + 3000^ 2 + 400^ 2 + 1000^ 2+ 8000^ 2) = 371000000\n",
+      "page": 6,
+      "bbox": [
+        72.0,
+        276.75,
+        395.27,
+        293.97
+      ]
+    },
+    {
+      "text": "Answer is 158760000 / 371000000 = 0.43\n",
+      "page": 6,
+      "bbox": [
+        72.0,
+        298.95,
+        276.74,
+        316.17
+      ]
+    },
+    {
+      "text": "5. Suppose a router has three input flows and one output. It receives the packets listed in the\nbelow table all at about the same time, in the order listed, during a period in which the output\nport is busy but all queues are otherwise empty. Give the order in which the packets are\ntransmitted, assuming\n",
+      "page": 6,
+      "bbox": [
+        72.0,
+        387.63,
+        528.99,
+        447.21
+      ]
+    },
+    {
+      "text": "For parts a and b, show your work. Otherwise, you will get zero credit.\n",
+      "page": 6,
+      "bbox": [
+        72.0,
+        452.19,
+        416.18,
+        469.41
+      ]
+    },
+    {
+      "text": "a.\n(10 points)\nFair queuing.\nb. (10 points)\n",
+      "page": 6,
+      "bbox": [
+        90.0,
+        474.39,
+        171.96,
+        519.92
+      ]
+    },
+    {
+      "text": "Weighted fair queuing, with flow 1 having weight 2, flow 2 having weight 3, and flow 3\nhaving weight 8.\n",
+      "page": 6,
+      "bbox": [
+        108.0,
+        516.87,
+        528.26,
+        548.25
+      ]
+    },
+    {
+      "text": "Packet\nSize\nFlow\n1\n100\n1\n2\n100\n1\n3\n100\n1\n4\n100\n1\n5\n40\n1\n6\n190\n2\n7\n120\n2\n8\n10\n2\n9\n210\n3\n10\n20\n3\n",
+      "page": 6,
+      "bbox": [
+        72.36,
+        554.32,
+        199.08,
+        722.25
+      ]
+    },
+    {
+      "text": "Solution:\n",
+      "page": 7,
+      "bbox": [
+        72.0,
+        97.53,
+        117.75,
+        110.39
+      ]
+    },
+    {
+      "text": "a.\nBecause all packets arrive all at about the same time, A_i (arrival time) is 0.\n",
+      "page": 7,
+      "bbox": [
+        72.0,
+        112.95,
+        437.83,
+        143.37
+      ]
+    },
+    {
+      "text": "Flow 1:\n",
+      "page": 7,
+      "bbox": [
+        72.0,
+        218.85,
+        107.38,
+        231.71
+      ]
+    },
+    {
+      "text": "Flow1_1 = max(0, 0) + 100 = 100\nFlow1_2 = max(100, 0) + 100 = 100 + 100 = 200\nFlow1_3 = max(200, 0) + 100 = 200 + 100 = 300\nFlow1_4 = max(300, 0) + 100 = 300 + 100 = 400\nFlow1_5 = max(400, 0) + 40 = 400 + 40 = 440\n",
+      "page": 7,
+      "bbox": [
+        72.0,
+        234.27,
+        307.33,
+        304.05
+      ]
+    },
+    {
+      "text": "Flow 2:\n",
+      "page": 7,
+      "bbox": [
+        72.0,
+        326.73,
+        109.49,
+        339.59
+      ]
+    },
+    {
+      "text": "Flow2_6 = max(0, 0) + 190 = 190\nFlow2_7 = max(190, 0) + 120 = 310\nFlow2_8 = max(310, 0) + 10 = 320\n",
+      "page": 7,
+      "bbox": [
+        72.0,
+        342.15,
+        245.29,
+        385.52
+      ]
+    },
+    {
+      "text": "Flow 3:\n",
+      "page": 7,
+      "bbox": [
+        72.0,
+        408.21,
+        109.49,
+        421.07
+      ]
+    },
+    {
+      "text": "Flow3_9 = max(0, 0) + 210 = 210\nFlow3_10 = max(210, 0) + 20 = 230\n",
+      "page": 7,
+      "bbox": [
+        72.0,
+        423.63,
+        245.29,
+        454.05
+      ]
+    },
+    {
+      "text": "Packet\nSize\nFlow\nFi\n1\n100\n1\n100\n2\n100\n1\n200\n3\n100\n1\n300\n4\n100\n1\n400\n5\n40\n1\n440\n6\n190\n2\n190\n7\n120\n2\n310\n8\n10\n2\n320\n9\n210\n3\n210\n10\n20\n3\n230\n",
+      "page": 7,
+      "bbox": [
+        72.36,
+        464.2,
+        243.73,
+        632.12
+      ]
+    },
+    {
+      "text": "Order in which the packets are transmitted via fair queuing:\nPacket: 1, 6, 2, 9, 10, 3, 7, 8, 4, 5\n",
+      "page": 7,
+      "bbox": [
+        72.0,
+        663.75,
+        362.52,
+        694.17
+      ]
+    },
+    {
+      "text": "b.(10 points)\nWeighted fair queuing, with flow 1 having weight 2, flow 2 having weight 3, and flow 3 having\nweight 8.\n",
+      "page": 8,
+      "bbox": [
+        72.0,
+        93.03,
+        527.66,
+        138.57
+      ]
+    },
+    {
+      "text": "Packet\nSize\n",
+      "page": 8,
+      "bbox": [
+        72.36,
+        156.88,
+        149.59,
+        174.81
+      ]
+    },
+    {
+      "text": "Weighted\n",
+      "page": 8,
+      "bbox": [
+        168.0,
+        143.56,
+        217.71,
+        161.49
+      ]
+    },
+    {
+      "text": "Size\nFlow\n",
+      "page": 8,
+      "bbox": [
+        181.8,
+        156.88,
+        259.68,
+        174.81
+      ]
+    },
+    {
+      "text": "Weighted\n",
+      "page": 8,
+      "bbox": [
+        276.48,
+        143.56,
+        326.19,
+        161.49
+      ]
+    },
+    {
+      "text": "Fi\n1\n100\n50\n1\n50\n2\n100\n50\n1\n100\n3\n100\n50\n1\n150\n4\n100\n50\n1\n200\n5\n40\n20\n1\n220\n6\n190\n63.33\n2\n63.33\n7\n120\n40\n2\n103.33\n8\n10\n3.33\n2\n106.66\n9\n210\n26.25\n3\n26.25\n10\n20\n2.5\n3\n28.75\n",
+      "page": 8,
+      "bbox": [
+        84.48,
+        156.88,
+        318.18,
+        325.52
+      ]
+    },
+    {
+      "text": "Flow 1:\n",
+      "page": 8,
+      "bbox": [
+        72.0,
+        326.61,
+        107.38,
+        339.47
+      ]
+    },
+    {
+      "text": "Flow1_1 = max(0, 0) + 50 = 50\n",
+      "page": 8,
+      "bbox": [
+        72.0,
+        351.63,
+        220.82,
+        368.85
+      ]
+    },
+    {
+      "text": "Flow1_2 = max(50, 0) + 50 = 100\n",
+      "page": 8,
+      "bbox": [
+        72.0,
+        373.71,
+        233.05,
+        390.92
+      ]
+    },
+    {
+      "text": "Flow1_3 = max(100, 0) + 50= 150\n",
+      "page": 8,
+      "bbox": [
+        72.0,
+        395.91,
+        236.05,
+        413.12
+      ]
+    },
+    {
+      "text": "Flow1_4 = max(150, 0) + 50 = 200\n",
+      "page": 8,
+      "bbox": [
+        72.0,
+        418.11,
+        239.18,
+        435.32
+      ]
+    },
+    {
+      "text": "Flow1_5 = max(200, 0) + 20= 220\n",
+      "page": 8,
+      "bbox": [
+        72.0,
+        440.19,
+        236.05,
+        457.41
+      ]
+    },
+    {
+      "text": "Flow 2:\n",
+      "page": 8,
+      "bbox": [
+        72.0,
+        489.09,
+        109.49,
+        501.95
+      ]
+    },
+    {
+      "text": "Flow2_6 = max(0, 0) + 63.33 = 63.33\n",
+      "page": 8,
+      "bbox": [
+        72.0,
+        514.11,
+        251.35,
+        531.32
+      ]
+    },
+    {
+      "text": "Flow2_7 = max(63.33, 0) + 40 = 103.33\n",
+      "page": 8,
+      "bbox": [
+        72.0,
+        536.31,
+        263.58,
+        553.52
+      ]
+    },
+    {
+      "text": "Flow2_8 = max(103.33 , 0) + 3.33 = 106.66\n",
+      "page": 8,
+      "bbox": [
+        72.0,
+        558.51,
+        281.94,
+        575.72
+      ]
+    },
+    {
+      "text": "Flow 3:\n",
+      "page": 8,
+      "bbox": [
+        72.0,
+        607.41,
+        109.49,
+        620.27
+      ]
+    },
+    {
+      "text": "Flow3_9 = max(0, 0) + 26.25= 26.25\n",
+      "page": 8,
+      "bbox": [
+        72.0,
+        632.43,
+        248.35,
+        649.65
+      ]
+    },
+    {
+      "text": "Flow3_10 = max(26.25, 0) + 2.5 = 28.75\n",
+      "page": 8,
+      "bbox": [
+        72.0,
+        654.63,
+        266.59,
+        671.85
+      ]
+    },
+    {
+      "text": "Order in which the packets are transmitted via weighted fair queuing per the weights provided:\nPacket: 9, 10, 1, 6, 2, 7, 8, 3, 4, 5\n",
+      "page": 8,
+      "bbox": [
+        72.0,
+        676.71,
+        535.82,
+        707.01
+      ]
+    }
+  ],
+  "metadata": {
+    "filename": "CS5700 Final Exam.pdf",
+    "file_size": 410049,
+    "page_count": 110,
+    "created_at": "2025-04-29T20:51:38.808107"
+  }
+}

@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 
-const MarkdownViewer = ({ highlightText, citedBlockIndices = [] }) => {
+const MarkdownViewer = ({ highlightText, citedBlockIndices = [], currentDocument }) => {
   // 顶部定义清理函数
   const cleanText = (text) => {
     if (!text) return '';
@@ -15,22 +15,62 @@ const MarkdownViewer = ({ highlightText, citedBlockIndices = [] }) => {
 
   const [blocks, setBlocks] = useState([]);
   const [highlightedBlocks, setHighlightedBlocks] = useState([]);
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   // 用于存储高亮块的引用
   const highlightedRefs = useRef({});
 
   useEffect(() => {
+    // 如果没有当前文档，不加载任何内容
+    if (!currentDocument) {
+      console.log('没有当前文档，清空blocks');
+      setBlocks([]);
+      setError(null);
+      return;
+    }
+
+    console.log('当前文档:', currentDocument);
+
+    // 构建JSON文件路径
+    const jsonFilename = currentDocument.name.replace(/\.pdf$/, '_structured.json');
+    const jsonPath = `/json/${jsonFilename}`;
+    console.log('尝试加载JSON文件:', jsonPath);
+
+    setIsLoading(true);
+    setError(null);
+
     // 从JSON文件获取Markdown数据
-    fetch("/annurev-biodatasci-092820-114757_structured.json")
-      .then((res) => res.json())
+    fetch(jsonPath)
+      .then(async (res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        const contentType = res.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+          throw new TypeError("返回的不是JSON!");
+        }
+        return res.json();
+      })
       .then((data) => {
-        console.log('加载的JSON数据:', data.slice(0, 3)); // 只显示前3项
-        setBlocks(data);
-        console.log('原文文本示例:', data.slice(0, 5).map(b => b.text));
+        console.log('成功加载JSON数据:', data);
+        // 确保我们使用正确的数据结构
+        const contentBlocks = data.content || [];
+        console.log('内容块数量:', contentBlocks.length);
+        if (contentBlocks.length > 0) {
+          console.log('数据示例:', contentBlocks.slice(0, 3));
+        }
+        setBlocks(contentBlocks);
+        setError(null);
       })
       .catch(err => {
         console.error("加载PDF数据失败:", err);
+        setError(err.message);
+        setBlocks([]); // 清空blocks以显示错误状态
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
-  }, []);
+  }, [currentDocument]); // 当currentDocument变化时重新加载
 
   // 当highlightText变化时，查找匹配的文本块
   useEffect(() => {
@@ -113,34 +153,42 @@ const MarkdownViewer = ({ highlightText, citedBlockIndices = [] }) => {
 
   return (
     <div className="markdown-content h-full overflow-auto">
-      {blocks.map((block, idx) => {
-        // 使用两种高亮判断方式
-        const isHighlightedByIndex = citedBlockIndices.includes(idx);
-        const isHighlightedByText = highlightText && 
-          cleanText(block.text).includes(cleanText(highlightText));
-        
-        const shouldHighlight = isHighlightedByIndex || isHighlightedByText;
-        
-        return (
-          <div 
-            key={idx} 
-            className={`markdown-block ${shouldHighlight ? 'highlighted' : ''}`}
-            ref={el => {
-              if (shouldHighlight) {
-                highlightedRefs.current[idx] = el;
-              }
-            }}
-          >
-            <ReactMarkdown>
-          {block.markdown + block.text}
-        </ReactMarkdown>
-          </div>
-        );
-      })}
-      
-      {blocks.length === 0 && (
+      {error ? (
+        <div className="text-center p-8 text-red-500">
+          加载失败: {error}
+        </div>
+      ) : isLoading ? (
         <div className="text-center p-8 text-gray-500">
           正在加载文档内容...
+        </div>
+      ) : blocks.length > 0 ? (
+        blocks.map((block, idx) => {
+          // 使用两种高亮判断方式
+          const isHighlightedByIndex = citedBlockIndices.includes(idx);
+          const isHighlightedByText = highlightText && 
+            cleanText(block.text).includes(cleanText(highlightText));
+          
+          const shouldHighlight = isHighlightedByIndex || isHighlightedByText;
+          
+          return (
+            <div 
+              key={idx} 
+              className={`markdown-block ${shouldHighlight ? 'highlighted' : ''}`}
+              ref={el => {
+                if (shouldHighlight) {
+                  highlightedRefs.current[idx] = el;
+                }
+              }}
+            >
+              <ReactMarkdown>
+                {block.text}
+              </ReactMarkdown>
+            </div>
+          );
+        })
+      ) : (
+        <div className="text-center p-8 text-gray-500">
+          {currentDocument ? '没有找到文档内容' : '请选择或上传一个文档'}
         </div>
       )}
     </div>

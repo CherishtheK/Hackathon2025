@@ -10,7 +10,8 @@ import {
   getAllProjects, 
   getUnsortedDocuments, 
   getProjectDocuments,
-  updateDocumentInDB 
+  updateDocumentInDB,
+  deleteDocument
 } from '../utils/dbUtils';
 import UploadDialog from './UploadDialog';
 
@@ -374,6 +375,33 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
     };
   }, []);
 
+  const handleDeleteDocument = async () => {
+    if (!currentDocument?.id || !window.confirm('确定要删除这个文档吗？这个操作不可撤销。')) {
+      return;
+    }
+
+    try {
+      await deleteDocument(currentDocument.id);
+      
+      // 更新未分类文档列表
+      setUnsortedDocs(prev => prev.filter(doc => doc.id !== currentDocument.id));
+      
+      // 返回到库视图
+      setActiveView('library');
+      setCurrentDocument(null);
+      
+      // 清除相关状态
+      setDocumentSummaries(prev => {
+        const newSummaries = { ...prev };
+        delete newSummaries[currentDocument.id];
+        return newSummaries;
+      });
+    } catch (error) {
+      console.error('删除文档失败:', error);
+      alert('删除文档失败: ' + error.message);
+    }
+  };
+
   return (
     <WindowShell title={currentDocument?.title || currentDocument?.name || "Knowledge Bridge"}>
       {showUploadDialog && (
@@ -442,16 +470,24 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
                   <ChevronLeft size={20} className="text-gray-700 hover:text-black" />
                 </button>
                 {isEditingTitle ? titleEditingSection : (
-                  <h2 
-                    className="text-2xl font-semibold cursor-pointer hover:text-blue-600"
-                    onClick={() => {
-                      setEditedTitle(currentDocument?.title || currentDocument?.name || "");
-                      setIsEditingTitle(true);
-                    }}
-                  >
-                    {currentDocument?.title || currentDocument?.name}
-                    <span className="text-sm text-gray-400 ml-2">✎</span>
-                  </h2>
+                  <div className="flex items-center flex-1">
+                    <h2 
+                      className="text-2xl font-semibold cursor-pointer hover:text-blue-600"
+                      onClick={() => {
+                        setEditedTitle(currentDocument?.title || currentDocument?.name || "");
+                        setIsEditingTitle(true);
+                      }}
+                    >
+                      {currentDocument?.title || currentDocument?.name}
+                      <span className="text-sm text-gray-400 ml-2">✎</span>
+                    </h2>
+                    <button
+                      onClick={handleDeleteDocument}
+                      className="ml-4 px-3 py-1 text-sm text-red-600 hover:text-red-700 hover:bg-red-50 rounded"
+                    >
+                      删除文档
+                    </button>
+                  </div>
                 )}
               </div>
               <div className="flex flex-1 border border-gray-200 rounded overflow-hidden divide-x">
@@ -464,6 +500,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
                     <YourMarkdownViewer 
                       highlightText={selectedSentence} 
                       citedBlockIndices={citedBlockIndices} 
+                      currentDocument={currentDocument}
                     />
                   </div>
                 </div>
@@ -473,7 +510,10 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
                     className="flex-1 overflow-auto" 
                     style={{maxHeight: "calc(100vh - 200px)", border: "1px solid green"}}
                   >
-                    <YourSummary onSentenceClick={handleYourSentenceClick} />
+                    <YourSummary 
+                      onSentenceClick={handleYourSentenceClick} 
+                      currentDocument={currentDocument}
+                    />
                   </div>
                 </div>
                 <div className="w-1/3 flex flex-col h-full bg-gray-50">
