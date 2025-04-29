@@ -248,32 +248,99 @@ export const updateDocumentInDB = async (docId, updates) => {
   }
 };
 
-export async function deleteDocument(docId) {
-  const db = await openDatabase();
-  const tx = db.transaction(['documents'], 'readwrite');
-  const store = tx.objectStore('documents');
-  
-  // 获取文档信息
-  const doc = await store.get(docId);
-  if (!doc) {
-    throw new Error('Document not found');
-  }
-  
-  // 删除数据库记录
-  await store.delete(docId);
-  
-  // 删除服务器端文件
+export async function deleteDocument(documentId) {
   try {
-    // 删除 JSON 文件
-    const jsonFilename = doc.name.replace(/\.pdf$/, '_structured.json');
-    await fetch(`/api/delete-file?filename=${encodeURIComponent(jsonFilename)}`, {
-      method: 'DELETE'
-    });
+    const db = await openDatabase();
     
-    console.log('Successfully deleted document:', doc.name);
-    return true;
+    // 首先获取文档信息以获取文件路径
+    const tx = db.transaction("documents", "readonly");
+    const store = tx.objectStore("documents");
+    const doc = await new Promise((resolve, reject) => {
+      const request = store.get(documentId);
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+
+    if (!doc) {
+      throw new Error('Document not found');
+    }
+
+    // 从服务器删除相关文件
+    const filename = doc.name;
+    const jsonFilename = filename.replace(/\.[^/.]+$/, '') + '_structured.json';
+    
+    // 构建完整的 URL，确保正确编码
+    const deleteUrl = new URL('http://localhost:3000/api/delete-file');
+    deleteUrl.searchParams.append('pdfPath', filename);
+    deleteUrl.searchParams.append('jsonPath', jsonFilename);
+
+    console.log('Sending delete request to:', deleteUrl.toString());
+    
+    const response = await fetch(deleteUrl.toString(), {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include'
+    });
+
+    console.log('Server response status:', response.status);
+    
+    // 尝试解析响应
+    let result;
+    try {
+      const text = await response.text();
+      console.log('Raw server response:', text);
+      result = text ? JSON.parse(text) : { success: false, message: 'Empty response' };
+    } catch (error) {
+      console.error('Error parsing response:', error);
+      throw new Error('Failed to parse server response: ' + error.message);
+    }
+
+    if (!response.ok || !result.success) {
+      throw new Error(result.message || `Server error: ${response.status}`);
+    }
+    
+    // 从 IndexedDB 删除文档
+    const deleteTx = db.transaction("documents", "readwrite");
+    const deleteStore = deleteTx.objectStore("documents");
+    
+    await new Promise((resolve, reject) => {
+      const request = deleteStore.delete(documentId);
+      request.onsuccess = () => resolve();
+      request.onerror = () => reject(request.error);
+    });
+
+    db.close();
+
+    // 如果有警告但不影响删除操作的成功
+    if (result.warnings?.length > 0) {
+      const warningMessages = result.warnings
+        .map(warning => {
+          if (warning.includes('PDF file not found')) {
+            return '原始PDF文件已在处理后自动清理';
+          }
+          if (warning.includes('JSON file not found')) {
+            return 'JSON文件未找到或已被清理';
+          }
+          return warning;
+        });
+      
+      return {
+        success: true,
+        message: '文档已删除',
+        warnings: warningMessages
+      };
+    }
+
+    return {
+      success: true,
+      message: '文档已成功删除',
+      warnings: []
+    };
   } catch (error) {
-    console.error('Error deleting document files:', error);
+    console.error('Error deleting document:', error);
     throw error;
   }
 }

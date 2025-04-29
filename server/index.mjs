@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import fs from 'fs';
 import { spawn } from 'child_process';
+import { exec } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,20 +14,24 @@ const __dirname = dirname(__filename);
 const app = express();
 const port = 3000;
 
-// Add error handling middleware
+// 配置 CORS
+const corsOptions = {
+  origin: ['http://localhost:5173', 'http://127.0.0.1:5173'],
+  methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
+  credentials: true
+};
+
+// 使用 CORS 中间件
+app.use(cors(corsOptions));
+
+// 错误处理中间件
 app.use((err, req, res, next) => {
   console.error('Global error handler:', err);
   res.status(500).json({ error: 'Server error', details: err.message });
 });
 
-// Use standard CORS middleware
-app.use(cors({
-  origin: 'http://localhost:5173',
-  credentials: true,
-  methods: ['GET', 'POST', 'OPTIONS']
-}));
-
-// Ensure necessary directories exist
+// 确保必要的目录存在
 const ensureDirectories = async () => {
   const dirs = [
     path.join(__dirname, 'uploads'),
@@ -45,7 +50,7 @@ const ensureDirectories = async () => {
   }
 };
 
-// Configure multer storage
+// 配置 multer
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     const uploadDir = join(__dirname, 'uploads');
@@ -55,7 +60,6 @@ const storage = multer.diskStorage({
     cb(null, uploadDir);
   },
   filename: function (req, file, cb) {
-    // Ensure filename is safe
     const safeName = file.originalname.replace(/[^a-zA-Z0-9.-]/g, '_');
     cb(null, safeName);
   }
@@ -64,7 +68,6 @@ const storage = multer.diskStorage({
 const upload = multer({ 
   storage: storage,
   fileFilter: (req, file, cb) => {
-    // Only accept PDF files
     if (file.mimetype === 'application/pdf') {
       cb(null, true);
     } else {
@@ -76,11 +79,98 @@ const upload = multer({
   }
 });
 
-// Ensure directories exist before starting server
+// 删除文件的处理函数
+app.delete('/api/delete-file', cors(corsOptions), async (req, res) => {
+  console.log('\n=== DELETE Request Received ===');
+  console.log('Request URL:', req.url);
+  console.log('Query parameters:', req.query);
+  console.log('Headers:', req.headers);
+
+  try {
+    const { pdfPath, jsonPath } = req.query;
+    const warnings = [];
+
+    if (!pdfPath && !jsonPath) {
+      console.log('No file paths provided');
+      return res.status(400).json({
+        success: false,
+        message: 'No file paths provided',
+        warnings: []
+      });
+    }
+
+    console.log('Processing delete request for:', {
+      pdfPath: pdfPath || 'not provided',
+      jsonPath: jsonPath || 'not provided'
+    });
+
+    if (pdfPath) {
+      const fullPdfPath = path.join(__dirname, 'uploads', path.basename(pdfPath));
+      console.log('Attempting to delete PDF:', fullPdfPath);
+      
+      try {
+        if (fs.existsSync(fullPdfPath)) {
+          await fs.promises.unlink(fullPdfPath);
+          console.log('✅ PDF file deleted successfully');
+        } else {
+          console.log('⚠️ PDF file not found');
+          warnings.push(`PDF file not found: ${path.basename(pdfPath)}`);
+        }
+      } catch (error) {
+        console.error('❌ Error deleting PDF:', error);
+        warnings.push(`Failed to delete PDF: ${error.message}`);
+      }
+    }
+
+    if (jsonPath) {
+      const fullJsonPath = path.join(__dirname, '..', 'public', 'json', path.basename(jsonPath));
+      console.log('Attempting to delete JSON:', fullJsonPath);
+      
+      try {
+        if (fs.existsSync(fullJsonPath)) {
+          await fs.promises.unlink(fullJsonPath);
+          console.log('✅ JSON file deleted successfully');
+        } else {
+          console.log('⚠️ JSON file not found');
+          warnings.push(`JSON file not found: ${path.basename(jsonPath)}`);
+        }
+      } catch (error) {
+        console.error('❌ Error deleting JSON:', error);
+        warnings.push(`Failed to delete JSON: ${error.message}`);
+      }
+    }
+
+    const response = {
+      success: true,
+      message: warnings.length > 0 ? 'Files deleted with warnings' : 'Files deleted successfully',
+      warnings: warnings
+    };
+
+    console.log('Sending response:', JSON.stringify(response, null, 2));
+    
+    // 确保设置正确的响应头
+    res.setHeader('Content-Type', 'application/json');
+    return res.status(200).json(response);
+
+  } catch (error) {
+    console.error('❌ Unexpected error:', error);
+    
+    // 确保设置正确的响应头
+    res.setHeader('Content-Type', 'application/json');
+    return res.status(500).json({
+      success: false,
+      message: 'Server error during file deletion',
+      error: error.message,
+      warnings: []
+    });
+  }
+});
+
+// 确保目录存在后启动服务器
 await ensureDirectories().catch(console.error);
 
-// Handle file upload
-app.post('/upload', upload.single('file'), async (req, res) => {
+// 处理文件上传
+app.post('/upload', cors(corsOptions), upload.single('file'), async (req, res) => {
   try {
     console.log('\n=== Processing new upload request ===');
     console.log('Request time:', new Date().toISOString());
@@ -98,12 +188,12 @@ app.post('/upload', upload.single('file'), async (req, res) => {
       path: req.file.path
     });
 
-    // Check upload directory
+    // 检查上传目录
     const uploadDir = join(__dirname, 'uploads');
     console.log('📂 Upload directory:', uploadDir);
     console.log('Directory exists:', fs.existsSync(uploadDir));
 
-    // Check if file exists
+    // 检查文件是否存在
     if (!fs.existsSync(req.file.path)) {
       console.error('❌ Uploaded file not found:', req.file.path);
       return res.status(500).json({ error: 'Uploaded file not found' });
@@ -111,7 +201,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
     
     console.log('✅ File saved successfully to:', req.file.path);
 
-    // Get Python script path
+    // 获取 Python 脚本路径
     const scriptPath = join(__dirname, 'python', 'extract_pdf_to_json_md.py');
     console.log('Python script path:', scriptPath);
     
@@ -120,21 +210,21 @@ app.post('/upload', upload.single('file'), async (req, res) => {
       return res.status(500).json({ error: 'Python script not found' });
     }
 
-    // Ensure JSON output directory exists
+    // 确保 JSON 输出目录存在
     const jsonDir = join(__dirname, '..', 'public', 'json');
     if (!fs.existsSync(jsonDir)) {
       console.log('Creating JSON output directory:', jsonDir);
       fs.mkdirSync(jsonDir, { recursive: true });
     }
 
-    // Run Python script with timeout
+    // 运行 Python 脚本并设置超时
     console.log('Executing Python script:', `python3 ${scriptPath} ${req.file.path}`);
     
     const pythonProcess = spawn('python3', [scriptPath, req.file.path]);
     let outputData = '';
     let errorData = '';
 
-    // Set timeout for Python process (5 minutes)
+    // 设置 Python 进程超时（5分钟）
     const timeout = setTimeout(() => {
       console.error('Python process timed out');
       pythonProcess.kill();
@@ -173,7 +263,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
         });
       }
 
-      // Get generated JSON file path
+      // 获取生成的 JSON 文件路径
       const jsonFilename = req.file.filename.replace(/\.[^/.]+$/, '') + '_structured.json';
       const jsonPath = join(__dirname, '..', 'public', 'json', jsonFilename);
       
@@ -189,12 +279,12 @@ app.post('/upload', upload.single('file'), async (req, res) => {
       }
 
       try {
-        // Read and return JSON data
+        // 读取并返回 JSON 数据
         console.log('Reading JSON file');
         const jsonData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
         console.log('JSON data size:', JSON.stringify(jsonData).length, 'bytes');
         
-        // Clean up uploaded PDF file
+        // 清理上传的 PDF 文件
         fs.unlinkSync(req.file.path);
         console.log('Cleaned up uploaded PDF:', req.file.path);
 
@@ -220,41 +310,12 @@ app.post('/upload', upload.single('file'), async (req, res) => {
   }
 });
 
-// 添加删除文件的路由
-app.delete('/api/delete-file', async (req, res) => {
-  try {
-    const filename = req.query.filename;
-    if (!filename) {
-      return res.status(400).json({ error: 'Filename is required' });
-    }
-
-    // 删除 JSON 文件
-    const jsonPath = join(__dirname, '..', 'public', 'json', filename);
-    if (fs.existsSync(jsonPath)) {
-      fs.unlinkSync(jsonPath);
-      console.log('Deleted JSON file:', jsonPath);
-    }
-
-    // 尝试删除原始 PDF 文件（如果存在）
-    const pdfFilename = filename.replace('_structured.json', '.pdf');
-    const pdfPath = join(__dirname, 'uploads', pdfFilename);
-    if (fs.existsSync(pdfPath)) {
-      fs.unlinkSync(pdfPath);
-      console.log('Deleted PDF file:', pdfPath);
-    }
-
-    res.json({ message: 'Files deleted successfully' });
-  } catch (error) {
-    console.error('Error deleting files:', error);
-    res.status(500).json({ error: 'Failed to delete files', details: error.message });
-  }
-});
-
-// Start server
+// 启动服务器
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
 
+// 全局错误处理
 process.on('uncaughtException', (error) => {
   console.error('未捕获的异常:', error);
 });

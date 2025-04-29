@@ -53,6 +53,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
   const [editedTitle, setEditedTitle] = useState("");
   const [documentSummaries, setDocumentSummaries] = useState({});
   const [currentSummary, setCurrentSummary] = useState(null);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   const pdfPages = [
     { id: "ref-1", text: `--- Page 1 ---\nOriginal Investigation | Infectious Diseases\nSex Differences in Long COVID...` },
@@ -381,7 +382,8 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
     }
 
     try {
-      await deleteDocument(currentDocument.id);
+      setIsDeleting(true);
+      const result = await deleteDocument(currentDocument.id);
       
       // 更新未分类文档列表
       setUnsortedDocs(prev => prev.filter(doc => doc.id !== currentDocument.id));
@@ -396,9 +398,19 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
         delete newSummaries[currentDocument.id];
         return newSummaries;
       });
+
+      // 显示成功消息，如果有警告则一并显示
+      if (result.warnings?.length) {
+        alert(`${result.message}\n\n注意：\n${result.warnings.join('\n')}`);
+      }
     } catch (error) {
       console.error('删除文档失败:', error);
       alert('删除文档失败: ' + error.message);
+    } finally {
+      setIsDeleting(false);
+      
+      // 刷新文档列表
+      await loadData();
     }
   };
 
@@ -601,12 +613,6 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
                   )}
                 </div>
               </section>
-              <button 
-                onClick={loadData}
-                className="text-sm px-3 py-1 bg-blue-100 rounded"
-              >
-                刷新数据
-              </button>
             </>
           )}
         </main>

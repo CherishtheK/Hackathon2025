@@ -1,0 +1,642 @@
+{
+  "title": "iib_vol19no1_article1",
+  "processed_date": "2025-04-29T22:54:23.214289",
+  "content": [
+    {
+      "text": "Feature Article: Muhammad Aurangzeb Ahmad, Carly Eckert, Ankur Teredesai, and Greg McKelvey\n1\n",
+      "page": 1,
+      "bbox": [
+        48.96,
+        20.08,
+        563.03,
+        30.04
+      ]
+    },
+    {
+      "text": "Interpretable Machine Learning in Healthcare\n",
+      "page": 1,
+      "bbox": [
+        82.12,
+        58.63,
+        529.89,
+        82.54
+      ]
+    },
+    {
+      "text": "Muhammad Aurangzeb Ahmad, Carly Eckert, Ankur Teredesai, and Greg McKelvey\n",
+      "page": 1,
+      "bbox": [
+        115.03,
+        91.76,
+        496.97,
+        102.72
+      ]
+    },
+    {
+      "text": "Abstract—The drive towards greater penetration of machine\nlearning in healthcare is being accompanied by increased calls\nfor machine learning and AI based systems to be regulated and\nheld accountable in healthcare. Interpretable machine learning\nmodels can be instrumental in holding machine learning systems\naccountable. Healthcare offers unique challenges for machine\nlearning where the demands for explainability, model ﬁdelity\nand performance in general are much higher as compared to\nmost other domains. In this paper we review the notion of\ninterpretability within the context of healthcare, the various\nnuances associated with it, challenges related to interpretability\nwhich are unique to healthcare and the future of interpretability\nin healthcare.\n",
+      "page": 1,
+      "bbox": [
+        48.96,
+        141.24,
+        300.02,
+        269.76
+      ]
+    },
+    {
+      "text": "Index\nTerms—Interpretable\nMachine\nLearning,\nMachine\nLearning in Healthcare, Health Informatics\n",
+      "page": 1,
+      "bbox": [
+        48.96,
+        276.24,
+        300.02,
+        295.17
+      ]
+    },
+    {
+      "text": "I. INTRODUCTION\nW\nHILE the use of machine learning and artiﬁcial intelli-\ngence in medicine has its roots in the earliest days\nof the ﬁeld [1], it is only in recent years that there has\nbeen a push towards the recognition of the need to have\nhealthcare solutions powered by machine learning. This has\nled researchers to suggest that it is only a matter of time\nbefore machine learning will be ubiquitous in healthcare [22].\nDespite the recognition of the value of machine learning\n(ML) in healthcare, impediments to further adoption remain.\nOne pivotal impediment relates to the black box nature, or\nopacity, of many machine learning algorithms. Especially in\ncritical use cases that include clinical decision making, there\nis some hesitation in the deployment of such models because\nthe cost of model misclassiﬁcation is potentially high [21].\nHealthcare abounds with possible ”high stakes” applications of\nML algorithms: predicting patient risk of sepsis (a potentially\nlife threatening response to infection), predicting a patient’s\nlikelihood of readmission to the hospital, and predicting the\nneed for end of life care, just to name a few. Interpretable\nML thus allows the end user to interrogate, understand, debug\nand even improve the machine learning system. There is much\nopportunity and demand for interpretable ML models in such\nsituations. Interpretable ML models allow end users to evaluate\nthe model, ideally before an action is taken by the end user,\nsuch as the clinician. By explaining the reasoning behind\npredictions, interpretable machine learning systems give users\nreasons to accept or reject predictions and recommendations.\nAudits of machine learning systems in domains like health-\ncare and the criminal justice system reveal that the decisions\nand recommendations of machine learning systems may be\nbiased [4]. Thus, interpretability is needed to ensure that such\nsystems are free from bias and fair in scoring different ethnic\nand social groups [12]. Lastly, machine learning systems are\n",
+      "page": 1,
+      "bbox": [
+        48.96,
+        312.89,
+        300.02,
+        720.4
+      ]
+    },
+    {
+      "text": "The authors are from KenSci Inc. Corresponding Author e-mail: (muham-\nmad@kensci.com).\n",
+      "page": 1,
+      "bbox": [
+        48.96,
+        730.87,
+        300.02,
+        747.81
+      ]
+    },
+    {
+      "text": "already making decisions and recommendations for tens of\nmillions of people around the world (i.e. Netﬂix, Alibaba,\nAmazon). These predictive algorithms are having disruptive ef-\nfects on society [32] and resulting in unforeseen consequences\n[12] like deskilling of physicians. While the application of\nmachine learning methods to healthcare problems is inevitable\ngiven that complexity of analyzing massive amounts of data,\nthe need to standardize the expectation for interpretable ML\nin this domain is critical.\nHistorically, there has been a trade-off between interpretable\nmachine learning models and performance (precision, recall,\nF-Score, AUC, etc.) of the prediction models [8]. That is, more\ninterpretable models like regression models and decision trees\noften perform less well on many prediction tasks compared to\nless interpretable models like gradient boosting, deep learning\nmodels, and others. Researchers and scientists have had to\nbalance the desire for the most highly performing model\nto that which is adequately interpretable. In the last few\nyears, researchers have proposed new models which exhibit\nhigh performance as well as interpretability e.g., GA2M [5],\nrule-based models like SLIM[30], falling rule lists[31], and\nmodel distillation [27]. However, the utility of these models\nin healthcare has not been convincingly demonstrated due to\nthe rarity of their application.\nThe lack of interpretability in ML models can potentially\nhave adverse or even life threatening consequences. Consider\na scenario where the insights from a black box models are\nused for operationalizating without the recognition that the\npredictive model is not prescriptive in nature. As an example,\nconsider Caruana et al. [5] work on building classiﬁers for\nlabeling pneumonia patients as high or low risk for in-\nhospital mortality. A neural network, essentially a black box\nin terms of interpretability, proved to be the best classiﬁer\nfor this problem. Investigation of this problem with regression\nmodels revealed that one of the top predictors was patient\nhistory of asthma, a chronic pulmonary disease. The model\nwas predicting that given asthma, a patient had a lower risk\nof in-hospital death when admitted for pneumonia. In fact,\nthe opposite is true - patients with asthma are at higher\nrisk for serious complications and sequelae, including death,\nfrom an infectious pulmonary disease like pneumonia. The\nasthma patients were, in fact, provided more timely care of a\nhigher acuity than their counterparts without asthma, thereby\nincurring a survival advantage. Similarly leakage from data\ncan misinform models or artiﬁcially inﬂate performance during\ntesting [14], however explanations can be used to interrogate\nand rectify models when such problems surface.\nWhile there is a call to apply interpretable ML models\nto a large number of domains, healthcare is particularly\nchallenging due to medicolegal and ethical requirements, laws,\nand regulations, as well as the very real caution that must be\n",
+      "page": 1,
+      "bbox": [
+        311.98,
+        140.57,
+        563.04,
+        748.29
+      ]
+    },
+    {
+      "text": "IEEE Intelligent Informatics Bulletin\nAugust 2018\nVol.19 No.1\n",
+      "page": 1,
+      "bbox": [
+        48.96,
+        764.04,
+        563.03,
+        774.0
+      ]
+    },
+    {
+      "text": "2\nFeature Article: Interpretable Machine Learning in Healthcare\n",
+      "page": 2,
+      "bbox": [
+        48.96,
+        20.08,
+        563.03,
+        30.04
+      ]
+    },
+    {
+      "text": "employed when venturing into this domain. There are ethical,\nlegal and regulatory challenges that are unique to healthcare\ngiven that healthcare decisions can have an immediate effect\non the wellbeing or even the life of a person. Regulations\nlike the European Union’s General Data Protection Regu-\nlation (GDPR) require organizations which use patient data\nfor predictions and recommendations to provide on demand\nexplanations [28]. The inability to provide such explanations\non demand may result in large penalties for the organizations\ninvolved. Thus, there are monetary as well as regulatory and\nsafety incentives associated with interpretable ML models.\nInterpretability of ML models is applicable across all types\nof ML: supervised learning [17], unsupervised learning [6]\nand reinforcement learning [15]. In this paper, we limit the\nscope of the discussion to interpretability in supervised learn-\ning models as this covers the majority of the ML systems\ndeployed in healthcare settings [18]. The remainder of the\npaper is organized as follows: First, we deﬁne interpretability\nin machine learning, we provide an overview of the need for\ninterpretability in machine learning models in healthcare, and\nwe discuss use cases where interpretability is less critical.\nWe conclude this paper with a brief survey of interpretable\nML models and challenges related to interpretability unique\nto healthcare.\n",
+      "page": 2,
+      "bbox": [
+        48.96,
+        56.88,
+        300.02,
+        342.26
+      ]
+    },
+    {
+      "text": "II. WHAT IS INTERPRETABILITY?\n",
+      "page": 2,
+      "bbox": [
+        103.21,
+        361.47,
+        245.77,
+        371.44
+      ]
+    },
+    {
+      "text": "While there is general consensus regarding the need for\ninterpretability in machine learning models, there is much less\nagreement about what constitutes interpretability [17]. To this\nend, researchers have tried to elucidate the numerous notions\nand deﬁnitions of interpretability [17],[8]. Interpretability has\nbeen deﬁned in terms of model transparency [17], model ﬁdeli-\nty [17], model trust [17], [8], [9], and model comprehension\n[9], among other characteristics. Many of the notions of inter-\npretability have been developed in the context of computing\nsystems and mostly ignore the literature on interpretability that\ncomes from the social sciences or psychology [19]. Thus, one\ncommon objection to these deﬁnitions of interpretability is that\nit does not put enough emphasis on the user of interpretable\nmachine learning systems [16]. This results in a situation\nwhere the models and explanations produced do not facilitate\nthe needs of the end users [19].\nA primary sentiment of interpretability is the ﬁdelity of the\nmodel and its explanation i.e., the machine learning model\nshould give an explanation of why it is making a prediction\nor giving a recommendation. This is often referred to as a\nkey component of “user trust” [25]. In some machine learning\nmodels like decision trees [24], regression models [33], and\ncontext explanation networks [3] the explanation itself is part\nof the model. In contrast, for models such as neural networks,\nsupport vector machines, and random forests that do not have\nexplanations as part of their predictions it is possible to extract\nexplanations from models that are applied post-hoc, such\nas locally interpretable model explanations (LIME) [25] and\nShapley Values [26]. LIME constructs explanations by creating\na local model, like a regression model, for the instance for\nwhich an explanation is required. The data for the local model\n",
+      "page": 2,
+      "bbox": [
+        48.96,
+        379.23,
+        300.02,
+        748.29
+      ]
+    },
+    {
+      "text": "is generated by perturbing the instance of interest, observing\nthe change in labels and using it to train a new model.\nShapley values, on the other hand, take a game theoretical\nperspective to determine the relative contribution of variables\nto the predictions by considering all possible combinations of\nvariables as cooperating and competing coalitions to maximize\npayoff, deﬁned in terms of the prediction [26].\nMany deﬁnitions of interpretability include transparency of\nthe components and algorithms, the use of comprehensible\nfeatures in model building, and intelligible applications of\nparameters and hyperparameters. Based on the work of Lipton\net al. [17], interpretability can be described in terms of\ntransparency of the machine learning system i.e., the algo-\nrithm, features, parameters and the resultant model should\nbe comprehensible by the end user. At the feature level, the\nsemantics of the features should be understandable. Thus, a\npatient’s age is readily interpretable as compared to a highly\nengineered feature (the third derivative of a function that\nincorporates age, social status and gender, for example). At\nthe model level, a deep learning model is less interpretable\ncompared to a logistic regression model. An exception to\nthis rule is when the deep learning model utilizes intuitive\nfeatures as inputs and the regression model utilizes highly\nengineered features, then the deep learning model may in fact\nbe more interpretable. Lastly, we consider interpretability in\nterms of the model parameters and hyperparameters. From this\nperspective, the number of nodes and the depth of the neural\nnetwork is not interpretable but the number of support vectors\nfor a linear kernel is much more interpretable [17].\nInterpretability may also mean different things for different\npeople and in different use cases. Consider regression models.\nFor a statistician or a machine learning expert the following\nequation for linear regression is quite interpretable:\n",
+      "page": 2,
+      "bbox": [
+        311.98,
+        56.88,
+        563.04,
+        449.36
+      ]
+    },
+    {
+      "text": "yi = β0 + β1xi + ϵi,\ni = 1, 2, ..., n\n(1)\n",
+      "page": 2,
+      "bbox": [
+        359.99,
+        457.75,
+        563.04,
+        469.2
+      ]
+    },
+    {
+      "text": "Those familiar with the ﬁeld, can easily identify the relative\nweights of the parameter coefﬁcients and abstract meaning\nfrom the derived equation. However, most non statisticians,\nincluding some clinicians, may not be able to interpret the\nmeaning of this equation. For others, merely describing a\nmodel as ”linear” may be sufﬁcient. Conversely, a more\nadvanced audience, knowing the error surface of the model\nmay be needed to consider the model fully “interpretable”.\nFor some predictive algorithms, however, the lack of in-\nterpretability may go deeper. Thus consider the following\nequation for updating weights in a deep learning network.\n",
+      "page": 2,
+      "bbox": [
+        311.98,
+        476.55,
+        563.04,
+        606.04
+      ]
+    },
+    {
+      "text": "al\nj = σ\n\u0010 X\n",
+      "page": 2,
+      "bbox": [
+        380.85,
+        612.19,
+        431.65,
+        628.51
+      ]
+    },
+    {
+      "text": "k\nwl\njkal−1\nk\n+ bl\nj\n\u0011\n(2)\n",
+      "page": 2,
+      "bbox": [
+        422.25,
+        612.19,
+        563.04,
+        637.38
+      ]
+    },
+    {
+      "text": "While the math is clear and interpretable, the equation does not\nhelp anyone understand how deep learning networks actually\nlearn and generalize.\nFinally, interpretability of machine learning models in\nhealthcare is always context dependent, even to the level of\nthe user role. The same machine learning model may require\ngenerating different explanations for different end users e.g.,\nan explanation model for a risk of readmission prediction\nmodel to be consumed by a hospital discharge planner vs.\n",
+      "page": 2,
+      "bbox": [
+        311.98,
+        642.71,
+        563.04,
+        748.29
+      ]
+    },
+    {
+      "text": "August 2018\nVol.19 No.1\nIEEE Intelligent Informatics Bulletin\n",
+      "page": 2,
+      "bbox": [
+        48.96,
+        764.04,
+        563.03,
+        774.0
+      ]
+    },
+    {
+      "text": "Feature Article: Muhammad Aurangzeb Ahmad, Carly Eckert, Ankur Teredesai, and Greg McKelvey\n3\n",
+      "page": 3,
+      "bbox": [
+        48.96,
+        20.08,
+        563.03,
+        30.04
+      ]
+    },
+    {
+      "text": "a physician may necessitate different explanations for the\nsame risk score. This component of interpretability parallels\nthe thought processes and available interventions of different\npersonas in healthcare. For example, a discharge planner will\noften evaluate a patient’s risk of readmission based on the com-\nponents of that patient’s situation that are under her purview\n- perhaps related to the patient’s living situation, unreliable\ntransportation, or need for a primary care physician. While the\ntreating physician will need to be aware of these associated\ncharacteristics, she may be more likely to focus on the patient’s\ncardiac risk and history of low compliance with medications\nthat are associated with the patient’s high risk of readmission.\nContext is critical when considering interpretability.\n",
+      "page": 3,
+      "bbox": [
+        48.96,
+        56.88,
+        300.02,
+        210.31
+      ]
+    },
+    {
+      "text": "III. INTERPRETABILITY VS. RISK\nWhile there are a number of reasons why interpretability\nof ML models is important, not all prediction problems in\nsupervised machine learning predictions require explanations.\nAlternatives to explanations include domains where the system\nmay have theoretical guarantees to always work or empirical\nguarantees of performance when the system has historically\nshown to have great performance e.g., deep learning ap-\nplications radiology with superhuman performance[20]; or\nin work pioneered by Gulshan et al, the developed deep\nlearning algorithm was able to detect diabetic retinopathy from\nretinal fundal photographs with extremely high sensitivity and\nspeciﬁcity [10]. The exceptional performance supports the fact\nthat this prediction does not require an explanation. However,\nﬁndings such as this are quite rare. Another example where\ninterpretability may not be prioritized is in the setting of\nemergency department (ED) crowding. For a hospital’s ED,\nthe number of patients expected to arrive at the ED in the\nnext several hours can be a helpful prediction to anticipate\nED stafﬁng. In general, the nursing supervisor is not concerned\nwith the reasons why they are seeing the expected number of\npatients (of course, there are exceptions) but only interested\nin the number of expected patients and the accuracy of the\nprediction. On the other hand, consider the case of predicting\nrisk of mortality for patients. In this scenario, the imperative\nfor supporting explanations for predictions may be great - as\nthe risk score may drive critical care decisions. What these\nexamples demonstrate is that the clinical context (also, how\n”close” the algorithm is to the patient) associated with the\napplication determines the need for explanation. The ﬁdelity\nof the interpretable models also plays a role in determining\nthe need for explanations. Models like LIME [25] produce\nexplanations which may not correspond to how the predictive\nmodel actually works. LIME models are post-hoc explanations\nof model output, and in some ways, likely mimics the manner\nin which human beings explain their own decision making\nprocesses [17], this may be an admissible explanation where\nexplanations are needed but the cost for the occasional false\npositives is not very high.\nConsider Figure 1 which shows a continuum of potential\nrisk predictions related to patient care. The arrow represents\nthe increasing need for explanations along the continuum.\nConsider a model for cost prediction for a patient, the accura-\ncy of the prediction may take precedence over explanation\n",
+      "page": 3,
+      "bbox": [
+        48.96,
+        221.63,
+        300.02,
+        748.29
+      ]
+    },
+    {
+      "text": "Fig. 1: Prediction Use Cases vs. Need for Interpretability\n(LWBS: left without being seen)\n",
+      "page": 3,
+      "bbox": [
+        311.98,
+        272.79,
+        563.04,
+        294.71
+      ]
+    },
+    {
+      "text": "depending on the user role. However, as we move up the\ncontinuum to Length of hospital stay explanations may be\nhelpful in decision making while tolerating a slight decrement\nin model performance. Thus, the speciﬁc use case is very\nimportant when considering which predictive and explanation\nmodels to choose. Certain use cases and domains require us to\nsacriﬁce performance for interpretability while in other cases,\npredictive performance may be the priority.\n",
+      "page": 3,
+      "bbox": [
+        311.98,
+        318.95,
+        563.04,
+        412.6
+      ]
+    },
+    {
+      "text": "IV. THE CHALLENGE OF INTERPRETABILITY IN\nHEALTHCARE\n",
+      "page": 3,
+      "bbox": [
+        336.21,
+        428.48,
+        538.81,
+        450.39
+      ]
+    },
+    {
+      "text": "The motivation for model explanations in healthcare is clear\n- in many cases both the end users and the critical nature of\nthe prediction demand a certain transparency - both for user\nengagement and for patient safety. However, merely providing\nan explanation for an algorithm’s prediction is insufﬁcient.\nThe manner in which interpretations are shared with the end\nusers, incorporated into user workﬂows, and utilized must be\ncarefully considered.\nHealthcare workers are generally overwhelmed - by the\nnumber of patients they are required to see in a shift, by\nthe amount of data generated by such patients, and the\nassociated tasks required of them (data entry, electronic health\nrecord system requirements, as well as providing clinical care).\nMachine learning algorithms and their associated explanations,\nif not delivered correctly, will merely be one additional piece\nof data delivered to a harried healthcare professional. In order\nto be truly considered, ML output should be comprehensible to\nthe intended user from a domain perspective and be applicable\nwith respect to the intended use case.\n",
+      "page": 3,
+      "bbox": [
+        311.98,
+        455.83,
+        563.04,
+        681.03
+      ]
+    },
+    {
+      "text": "A. User Centric Explanations\n",
+      "page": 3,
+      "bbox": [
+        311.98,
+        698.97,
+        434.35,
+        708.93
+      ]
+    },
+    {
+      "text": "The participation of end users in the design of clinical\nmachine learning tools is imperative - to better understand\nhow the end users will utilize the output components - and\n",
+      "page": 3,
+      "bbox": [
+        311.98,
+        714.42,
+        563.04,
+        748.29
+      ]
+    },
+    {
+      "text": "IEEE Intelligent Informatics Bulletin\nAugust 2018\nVol.19 No.1\n",
+      "page": 3,
+      "bbox": [
+        48.96,
+        764.04,
+        563.03,
+        774.0
+      ]
+    },
+    {
+      "text": "4\nFeature Article: Interpretable Machine Learning in Healthcare\n",
+      "page": 4,
+      "bbox": [
+        48.96,
+        20.08,
+        563.03,
+        30.04
+      ]
+    },
+    {
+      "text": "Fig. 2: Global vs. Local Models for Predicting Diabetes\n",
+      "page": 4,
+      "bbox": [
+        191.05,
+        195.9,
+        420.95,
+        205.86
+      ]
+    },
+    {
+      "text": "also to educate end users to the nature of the prediction\nand explanation. According to Jeffrey et al. [13], even\nseasoned clinicians have difﬁculty interpreting risk scores\nand probability based estimates and end user input in the\ndesign of the expected output can drive participation. Moreso,\nunderstanding how end users interpret explanations, derived\nfrom the machine learning models, is imperative. Consider\nfor example, the following output:\n",
+      "page": 4,
+      "bbox": [
+        48.96,
+        229.97,
+        300.02,
+        323.62
+      ]
+    },
+    {
+      "text": "Patient risk of Readmission: 62, HIGH\nTop Factors: Low albumin\nElevated heart rate in emergency department\nHistory of heart failure\n",
+      "page": 4,
+      "bbox": [
+        48.96,
+        343.48,
+        285.73,
+        389.31
+      ]
+    },
+    {
+      "text": "How will a healthcare provider interpret this resulting risk\nscore and the associated explanation? Does the fact that the\nprovider knows that these attributes are ”true” for this patient\nallow user trust in the model? Does the physician consider\nthat by addressing these top factors - such as the patient’s\nlow albumin- that the patient’s risk of readmission will be\nmitigated? It is important that the concepts of causality and\nassociation are emphasized and differentiated. Lipton [17]\naddresses the issue of algorithm explanation and the tendency\nto attribute causality to an explanation. He cautions against the\nconﬂation of these concepts but does remind us that the results\nof the explanation can instead inform future formal studies to\ninvestigate causal associations between the associated factor\nand the end point, i.e. readmission.\n",
+      "page": 4,
+      "bbox": [
+        48.96,
+        409.2,
+        300.02,
+        574.58
+      ]
+    },
+    {
+      "text": "B. Performance vs. Transparency Trade-off\n",
+      "page": 4,
+      "bbox": [
+        48.96,
+        591.58,
+        226.03,
+        601.55
+      ]
+    },
+    {
+      "text": "Earlier in this paper we described the trade-off between\nmodel performance and model transparency in healthcare\nalgorithms. How is this trade-off determined? and by whom?\nOthers have described the need to optimize models towards\ndifferent performance metrics, and that AUC may not always\nbe the metric to optimize. For example, when predicting\nend of life to determine when to refer patients to hospice,\nphysicians may prefer to optimize for model precision, that\nis, to maximize the number of individuals who are correctly\nclassiﬁed as likely to die by the algorithm. Similarly, the\ntrade-off between performance and interpretability requires\ndiscussions with end users to understand the clinical and\n",
+      "page": 4,
+      "bbox": [
+        48.96,
+        606.82,
+        300.02,
+        748.29
+      ]
+    },
+    {
+      "text": "human risk associated with misclassiﬁcation or with model\nopacity.\n",
+      "page": 4,
+      "bbox": [
+        311.98,
+        229.97,
+        563.04,
+        251.89
+      ]
+    },
+    {
+      "text": "C. Balancing Requirements of Interpretability\n",
+      "page": 4,
+      "bbox": [
+        311.98,
+        276.27,
+        500.19,
+        286.23
+      ]
+    },
+    {
+      "text": "As there is not a single uniﬁed conception of interpretability,\nthere are multiple requirements for an ideal interpretable\nmachine learning system, some of which may be at odds.\nConsider model soundness which refers to how close the\nmodel explanation is to how the model actually works. It\nmay be the case that the model which results in the best\nperformance and interpretability is a decision trees with depth\n8 and 50 nodes. While the decision tree model is interpretable,\nthe whole model is not comprehensible at the same time.\nSimultability is a characteristic of a model when it can be\ncomprehensible in its entirety [17]. In this situation, it may\nbe possible to make the decision tree more interpretable by\npruning and then use that model for explanations. This may\nresult in a loss in performance and also a loss in soundness, as\nthe model now corresponds to a lesser degree regarding how\npredictions are being made.\nCertain healthcare applications such as predicting disease\nprogression may require explanations at the local, the cohort\nand the global level. For such applications, local explanations\nlike LIME or Shapley Values may not sufﬁce. One way\nto address the requirements of explanation scope is to ﬁrst\ngenerate the local explanations ﬁrst and to then generate\nglobal level explanations by aggregating these. The main\ndrawback in such approaches is the large runtime required to\ngenerate explanations for individual instances. Another way to\naddress this problem is to create distilled models like decision\ntrees for generating global explanations and local models for\nexplanations at the instance level.\nLastly, trust is one of the most important aspects of inter-\npretability. Consider the case of deep learning models that\nhave shown great predictive performance in a number of\nhealthcare applications [20]. While it is possible to extract\nexplanations from deep learning models, these explanations\ncannot be proven to be sound or complete [23]. Often the\ngoal of explanations is to get parsimonious explanations which\ncannot be stated to have the correct explanations. Additionally\nalways having parsimony as a goal may lead to incorrect\nmodels [7].\n",
+      "page": 4,
+      "bbox": [
+        311.98,
+        294.37,
+        563.04,
+        748.29
+      ]
+    },
+    {
+      "text": "August 2018\nVol.19 No.1\nIEEE Intelligent Informatics Bulletin\n",
+      "page": 4,
+      "bbox": [
+        48.96,
+        764.04,
+        563.03,
+        774.0
+      ]
+    },
+    {
+      "text": "Feature Article: Muhammad Aurangzeb Ahmad, Carly Eckert, Ankur Teredesai, and Greg McKelvey\n5\n",
+      "page": 5,
+      "bbox": [
+        48.96,
+        20.08,
+        563.03,
+        30.04
+      ]
+    },
+    {
+      "text": "D. Assistive Intelligence\n",
+      "page": 5,
+      "bbox": [
+        48.96,
+        56.71,
+        148.92,
+        66.67
+      ]
+    },
+    {
+      "text": "One common misconception about the application of ma-\nchine learning in healthcare is that machine learning algo-\nrithms are intended to replace human practitioners in health-\ncare and medicine [11]. Healthcare delivery is an extremely\ncomplex, subtle, and intimate process that requires domain\nknowledge and intervention in every step of care. We believe\nthat the human healthcare practitioner will remain integral to\ntheir role and that machine learning algorithms can assist and\naugment the provision of better care. Human performance\nparity [17] is also considered to be an important aspect of\npredictive systems that provide explanations i.e., the predictive\nsystem should be at least as good as the humans in the domain\nand at least make the same mistakes that the human is making.\nIn certain use cases the opposite requirement may hold i.e.,\none may not care about parity with cases when humans are\nright but rather one cares more about cases where humans are\nbad at prediction but the machine learning system has superior\nperformance. Such hybrid of human-machine learning systems\ncan lead to truly assistive machine Learning in healthcare.\nExplanations from such systems could also be used to improve\nhuman performance, extract insights, gain new knowledge\nwhich may be used to generate hypothesis etc. The results\nfrom hypothesis derived from the data driven paradigm could\nin turn be used to push the frontiers of knowledge in healthcare\nand medicine by guiding theory [2].\n",
+      "page": 5,
+      "bbox": [
+        48.96,
+        72.75,
+        300.02,
+        369.63
+      ]
+    },
+    {
+      "text": "V. INTERPRETABLE MODELS IN HEALTHCARE\n",
+      "page": 5,
+      "bbox": [
+        75.96,
+        386.95,
+        273.04,
+        396.91
+      ]
+    },
+    {
+      "text": "Depending upon the scope of the problem, explanations\nfrom machine learning models can be divided into “global”,\n“cohort-speciﬁc” and “local” explanations. Global explana-\ntions refer to explanations that apply to the entire study\npopulation e.g., in the case of decision trees and regression\nmodels. Cohort-speciﬁc explanations are explanations that are\nfocal to population sub-groups. Local explanations refer to\nexplanations that are at the instance level i.e., explanations\nthat are generated for individuals. Consider Figure 2 which\nillustrates the contrast between global vs. local models for\npredicting diabetes. The global model is a decision tree model\nthat generalizes over the entire population, the cohort level\nmodel can also be a decision tree model which captures certain\nnuances of the sub-population of patients not captured by the\nglobal model and lastly the local model gives explanations at\nthe level of instances. All three explanations may be equally\nvalid depending upon the use case and how much soundness\nand generalizability is required by the application.\nOne way to distinguish models is by model composition.\nThe predictive model and the explanation of the model can\nbe the same as in the case of decision trees, GA2M etc.\nAlternatively they can be different e.g., a Gradient Boosting\nmodel is not really interpretable but it is possible to extract\nexplanations via models like LIME, Shapley values, Tree\nExplainers etc. One scheme to create interpretable models\nis via model distillation where the main idea is to create\ninterpretable models from non-interpretable models. Consider\na feature set X = x1, x2, x3, ...., xn with yi is the class\nlabel being predicted. Suppose y′\ni is the label that is predicted\n",
+      "page": 5,
+      "bbox": [
+        48.96,
+        403.36,
+        300.02,
+        750.88
+      ]
+    },
+    {
+      "text": "by a prediction model Mp which is non-interpretable e.g.,\nDeep Learning etc. An interpretable model e.g., decision trees,\nregression models etc. which is created by the feature set X\nand the output y′\ni as the label is referred to as a student model.\nWhile there are no theoretical guarantees for the performance\nof the student model but in practice, many student models have\npredictive power which is sufﬁciently high from an application\nperspective.\n",
+      "page": 5,
+      "bbox": [
+        311.98,
+        56.65,
+        563.04,
+        150.53
+      ]
+    },
+    {
+      "text": "VI. FUTURE OF INTERPRETABILITY IN HEALTHCARE\n",
+      "page": 5,
+      "bbox": [
+        324.54,
+        169.75,
+        550.49,
+        179.71
+      ]
+    },
+    {
+      "text": "As machine learning increasingly penetrates healthcare,\nissues around accountability, fairness and transparency of ma-\nchine learning systems in healthcare will become paramount.\nMost predictive machine learning systems in healthcare just\nprovide predictions but in practice many use cases do require\nreasoning to convince medical practitioners to take feedback\nfrom such models. Thus there is a need to integrate inter-\npretable models with predictions with the workﬂow of medical\nfacilities. Most predictive models are not prescriptive or causal\nin nature. In many healthcare applications explanations are\nnot sufﬁcient and prescriptions or actionability. We foresee\ncausal explanations to be the next frontier of machine learning\nresearch.\nIt should also be noted that while interpretability is an\naspect of holding machine learning models accountable, it is\nnot the only way to do. Researchers have also suggested that\none way to audit machine learning systems it to analyze their\noutputs given that some models may be too complex for human\ncomprehension [29] and auditing outputs for fairness and bias\nmay be a better option. Also, many problems in healthcare\nare complex and simplifying them to point solutions with ac-\ncompanying explanations may result in suboptimal outcomes.\nThus consider the problem of optimizing risk of readmission\nto a hospital. Just optimizing predictions and actionability to\nreducing risk of readmission may in fact increase the average\nlength of stay in hospitals for patients. This would be non-\noptimal solution and not in the best interest of the patient\neven though the original formulation of the machine learning\nproblem is deﬁned as such. Thus problem formulations for\ninterpretable models should take such contexts and inter-\ndependencies into account.\nThere is also some debate around the use of post-hoc vs.\nante-hoc models of prediction in the research community.\nSince explanations from post-hoc models do not correspond to\nhow the model actually predicts, there is skepticism regarding\nthe use of these models in scenarios which may require critical\ndecision making. Current and future efforts in predictive\nmodels should also focus on ante-hoc explanation models\nlike context explanation networks, falling rule lists, SLIM\netc. Scalability of interpretable machine learning models is\nalso an open area of research. Generating explanations for\nmodels like LIME and Shapley values can be computationally\nexpensive. In case of LIME, a local model has to be created\nfor each instance for which an explanation is required. In a\nscenario where there are hundreds of millions of instances for\nwhich prediction and explanations are required then this can\nbe problematic from a scalability perspective. Shapley values\n",
+      "page": 5,
+      "bbox": [
+        311.98,
+        187.5,
+        563.04,
+        748.29
+      ]
+    },
+    {
+      "text": "IEEE Intelligent Informatics Bulletin\nAugust 2018\nVol.19 No.1\n",
+      "page": 5,
+      "bbox": [
+        48.96,
+        764.04,
+        563.03,
+        774.0
+      ]
+    },
+    {
+      "text": "6\nFeature Article: Interpretable Machine Learning in Healthcare\n",
+      "page": 6,
+      "bbox": [
+        48.96,
+        20.08,
+        563.03,
+        30.04
+      ]
+    },
+    {
+      "text": "computation requires computing the variable contribution by\nconsidering all possible combinations of variables in the data.\nFor problems where the feature set has hundreds of variables,\nsuch computations can be very expensive. The problem of\nscalability thus exists with two of the most widely used\ninterpretable machine learning models.\nLastly, evaluation of explanation models is an area which\nhas not been explored in much detail. Consider the scenario\nin which multiple models with the same generalization error\noffer different explanations for the same instance or alter-\nnatively different model agnostic models are used to extract\nexplanations and these model offer different explanations. In\nboth these scenarios, the challenge is to ﬁgure out which\nexplanations are the best. We propose that the concordance\nin explanations as well as how well the explanations align\nwith what is already known in the domain will determine\nexplanation model preference. However, the danger also exists\nthat novel but correct explanations may be weeded out if\nconcordance is the only criteria of choosing explanations.\n",
+      "page": 6,
+      "bbox": [
+        48.96,
+        56.88,
+        300.02,
+        282.39
+      ]
+    },
+    {
+      "text": "VII. CONCLUSION\n",
+      "page": 6,
+      "bbox": [
+        134.29,
+        300.83,
+        214.71,
+        310.8
+      ]
+    },
+    {
+      "text": "Applied Machine Learning in Healthcare is an active area of\nresearch. The increasingly widespread applicability of machine\nlearning models necessitates the need for explanations to\nhold machine learning models accountable. While there is not\nmuch agreement on the meaning of interpretability in machine\nlearning, there are a number of characteristics of interpretable\nmodels that researchers have discussed which can be used as a\nguide to create the requirements of interpretable models. The\nchoice of interpretable models depends upon the application an\nuse case for which explanations are required. Thus a critical\napplication like prediction a patient’s end of life may have\nmuch more stringent conditions for explanation ﬁdelity as\ncompared to just predicting costs for a procedure where getting\nthe prediction right is much more important as compared\nto providing explanations. There are still a large number of\nquestions that are unaddressed in the area of interpretable\nmodels and we envision that it will be an active area of\nresearch for the next few years.\n",
+      "page": 6,
+      "bbox": [
+        48.96,
+        318.04,
+        300.02,
+        531.24
+      ]
+    },
+    {
+      "text": "ACKNOWLEDGMENT\n",
+      "page": 6,
+      "bbox": [
+        131.05,
+        549.68,
+        217.94,
+        559.65
+      ]
+    },
+    {
+      "text": "The authors would like to thank Kiyana Zolfaghar, Vikas\nKumar, Dr. Nicholas Mark, Rohan D’Souza and other mem-\nbers of the KenSci team for the fruitful and enlightening dis-\ncussions and feedback on interpretability in machine learning.\n",
+      "page": 6,
+      "bbox": [
+        48.96,
+        566.89,
+        300.02,
+        612.72
+      ]
+    },
+    {
+      "text": "REFERENCES\n",
+      "page": 6,
+      "bbox": [
+        146.6,
+        631.16,
+        202.4,
+        641.13
+      ]
+    },
+    {
+      "text": "[1] TR Addis.\nTowards an” expert” diagnostic system.\nICL Technical\nJournal, 1:79–105, 1956.\n[2] Muhammad Aurangzeb Ahmad, Zoheb Borbora, Jaideep Srivastava, and\nNoshir Contractor. Link prediction across multiple social networks. In\nData Mining Workshops (ICDMW), 2010 IEEE International Conference\non, pages 911–918. IEEE, 2010.\n[3] Maruan Al-Shedivat, Avinava Dubey, and Eric P Xing.\nContextual\nexplanation networks. arXiv preprint arXiv:1705.10301, 2017.\n[4] Jenna Burrell. How the machine thinks: Understanding opacity in ma-\nchine learning algorithms. Big Data & Society, 3(1):2053951715622512,\n2016.\n",
+      "page": 6,
+      "bbox": [
+        52.95,
+        649.45,
+        300.02,
+        747.81
+      ]
+    },
+    {
+      "text": "[5] Rich Caruana, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm,\nand Noemie Elhadad.\nIntelligible models for healthcare: Predicting\npneumonia risk and hospital 30-day readmission. In Proceedings of the\n21th ACM SIGKDD International Conference on Knowledge Discovery\nand Data Mining, pages 1721–1730. ACM, 2015.\n[6] Xi Chen, Yan Duan, Rein Houthooft, John Schulman, Ilya Sutskever,\nand Pieter Abbeel.\nInfogan: Interpretable representation learning by\ninformation maximizing generative adversarial nets.\nIn Advances in\nNeural Information Processing Systems, pages 2172–2180, 2016.\n[7] Pedro Domingos. The role of occam’s razor in knowledge discovery.\nData Mining and Knowledge Discovery, 3(4):409–425, 1999.\n[8] Finale Doshi-Velez, Mason Kortz, Ryan Budish, Chris Bavitz, Sam\nGershman, David O’Brien, Stuart Schieber, James Waldo, David Wein-\nberger, and Alexandra Wood. Accountability of ai under the law: The\nrole of explanation. arXiv preprint arXiv:1711.01134, 2017.\n[9] Alex A Freitas. Comprehensible classiﬁcation models: a position paper.\nACM SIGKDD Explorations Newsletter, 15(1):1–10, 2014.\n[10] Varun Gulshan, Lily Peng, Marc Coram, Martin C Stumpe, Derek\nWu, Arunachalam Narayanaswamy, Subhashini Venugopalan, Kasumi\nWidner, Tom Madams, Jorge Cuadros, et al. Development and validation\nof a deep learning algorithm for detection of diabetic retinopathy in\nretinal fundus photographs. Jama, 316(22):2402–2410, 2016.\n[11] Puneet Gupta. Machine learning: The future of healthcare. Harvard Sci.\nRev., 2017.\n[12] Sara Hajian, Francesco Bonchi, and Carlos Castillo.\nAlgorithmic\nbias: From discrimination discovery to fairness-aware data mining. In\nProceedings of the 22nd ACM SIGKDD International Conference on\nKnowledge Discovery and Data Mining, pages 2125–2126. ACM, 2016.\n[13] Alvin D Jeffery, Laurie L Novak, Betsy Kennedy, Mary S Dietrich, and\nLorraine C Mion.\nParticipatory design of probability-based decision\nsupport tools for in-hospital nurses. Journal of the American Medical\nInformatics Association, 24(6):1102–1110, 2017.\n[14] Shachar Kaufman, Saharon Rosset, Claudia Perlich, and Ori Stitelman.\nLeakage in data mining: Formulation, detection, and avoidance. ACM\nTransactions on Knowledge Discovery from Data (TKDD), 6(4):15,\n2012.\n[15] Samantha Krening, Brent Harrison, Karen M Feigh, Charles Lee Isbell,\nMark Riedl, and Andrea Thomaz. Learning from explanations using\nsentiment and advice in rl.\nIEEE Transactions on Cognitive and\nDevelopmental Systems, 9(1):44–55, 2017.\n[16] Todd Kulesza. Personalizing machine learning systems with explanatory\ndebugging. PhD Dissertation, Oregon State University, 2014.\n[17] Zachary C Lipton. The mythos of model interpretability. arXiv preprint\narXiv:1606.03490, 2016.\n[18] Gunasekaran Manogaran and Daphne Lopez. A survey of big data ar-\nchitectures and machine learning algorithms in healthcare. International\nJournal of Biomedical Engineering and Technology, 25(2-4):182–211,\n2017.\n[19] Tim Miller. Explanation in artiﬁcial intelligence: insights from the social\nsciences. arXiv preprint arXiv:1706.07269, 2017.\n[20] Riccardo Miotto, Fei Wang, Shuang Wang, Xiaoqian Jiang, and Joel T\nDudley. Deep learning for healthcare: review, opportunities and chal-\nlenges. Brieﬁngs in Bioinformatics, 2017.\n[21] Mehran Mozaffari-Kermani, Susmita Sur-Kolay, Anand Raghunathan,\nand Niraj K Jha.\nSystematic poisoning attacks on and defenses for\nmachine learning in healthcare. IEEE Journal of Biomedical and Health\nInformatics, 19(6):1893–1905, 2015.\n[22] Travis B Murdoch and Allan S Detsky. The inevitable application of\nbig data to health care. Jama, 309(13):1351–1352, 2013.\n[23] Nicolas Papernot, Patrick McDaniel, Somesh Jha, Matt Fredrikson,\nZ Berkay Celik, and Ananthram Swami. The limitations of deep learning\nin adversarial settings. In Security and Privacy (EuroS&P), 2016 IEEE\nEuropean Symposium on, pages 372–387. IEEE, 2016.\n[24] Jesus Maria P´erez, Javier Muguerza, Olatz Arbelaitz, and Ibai Gurrutx-\naga. A new algorithm to build consolidated trees: study of the error rate\nand steadiness. In Intelligent Information Processing and Web Mining,\npages 79–88. Springer, 2004.\n[25] Marco Tulio Ribeiro, Sameer Singh, and Carlos Guestrin. Why should\ni trust you?: Explaining the predictions of any classiﬁer. In Proceedings\nof the 22nd ACM SIGKDD International Conference on Knowledge\nDiscovery and Data Mining, pages 1135–1144. ACM, 2016.\n[26] Erik ˇStrumbelj and Igor Kononenko.\nExplaining prediction models\nand individual predictions with feature contributions. Knowledge and\nInformation Systems, 41(3):647–665, 2014.\n[27] Sarah Tan, Rich Caruana, Giles Hooker, and Yin Lou. Detecting bias\nin black-box models using transparent model distillation. arXiv preprint\narXiv:1710.06169, 2017.\n",
+      "page": 6,
+      "bbox": [
+        311.98,
+        58.39,
+        563.04,
+        747.81
+      ]
+    },
+    {
+      "text": "August 2018\nVol.19 No.1\nIEEE Intelligent Informatics Bulletin\n",
+      "page": 6,
+      "bbox": [
+        48.96,
+        764.04,
+        563.03,
+        774.0
+      ]
+    },
+    {
+      "text": "Feature Article: Muhammad Aurangzeb Ahmad, Carly Eckert, Ankur Teredesai, and Greg McKelvey\n7\n",
+      "page": 7,
+      "bbox": [
+        48.96,
+        20.08,
+        563.03,
+        30.04
+      ]
+    },
+    {
+      "text": "[28] Welderufael B Tesfay, Peter Hofmann, Toru Nakamura, Shinsaku Kiy-\nomoto, and Jetzabel Serna.\nI read but don’t agree: Privacy policy\nbenchmarking using machine learning and the eu gdpr. In Companion\nof The Web Conference 2018, pages 163–166. International World Wide\nWeb Conferences Steering Committee, 2018.\n[29] Michael Tomasello. The Cultural Origins of Human Cognition. Harvard\nUniversity Press, 2009.\n[30] Berk Ustun and Cynthia Rudin. Supersparse linear integer models for\noptimized medical scoring systems. Machine Learning, 102(3):349–391,\n2016.\n[31] Fulton Wang and Cynthia Rudin.\nFalling rule lists.\nIn Artiﬁcial\nIntelligence and Statistics, pages 1013–1022, 2015.\n[32] William Yang Wang. “Liar, Liar pants on ﬁre”: A new benchmark dataset\nfor fake news detection. arXiv preprint arXiv:1705.00648, 2017.\n[33] Xin Yan and Xiaogang Su. Linear Regression Analysis: Theory and\nComputing. World Scientiﬁc, 2009.\n",
+      "page": 7,
+      "bbox": [
+        48.96,
+        58.39,
+        300.03,
+        200.86
+      ]
+    },
+    {
+      "text": "IEEE Intelligent Informatics Bulletin\nAugust 2018\nVol.19 No.1\n",
+      "page": 7,
+      "bbox": [
+        48.96,
+        764.04,
+        563.03,
+        774.0
+      ]
+    }
+  ],
+  "metadata": {
+    "filename": "iib_vol19no1_article1.pdf",
+    "file_size": 442541,
+    "block_count": 63,
+    "created_at": "2025-04-29T22:54:23.214369"
+  }
+}
