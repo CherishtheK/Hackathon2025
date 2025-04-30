@@ -522,12 +522,6 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
               </div>
             </div>
           </div>
-          <button
-            className="absolute bottom-4 left-4 text-xs font-medium text-gray-600 hover:text-gray-800"
-            onClick={() => setShowSettings(true)}
-          >
-            ⚙️ Settings
-          </button>
         </nav>
         <main className="flex-1 p-6 flex flex-col overflow-hidden">
           {activeView === "detail" ? (
