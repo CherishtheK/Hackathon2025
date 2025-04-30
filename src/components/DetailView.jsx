@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { deleteDocument } from '../utils/dbUtils';
 import './DetailView.css';
 
-const DetailView = ({ document, onUpdateDocument, onDeleteDocument }) => {
+const DetailView = ({ document, onUpdateDocument, onDeleteDocument, projects = [] }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedTitle, setEditedTitle] = useState(document?.title || '');
   const [isDeleting, setIsDeleting] = useState(false);
+  const [selectedProjectId, setSelectedProjectId] = useState(document?.projectId || '');
+
+  useEffect(() => {
+    setSelectedProjectId(document?.projectId || '');
+  }, [document]);
 
   if (!document) {
     return <div className="detail-view">No document selected</div>;
@@ -43,6 +48,12 @@ const DetailView = ({ document, onUpdateDocument, onDeleteDocument }) => {
     }
   };
 
+  const handleArchiveChange = (e) => {
+    const newProjectId = e.target.value === 'unsorted' ? null : e.target.value;
+    setSelectedProjectId(newProjectId || '');
+    onUpdateDocument({ ...document, projectId: newProjectId });
+  };
+
   return (
     <div className="detail-view">
       <div className="title-section">
@@ -63,13 +74,25 @@ const DetailView = ({ document, onUpdateDocument, onDeleteDocument }) => {
         )}
       </div>
 
-      <button 
-        className="delete-button"
-        onClick={handleDelete}
-        disabled={isDeleting}
-      >
-        {isDeleting ? 'Deleting...' : 'Delete Document'}
-      </button>
+      <div className="actions">
+        <button 
+          className="delete-button"
+          onClick={handleDelete}
+          disabled={isDeleting}
+        >
+          {isDeleting ? 'Deleting...' : 'Delete Document'}
+        </button>
+        <select
+          className="border rounded px-2 py-1 text-sm"
+          value={selectedProjectId || 'unsorted'}
+          onChange={handleArchiveChange}
+        >
+          <option value="unsorted">Unsorted</option>
+          {projects.map((proj) => (
+            <option key={proj.id} value={proj.id}>{proj.name}</option>
+          ))}
+        </select>
+      </div>
 
       <div className="content">
         <pre>{JSON.stringify(document.jsonContent, null, 2)}</pre>

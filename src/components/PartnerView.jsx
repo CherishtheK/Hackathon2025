@@ -431,15 +431,32 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
     }
   };
 
-  const handleArchiveDocument = async (docId, projectId) => {
+  const handleArchiveDocument = async (docId, newProjectId) => {
     try {
+      // 先获取当前文档，判断原有 projectId
+      let oldProjectId = null;
+      const allDocs = unsortedDocs.concat(...Object.values(projectDocsMap).flat());
+      const doc = allDocs.find(d => d.id === docId) || currentDocument;
+      if (doc) oldProjectId = doc.projectId;
+
       // 更新文档的 projectId
-      await updateDocumentInDB(docId, { projectId });
-      // 更新项目的 documentCount
-      const projectDocs = await getProjectDocuments(projectId);
-      await updateProjectDocumentCount(projectId, projectDocs.length);
+      await updateDocumentInDB(docId, { projectId: newProjectId || null });
+
+      // 如果是归档到某个项目
+      if (newProjectId) {
+        // 更新新项目的 documentCount
+        const projectDocs = await getProjectDocuments(newProjectId);
+        await updateProjectDocumentCount(newProjectId, projectDocs.length);
+      }
+      // 如果是从项目移到 Unsorted，需要更新原项目的 documentCount
+      if (oldProjectId && oldProjectId !== newProjectId) {
+        const oldProjectDocs = await getProjectDocuments(oldProjectId);
+        await updateProjectDocumentCount(oldProjectId, oldProjectDocs.length);
+      }
       // 刷新数据
       await loadData();
+      // 关键：清空 projectDocsMap，保证下次展开项目时重新加载文档列表
+      setProjectDocsMap({});
     } catch (error) {
       alert("Archive failed: " + error.message);
     }
@@ -568,6 +585,20 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
                     >
                       Delete Document
                     </button>
+                    <select
+                      className="ml-4 border rounded px-2 py-1 text-sm"
+                      value={currentDocument?.projectId || 'unsorted'}
+                      onChange={async (e) => {
+                        const newProjectId = e.target.value === 'unsorted' ? null : e.target.value;
+                        await handleArchiveDocument(currentDocument.id, newProjectId);
+                        setCurrentDocument({ ...currentDocument, projectId: newProjectId });
+                      }}
+                    >
+                      <option value="unsorted">Unsorted</option>
+                      {projects.map((proj) => (
+                        <option key={proj.id} value={proj.id}>{proj.name}</option>
+                      ))}
+                    </select>
                   </div>
                 )}
               </div>
@@ -634,7 +665,8 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
                     <div
                       key={proj.id}
                       className={`border rounded ${viewMode === "grid" ? "p-4 shadow-sm hover:shadow-md" : "py-2 px-3 flex justify-between items-center"} cursor-pointer`}
-                      onClick={() => setActiveView("detail")}
+                      // onClick={() => setActiveView("detail")}
+                      // 不做任何操作
                     >
                       {viewMode === "grid" ? (
                         <>
