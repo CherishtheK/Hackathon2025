@@ -336,8 +336,10 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
 
   const renderDocumentItem = (doc) => (
     <div key={doc.id} className="flex items-center border rounded p-4 bg-gray-50 hover:bg-gray-100">
-      <div className="flex-1 cursor-pointer" onClick={() => { setCurrentDocument(doc); setActiveView("detail"); }}>
-        <h3 className="text-sm font-medium truncate">{doc.title || doc.name}</h3>
+      <div className="flex-1 cursor-pointer overflow-hidden min-w-0" onClick={() => { setCurrentDocument(doc); setActiveView("detail"); }}>
+        <h3 className="text-sm font-medium truncate" title={doc.title || doc.name}>
+          {doc.title || doc.name}
+        </h3>
         <p className="text-xs text-gray-500 mt-1">
           Uploaded on {new Date(doc.uploadDate).toLocaleDateString()}
         </p>
@@ -545,7 +547,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
                     }}
                   >
                     <span className="inline-block w-4 h-4">📄</span>
-                    <span className="truncate w-full" title={doc.title || doc.name}>
+                    <span className="truncate w-full overflow-hidden min-w-0" title={doc.title || doc.name}>
                       {doc.title || doc.name}
                     </span>
                   </button>
@@ -570,7 +572,8 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
                 {isEditingTitle ? titleEditingSection : (
                   <div className="flex items-center flex-1">
                     <h2 
-                      className="text-2xl font-semibold cursor-pointer hover:text-blue-600"
+                      className="text-2xl font-semibold cursor-pointer hover:text-blue-600 truncate max-w-[400px]"
+                      title={currentDocument?.title || currentDocument?.name}
                       onClick={() => {
                         setEditedTitle(currentDocument?.title || currentDocument?.name || "");
                         setIsEditingTitle(true);
@@ -670,13 +673,13 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
                     >
                       {viewMode === "grid" ? (
                         <>
-                          <h3 className="text-md font-semibold truncate">{proj.name}</h3>
-                          <p className="text-sm text-gray-600 mt-1 truncate">{proj.description || ""}</p>
+                          <h3 className="text-md font-semibold truncate" title={proj.name}>{proj.name}</h3>
+                          <p className="text-sm text-gray-600 mt-1 truncate" title={proj.description || ""}>{proj.description || ""}</p>
                           <p className="text-xs text-gray-400 mt-2">{proj.documentCount || 0} PDFs</p>
                         </>
                       ) : (
                         <>
-                          <span className="text-sm font-medium text-gray-800 truncate">{proj.name}</span>
+                          <span className="text-sm font-medium text-gray-800 truncate" title={proj.name}>{proj.name}</span>
                           <span className="text-xs text-gray-500">{proj.documentCount || 0} PDFs</span>
                         </>
                       )}
