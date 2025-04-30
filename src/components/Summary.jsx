@@ -155,7 +155,7 @@ const Summary = ({ onSentenceClick, currentDocument }) => {
             citations: citations
           });
         });
-        return result.length > 0 ? result : [{text: "无法解析摘要内容，请重试", citations: []}];
+        return result.length > 0 ? result : [{text: "Failed to parse summary content, please try again", citations: []}];
       };
 
       const parsedSentences = parseWithCitations(summaryText);
@@ -168,7 +168,7 @@ const Summary = ({ onSentenceClick, currentDocument }) => {
       };
     } catch (err) {
       console.error("生成摘要时出错:", err);
-      setError(err.message || "生成摘要时出错，请重试");
+      setError(err.message || "Error generating summary, please try again");
     } finally {
       setLoading(false);
     }

@@ -155,11 +155,11 @@ const MarkdownViewer = ({ highlightText, citedBlockIndices = [], currentDocument
     <div className="markdown-content h-full overflow-auto">
       {error ? (
         <div className="text-center p-8 text-red-500">
-          加载失败: {error}
+          Load failed: {error}
         </div>
       ) : isLoading ? (
         <div className="text-center p-8 text-gray-500">
-          正在加载文档内容...
+          Loading document content...
         </div>
       ) : blocks.length > 0 ? (
         blocks.map((block, idx) => {
@@ -188,7 +188,7 @@ const MarkdownViewer = ({ highlightText, citedBlockIndices = [], currentDocument
         })
       ) : (
         <div className="text-center p-8 text-gray-500">
-          {currentDocument ? '没有找到文档内容' : '请选择或上传一个文档'}
+          {currentDocument ? 'No document content found' : 'Please select or upload a document'}
         </div>
       )}
     </div>

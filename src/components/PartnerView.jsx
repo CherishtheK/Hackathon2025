@@ -407,10 +407,8 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
         return newSummaries;
       });
 
-      // 显示成功消息，如果有警告则一并显示
-      if (result.warnings?.length) {
-        alert(`${result.message}\n\nNote:\n${result.warnings.join('\n')}`);
-      }
+      // 只显示英文 "Document deleted"
+      alert('Document deleted');
     } catch (error) {
       console.error('Delete document failed:', error);
       alert('Delete document failed: ' + error.message);
