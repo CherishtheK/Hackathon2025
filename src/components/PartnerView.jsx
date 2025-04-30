@@ -18,26 +18,6 @@ import {
 } from '../utils/dbUtils';
 import UploadDialog from './UploadDialog';
 
-// WindowShell: Wrapper component for PWA-like window frame
-function WindowShell({ children, title = "Knowledge Bridge" }) {
-  return (
-    <div className="bg-gray-200 h-screen w-screen flex items-center justify-center">
-      <div className="w-[1280px] h-[800px] bg-white rounded-xl shadow-lg overflow-hidden border border-gray-300 flex flex-col">
-        <header className="h-10 bg-gray-100 border-b border-gray-300 flex items-center justify-between px-4">
-          <div className="flex items-center space-x-2">
-            <span className="w-3 h-3 bg-red-500 rounded-full inline-block" />
-            <span className="w-3 h-3 bg-yellow-400 rounded-full inline-block" />
-            <span className="w-3 h-3 bg-green-500 rounded-full inline-block" />
-          </div>
-          <div className="text-sm font-medium text-gray-700">{title}</div>
-          <div className="w-12" />
-        </header>
-        <main className="flex-1 overflow-hidden relative">{children}</main>
-      </div>
-    </div>
-  );
-}
-
 export default function PartnerView({ initialDocument, onUpdateDocument }) {
   const [viewMode, setViewMode] = useState("grid");
   const [activeView, setActiveView] = useState("library");
@@ -490,7 +470,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
   };
 
   return (
-    <WindowShell title={currentDocument?.title || currentDocument?.name || "Knowledge Bridge"}>
+    <>
       {showUploadDialog && (
         <UploadDialog 
           onClose={() => setShowUploadDialog(false)} 
@@ -594,7 +574,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
                   <h3 className="text-lg font-medium mb-2 flex-shrink-0">Original Document</h3>
                   <div 
                     className="flex-1 overflow-auto" 
-                    style={{maxHeight: "calc(100vh - 200px)", border: "1px solid blue"}}
+                    style={{maxHeight: "calc(100vh - 200px)"}}
                   >
                     <YourMarkdownViewer 
                       highlightText={selectedSentence} 
@@ -607,7 +587,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
                   <h3 className="text-lg font-medium mb-2 flex-shrink-0">AI Summary</h3>
                   <div 
                     className="flex-1 overflow-auto" 
-                    style={{maxHeight: "calc(100vh - 200px)", border: "1px solid green"}}
+                    style={{maxHeight: "calc(100vh - 200px)"}}
                   >
                     <YourSummary 
                       onSentenceClick={handleYourSentenceClick} 
@@ -749,6 +729,6 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
           )}
         </main>
       </div>
-    </WindowShell>
+    </>
   );
 }
