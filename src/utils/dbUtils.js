@@ -363,3 +363,60 @@ export const updateProjectDocumentCount = async (projectId, count) => {
     tx.oncomplete = () => db.close();
   });
 };
+
+export const deleteProject = async (projectId) => {
+  const db = await openDatabase();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(["projects", "documents"], "readwrite");
+    const projectStore = tx.objectStore("projects");
+    const docStore = tx.objectStore("documents");
+
+    // 1. 删除项目
+    const deleteRequest = projectStore.delete(projectId);
+
+    // 2. 将该项目下所有文档的 projectId 设为 null
+    const index = docStore.index("projectId");
+    const getDocsRequest = index.getAll(projectId);
+
+    getDocsRequest.onsuccess = () => {
+      const docs = getDocsRequest.result;
+      docs.forEach(doc => {
+        const updatedDoc = { ...doc, projectId: null };
+        docStore.put(updatedDoc);
+      });
+    };
+
+    deleteRequest.onsuccess = () => resolve();
+    deleteRequest.onerror = () => reject(deleteRequest.error);
+    tx.oncomplete = () => db.close();
+    tx.onerror = () => reject(tx.error);
+  });
+};
+
+// 更新项目
+export const updateProjectInDB = async (projectId, updates) => {
+  try {
+    const db = await openDatabase();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction("projects", "readwrite");
+      const store = tx.objectStore("projects");
+      const getRequest = store.get(projectId);
+      getRequest.onsuccess = () => {
+        const existingProject = getRequest.result;
+        if (!existingProject) {
+          reject(new Error('Project not found'));
+          return;
+        }
+        const updatedProject = { ...existingProject, ...updates };
+        const putRequest = store.put(updatedProject);
+        putRequest.onsuccess = () => resolve(updatedProject);
+        putRequest.onerror = () => reject(putRequest.error);
+      };
+      getRequest.onerror = () => reject(getRequest.error);
+      tx.oncomplete = () => db.close();
+    });
+  } catch (error) {
+    console.error("更新项目时出错:", error);
+    throw error;
+  }
+};

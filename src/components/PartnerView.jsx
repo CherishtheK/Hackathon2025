@@ -12,7 +12,9 @@ import {
   getProjectDocuments,
   updateDocumentInDB,
   deleteDocument,
-  updateProjectDocumentCount
+  updateProjectDocumentCount,
+  deleteProject,
+  updateProjectInDB
 } from '../utils/dbUtils';
 import UploadDialog from './UploadDialog';
 
@@ -57,6 +59,8 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
   const [isDeleting, setIsDeleting] = useState(false);
   const [expandedProjectId, setExpandedProjectId] = useState(null);
   const [projectDocsMap, setProjectDocsMap] = useState({});
+  const [editingProjectId, setEditingProjectId] = useState(null);
+  const [editingProjectName, setEditingProjectName] = useState("");
 
   const pdfPages = [
     { id: "ref-1", text: `--- Page 1 ---\nOriginal Investigation | Infectious Diseases\nSex Differences in Long COVID...` },
@@ -464,6 +468,27 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
     }
   };
 
+  const handleDeleteProject = async (projectId) => {
+    try {
+      await deleteProject(projectId);
+      await loadData(); // 刷新项目和文档
+      setProjectDocsMap({}); // 清空缓存，保证侧边栏同步
+    } catch (error) {
+      alert('Failed to delete project: ' + error.message);
+    }
+  };
+
+  const handleEditProjectName = async (projectId, newName) => {
+    try {
+      await updateProjectInDB(projectId, { name: newName });
+      setEditingProjectId(null);
+      setEditingProjectName("");
+      await loadData();
+    } catch (error) {
+      alert('Failed to update project name: ' + error.message);
+    }
+  };
+
   return (
     <WindowShell title={currentDocument?.title || currentDocument?.name || "Knowledge Bridge"}>
       {showUploadDialog && (
@@ -481,53 +506,12 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
               <h3 className="text-xs font-semibold text-gray-500 mb-2">Projects</h3>
               <div className="space-y-1">
                 {projects.map((proj) => (
-                  <div key={proj.id}>
-                    <button
-                      className="w-full text-left flex items-center gap-2 text-gray-700 hover:text-black"
-                      onClick={async () => {
-                        if (expandedProjectId === proj.id) {
-                          setExpandedProjectId(null);
-                        } else {
-                          setExpandedProjectId(proj.id);
-                          // 如果还没加载过，才加载
-                          if (!projectDocsMap[proj.id]) {
-                            const docs = await getProjectDocuments(proj.id);
-                            setProjectDocsMap(prev => ({ ...prev, [proj.id]: docs }));
-                          }
-                        }
-                      }}
-                    >
-                      <span className="inline-block w-4 h-4">📁</span>
-                      <span className="truncate w-full" title={proj.name}>
-                        {proj.name}
-                      </span>
-                      <span className="ml-auto text-xs text-gray-400">{proj.documentCount || 0}</span>
-                      <span>{expandedProjectId === proj.id ? "▲" : "▼"}</span>
-                    </button>
-                    {/* 下拉显示PDF */}
-                    {expandedProjectId === proj.id && (
-                      <div className="ml-6 mt-1 space-y-1">
-                        {(projectDocsMap[proj.id] || []).length === 0 ? (
-                          <div className="text-xs text-gray-400">No PDFs</div>
-                        ) : (
-                          projectDocsMap[proj.id].map(doc => (
-                            <button
-                              key={doc.id}
-                              className="w-full text-left flex items-center gap-2 text-gray-600 hover:text-black text-xs"
-                              onClick={() => {
-                                setCurrentDocument(doc);
-                                setActiveView('detail');
-                              }}
-                            >
-                              <span className="inline-block w-4 h-4">📄</span>
-                              <span className="truncate w-full" title={doc.title || doc.name}>
-                                {doc.title || doc.name}
-                              </span>
-                            </button>
-                          ))
-                        )}
-                      </div>
-                    )}
+                  <div
+                    key={proj.id}
+                    className="border rounded p-4 shadow-sm flex flex-col cursor-default relative"
+                  >
+                    <h3 className="text-md font-semibold truncate" title={proj.name}>{proj.name}</h3>
+                    <p className="text-xs text-gray-400 mt-2">{proj.documentCount || 0} PDFs</p>
                   </div>
                 ))}
               </div>
@@ -667,11 +651,55 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
                   {projects.map((proj) => (
                     <div
                       key={proj.id}
-                      className={`border rounded ${viewMode === "grid" ? "p-4 shadow-sm hover:shadow-md" : "py-2 px-3 flex justify-between items-center"} cursor-pointer`}
-                      // onClick={() => setActiveView("detail")}
-                      // 不做任何操作
+                      className={`border rounded ${viewMode === "grid" ? "p-4 shadow-sm hover:shadow-md" : "py-2 px-3 flex justify-between items-center"} cursor-pointer relative`}
                     >
-                      {viewMode === "grid" ? (
+                      {/* 编辑按钮和删除按钮 */}
+                      <div className="absolute top-2 right-2 flex gap-2">
+                        <button
+                          className="text-gray-400 hover:text-blue-600 text-xs"
+                          title="Edit project name"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setEditingProjectId(proj.id);
+                            setEditingProjectName(proj.name);
+                            console.log('Set editingProjectId:', proj.id, 'editingProjectName:', proj.name);
+                          }}
+                        >✎</button>
+                        <button
+                          className="text-gray-400 hover:text-red-600 text-xs"
+                          title="Delete project"
+                          onClick={async (e) => {
+                            e.stopPropagation();
+                            if (window.confirm(`Are you sure you want to delete project \"${proj.name}\"? All its files will be unsorted.`)) {
+                              await handleDeleteProject(proj.id);
+                            }
+                          }}
+                        >🗑️</button>
+                      </div>
+                      {editingProjectId === proj.id ? (
+                        <input
+                          className="text-md font-semibold truncate border rounded px-2 py-1 w-full"
+                          value={editingProjectName}
+                          autoFocus
+                          onChange={e => setEditingProjectName(e.target.value)}
+                          onBlur={() => {
+                            if (editingProjectName.trim() && editingProjectName !== proj.name) {
+                              handleEditProjectName(proj.id, editingProjectName.trim());
+                            } else {
+                              setEditingProjectId(null);
+                              setEditingProjectName("");
+                            }
+                          }}
+                          onKeyDown={e => {
+                            if (e.key === 'Enter' && editingProjectName.trim() && editingProjectName !== proj.name) {
+                              handleEditProjectName(proj.id, editingProjectName.trim());
+                            } else if (e.key === 'Escape') {
+                              setEditingProjectId(null);
+                              setEditingProjectName("");
+                            }
+                          }}
+                        />
+                      ) : viewMode === "grid" ? (
                         <>
                           <h3 className="text-md font-semibold truncate" title={proj.name}>{proj.name}</h3>
                           <p className="text-sm text-gray-600 mt-1 truncate" title={proj.description || ""}>{proj.description || ""}</p>
