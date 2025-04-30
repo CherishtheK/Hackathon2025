@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 
+const BLOB_SAS_URL = "https://hackathoncc2025.blob.core.windows.net/pdfs?sv=2024-11-04&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2026-04-30T15:00:41Z&st=2025-04-30T07:00:41Z&spr=https&sig=zetELIMR2%2F4PiiZIFYQNUe3hYDieboYRlw4anWyjQCA%3D";
+
 function UploadDialog({ onClose, onUpload, showProjectCreation = false }) {
   const [selectedFile, setSelectedFile] = useState(null);
   const [projectName, setProjectName] = useState('');
@@ -35,40 +37,29 @@ function UploadDialog({ onClose, onUpload, showProjectCreation = false }) {
 
     // 上传文档模式
     if (selectedFile) {
-      console.log('Starting file upload:', selectedFile.name);
       try {
-        // 创建 FormData 对象
-        const formData = new FormData();
-        formData.append('file', selectedFile);
-
-        // 发送文件到服务器
-        console.log('Starting upload to server...');
-        const response = await fetch('http://localhost:3000/upload', {
-          method: 'POST',
-          body: formData,
-          credentials: 'include',
+        // 拼接最终上传 URL（容器SAS URL + /文件名）
+        const uploadUrl = BLOB_SAS_URL.split('?')[0] + '/' + encodeURIComponent(selectedFile.name) + '?' + BLOB_SAS_URL.split('?')[1];
+        // 上传
+        const response = await fetch(uploadUrl, {
+          method: 'PUT',
           headers: {
-            'Accept': 'application/json',
+            'x-ms-blob-type': 'BlockBlob'
           },
+          body: selectedFile
         });
-
         if (!response.ok) {
-          throw new Error(`Server response error: ${response.status}`);
+          throw new Error(`Azure Blob upload failed: ${response.statusText}`);
         }
-
-        const result = await response.json();
-        console.log('Server processing result:', result);
-
-        // 调用父组件的 onUpload 函数存储到 IndexedDB
+        alert('Upload success!');
+        // 调用父组件的 onUpload 函数（只传元数据）
         await onUpload({
           type: 'document',
           name: selectedFile.name,
-          file: result.data, // 使用服务器返回的处理后的数据
+          file: null, // 不再传文件内容
           uploadDate: new Date().toISOString()
         });
-
-        console.log('File upload and processing completed');
-        onClose(); // 上传成功后关闭对话框
+        onClose();
       } catch (error) {
         console.error('Error during upload:', error);
         alert('Upload failed: ' + error.message);
