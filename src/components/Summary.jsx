@@ -139,59 +139,23 @@ const Summary = ({ onSentenceClick, currentDocument }) => {
       // 解析带引用的句子
       const parseWithCitations = (text) => {
         const result = [];
-        
-        // 先尝试常规格式匹配
-        const regex = /(\d+\.\s*.*?)(?=\s*\[|\d+\.\s*|$)(\s*\[([0-9,\s]+)\])?/gs;
-        let match;
-        let foundAny = false;
-        
-        while ((match = regex.exec(text)) !== null) {
-          foundAny = true;
-          const paragraphText = match[1].trim();
-          const citationText = match[2] || '';
-          
-          // 提取引用索引
-          const citationsMatch = /\[([0-9,\s]+)\]/.exec(citationText);
+        // 按段落分割
+        const paragraphs = text.split(/\n{2,}/);
+        paragraphs.forEach((para) => {
+          // 查找末尾的 [数字,数字,...]
+          const citationMatch = para.match(/\[([0-9,\s]+)\]\s*\.?$/);
           let citations = [];
-          
-          if (citationsMatch) {
-            citations = citationsMatch[1].split(',').map(idx => parseInt(idx.trim()));
-          } else {
-            console.log("段落未找到引用:", paragraphText.substring(0, 50) + "...");
-            citations = [0]; // 默认引用第一段
+          let paraText = para;
+          if (citationMatch) {
+            citations = citationMatch[1].split(',').map(idx => parseInt(idx.trim())).filter(idx => !isNaN(idx));
+            paraText = para.replace(/\[([0-9,\s]+)\]\s*\.?$/, '').trim();
           }
-          
           result.push({
-            text: paragraphText,
+            text: paraText,
             citations: citations
           });
-        }
-        
-        // 如果标准格式没有匹配到任何内容，尝试备用解析方法
-        if (!foundAny) {
-          console.log("未能匹配标准格式，尝试备用解析");
-          // 简单按段落分割
-          const paragraphs = text.split(/\n\n+/);
-          
-          paragraphs.forEach((para, index) => {
-            // 尝试查找末尾的引用格式 [x,y,z]
-            const citationMatch = para.match(/\s*\[([0-9,\s]+)\]$/);
-            let citations = [0]; // 默认引用
-            let paraText = para;
-            
-            if (citationMatch) {
-              citations = citationMatch[1].split(',').map(idx => parseInt(idx.trim()));
-              paraText = para.replace(/\s*\[([0-9,\s]+)\]$/, '');
-            }
-            
-            result.push({
-              text: paraText.trim(),
-              citations: citations
-            });
-          });
-        }
-        
-        return result.length > 0 ? result : [{text: "无法解析摘要内容，请重试", citations: [0]}];
+        });
+        return result.length > 0 ? result : [{text: "无法解析摘要内容，请重试", citations: []}];
       };
 
       const parsedSentences = parseWithCitations(summaryText);

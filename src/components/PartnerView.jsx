@@ -144,15 +144,20 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
       el.style.backgroundColor = '';
     });
 
+    // 修正：确保 citations 是有效数字数组
+    const validCitations = Array.isArray(citations)
+      ? citations.map(idx => Number(idx)).filter(idx => typeof idx === 'number' && !isNaN(idx))
+      : [];
+
     // 添加新的高亮
-    if (citations && citations.length > 0) {
-      citations.forEach(index => {
+    if (validCitations.length > 0) {
+      validCitations.forEach(index => {
         const element = document.querySelector(`[data-block-index="${index}"]`);
         if (element) {
           element.classList.add('highlight-text');
           element.style.backgroundColor = '#FFEB3B';
           // 滚动到第一个高亮元素
-          if (index === citations[0]) {
+          if (index === validCitations[0]) {
             element.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
         }
@@ -164,7 +169,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
     // 保存状态
     const summaryData = {
       sentence,
-      citations,
+      citations: validCitations,
       content: summaryContainer?.innerHTML || '',
       selectedSentence: sentence
     };
@@ -175,7 +180,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
     }));
     
     setSelectedSentence(sentence);
-    setCitedBlockIndices(citations);
+    setCitedBlockIndices(validCitations);
     setCurrentSummary(summaryData);
   };
 
