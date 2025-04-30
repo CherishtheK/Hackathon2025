@@ -11,7 +11,8 @@ import {
   getUnsortedDocuments, 
   getProjectDocuments,
   updateDocumentInDB,
-  deleteDocument
+  deleteDocument,
+  updateProjectDocumentCount
 } from '../utils/dbUtils';
 import UploadDialog from './UploadDialog';
 
@@ -54,6 +55,8 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
   const [documentSummaries, setDocumentSummaries] = useState({});
   const [currentSummary, setCurrentSummary] = useState(null);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [expandedProjectId, setExpandedProjectId] = useState(null);
+  const [projectDocsMap, setProjectDocsMap] = useState({});
 
   const pdfPages = [
     { id: "ref-1", text: `--- Page 1 ---\nOriginal Investigation | Infectious Diseases\nSex Differences in Long COVID...` },
@@ -332,18 +335,32 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
   }, [activeView]);
 
   const renderDocumentItem = (doc) => (
-    <div
-      key={doc.id}
-      className="border rounded p-4 bg-gray-50 hover:bg-gray-100 cursor-pointer"
-      onClick={() => {
-        setCurrentDocument(doc);
-        setActiveView("detail");
-      }}
-    >
-      <h3 className="text-sm font-medium truncate">{doc.title || doc.name}</h3>
-      <p className="text-xs text-gray-500 mt-1">
-        上传于 {new Date(doc.uploadDate).toLocaleDateString()}
-      </p>
+    <div key={doc.id} className="flex items-center border rounded p-4 bg-gray-50 hover:bg-gray-100">
+      <div className="flex-1 cursor-pointer" onClick={() => { setCurrentDocument(doc); setActiveView("detail"); }}>
+        <h3 className="text-sm font-medium truncate">{doc.title || doc.name}</h3>
+        <p className="text-xs text-gray-500 mt-1">
+          上传于 {new Date(doc.uploadDate).toLocaleDateString()}
+        </p>
+      </div>
+      <div className="ml-4">
+        <select
+          className="border rounded px-2 py-1 text-sm"
+          disabled={projects.length === 0}
+          defaultValue=""
+          onChange={async (e) => {
+            const projectId = e.target.value;
+            if (!projectId) return;
+            await handleArchiveDocument(doc.id, projectId);
+          }}
+        >
+          <option value="" disabled>
+            {projects.length === 0 ? "暂无项目可选" : "归档到项目"}
+          </option>
+          {projects.map(proj => (
+            <option key={proj.id} value={proj.id}>{proj.name}</option>
+          ))}
+        </select>
+      </div>
     </div>
   );
 
@@ -414,6 +431,20 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
     }
   };
 
+  const handleArchiveDocument = async (docId, projectId) => {
+    try {
+      // 更新文档的 projectId
+      await updateDocumentInDB(docId, { projectId });
+      // 更新项目的 documentCount
+      const projectDocs = await getProjectDocuments(projectId);
+      await updateProjectDocumentCount(projectId, projectDocs.length);
+      // 刷新数据
+      await loadData();
+    } catch (error) {
+      alert("归档失败：" + error.message);
+    }
+  };
+
   return (
     <WindowShell title={currentDocument?.title || currentDocument?.name || "Knowledge Bridge"}>
       {showUploadDialog && (
@@ -431,16 +462,54 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
               <h3 className="text-xs font-semibold text-gray-500 mb-2">Projects</h3>
               <div className="space-y-1">
                 {projects.map((proj) => (
-                  <button
-                    key={proj.id}
-                    className="w-full text-left flex items-center gap-2 text-gray-700 hover:text-black"
-                    onClick={() => setActiveView('detail')}
-                  >
-                    <span className="inline-block w-4 h-4">📁</span>
-                    <span className="truncate w-full" title={proj.name}>
-                      {proj.name}
-                    </span>
-                  </button>
+                  <div key={proj.id}>
+                    <button
+                      className="w-full text-left flex items-center gap-2 text-gray-700 hover:text-black"
+                      onClick={async () => {
+                        if (expandedProjectId === proj.id) {
+                          setExpandedProjectId(null);
+                        } else {
+                          setExpandedProjectId(proj.id);
+                          // 如果还没加载过，才加载
+                          if (!projectDocsMap[proj.id]) {
+                            const docs = await getProjectDocuments(proj.id);
+                            setProjectDocsMap(prev => ({ ...prev, [proj.id]: docs }));
+                          }
+                        }
+                      }}
+                    >
+                      <span className="inline-block w-4 h-4">📁</span>
+                      <span className="truncate w-full" title={proj.name}>
+                        {proj.name}
+                      </span>
+                      <span className="ml-auto text-xs text-gray-400">{proj.documentCount || 0}</span>
+                      <span>{expandedProjectId === proj.id ? "▲" : "▼"}</span>
+                    </button>
+                    {/* 下拉显示PDF */}
+                    {expandedProjectId === proj.id && (
+                      <div className="ml-6 mt-1 space-y-1">
+                        {(projectDocsMap[proj.id] || []).length === 0 ? (
+                          <div className="text-xs text-gray-400">暂无PDF</div>
+                        ) : (
+                          projectDocsMap[proj.id].map(doc => (
+                            <button
+                              key={doc.id}
+                              className="w-full text-left flex items-center gap-2 text-gray-600 hover:text-black text-xs"
+                              onClick={() => {
+                                setCurrentDocument(doc);
+                                setActiveView('detail');
+                              }}
+                            >
+                              <span className="inline-block w-4 h-4">📄</span>
+                              <span className="truncate w-full" title={doc.title || doc.name}>
+                                {doc.title || doc.name}
+                              </span>
+                            </button>
+                          ))
+                        )}
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>

@@ -1,0 +1,1082 @@
+{
+  "title": "cix731",
+  "processed_date": "2025-04-30T10:36:22.571947",
+  "content": [
+    {
+      "text": "Clinical Infectious Diseases\n",
+      "page": 1,
+      "bbox": [
+        49.1,
+        16.45,
+        168.38,
+        31.13
+      ]
+    },
+    {
+      "text": "HEALTHCARE EPIDEMIOLOGY  •  CID  2018:66  (1 January)  •  149\n",
+      "page": 1,
+      "bbox": [
+        312.93,
+        729.29,
+        544.9,
+        740.36
+      ]
+    },
+    {
+      "text": "Machine Learning for Healthcare: On the Verge of a Major \nShift in Healthcare Epidemiology\n",
+      "page": 1,
+      "bbox": [
+        49.1,
+        79.0,
+        544.57,
+        130.32
+      ]
+    },
+    {
+      "text": "Jenna Wiens1 and Erica S. Shenoy2,3,4\n",
+      "page": 1,
+      "bbox": [
+        49.1,
+        132.05,
+        169.7,
+        142.77
+      ]
+    },
+    {
+      "text": "1Computer Science and Engineering, University of Michigan, Ann Arbor; and 2Infection Control Unit and 3Division of Infectious Diseases, Department of Medicine, Massachusetts General Hospital, \nand 4Harvard Medical School, Boston, Massachusetts\n",
+      "page": 1,
+      "bbox": [
+        49.1,
+        146.21,
+        544.24,
+        164.52
+      ]
+    },
+    {
+      "text": "The increasing availability of electronic health data presents a major opportunity in healthcare for both discovery and practical \napplications to improve healthcare. However, for healthcare epidemiologists to best use these data, computational techniques that \ncan handle large complex datasets are required. Machine learning (ML), the study of tools and methods for identifying patterns in \ndata, can help. The appropriate application of ML to these data promises to transform patient risk stratification broadly in the field \nof medicine and especially in infectious diseases. This, in turn, could lead to targeted interventions that reduce the spread of health-\ncare-associated pathogens. In this review, we begin with an introduction to the basics of ML. We then move on to discuss how ML \ncan transform healthcare epidemiology, providing examples of successful applications. Finally, we present special considerations for \nthose healthcare epidemiologists who want to use and apply ML.\n",
+      "page": 1,
+      "bbox": [
+        49.1,
+        173.87,
+        547.11,
+        270.68
+      ]
+    },
+    {
+      "text": "Keywords.  machine learning, patient risk stratification, healthcare epidemiologist, data-driven, computation. \n",
+      "page": 1,
+      "bbox": [
+        58.6,
+        269.53,
+        480.91,
+        282.67
+      ]
+    },
+    {
+      "text": "INTRODUCTION\n",
+      "page": 1,
+      "bbox": [
+        49.1,
+        299.89,
+        121.16,
+        310.39
+      ]
+    },
+    {
+      "text": "Increasingly, healthcare epidemiologists must process and inter-\npret large amounts of complex data [1]. As the role of healthcare \nepidemiologists has expanded, so too has the pervasiveness of \nelectronic health data [2]. The availability of large quantities \nof high-quality patient- and facility-level data has generated \nnew opportunities. In particular, these data could lead to an \nimproved understanding of risk factors for development of \nhealthcare-associated infections (HAIs), improved patient risk \nstratification, and identification of pathways for intra- and \ninterfacility spread of infectious diseases—all of which would \nallow for targeted prevention approaches.\n",
+      "page": 1,
+      "bbox": [
+        49.1,
+        316.87,
+        290.16,
+        459.65
+      ]
+    },
+    {
+      "text": "In the past, a large fraction of clinical data were ignored (or \nnot collected at all). This limitation was due to both the size and \ncomplexity of the data and the absence of techniques for collect-\ning and storing such data. These data are frequently underused \nand undervalued; however, new and improved methods for data \ncollection and storage (eg, electronic health records) provide \nopportunities to tackle the issue of analysis. In particular, machine \nlearning (ML) has begun to infiltrate the clinical literature broadly. \nThe appropriate application of ML in healthcare epidemiology \n(HE) promises returns on the field’s investment in data collection.\n",
+      "page": 1,
+      "bbox": [
+        49.1,
+        459.83,
+        290.18,
+        589.61
+      ]
+    },
+    {
+      "text": "In this review, we begin by describing the basics of ML and \nthen move on to discuss how it applies to HE, providing examples \n",
+      "page": 1,
+      "bbox": [
+        49.1,
+        589.79,
+        290.15,
+        615.6
+      ]
+    },
+    {
+      "text": "of successful research applications. Finally, we describe some of \nthe practical considerations for design and implementation of \nML applied to HE.\n",
+      "page": 1,
+      "bbox": [
+        306.0,
+        301.79,
+        547.05,
+        340.59
+      ]
+    },
+    {
+      "text": "WHAT IS MACHINE LEARNING?\n",
+      "page": 1,
+      "bbox": [
+        306.0,
+        355.39,
+        447.27,
+        365.89
+      ]
+    },
+    {
+      "text": "The definition of ML is broad. ML is the study of tools and \nmethods for identifying patterns in data. These patterns can \nthen be used to either increase our understanding of the current \nworld (eg, identify risk factors for infection) or make predic-\ntions about the future (eg, predict who will become infected). \nML draws on concepts from many fields including computer \nscience, statistics, and optimization. At their core, almost all \nML problems can be formulated as an optimization problem \nwith respect to a dataset. In such settings, the goal is to find \n(or “learn” in ML parlance) a model that best explains the data \n(Figure 1). While there are many different types of ML, most \napplications fall into 1 of 3 categories: supervised, unsuper-\nvised, or reinforcement learning.\n",
+      "page": 1,
+      "bbox": [
+        306.0,
+        372.37,
+        547.08,
+        541.14
+      ]
+    },
+    {
+      "text": "Here, we focus on supervised learning, a setting in which the \ndata are “labeled” according to a specific outcome of interest (eg, \npatients are either infected or not infected). The algorithm then \nlearns a mapping from a set of covariates (eg, patient demo-\ngraphics) to the outcome. This part is performed on the train-\ning data. Once learned, this mapping can be applied to new test \ndata either for identification or prediction tasks. For example, \ngiven a dataset of patients described by their demographics and \nadmission details, one can try to predict the specific outcome of \n30-day readmission.\n",
+      "page": 1,
+      "bbox": [
+        306.0,
+        541.32,
+        547.09,
+        671.1
+      ]
+    },
+    {
+      "text": "Many different learning algorithms exist to accomplish \nthis task (eg, logistic regression, decision trees, ensemble \napproaches, and deep neural networks). These techniques differ \n",
+      "page": 1,
+      "bbox": [
+        306.0,
+        671.28,
+        547.08,
+        710.09
+      ]
+    },
+    {
+      "text": "I N V I T E D  A R T I C L E\n",
+      "page": 1,
+      "bbox": [
+        57.2,
+        37.47,
+        175.48,
+        52.34
+      ]
+    },
+    {
+      "text": "© The Author(s) 2017. Published by Oxford University Press for the Infectious Diseases Society \nof America. All rights reserved. For permissions, e-mail: journals.permissions@oup.com.\nDOI: 10.1093/cid/cix731\n",
+      "page": 1,
+      "bbox": [
+        49.1,
+        684.18,
+        289.54,
+        710.61
+      ]
+    },
+    {
+      "text": "Received 1 May 2017; editorial decision 4 August 2017; accepted 14 August 2017; published \nonline August 21, 2017.\n",
+      "page": 1,
+      "bbox": [
+        49.1,
+        634.6,
+        289.54,
+        652.02
+      ]
+    },
+    {
+      "text": "Correspondence: J. Wiens, 2260 Hayward Street, University of Michigan, Ann Arbor, MI \n48109, (wiensj@umich.edu).\n",
+      "page": 1,
+      "bbox": [
+        49.1,
+        652.6,
+        289.55,
+        670.02
+      ]
+    },
+    {
+      "text": "Clinical Infectious Diseases®    2018;66(1):149–53\n",
+      "page": 1,
+      "bbox": [
+        49.15,
+        674.06,
+        194.5,
+        683.44
+      ]
+    },
+    {
+      "text": "HEALTHCARE EPIDEMIOLOGY: Robert A. Weinstein, Section Editor\n",
+      "page": 1,
+      "bbox": [
+        49.2,
+        55.73,
+        312.46,
+        68.96
+      ]
+    },
+    {
+      "text": "150  •  CID  2018:66  (1 January)  •  HEALTHCARE EPIDEMIOLOGY\n",
+      "page": 2,
+      "bbox": [
+        47.72,
+        730.28,
+        279.69,
+        741.35
+      ]
+    },
+    {
+      "text": "in their underlying objective function and constraints. While \nclosely tied to traditional statistics, ML-based analyses often \nseek nonlinear relationships among hundreds or thousands \nof covariates. Unsurprisingly, such techniques do best when a \nlarge amount of “training” data is available (ie, when there are \nmany examples to learn from). Here, one aims to learn a model \nthat will generalize beyond the data one has already seen. The \ngoal is generalization not memorization. In many cases, espe-\ncially in settings with hundreds or thousands of covariates (ie, \nhigh-dimensional settings), it may be straightforward to learn \na model that works well when applied to the training data but \nfails when applied to never-before-seen data. In such cases, the \nmodel is said to have “overfit” the training data (ie, it has simply \nmemorized the data). Different regularization methods exist to \ndeal with such issues and depend on the underlying learning \nframework. For example, in a least squares regression setting, \nL2 regularization is commonly applied (ie, ridge regression). \nThese techniques push algorithms toward simpler models. The \noptimization loosely follows Occam’s razor, preferring simpler \nmodels over more complex ones.\n",
+      "page": 2,
+      "bbox": [
+        49.1,
+        181.84,
+        290.2,
+        441.58
+      ]
+    },
+    {
+      "text": "As a field, ML has experienced a number of successes in recent \nyears and continues to have an impact across several disciplines. \nThe common thread across these disciplines is the availability of \ndata. For example, the computer vision community (ie, the field of \ncomputer science focused on image-related tasks) has benefited \ntremendously from recent advances in ML. For many image rec-\nognition tasks, the performance of ML algorithms has approached \nor even surpassed that of humans [3, 4]. These advances have, in \npart, been driven by large image databases (eg, “ImageNet” con-\nsists of more than 14 million images [5]). In addition to providing \ntraining data, such databases serve as a resource against which \nresearchers can benchmark their proposed algorithms. ML has \nalso led to recent breakthroughs in machine translation [6, 7]. \nModels that take an input sequence (eg, an English sentence) \nand generate the target sequence (eg, the sentence translated to \nFrench). Such models are trained on tens of millions of sentence \npairs. Here, the success came from training “deeper” models \n(ie, more complex models) capable of capturing context within \nsequences.\n",
+      "page": 2,
+      "bbox": [
+        49.1,
+        441.76,
+        290.18,
+        688.51
+      ]
+    },
+    {
+      "text": "With the recent increase in availability of clinically relevant \ndatasets, researchers have applied ML techniques to a wide range \n",
+      "page": 2,
+      "bbox": [
+        49.1,
+        688.69,
+        290.17,
+        714.5
+      ]
+    },
+    {
+      "text": "of clinical tasks [8–22], from identification/diagnostic tasks (eg, \nautomatic classification of skin lesions or arrhythmia detection \n[23, 24]) to prediction tasks (eg, predicting 30-day readmissions \n[25]). While more research is required before we will under-\nstand the full clinical impact of this work, efforts are already \nunderway to integrate ML tools into clinical practice [26–29]. \nAs we continue to amass more data in HE, we will be better \npositioned to take advantage of these data and recent advances \nin ML. Below, we describe the impact ML is beginning to have \non the field of infectious disease and HE more specifically.\n",
+      "page": 2,
+      "bbox": [
+        306.0,
+        36.92,
+        547.08,
+        166.7
+      ]
+    },
+    {
+      "text": "HOW WILL ML AFFECT INFECTIOUS DISEASE (AND \nMORE SPECIFICALLY HE)?\n",
+      "page": 2,
+      "bbox": [
+        306.0,
+        177.1,
+        538.04,
+        197.6
+      ]
+    },
+    {
+      "text": "The applications of ML in infectious disease are diverse and \ninclude risk stratification for specific infections (eg, specific \nHAIs), identifying the relative contribution of specific risk fac-\ntors to overall risk, understanding pathogen–host interactions, \nand predicting the emergence and spread of infectious diseases. \nHere, we review 4 recent projects that highlight the diversity of \napplications in HE and infectious disease.\n",
+      "page": 2,
+      "bbox": [
+        306.0,
+        204.08,
+        547.09,
+        294.87
+      ]
+    },
+    {
+      "text": "Predicting Risk of Nosocomial Clostridium difficile Infection \n(CDI) [30–33]\nDespite efforts to reduce incidence, HAIs remain prevalent, \nin part, because we lack an effective clinical tool for accur-\nately measuring patient risk. Along these lines, researchers \nhave sought to develop models for predicting patient risk of \nCDI. ML-driven approaches can successfully leverage the \nentire contents of the electronic health record (EHR). These \nclinical data contain information regarding medications, pro-\ncedures, locations, healthcare staff, lab results, vital signs, \ndemographics, patient history, and admission details. ML \ntechniques learn to map these data to a value that estimates \nthe patient’s probability of CDI. Although more complex than \nlow-dimensional tools for calculating patient risk, models that \nleverage the richness of the EHR can be significantly more \naccurate [33]. Such models, based on thousands of variables, \nhave been extended to change over the course of an admis-\nsion, capturing how risk factors change over time [34]. These \ntime-varying models could be incorporated into an EHR sys-\ntem, using streaming data to generate daily risk estimates for \neach inpatient.\n",
+      "page": 2,
+      "bbox": [
+        306.0,
+        307.97,
+        547.13,
+        575.82
+      ]
+    },
+    {
+      "text": "Predicting Reservoirs of Zoonotic Diseases [35]\nZoonotic diseases account for billions of human infections \nand millions of deaths per year globally [36]. Researchers have \napplied ML to datasets that contain information on rodent \nspecies that carry zoonotic pathogens [35]. Using nearly 100 \npredictor variables (eg, lifespan, habitat), the authors identi-\nfied reservoir status with high accuracy. Furthermore, their \nmodel predicted new hyperreservoir species (ie, those identi-\nfied as harboring 2 or more zoonotic pathogens). The ability to \nidentify geographic areas with higher likelihood of harboring \n",
+      "page": 2,
+      "bbox": [
+        306.0,
+        586.72,
+        547.09,
+        714.86
+      ]
+    },
+    {
+      "text": "Figure 1.  Traditional vs. machine learning (ML) approach. In a traditional \napproach to data analysis, one starts with the model as input to the machine. In an \nML (or data-driven) approach, one starts with the data and outputs a model that can \nthen be applied to new data.\n",
+      "page": 2,
+      "bbox": [
+        49.1,
+        114.58,
+        289.81,
+        154.33
+      ]
+    },
+    {
+      "text": "HEALTHCARE EPIDEMIOLOGY  •  CID  2018:66  (1 January)  •  151\n",
+      "page": 3,
+      "bbox": [
+        314.21,
+        730.26,
+        546.18,
+        741.33
+      ]
+    },
+    {
+      "text": "rodent reservoirs of new or emerging zoonoses could help dir-\nect surveillance, vector control, and research into vaccines and \ntherapeutics.\n",
+      "page": 3,
+      "bbox": [
+        49.1,
+        37.08,
+        290.16,
+        75.89
+      ]
+    },
+    {
+      "text": "Predicting Clinical Outcomes in Ebola Virus Disease (EVD) \nInfection Using Initial Clinical Symptoms [37]\nThough ML is often applied to large datasets, one recent study \nsuccessfully applied ML techniques to a limited clinical data-\nset from a small patient cohort. The authors learned a model \nto predict clinical outcomes in patients presenting with Ebola \nVirus Disease during the 2013–2016 West African epidemic. \nUsing a publicly available de-identified dataset, they accurately \npredicted outcome of infection with only a few clinical symp-\ntoms and laboratory results.\n",
+      "page": 3,
+      "bbox": [
+        49.1,
+        88.97,
+        290.23,
+        213.87
+      ]
+    },
+    {
+      "text": "Predicting Patients at Greatest Risk of Developing Septic  \nShock [18]\nPrediction holds the promise of early intervention. In sepsis, \nearly intervention can reduce mortality in patients who go on to \ndevelop septic shock [38]. Using publicly available data stored \nin the MIMIC-II Clinical Database (described more below), \nresearchers learned to predict with high sensitivity which \npatients were likely to develop septic shock. Importantly, the \nprediction could be made at a median of more than a day prior \nto onset of septic shock, providing clinicians sufficient time to \npotentially prevent disease or mitigate its severity.\n",
+      "page": 3,
+      "bbox": [
+        49.1,
+        226.97,
+        290.24,
+        364.86
+      ]
+    },
+    {
+      "text": "These applications of ML could, in theory, facilitate the tar-\ngeting of specific interventions to high-risk groups. However, \nthe potential positive impact of ML on the field of infectious \ndisease goes well beyond facilitating targeted interventions. In \nparticular, such models could be used to design more efficient \nclinical trials. Often, clinical trials can be underpowered and \ninconclusive because a small fraction of the study population \nexperiences the outcome of interest. ML-based risk stratifica-\ntion models could help identify patients at several times the \nbaseline risk, making it possible to have adequately powered \nefficacy results with fewer enrolled patients. ML models can \nalso be used to help generate testable hypotheses. Although \nthe relationships uncovered by ML models are not necessarily \ncausal, study of the model can generate hypotheses. Further \ninvestigation of such hypotheses could then lead to new find-\nings related to disease risk.\n",
+      "page": 3,
+      "bbox": [
+        49.1,
+        365.04,
+        290.19,
+        572.8
+      ]
+    },
+    {
+      "text": "MACHINE LEARNING IN HE: A USER’S GUIDE—SPECIAL \nCONSIDERATIONS, CHALLENGES, AND PITFALLS\n",
+      "page": 3,
+      "bbox": [
+        49.1,
+        587.5,
+        279.34,
+        607.6
+      ]
+    },
+    {
+      "text": "Technical and methodological details about performing ML \nanalyses is beyond the scope of this review. For an in-depth \nintroduction to ML, we refer the reader to several excellent \nresources [39–42]. Rather than presenting a detailed user’s \nguide, here, we focus on a few special considerations/require-\nments in the context of patient risk stratification and HE (ie, for \nsettings in which the goal is to map patient data to a continuous \nvalue representing patient risk for a specific outcome).\n",
+      "page": 3,
+      "bbox": [
+        49.1,
+        614.08,
+        290.18,
+        717.87
+      ]
+    },
+    {
+      "text": "It Starts with Data\nData may come from a number of sources. The examples men-\ntioned in the section above are not specific to one particular \ndataset or even one data type. Researchers have successfully \napplied ML to clinical notes [20], physiological waveforms [10, \n43], structured EHR data [44], radiologic images [45], and even \nunstructured data from publications [13]. Clinicians interested \nin using EHR data for ML may engage leadership within their \ninstitution to both obtain access to institutional data and to \nestablish the resources to organize the data. Clinicians should \nnot underestimate the amount of time required for this step and \nshould also be aware that clinical insight throughout the pro-\ncess is essential.\n",
+      "page": 3,
+      "bbox": [
+        306.0,
+        37.61,
+        547.09,
+        204.74
+      ]
+    },
+    {
+      "text": "Sharable Data Are Key\nShared datasets serve an important purpose by facilitating com-\nparison of different ML approaches to specific clinical prob-\nlems. Without a shared dataset, it becomes difficult to compare \nmethods in a meaningful way.\n",
+      "page": 3,
+      "bbox": [
+        306.0,
+        217.61,
+        547.07,
+        280.77
+      ]
+    },
+    {
+      "text": "The Data Will Be Messy\nHealthcare practitioners are well aware of the extent of inconsist-\nencies, inaccuracies, and errors present in health data, in particu-\nlar, clinical notes. Often, the vast majority of such projects are \ndedicated to “data wrangling,” that is, data extraction and pre-\nprocessing. While the adage “garbage in garbage out” still holds, \nno amount of ML can identify relationships not present in the \ndata. When the size of the data grows, in particular, the number \nof examples, it can still be possible to identify a signal, despite the \npresence of noise. Techniques like regularization (see above) and \na held-out test set (see below) can help identify whether or not \nthere’s enough of a signal to learn meaningful relationships.\n",
+      "page": 3,
+      "bbox": [
+        306.0,
+        293.61,
+        547.08,
+        447.74
+      ]
+    },
+    {
+      "text": "Choose the Right Target\nWhen choosing the target (ie, outcome of interest), it is impor-\ntant that one has access to accurate data regarding that target. \nFor example, if predicting the development of CDI is the tar-\nget, one must know which patients developed CDI in order to \ndevelop the model. Sometimes, it is impossible to obtain com-\nplete certainty (eg, not all laboratory tests are 100% accurate). \nML techniques can, however, handle the presence of some \nuncertainty in the data. In addition, it is important to remem-\nber that the outcome used during training is the outcome that \nthe model is learning to predict. For example, we may want to \npredict risk of CDI. However, since not all patients are tested, in \nreality we are predicting risk of a positive laboratory result for \nCDI. This distinction is subtle but important. In particular, if \nthe hospital were to change its testing protocol, then the predic-\ntive performance of an existing model may change.\n",
+      "page": 3,
+      "bbox": [
+        306.0,
+        460.61,
+        547.09,
+        666.73
+      ]
+    },
+    {
+      "text": "Keep a Held-Out Test Set\nAs mentioned above, because such analyses often deal with a \nlarge number of covariates, one can easily overfit, obtaining a \n",
+      "page": 3,
+      "bbox": [
+        306.0,
+        680.61,
+        547.07,
+        717.78
+      ]
+    },
+    {
+      "text": "152  •  CID  2018:66  (1 January)  •  HEALTHCARE EPIDEMIOLOGY\n",
+      "page": 4,
+      "bbox": [
+        47.72,
+        730.28,
+        279.69,
+        741.35
+      ]
+    },
+    {
+      "text": "model that works well on the training set but does not general-\nize. Thus, it is important to split one’s data into separate training \nand test sets (eg, 80% of the data is used for training and 20% \nfor testing). Use the training set for model selection, and hold \nthe test set aside for final model evaluation. One may split the \ndata multiple times at random or choose a temporal split (eg, \ntraining on data from 2010–2014, testing on data from 2015). \nBy splitting the data temporally, one can estimate how changes \nover time may affect predictive performance.\n",
+      "page": 4,
+      "bbox": [
+        49.1,
+        37.08,
+        290.19,
+        153.86
+      ]
+    },
+    {
+      "text": "Beware of Data Leakage\nBeware of results that are too good to be true. In cases where \nthe discriminative power is well beyond that of humans, there \nis often some form of “data leakage.” For example, one of the \ncovariates may accidentally encode the outcome (eg, receipt of \nempiric oral vancomycin probably indicates that a clinician has \nalready diagnosed CDI). This type of potential pitfall makes it \nimportant to “look inside” the model to try to understand why \nit is making the predictions it is or test the model prospectively.\n",
+      "page": 4,
+      "bbox": [
+        49.1,
+        166.72,
+        290.18,
+        281.87
+      ]
+    },
+    {
+      "text": "Good Accuracy Isn’t Enough\nWhen evaluating predictive performance, it is important to \nkeep in mind the clinical task of interest. For example, if the \ngoal is to learn a model to predict daily risk of CDI, then the \nmodel should be applied daily to the test data, rather than just \nprior to the event of interest. In addition, both calibration (ie, \nhow well the estimate risk maps to actual risk) and discrim-\ninative performance (ie, how well the model distinguishes \nhigh-risk from low-risk patients) are important to consider. \nFinally, the transparency (ie, interpretability) of one’s model \ncan be as important as its accuracy. A black-box model that \nonly tells a user who is at risk may be less actionable than a \ntransparent model that tells a user why the patient is at risk. \nA model’s ability to explain its predictions can help identify \n“bugs” or data leakage. In addition, it can point researchers to \ntestable hypotheses that have biological plausibility.\n",
+      "page": 4,
+      "bbox": [
+        49.1,
+        294.72,
+        290.19,
+        500.84
+      ]
+    },
+    {
+      "text": "Hospital-specific Models Using Generalizable Methods\nIn the past, researchers have most often aimed to learn mod-\nels that generalize across hospitals or healthcare settings. Such \nmodels may do well on average but can perform poorly when \napplied to specific institutions. This limitation is, in part, \nbecause of institutional differences in the way data are collected \nand stored [46]. Rather than seeking models that generalize \nacross all hospitals, we should seek generalizable methods that \ncan be used to generate institution-specific models. Such an \napproach allows institutions to train models specific to their \ndata collection practices and patient populations.\n",
+      "page": 4,
+      "bbox": [
+        49.1,
+        517.72,
+        290.19,
+        658.86
+      ]
+    },
+    {
+      "text": "It Takes a Team\nFinally, and most importantly, applied ML in HE requires teams \ncomposed of experts from a variety of disciplines. Leadership \n",
+      "page": 4,
+      "bbox": [
+        49.1,
+        677.72,
+        290.15,
+        714.89
+      ]
+    },
+    {
+      "text": "of these teams is likely to comprise individuals with expertise \nin infectious disease, statistics, optimization, and computer sci-\nence. For studies that use EHR data, individuals with expertise \nin clinical data architecture are essential to team success. Such \nwork cannot take place in the isolation of a single department \nor discipline. ML experts are unlikely to make a meaningful \nclinical contribution using ML without close collaboration with \na clinical expert. Conversely, although open-source ML tools \nexist, without a good understanding of the underlying algo-\nrithms, the misapplication of ML to clinical data can lead to \nmisleading results and incorrect conclusions.\n",
+      "page": 4,
+      "bbox": [
+        306.0,
+        37.08,
+        547.09,
+        179.85
+      ]
+    },
+    {
+      "text": "While the increased availability of data and ML tools holds \nthe promise of improved patient outcomes, we should pro-\nceed cautiously. To date, ML has featured more prominently in \nresearch than in practice. At the point at which ML has proven \nefficacy in HE, additional questions will remain in translation \nto practice. These include training and education of healthcare \nepidemiologists and creation and maintenance of ML tools and \napplications. Barriers to implementation may be expected to \nvary by institution size, resources, and interest in the technol-\nogy. More research is required before we will fully understand \nthe good, the bad, and the unintended consequences of ML in \nHE [47].\n",
+      "page": 4,
+      "bbox": [
+        306.0,
+        180.03,
+        547.09,
+        335.8
+      ]
+    },
+    {
+      "text": "CONCLUSIONS\n",
+      "page": 4,
+      "bbox": [
+        306.0,
+        350.1,
+        374.76,
+        360.6
+      ]
+    },
+    {
+      "text": "ML has resulted in important contributions to a number of \ndisciplines in recent years, including vision and natural lan-\nguage processing. In these fields, more complex models can \ntake advantage of the large amount of existing training data (eg, \nimages in vision or sentences in natural language). Similarly, we \nare on the verge of a major shift in HE. Through the appropri-\nate application of ML to increasingly available electronic health \ndata—including genomic data—healthcare epidemiologists will \nbe able to better understand the underlying risk for acquisi-\ntion of infectious diseases and transmission pathways, develop \ntargeted interventions, and reduce HAIs. While powerful, it is \nimportant to remember that ML cannot identify relationships \nthat are not present in the data. Moreover, ML does not replace \nthe need for standard statistical analyses or randomized, control \ntrials. Instead, ML can serve as a tool to augment HE’s current \ntoolbox. Going forward, the greatest impact will come from \ninterdisciplinary teams that work together to make sense of the \ndata.\n",
+      "page": 4,
+      "bbox": [
+        306.0,
+        367.08,
+        547.08,
+        600.83
+      ]
+    },
+    {
+      "text": "Notes\n",
+      "page": 4,
+      "bbox": [
+        306.0,
+        611.59,
+        330.89,
+        621.48
+      ]
+    },
+    {
+      "text": "Acknowledgments.  We acknowledge John Guttag, PhD, and David \nC. Hooper, MD, for thoughtful review of the manuscript, and Erin Ryan, \nMPH, CCRP, for assistance with manuscript preparation.\n",
+      "page": 4,
+      "bbox": [
+        306.0,
+        623.22,
+        546.72,
+        654.36
+      ]
+    },
+    {
+      "text": "Financial support.  This work was supported by the National Institute \nof Allergy and Infectious Diseases (NIAID) of the National Institutes of \nHealth (NIH; K01AI110524); the the Massachusetts General Hospital-\nMassachusetts Institute of Technology Grand Challenge to E. S. S.; and \nthe National Science Foundation (IIS-1553146) and NIAID of NIH \n(U01AI124255) to J. W.\n",
+      "page": 4,
+      "bbox": [
+        306.0,
+        653.22,
+        546.74,
+        714.36
+      ]
+    },
+    {
+      "text": "HEALTHCARE EPIDEMIOLOGY  •  CID  2018:66  (1 January)  •  153\n",
+      "page": 5,
+      "bbox": [
+        314.21,
+        730.26,
+        546.18,
+        741.33
+      ]
+    },
+    {
+      "text": "Potential conflict of interest. All authors: No reported conflicts of inter-\nest. All authors have submitted the ICMJE Form for Disclosure of Potential \nConflicts of Interest. Conflicts that the editors consider relevant to the con-\ntent of the manuscript have been disclosed.\n",
+      "page": 5,
+      "bbox": [
+        49.1,
+        37.13,
+        289.81,
+        78.26
+      ]
+    },
+    {
+      "text": "References\n",
+      "page": 5,
+      "bbox": [
+        49.1,
+        89.5,
+        96.2,
+        99.38
+      ]
+    },
+    {
+      "text": "1.\t Kaye KS, Anderson DJ, Cook E, et  al. Guidance for infection prevention and \n",
+      "page": 5,
+      "bbox": [
+        54.1,
+        101.46,
+        289.58,
+        110.91
+      ]
+    },
+    {
+      "text": "healthcare epidemiology programs: healthcare epidemiologist skills and compe-\ntencies. Infect Control Hosp Epidemiol 2015; 36:369–80.\n2.\t Bates DW, Saria S, Ohno-Machado L, Shah A, Escobar G. Big data in health care: \n",
+      "page": 5,
+      "bbox": [
+        54.1,
+        110.46,
+        289.6,
+        137.91
+      ]
+    },
+    {
+      "text": "using analytics to identify and manage high-risk and high-cost patients. Health \nAff (Millwood) 2014; 33:1123–31.\n3.\t He K, Zhang X, Ren S, Sun J. Delving deep into rectifiers: surpassing human-\n",
+      "page": 5,
+      "bbox": [
+        54.1,
+        137.47,
+        289.56,
+        164.92
+      ]
+    },
+    {
+      "text": "level performance on imagenet classification. In IEEE International Conference \non Computer Vision (ICCV) 2015. 2015.\n4.\t He K, Zhang X, Ren S, Sun J. Deep residual learning for image recognition. In \n",
+      "page": 5,
+      "bbox": [
+        54.1,
+        164.48,
+        289.6,
+        191.92
+      ]
+    },
+    {
+      "text": "Computer Vision and Pattern Recognition (CVPR), 2016 IEEE Conference on. \n2016.\n5.\t ImageNet. 2016 [cited 2017; Available from: http://www.image-net.org/.\n6.\t Zhou J, Cao Y, Wang X, Li P, Xu W. Deep recurrent models with fast-forward \n",
+      "page": 5,
+      "bbox": [
+        54.1,
+        191.48,
+        289.6,
+        227.93
+      ]
+    },
+    {
+      "text": "connections for neural machine translation. arXiv preprint arXiv:1606.04199, \n2016.\n7.\t Lewis-Kraus G. The great AI awakening. In The New York Times Magazine. 2016.\n8.\t Opmeer BC. Electronic health records as sources of research data. JAMA 2016; \n",
+      "page": 5,
+      "bbox": [
+        54.1,
+        227.49,
+        289.58,
+        263.94
+      ]
+    },
+    {
+      "text": "315:201–2.\n9.\t Roski J, Bo-Linn GW, Andrews TA. Creating value in health care through big data: \n",
+      "page": 5,
+      "bbox": [
+        54.1,
+        263.5,
+        289.59,
+        281.94
+      ]
+    },
+    {
+      "text": "opportunities and policy implications. Health Aff (Millwood) 2014; 33:1115–22.\n10.\t Shoeb AH, Guttag J. Application of machine learning to epileptic seizure detec-\n",
+      "page": 5,
+      "bbox": [
+        50.8,
+        281.26,
+        288.0,
+        299.95
+      ]
+    },
+    {
+      "text": "tion. Proceedings of the 27th International Conference on Machine Learning \n(ICML-10), 2010: p. 975–82.\n11.\t Saria S, Rajani AK, Gould J, Koller D, Penn AA. Integration of early physiological \n",
+      "page": 5,
+      "bbox": [
+        50.8,
+        299.51,
+        289.57,
+        326.95
+      ]
+    },
+    {
+      "text": "responses predicts later illness severity in preterm infants. Sci Transl Med 2010; \n2:48ra65.\n12.\t Ghassemi M, et al., A Multivariate Timeseries Modeling Approach to Severity of \n",
+      "page": 5,
+      "bbox": [
+        50.8,
+        326.27,
+        289.61,
+        353.96
+      ]
+    },
+    {
+      "text": "Illness Assessment and Forecasting in ICU with Sparse, Heterogeneous Clinical \nData. Proceedings of the AAAI Conference on Artificial Intelligence. AAAI \nConference on Artificial Intelligence, 2015. 2015: p. 446–453.\n13.\t Wallace BC, Dahabreh IJ, Trikalinos TA, Barton Laws M, Wilson I, Charniak \n",
+      "page": 5,
+      "bbox": [
+        50.8,
+        353.52,
+        289.6,
+        389.97
+      ]
+    },
+    {
+      "text": "E. Identifying differences in physician communication styles with a log-linear \ntransition component model. In Twenty-Eighhth AAAI Conference on Artificial \nIntelligence. 2014.\n14.\t Visweswaran S, Cooper GF. Learning instance-specific predictive models. J Mach \n",
+      "page": 5,
+      "bbox": [
+        50.8,
+        389.53,
+        289.61,
+        425.98
+      ]
+    },
+    {
+      "text": "Learn Res 2010; 11:3333–69.\n15.\t Wang X, Sontag D, Wang F. Unsupervised learning of disease progression models. \n",
+      "page": 5,
+      "bbox": [
+        50.8,
+        425.29,
+        289.61,
+        443.98
+      ]
+    },
+    {
+      "text": "In 20th ACMSIGKDD International Conference on Knowledge Discovery and \nData Mining. 2014.\n16.\t Kale DC, Gong D, Che Z, et al. An examination of multivariate time series hash-\n",
+      "page": 5,
+      "bbox": [
+        50.8,
+        443.54,
+        289.6,
+        470.99
+      ]
+    },
+    {
+      "text": "ing with applications to health car. In IEEE International Conference on Data \nMining (ICDM). 2014. p. 260–69.\n17.\t Wiens J, Guttag J. Active learning applied to patient-adaptive heartbeat classi-\n",
+      "page": 5,
+      "bbox": [
+        50.8,
+        470.54,
+        289.59,
+        497.99
+      ]
+    },
+    {
+      "text": "fication. Advances in Neural Information Processing Systems (NIPS), 2010: \np. 2442–50.\n18.\t Henry KE. A targeted real-time early warning score (TREWScore) for septic \n",
+      "page": 5,
+      "bbox": [
+        50.8,
+        497.31,
+        289.61,
+        525.0
+      ]
+    },
+    {
+      "text": "shock. Sci Transl Med 2015; 7:299ra122–299ra122.\n19.\t Wallace BC, Kuiper J, Sharma A, Zhu MB, Marshall IJ. Extracting PICO sentences \n",
+      "page": 5,
+      "bbox": [
+        50.8,
+        524.31,
+        289.62,
+        543.0
+      ]
+    },
+    {
+      "text": "from clinical trial reports using supervised distant supervision. J Mach Learn Res \n2016; 17.\n20.\t Rumshisky A, Ghassemi M, Naumann T, et al. Predicting early psychiatric read-\n",
+      "page": 5,
+      "bbox": [
+        50.8,
+        542.56,
+        289.57,
+        570.01
+      ]
+    },
+    {
+      "text": "mission with natural language processing of narrative discharge summaries. \nTransl Psychiatry 2016; 6:e921.\n21.\t Wallace BC, Kuiper J, Sharma A, Zhu MB, Marshall IJ. Extracting PICO sentences \n",
+      "page": 5,
+      "bbox": [
+        50.8,
+        569.57,
+        289.62,
+        597.01
+      ]
+    },
+    {
+      "text": "from clinical trial reports using supervised distant supervision. J Mach Learn Res \n2016; 17:1–25.\n22.\t Rumshisky A, Ghassemi M, Naumann T, et al. Predicting early psychiatric read-\n",
+      "page": 5,
+      "bbox": [
+        50.8,
+        596.57,
+        289.57,
+        624.02
+      ]
+    },
+    {
+      "text": "mission with natural language processing of narrative discharge summaries. \nTransl Psychiatry 2016; 6:e921.\n",
+      "page": 5,
+      "bbox": [
+        62.6,
+        623.58,
+        289.59,
+        642.02
+      ]
+    },
+    {
+      "text": "23.\t Esteva A, Kuprel B, Novoa RA, et al. Dermatologist-level classification of skin \n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        37.85,
+        546.5,
+        47.3
+      ]
+    },
+    {
+      "text": "cancer with deep neural networks. Nature 2017; 542:115–8.\n24.\t Rajpurkar P, Hannun AY, Haghpanahi M, Bourn C, Ng AY. Cardiologist-level \n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        46.61,
+        546.47,
+        65.3
+      ]
+    },
+    {
+      "text": "arrhythmia detection with convolutional neural networks. arXiv preprint \narXiv:1707.01836, 2017.\n25.\t Bayati M, Braverman M, Gillam M, et al. Data-driven decisions for reducing read-\n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        64.86,
+        546.49,
+        92.31
+      ]
+    },
+    {
+      "text": "missions for heart failure: general methodology and case study. PLoS One 2014; \n9:e109264.\n26.\t DeepMindHealth: Helping clinicians get patients from test to treatment, faster. \n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        91.62,
+        546.49,
+        119.31
+      ]
+    },
+    {
+      "text": "2017; Available from: https://deepmind.com/applied/deepmind-health/.\n27.\t Watson for Oncology. Oncology and Genomics 2017; Available from: https://\n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        118.63,
+        544.9,
+        137.32
+      ]
+    },
+    {
+      "text": "www.ibm.com/watson/health/oncology-and-genomics/oncology/.\n28.\t Caradigm: a GE Healthcare company. 2017; Available from: https://www.cara-\n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        136.88,
+        544.89,
+        155.32
+      ]
+    },
+    {
+      "text": "digm.com/en-us/.\n29.\t InnerEye - Assistive AI for Cancer Treatment. 2017 [cited 2017; Available from: \n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        154.88,
+        546.49,
+        173.32
+      ]
+    },
+    {
+      "text": "https://www.microsoft.com/en-us/research/project/medical-image-analysis/#.\n30.\t Wiens J, Guttag J, Horvitz E. Patient risk stratification with time-varying parame-\n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        172.88,
+        544.9,
+        191.33
+      ]
+    },
+    {
+      "text": "ters: A multitask learning approach. J Mach Learn Res 2016; 17:1–23.\n31.\t Wiens J, Guttag J, Horvitz E. A study in transfer learning: leveraging data from \n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        190.64,
+        546.48,
+        209.33
+      ]
+    },
+    {
+      "text": "multiple hospitals to enhance hospital-specific predictions. J Am Med Inform \nAssoc 2014; 21:699–706.\n32.\t Wiens J, Horvitz E, Guttag JV. Patient risk stratification for hospital-associated \n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        208.89,
+        546.49,
+        236.34
+      ]
+    },
+    {
+      "text": "c.  diff as a time-series classification task. in Advances in Neural Information \nProcessing Systems. 2012.\n33.\t Wiens J, Campbell WN, Franklin ES, Guttag JV, Horvitz E. Learning data-driven \n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        235.9,
+        546.5,
+        263.34
+      ]
+    },
+    {
+      "text": "patient risk stratification models for Clostridium difficile. Open Forum Infect Dis \n2014; 1:ofu045.\n34.\t Wiens J, Guttag J, Horvitz E. Patient risk stratification with time-varying parame-\n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        262.81,
+        546.48,
+        290.35
+      ]
+    },
+    {
+      "text": "ters: a multitask learning approach. J Mach Learn Res 2016; 17:2797–819.\n35.\t Han BA, Schmidt JP, Bowden SE, Drake JM. Rodent reservoirs of future zoonotic \n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        289.66,
+        546.47,
+        308.35
+      ]
+    },
+    {
+      "text": "diseases. Proc Natl Acad Sci U S A 2015; 112:7039–44.\n36.\t Bank TW. Zoonotic Disease Prevention and Control, One Health, and the Role of \n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        307.67,
+        546.5,
+        326.36
+      ]
+    },
+    {
+      "text": "the World Bank. 2015.\n37.\t Colubri A, Silver T, Fradet T, Retzepi K, Fry B, Sabeti P. Transforming clinical data \n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        325.67,
+        546.47,
+        344.36
+      ]
+    },
+    {
+      "text": "into actionable prognosis models: machine-learning framework and field-de-\nployable app to predict outcome of Ebola patients. PLoS Negl Trop Dis 2016; \n10:e0004549.\n38.\t Dellinger RP, Levy MM, Rhodes A, et al; Surviving Sepsis Campaign Guidelines \n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        343.92,
+        546.49,
+        380.37
+      ]
+    },
+    {
+      "text": "Committee including the Pediatric Subgroup. Surviving sepsis campaign: inter-\nnational guidelines for management of severe sepsis and septic shock: 2012. Crit \nCare Med 2013; 41:580–637.\n39.\t An introduction to machine learning with scikit-learn. 2016 [cited 2017; Available \n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        379.93,
+        546.5,
+        416.38
+      ]
+    },
+    {
+      "text": "from: http://scikit-learn.org/stable/tutorial/basic/tutorial.html.\n40.\t Pedregosa F, Varoquaux G, Gramfortet A, et al. Scikit-learn: Machine learning in \n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        415.94,
+        546.52,
+        434.38
+      ]
+    },
+    {
+      "text": "Python. J Mach Learn Res 2011; 12:2825–30.\n41.\t In-depth introduction to machine learning in 15 hours of expert vid-\n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        433.7,
+        544.91,
+        452.39
+      ]
+    },
+    {
+      "text": "eos. \n2014 \n[cited \n2017; \nAvailable \nfrom: \nhttp://www.dataschool.\nio/15-hours-of-expert-machine-learning-videos/.\n42.\t Ng A. Machine learning. [cited 2017; Online course]. Available from: https://\n",
+      "page": 5,
+      "bbox": [
+        307.7,
+        451.7,
+        544.92,
+        479.39
+      ]
+    },
+    {
+      "text": "www.coursera.org/learn/machine-learning.\n43.\t Saria S, Rajani AK, Gould J, Koller D, Penn AA. Integration of early physiological \n",
+      "page": 5,
+      "bbox": [
+        307.71,
+        478.95,
+        546.46,
+        497.4
+      ]
+    },
+    {
+      "text": "responses predicts later illness severity in preterm infants. Sci Transl Med 2010; \n2:48ra65.\n44.\t Ghassemi M, Pimentel MAF, Naumann T, Brennan T, Clifton DA, Szolovits P, Feng \n",
+      "page": 5,
+      "bbox": [
+        307.71,
+        496.71,
+        546.53,
+        524.4
+      ]
+    },
+    {
+      "text": "M. A multivariate time series modeling approach to severity of illness assessment \nand forecasting in icu with sparse, heterogeneous clinical data. in Proceedings of \nthe... AAAI Conference on Artificial Intelligence. AAAI Conference on Artificial \nIntelligence. 2015. NIH Public Access.\n45.\t Ahmed B, Thesen T, Blackmon KE, Kuzniecky R, Devinsky O, Brodley CE. \n",
+      "page": 5,
+      "bbox": [
+        307.71,
+        523.96,
+        546.53,
+        569.41
+      ]
+    },
+    {
+      "text": "Decrypting cryptogenic epilepsy: semi-supervised hierarchical conditional ran-\ndom fields for detecting cortical lesions in MRI-negative patients. J Mach Learn \nRes 2016; 17:3885–9–14.\n46.\t Wiens J, Guttag J, Horvitz E. A study in transfer learning: leveraging data from \n",
+      "page": 5,
+      "bbox": [
+        307.71,
+        568.97,
+        546.49,
+        605.42
+      ]
+    },
+    {
+      "text": "multiple hospitals to enhance hospital-specific predictions. J Am Med Inform \nAssoc 2014; 21:699–706.\n47.\t Cabitza F, Rasoini R, Gensini G. Unintended consequences of machine learning \n",
+      "page": 5,
+      "bbox": [
+        307.71,
+        604.98,
+        546.5,
+        632.43
+      ]
+    },
+    {
+      "text": "in medicine. JAMA 2017; 318:517–8.\n",
+      "page": 5,
+      "bbox": [
+        319.51,
+        631.74,
+        422.94,
+        641.43
+      ]
+    }
+  ],
+  "metadata": {
+    "filename": "cix731.pdf",
+    "file_size": 292030,
+    "block_count": 107,
+    "created_at": "2025-04-30T10:36:22.572167"
+  }
+}

@@ -182,7 +182,7 @@ const MarkdownViewer = ({ highlightText, citedBlockIndices = [], currentDocument
             >
               <ReactMarkdown>
                 {block.text}
-              </ReactMarkdown>
+        </ReactMarkdown>
             </div>
           );
         })

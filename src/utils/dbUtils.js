@@ -344,3 +344,22 @@ export async function deleteDocument(documentId) {
     throw error;
   }
 }
+
+export const updateProjectDocumentCount = async (projectId, count) => {
+  const db = await openDatabase();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction("projects", "readwrite");
+    const store = tx.objectStore("projects");
+    const getRequest = store.get(projectId);
+    getRequest.onsuccess = () => {
+      const project = getRequest.result;
+      if (!project) return reject(new Error("项目不存在"));
+      project.documentCount = count;
+      const putRequest = store.put(project);
+      putRequest.onsuccess = () => resolve();
+      putRequest.onerror = () => reject(putRequest.error);
+    };
+    getRequest.onerror = () => reject(getRequest.error);
+    tx.oncomplete = () => db.close();
+  });
+};

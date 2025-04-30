@@ -14,6 +14,26 @@ function UploadDialog({ onClose, onUpload, showProjectCreation = false }) {
   };
 
   const handleSubmit = async () => {
+    if (createProject && showProjectCreation) {
+      // 创建项目模式
+      if (!projectName.trim()) {
+        alert('请输入项目名称');
+        return;
+      }
+      try {
+        await onUpload({
+          type: 'project',
+          name: projectName,
+          description: projectDescription
+        });
+        onClose();
+      } catch (error) {
+        alert('创建项目失败：' + error.message);
+      }
+      return;
+    }
+
+    // 上传文档模式
     if (selectedFile) {
       console.log('开始处理文件上传:', selectedFile.name);
       try {
