@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-const BLOB_SAS_URL = "https://hackathoncc2025.blob.core.windows.net/pdfs?sv=2024-11-04&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2026-04-30T15:00:41Z&st=2025-04-30T07:00:41Z&spr=https&sig=zetELIMR2%2F4PiiZIFYQNUe3hYDieboYRlw4anWyjQCA%3D";
+const BLOB_SAS_URL = "https://hackathoncc2025.blob.core.windows.net/uploadedpdfs?sv=...&sig=...";
 
 function UploadDialog({ onClose, onUpload, showProjectCreation = false }) {
   const [selectedFile, setSelectedFile] = useState(null);
