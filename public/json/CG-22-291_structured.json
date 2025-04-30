@@ -1,0 +1,2282 @@
+{
+  "title": "CG-22-291",
+  "processed_date": "2025-04-30T11:00:37.477428",
+  "content": [
+    {
+      "text": "Send Orders for Reprints to reprints@benthamscience.net\n",
+      "page": 1,
+      "bbox": [
+        346.43,
+        37.27,
+        560.72,
+        47.22
+      ]
+    },
+    {
+      "text": "Current Genomics, 2021, 22, 291-300\n291\n",
+      "page": 1,
+      "bbox": [
+        244.17,
+        55.5,
+        560.72,
+        64.35
+      ]
+    },
+    {
+      "text": "1389-2029/21 $65.00+.00\n© 2021  Bentham Science Publishers\n",
+      "page": 1,
+      "bbox": [
+        213.55,
+        726.08,
+        439.42,
+        734.94
+      ]
+    },
+    {
+      "text": "REVIEW ARTICLE\n",
+      "page": 1,
+      "bbox": [
+        51.02,
+        68.0,
+        140.75,
+        79.07
+      ]
+    },
+    {
+      "text": "Machine Learning in Healthcare\n",
+      "page": 1,
+      "bbox": [
+        51.02,
+        88.98,
+        274.58,
+        106.69
+      ]
+    },
+    {
+      "text": "Hafsa Habehh\n",
+      "page": 1,
+      "bbox": [
+        51.02,
+        122.3,
+        119.33,
+        135.58
+      ]
+    },
+    {
+      "text": "1 and Suril Gohel\n",
+      "page": 1,
+      "bbox": [
+        119.33,
+        121.11,
+        201.62,
+        135.58
+      ]
+    },
+    {
+      "text": "1,*\n",
+      "page": 1,
+      "bbox": [
+        201.62,
+        121.11,
+        209.87,
+        128.41
+      ]
+    },
+    {
+      "text": "1Department of Health Informatics, Rutgers University School of Health Professions, 65 Bergen Street, Newark, NJ\n07107, USA\n",
+      "page": 1,
+      "bbox": [
+        51.02,
+        153.99,
+        528.94,
+        176.06
+      ]
+    },
+    {
+      "text": "A R T I C L E  H I S T O R Y\n",
+      "page": 1,
+      "bbox": [
+        64.56,
+        208.74,
+        152.99,
+        216.49
+      ]
+    },
+    {
+      "text": "Received: December 18, 2020\nRevised: May 12, 2021\nAccepted: June 04, 2021\n",
+      "page": 1,
+      "bbox": [
+        64.52,
+        229.28,
+        137.17,
+        250.32
+      ]
+    },
+    {
+      "text": "DOI:\n10.2174/1389202922666210705124359\n",
+      "page": 1,
+      "bbox": [
+        64.52,
+        259.88,
+        160.69,
+        273.72
+      ]
+    },
+    {
+      "text": "Abstract: Recent advancements in Artificial Intelligence (AI) and Machine Learning (ML) technol-\nogy have brought on substantial strides in predicting and identifying health emergencies, disease\npopulations, and disease state and immune response, amongst a few. Although, skepticism remains\nregarding the practical application and interpretation of results from ML-based approaches in\nhealthcare settings, the inclusion of these approaches is increasing at a rapid pace. Here we provide\na brief overview of machine learning-based approaches and learning algorithms including super-\nvised, unsupervised, and reinforcement learning along with examples. Second, we discuss the appli-\ncation of ML in several healthcare fields, including radiology, genetics, electronic health records,\nand neuroimaging. We also briefly discuss the risks and challenges of ML application to healthcare\nsuch as system privacy and ethical concerns and provide suggestions for future applications.\n",
+      "page": 1,
+      "bbox": [
+        171.02,
+        185.94,
+        529.57,
+        293.1
+      ]
+    },
+    {
+      "text": "Keywords: Machine learning, healthcare, support vector machine, EHR, genomics, artificial intelligence.\n",
+      "page": 1,
+      "bbox": [
+        51.02,
+        303.58,
+        474.27,
+        314.65
+      ]
+    },
+    {
+      "text": "1. INTRODUCTION\n",
+      "page": 1,
+      "bbox": [
+        51.02,
+        327.08,
+        141.02,
+        338.15
+      ]
+    },
+    {
+      "text": "The application of machine learning dates back to the\n1950s when Alan Turing proposed the first machine that can\nlearn and become artificially intelligent [1]. Since its advent,\nmachine learning has been used in various applications, rang-\ning from security services through face detection [2] to in-\ncreasing efficiency and decreasing risk in public transporta-\ntion [3, 4], and recently in various aspects of healthcare and\nbiotechnology  [5-10].  Artificial  intelligence  and  machine\nlearning have brought significant changes in business pro-\ncesses and have transformed day-to-day lives, and compara-\nble  transformations  are  anticipated  in  healthcare  and\nmedicine. Recent advancements in this area have displayed\nincredible progress and opportunity to disburden physicians\nand improve accuracy, prediction, and quality of care. Cur-\nrent machine learning advancements in healthcare have pri-\nmarily served as a supportive role in a physician or analyst's\nability to fulfill their roles, identify healthcare trends, and de-\nvelop disease prediction models. In large medical organiza-\ntions, machine learning-based approaches have also been im-\nplemented to achieve increased efficiency in the organiza-\ntion of electronic health records [11], identification of irregu-\nlarities in the blood samples [5], organs [6-8], and bones\n[12] using medical imaging and monitoring, as well as in\nrobot-assisted surgeries [9, 13]. Machine learning applica-\ntions have recently enabled the acceleration of testing and\nhospital response in the battle against COVID-19. Hospitals\nhave been able to organize, share, and track patients, beds,\nrooms, ventilators, EHRs, and even staff during the pandem-\nic using a deep learning system by GE called the Clinical\n",
+      "page": 1,
+      "bbox": [
+        51.02,
+        343.08,
+        294.74,
+        662.15
+      ]
+    },
+    {
+      "text": "*Address correspondence to this author at the Department of Health Infor-\nmatics, Rutgers University School of Health Professions, 65 Bergen Street,\nNewark, NJ 07107, USA; Tel: 973-972-5039;\nE-mail: suril.gohel@rutgers.edu\n",
+      "page": 1,
+      "bbox": [
+        51.02,
+        681.84,
+        294.68,
+        717.1
+      ]
+    },
+    {
+      "text": "Command Center [14]. Researchers have also used artificial\nintelligence  for  the  identification  of  genetic  sequences  of\nSARS-CoV2 and the creation of vaccines as well as for their\nmonitoring [15].\n",
+      "page": 1,
+      "bbox": [
+        317.34,
+        327.11,
+        560.98,
+        371.97
+      ]
+    },
+    {
+      "text": "Many new developments emerge as the field of health-\ncare grows into the new world of technology. Artificial intel-\nligence and machine learning-based approaches and applica-\ntions are vital for the field’s progression, including increased\nspeed of diagnosis, accuracy, and simplicity. The purpose of\nthis review is to highlight the advantages and disadvantages\nof machine learning-based approaches in the healthcare in-\ndustry. As the application of new machine learning technolo-\ngy takes the healthcare industry by storm, we aim to provide\na brief overview of the various approaches to machine learn-\ning and highlight the fields where these approaches are pri-\nmarily applied. We discuss their widespread use and future\nadvancement opportunities in healthcare. We also address\nthe ethical and logistical risks and challenges that occur with\ntheir application.\n",
+      "page": 1,
+      "bbox": [
+        317.34,
+        376.99,
+        561.07,
+        545.05
+      ]
+    },
+    {
+      "text": "2. OVERVIEW OF ARTIFICIAL INTELLIGENCE\n",
+      "page": 1,
+      "bbox": [
+        317.34,
+        555.16,
+        542.64,
+        566.43
+      ]
+    },
+    {
+      "text": "Although the terms machine learning, deep learning, and\nartificial  intelligence  are  typically  used  interchangeably,\nthey represent different sets of algorithms and learning pro-\ncesses. Artificial Intelligence (AI) is the umbrella term that\nrefers to any computerized intelligence that learns and imi-\ntates  human  intelligence  [16].  AI  is  most  regarded  for\nautonomous machines such as robots and self-driving cars,\nbut it also permeates everyday applications, such as personal-\nized advertisements and web searches. In recent years, AI de-\nvelopment and application have made incredible strides and\nhave been applied to many areas due to their higher levels of\ndecision-making, accuracy, problem-solving capability, and\ncomputational skills [17]. In generally all development of AI\n",
+      "page": 1,
+      "bbox": [
+        317.34,
+        571.45,
+        561.06,
+        717.11
+      ]
+    },
+    {
+      "text": "292   Current Genomics, 2021, Vol. 22, No. 4\nHabehh and Gohel\n",
+      "page": 2,
+      "bbox": [
+        51.02,
+        37.22,
+        560.98,
+        46.08
+      ]
+    },
+    {
+      "text": "algorithms, the data obtained is split into two groups, a train-\ning and test data set, to ensure reliable learning, representa-\ntive  populations,  and  unbiased  predictions.  As  the  name\nsuggests, the training set is used for algorithm training that\nincludes sets of characterizing data points (features) and cor-\nresponding predictions (in the case of supervised learning).\nThe testing data set is new to the algorithm and is solely\nused to test the algorithm's abilities. This measure is taken to\neliminate biases in the algorithm's testing by the training da-\ntaset [18]. Once an algorithm passes through a training and\ntesting phase with acceptable results, the algorithms are im-\nplemented in healthcare settings. The application of AI is\nbroad and has many applied sub-regions; here, we provide\nan overview of machine learning and deep learning, two of\nthe several sub-regions of AI.\n",
+      "page": 2,
+      "bbox": [
+        51.02,
+        68.03,
+        294.71,
+        233.35
+      ]
+    },
+    {
+      "text": "Machine learning encompasses several different algorith-\nmic models and statistical methods to solve problems with-\nout specialized programming [19]. Several machine learning\nmodels are single-layered, therefore, large components of\nfeature extraction and data processing are performed prior to\ninputting the data into the algorithm [20]. Without the extra\nlayers, these machine learning algorithms require intense da-\nta preprocessing in order for the algorithms to determine ac-\ncurate predictions and to avoid over-fitting or under-fitting\nthe training dataset. Deep learning is a more elaborate sub-\nform of machine learning that utilizes layered artificial neu-\nral networks and provides increased accuracy and specificity\nwith decreased interpretability [21]. The neuronal network\nmethod is characterized as the multilayer network that sup-\nports the connection between the artificial neurons, or units,\nin each layer with that of the layer before and after it [22].\nThese networks can learn, discern, and deduce from data on\ntheir own using these multilevel links for data processing,\nand the data are processed until the specialized results are\nachieved [21].\n",
+      "page": 2,
+      "bbox": [
+        51.02,
+        238.28,
+        294.72,
+        458.68
+      ]
+    },
+    {
+      "text": "2.1. Types of Learning Approaches\n",
+      "page": 2,
+      "bbox": [
+        51.02,
+        468.63,
+        200.47,
+        479.72
+      ]
+    },
+    {
+      "text": "Most of the machine learning and AI-based algorithms\nare built on different learning approaches. One subtype is su-\npervised  learning,  which  is  used  in  training  classification\nand prediction algorithms based on previous examples, or\noutputs. An important distinction for this learning technique\nis that the training set involves features and corresponding\npredictions, or outcomes. Simply put, the supervised learn-\ning approach generalizes information from the training set's\nfeatures to construct a model that can correctly predict train-\ning-set outcomes and then uses the learned model to make\npredictions  using  the  new  features  in  the  testing  data  set\n[20].  Decision  Trees,  Random  Forest,  Support  Vector\nMachines, and Artificial Neural Networks are a few types of\nML algorithms that implement supervised learning approach-\nes. Decision tree algorithms form a decision support tool\nthat begins with a single node and identifies the possible out-\ncomes of that decision. The tree continues with the product\nof that decision and the following decisions until it reaches a\nfinal  product  [23].  Support  Vector  Machines  (SVM)  are\nknown as classification algorithms that use supervised learn-\ning to classify features in two group problems by finding the\n",
+      "page": 2,
+      "bbox": [
+        51.02,
+        484.65,
+        294.7,
+        716.07
+      ]
+    },
+    {
+      "text": "largest margin hyperplane to separate the data and providing\nthe  best  fit  to  organize  it  [16,  24].  Artificial  Neural  Net-\nworks (ANNs) consist of an input layer, one or more hidden\nlayers, and output layers, where functional unities/neurons\nin one layer are connected to every neuron in the layer be-\nfore and after [25]. In healthcare, supervised machine learn-\ning approaches are widely implemented in disease predic-\ntion [26], identifying hospital outcomes [14], and image de-\ntection [27] to name a few.\n",
+      "page": 2,
+      "bbox": [
+        317.34,
+        68.0,
+        560.98,
+        167.07
+      ]
+    },
+    {
+      "text": "Another subtype of AI-based learning approaches is un-\nsupervised learning, which is typically used to evaluate data\nand to cluster applications. Unsupervised machine learning\nis usually purposeful in data analysis, stratification, and re-\nduction rather than prediction. In general, unsupervised clus-\ntering  methods  use  algorithms  to  group  data  that  has  not\nbeen classified or categorized into independent clusters. Al-\nthough data preprocessing and feature extraction are done be-\nfore  the  input  in  most  forms  of  machine  learning,  this\nmethod allows for the extraction of features and explores\npossibilities of data clusters by identifying the underlying re-\nlationships or features in the data, then grouping them by\ntheir similarities [18]. Some unsupervised learning approach-\nes include the k-Means algorithm, Deep Belief Networks,\nand Convolutional Neural Networks. The most common un-\nsupervised learning algorithm is the k-Means algorithm that\nis used as a clustering method to identify the mean between\ngroups within unlabeled datasets and create groups based on\nthe mean [18]. A Deep Belief Network (DBN) is a multi-lay-\ner network consisting of intra-level connections useful for\ndata retrieval that typically uses unsupervised learning and\nhas many hidden layers tasked with feature detection and\nfinding correlations in the data [28, 29]. A Convolutional\nNeural Network (CNN) is a multilayer network that relies\non feature recognition and identification and is useful for\nanomaly  detection,  image  recognition,  and  identification\n[25]. Many unsupervised algorithms are used for clustering\ndue to the lack of predetermined results and homogeneity in\nthe data, and although the unsupervised methods are useful\nand quick, they are only semipopular in healthcare.\n",
+      "page": 2,
+      "bbox": [
+        317.34,
+        172.0,
+        561.05,
+        502.07
+      ]
+    },
+    {
+      "text": "Reinforcement learning is another learning method that\nis neither supervised nor unsupervised learning. Similar to\nthe mechanisms of conditioning in psychology, this learning\ndepends on the sequences of rewards, and it forms a strategy\nfor  operation  in  a  specific  problem  space.  Reinforcement\nlearning methods have the potential to influence their envi-\nronment, are geared towards optimizing the error criterion,\nand have been described as the closest form of learning as\nseen in humans and animals [30]. Given the types of learn-\ning approaches, the selection of learning methods is relative-\nly less complicated than the selection of algorithms and is\nusually dictated by the implementation purpose. A common-\nly used neural network that uses reinforcement learning is\nthe Recurrent Neural Network (RNN). An RNN is one of\nthe neural networks in which every artificial neuron is con-\nnected; the artificial neurons can receive inputs with delays\nin time and can reuse outputs from previous steps as input\nfor a future step. It is useful for time series prediction, trans-\nlation, speech recognition, rhythm learning, and music com-\n",
+      "page": 2,
+      "bbox": [
+        317.34,
+        507.0,
+        560.96,
+        716.07
+      ]
+    },
+    {
+      "text": "Machine Learning in Healthcare\nCurrent Genomics, 2021, Vol. 22, No. 4   293\n",
+      "page": 3,
+      "bbox": [
+        51.02,
+        37.22,
+        560.98,
+        46.08
+      ]
+    },
+    {
+      "text": "position [25]. Although healthcare applications of reinforce-\nment learning remain limited due to its need for structure,\nheterogeneous  data,  definition  and  implementation  of  re-\nwards, and extensive computational resources, it still pos-\nsesses  the  significant  potential  to  bring  major  strides  in\nhealthcare.\n",
+      "page": 3,
+      "bbox": [
+        51.02,
+        68.0,
+        294.65,
+        134.07
+      ]
+    },
+    {
+      "text": "Given the several types of machine learning and deep\nlearning approaches, it is highly imperative to identify and\nimplement an approach suitable specific to the healthcare ap-\nplication. Several factors, including the number of features\n[28], sample size [31, 32], and data distributions [33], can\nhave significant effects on the learning and prediction pro-\ncesses and should be considered.\n",
+      "page": 3,
+      "bbox": [
+        51.02,
+        139.0,
+        294.66,
+        216.07
+      ]
+    },
+    {
+      "text": "3. AI IN HEALTHCARE\n",
+      "page": 3,
+      "bbox": [
+        51.02,
+        226.0,
+        159.36,
+        237.07
+      ]
+    },
+    {
+      "text": "In healthcare, common machine learning advances have\nbeen evolving for years. The application of AI has the capac-\nity to assist with case triage and diagnoses [26], enhance im-\nage scanning and segmentation [34], support decision mak-\n",
+      "page": 3,
+      "bbox": [
+        51.02,
+        242.0,
+        294.75,
+        286.07
+      ]
+    },
+    {
+      "text": "ing [11], predict the risk of disease [35, 36], and in neuroi-\nmaging [37]. Here we provide a brief overview of current ad-\nvances in AI applications to specific aspects of health sci-\nence. Inclusion criteria for the applications mentioned are\nbased on the higher availability of digital data used in the\nML-based  approaches  and  their  clear  implementation  of\nlearning approaches with clinical applications and experi-\nments. In the current review, we focused on ML application\nto healthcare in the fields of electronic health records, medi-\ncal imaging, and genetic engineering. These areas also repre-\nsent healthcare’s “BIG” data, or the structured and unstruc-\ntured data of the field, and have shown significant promise\nin relation to clinical applications.\n",
+      "page": 3,
+      "bbox": [
+        317.34,
+        67.99,
+        561.07,
+        213.73
+      ]
+    },
+    {
+      "text": "Our search strategy is as follows: articles between June\nand December 2020, online libraries and journal databases\nincluding, but not limited to, and Academic OneFile, Gale,\nNature,  Sage  Journals,  Science  Direct,  PsycNet,  and\nPubmed were used. The compilation of articles and papers\nfocused on the use of machine learning and artificial intelli-\n",
+      "page": 3,
+      "bbox": [
+        317.34,
+        218.76,
+        560.97,
+        286.06
+      ]
+    },
+    {
+      "text": "Table 1. List of primary references.\n",
+      "page": 3,
+      "bbox": [
+        51.02,
+        297.0,
+        187.25,
+        306.96
+      ]
+    },
+    {
+      "text": "Healthcare\n",
+      "page": 3,
+      "bbox": [
+        58.36,
+        323.75,
+        96.12,
+        332.61
+      ]
+    },
+    {
+      "text": "Area\n",
+      "page": 3,
+      "bbox": [
+        68.8,
+        333.35,
+        85.68,
+        342.21
+      ]
+    },
+    {
+      "text": "Type of\nMachine Learn-\n",
+      "page": 3,
+      "bbox": [
+        104.46,
+        318.95,
+        158.39,
+        337.41
+      ]
+    },
+    {
+      "text": "ing Model\n",
+      "page": 3,
+      "bbox": [
+        114.19,
+        338.15,
+        148.64,
+        347.01
+      ]
+    },
+    {
+      "text": "Description\nApplied or\nExperiment\nReferences\n",
+      "page": 3,
+      "bbox": [
+        269.83,
+        323.75,
+        530.28,
+        342.21
+      ]
+    },
+    {
+      "text": "EHRs\nSVM, DT\nUsing EHRs for predicting diagnoses\nApplied\nLiang et al. 2014 [26]\n",
+      "page": 3,
+      "bbox": [
+        67.68,
+        350.5,
+        546.62,
+        359.36
+      ]
+    },
+    {
+      "text": "-\nRNN\nPredicting post-stroke pneumonia using deep neural network approaches\nExperiment\nGe et al., 2019 [35]\n",
+      "page": 3,
+      "bbox": [
+        75.91,
+        362.85,
+        542.95,
+        371.71
+      ]
+    },
+    {
+      "text": "-\nLSTM, CNN\nDeep EHR: Chronic Disease Prediction Using Medical Notes\nExperiment Liu, Zhang & Razavian 2018\n",
+      "page": 3,
+      "bbox": [
+        75.91,
+        375.2,
+        558.4,
+        388.86
+      ]
+    },
+    {
+      "text": "[40]\n",
+      "page": 3,
+      "bbox": [
+        504.96,
+        384.8,
+        518.29,
+        393.66
+      ]
+    },
+    {
+      "text": "-\nML\nSRML-Mortality Predictor: A hybrid machine learning framework to predict\n",
+      "page": 3,
+      "bbox": [
+        75.91,
+        397.15,
+        416.24,
+        410.81
+      ]
+    },
+    {
+      "text": "mortality in paralytic ileus patients using Electronic Health Records (EHRs)\nExperiment\nAhmad et al., 2020 [41]\n",
+      "page": 3,
+      "bbox": [
+        167.73,
+        401.95,
+        550.06,
+        415.61
+      ]
+    },
+    {
+      "text": "Medical\nImaging\nCNN\nDermatologist-level classification of skin cancer with deep neural networks\nExperiment\nEsteva et al. 2017 [7]\n",
+      "page": 3,
+      "bbox": [
+        63.91,
+        419.1,
+        545.95,
+        437.56
+      ]
+    },
+    {
+      "text": "-\nCNN\nChexnet: Radiologist-Level Pneumonia Detection on Chest X-Rays with Deep-\n",
+      "page": 3,
+      "bbox": [
+        75.91,
+        441.05,
+        417.81,
+        454.71
+      ]
+    },
+    {
+      "text": "-Learning\nApplied\nRajpurkar et al., 2017; Tsai\n",
+      "page": 3,
+      "bbox": [
+        273.83,
+        441.05,
+        555.62,
+        459.51
+      ]
+    },
+    {
+      "text": "& Tao, 2019 [8]\n",
+      "page": 3,
+      "bbox": [
+        485.63,
+        450.65,
+        537.62,
+        459.51
+      ]
+    },
+    {
+      "text": "-\nCNN\nInternational evaluation of an AI system for breast cancer screening\nExperiment\nMcKinney et al. 2020 [49]\n",
+      "page": 3,
+      "bbox": [
+        75.91,
+        463.0,
+        554.4,
+        471.86
+      ]
+    },
+    {
+      "text": "-\nDeep CNN\nDeep-learning algorithm predicts diabetic retinopathy progression in individual\n",
+      "page": 3,
+      "bbox": [
+        75.91,
+        475.35,
+        416.59,
+        489.01
+      ]
+    },
+    {
+      "text": "patients\nExperiment\nArcadu et al. 2019 [56]\n",
+      "page": 3,
+      "bbox": [
+        277.16,
+        480.15,
+        549.06,
+        493.81
+      ]
+    },
+    {
+      "text": "-\nDBN\nStructural MRI classification for Alzheimer's disease detection using deep be-\n",
+      "page": 3,
+      "bbox": [
+        75.91,
+        497.3,
+        414.41,
+        510.96
+      ]
+    },
+    {
+      "text": "lief network\nExperiment Faturrahman et al., 2017 [37]\n",
+      "page": 3,
+      "bbox": [
+        270.16,
+        502.1,
+        558.73,
+        515.76
+      ]
+    },
+    {
+      "text": "-\nDecision tree\nMachine learning approaches for integrating clinical and imaging features in\n",
+      "page": 3,
+      "bbox": [
+        75.91,
+        519.25,
+        412.13,
+        532.91
+      ]
+    },
+    {
+      "text": "late-life depression classification and response prediction\nExperiment\nPatel et al., 2015 [27]\n",
+      "page": 3,
+      "bbox": [
+        197.96,
+        524.05,
+        546.29,
+        537.71
+      ]
+    },
+    {
+      "text": "Genetic\nEngineering &\n",
+      "page": 3,
+      "bbox": [
+        53.58,
+        541.2,
+        100.9,
+        559.66
+      ]
+    },
+    {
+      "text": "Genomics\n",
+      "page": 3,
+      "bbox": [
+        61.02,
+        560.4,
+        93.46,
+        569.26
+      ]
+    },
+    {
+      "text": "RT\nApplication of machine learning models to predict tacrolimus stable dose in re-\n",
+      "page": 3,
+      "bbox": [
+        126.3,
+        546.0,
+        416.36,
+        559.66
+      ]
+    },
+    {
+      "text": "nal transplant recipients\nExperiment\nTang et al. 2017 [10]\n",
+      "page": 3,
+      "bbox": [
+        251.39,
+        550.8,
+        545.51,
+        564.46
+      ]
+    },
+    {
+      "text": "-\nML\nArtificial intelligence predicts the immunogenic landscape of SARS-CoV-2\n",
+      "page": 3,
+      "bbox": [
+        75.91,
+        572.75,
+        410.81,
+        586.41
+      ]
+    },
+    {
+      "text": "leading to universal blueprints for vaccine designs\nApplied\nMalone et al. 2020 [15]\n",
+      "page": 3,
+      "bbox": [
+        209.17,
+        577.55,
+        549.51,
+        591.21
+      ]
+    },
+    {
+      "text": "-\nDeep CNN,\n",
+      "page": 3,
+      "bbox": [
+        75.91,
+        594.7,
+        150.3,
+        608.36
+      ]
+    },
+    {
+      "text": "Deep FFs\nOff-target predictions in CRISPR-Cas9 gene editing using deep learning\nApplied\nLin & Wong 2018 [76]\n",
+      "page": 3,
+      "bbox": [
+        115.97,
+        599.5,
+        548.73,
+        613.16
+      ]
+    },
+    {
+      "text": "-\nRNNs\nDeepHF: Optimized CRISPR guide RNA design for two high-fidelity Cas9\n",
+      "page": 3,
+      "bbox": [
+        75.91,
+        616.65,
+        411.27,
+        630.31
+      ]
+    },
+    {
+      "text": "variants by deep learning\nApplied\nWang et al., 2019 [85]\n",
+      "page": 3,
+      "bbox": [
+        249.28,
+        621.45,
+        547.84,
+        635.11
+      ]
+    },
+    {
+      "text": "-\nRandom Forest\nCUNE: Unlocking HDR-mediated nucleotide editing by identifying high- effi-\n",
+      "page": 3,
+      "bbox": [
+        75.91,
+        638.6,
+        416.26,
+        652.26
+      ]
+    },
+    {
+      "text": "ciency target sites using machine learning\nApplied\nO’Brien et al., 2019 [86]\n",
+      "page": 3,
+      "bbox": [
+        222.62,
+        643.4,
+        551.4,
+        657.06
+      ]
+    },
+    {
+      "text": "-\nCNNs\nToxDL: deep learning using primary structure and domain embeddings for as-\n",
+      "page": 3,
+      "bbox": [
+        75.91,
+        660.55,
+        415.36,
+        674.21
+      ]
+    },
+    {
+      "text": "sessing protein toxicity\nApplied\nPan et al., 2020 [87]\n",
+      "page": 3,
+      "bbox": [
+        252.49,
+        665.35,
+        544.29,
+        679.01
+      ]
+    },
+    {
+      "text": "Applied is defined as an algorithm or application that is currently available on a public or private platform to healthcare professionals. It also refers to applications that are currently\napplied in medical practices such as clinics, hospitals, etc. An experiment is defined as an algorithm or application that has been used in a research study. EHR: Electronic Health Re-\ncords, SVM: Support Vector Machine, LSTM: Long Short-Term Memory Neural Network, CNN: Convolutional Neural Network, MLP: Multi-Layer perceptron Neural Network,\nRNN: Recurrent Neural network, DBN: Deep Belief Network, ANN: Artificial Neural Network, ML: Machine Learning.\n",
+      "page": 3,
+      "bbox": [
+        51.02,
+        681.11,
+        561.01,
+        711.96
+      ]
+    },
+    {
+      "text": "294   Current Genomics, 2021, Vol. 22, No. 4\nHabehh and Gohel\n",
+      "page": 4,
+      "bbox": [
+        51.02,
+        37.22,
+        560.98,
+        46.08
+      ]
+    },
+    {
+      "text": "gence in healthcare as well as current and potential applica-\ntions. Search terms included machine learning in healthcare,\nartificial intelligence medical imaging, BIG data and ma-\nchine  learning,  machine  learning  in  genomics,  electronic\nhealth records, challenges of AI in healthcare, and medical\napplications of AI. Variations of these terms were used to en-\nsure exhaustive search results. Searches were not limited by\nyear or journal Table 1.\n",
+      "page": 4,
+      "bbox": [
+        51.02,
+        68.0,
+        294.68,
+        156.07
+      ]
+    },
+    {
+      "text": "3.1. Electronic Health Records\n",
+      "page": 4,
+      "bbox": [
+        51.02,
+        166.0,
+        181.28,
+        177.07
+      ]
+    },
+    {
+      "text": "Electronic Health Records (EHRs), originally known as\nclinical information systems, were first introduced by Lock-\nheed in the 1960s [38]. Since then, the systems have been re-\nconstructed many times to create an industry-wide standard\nsystem. In 2009, the US federal government invested bil-\nlions in promoting EHR implementation in all practices in\nan effort to improve the quality and efficiency of the work;\nthis ultimately resulted in nearly 87 percent of office-based\npractices nationwide implementing EHRs in their systems\nby 2015 [39]. BIG data collected from EHR systems with\nstructured feature data have been instrumental in deep learn-\ning applications, including medication refills and using pa-\ntient history for predicting diagnoses [11]. This has resulted\nin significant improvement in data organization, accessibili-\nty, and quality of care and has helped physicians with diag-\nnoses and treatments. The standardization of features across\ndatasets has also allowed for increased access to health re-\ncords for research purposes.\n",
+      "page": 4,
+      "bbox": [
+        51.02,
+        182.0,
+        294.67,
+        380.07
+      ]
+    },
+    {
+      "text": "Considering the vital role that prediction plays in provid-\ning treatment, scientists have developed deep learning mod-\nels for the diagnosis and prediction of clinical conditions us-\ning EHRs. In a recent research study, Liu, Zhang, and Raza-\nvian developed a deep learning algorithm using LSTM net-\nworks (reinforcement learning) and CNNs (supervised learn-\ning) to predict the onset of diseases, such as heart failure,\nkidney failure, and stroke. Unlike other prediction models,\nthis algorithm used both structured data obtained from EHR\nand unstructured data contained in progress and diagnosis\nnotes. As explained by Liu and colleagues, the inclusion of\nunstructured data within the model resulted in significant im-\nprovements in all the baseline accuracy measures, further in-\ndicating  the  versatility  and  robustness  of  such  algorithms\n[40]. In another research study using deep neural network ap-\nproaches, Ge and colleagues built a model to predict post-\nstroke pneumonia within 7 and 14-day periods. The model\nreturned an Area under the ROC curve (AUC, a measure of\nmodel performance by combining sensitivity and specificity\nof a model) value of 92.8 percent for the 7-day predictions\nand 90.5 percent for the 14-day predictions [35], providing a\nhighly  accurate  model  predicting  pneumonia  following  a\nstroke. In addition, several ML-based models have also been\nimplemented to predict mortality in ICU patients. In one of\nsuch models, Ahmad and colleagues have shown great abili-\nty  to  predict  mortality  in  paralytic  ileus  (PI,  incomplete\nblockage of the intestine that prohibits the passage of food,\neventually leading to a build-up and complete blockage of\nthe intestines) patients using EHRs. The algorithm, named\nStatistically Robust Machine Learning-based Mortality Pre-\n",
+      "page": 4,
+      "bbox": [
+        51.02,
+        385.0,
+        294.75,
+        715.07
+      ]
+    },
+    {
+      "text": "dictor (SRML-Mortality Predictor), showed an 81.30% accu-\nracy rate in predicting mortality in PI patients [41]. Provid-\ning  patients  and  practitioners  with  predicted  mortality,\nthrough  the  use  of  EHR  prediction  algorithms,  can  allow\nthem to make more educated clinical treatment decisions.\n",
+      "page": 4,
+      "bbox": [
+        317.34,
+        67.97,
+        560.98,
+        123.55
+      ]
+    },
+    {
+      "text": "3.2. Medical Imaging\n",
+      "page": 4,
+      "bbox": [
+        317.34,
+        133.58,
+        407.34,
+        144.75
+      ]
+    },
+    {
+      "text": "Given the digital nature of data and the presence of struc-\ntured  data  formats  such  as  DICOM  (Digital  Imaging  and\nCommunications in Medicine), medical imaging has seen\nsignificant strides with the implementation of machine learn-\ning-based approaches to several imaging modalities, includ-\ning  Computed  Tomography  (CT),  Magnetic  Resonance\nImaging  (MRI),  X-Ray,  Positron  Emission  Tomography\n(PET),  Ultrasound,  and  more.  Several  ML-based  models\nhave  been  developed  to  identify  tumors  [42,  43],  lesions\n[44], fractures [45, 46], and tears [47, 48].\n",
+      "page": 4,
+      "bbox": [
+        317.34,
+        149.73,
+        561.05,
+        260.83
+      ]
+    },
+    {
+      "text": "In a recent study, McKinney and colleagues have imple-\nmented a deep learning algorithm to detect tumors based on\nMammograms in earlier stages of growth. In comparison to\ntraditional screening techniques used to identify tumors, th-\nese deep learning-based screen techniques allow for the iden-\ntification and location of tumors in earlier stages of breast\ncancer, allowing for a better rate of resection. In a direct\ncomparison, the deep learning-based approach was able to\noutperform  experienced  radiologists  by  an  AUC  score  of\n11.5%  [49].  Several  other  studies  have  also  implemented\nML-based approaches for breast cancer detection with vari-\nable  success,  including  models  by  Wang  and  colleagues\n[50],  Amrane  and  colleagues  [51],  and  Ahmad  and  col-\nleagues  [52].\n",
+      "page": 4,
+      "bbox": [
+        317.34,
+        265.81,
+        561.0,
+        421.33
+      ]
+    },
+    {
+      "text": "Similarly, in a recent study, Esteva and colleagues used\nCNN (unsupervised learning) to classify 2032 different skin\ndiseases using dermoscopic images. An objective compari-\nson of CNN classification with that of 21 board-certified der-\nmatologists resulted in “on par” performance, further con-\nfirming the veracity of the results [7]. When implemented in\nconjunction  with  the  average  consumer  mobile  platform,\nthis approach can result in ease of use and early diagnosis.\nIn  parallel,  studies  have  also  implemented  ML-based  ap-\nproaches  to  quantify  the  progression  of  retinal  diseases\n[51-54]. In one such study, Arcadu and colleagues applied a\ndeep learning CNN to detect the aneurysms that cause vision\nloss due to the progression of Diabetic Retinopathy (DR)\n[55]. The CNN was also able to detect small and low con-\ntrast  microaneurysms,  although  it  was  not  explicitly  de-\nsigned to accomplish that task [55, 56]. Given that diabetic\nretinopathy is a common eye condition that affects around\n60 percent of type 1 diabetes patients [57], it is difficult to\ndetect in its preliminary stages. Early prediction obtained us-\ning a CNN approach has the potential to prevent and delay ir-\nreversible damage to patients' vision. X-rays have been used\nfor decades to identify abnormalities in the chest cavity and\nlung disease, though an in-depth careful examination by a\ntraining radiologist is often required. In a recent study, Ra-\njpurkar and colleagues conducted a retrospective study to ex-\nplore the capacities of a 121-layer convolutional neural net-\n",
+      "page": 4,
+      "bbox": [
+        317.34,
+        426.3,
+        561.04,
+        715.06
+      ]
+    },
+    {
+      "text": "Machine Learning in Healthcare\nCurrent Genomics, 2021, Vol. 22, No. 4   295\n",
+      "page": 5,
+      "bbox": [
+        51.02,
+        37.22,
+        560.98,
+        46.08
+      ]
+    },
+    {
+      "text": "work to examine a collection of chest x-rays with various\nthoracic diseases and identify irregularities in an attempt to\nmimic the detection by trained radiologists [8]. In compari-\nson, CNN's performance in the accuracy of identification ob-\nserved was 81%, which was 2% higher than that of the radi-\nologists. Although applied retrospectively, this study, along\nwith CNNs developed by Tsai and Tao [58], Asif and col-\nleagues [59], Liang and colleagues [60], and Lee and col-\nleagues  [61],  indicates  incredible  support  that  these  ap-\nproaches can provide in examining and diagnosing illnesses,\nfurther reducing the burden on healthcare professionals.\n",
+      "page": 5,
+      "bbox": [
+        51.02,
+        68.0,
+        294.69,
+        189.07
+      ]
+    },
+    {
+      "text": "ML-based  approaches  have  also  been  implemented  to\npredict and diagnose disease progression of neurodegenera-\ntive diseases, including Alzheimer's disease [37, 62], Parkin-\nson's  disease  [63,  64],  serious  mental  disorders  including\nPsychosis, [65, 66], depression [27, 67], PTSD [68], and de-\nvelopmental disorders, including autism [69, 70] and ADHD\n[71, 72]. In one such study, Faturrahman and colleagues pre-\nsented a higher-level model using DBNs(unsupervised learn-\ning) for predicting Alzheimer's Disease (AD) progression us-\ning structural MRI images, resulting in 91.76% accuracy,\n90.59% sensitivity, and 92.96% specificity [37]. Although\nthere is no cure for AD, early diagnosis can help implement\nstrategies to delay the symptoms and degeneration. Using de-\ncision tree models and feature-rich data sets consisting of\nfunctional MRI, cognitive behavior scores, and age, Patel\nand colleagues developed a model to predict the diagnosis\nand  treatment  response  for  depression.  The  model  scored\n87.27%  accuracy  for  diagnosis  and  89.47%  accuracy  for\ntreatment response [27]. This predictive diagnosis can help\nidentify patients with depression and develop personalized\ntreatment plans based on their responses. With the current\nML applications in medical imaging, it is evident that its use\nhas valuable implications for advancing the medical field\ndue to its pronounced advantages in accuracy, classification,\nsensitivity, and specificity in prediction and diagnoses.\n",
+      "page": 5,
+      "bbox": [
+        51.02,
+        194.0,
+        294.71,
+        469.07
+      ]
+    },
+    {
+      "text": "3.3. Genetic Engineering and Genomics\n",
+      "page": 5,
+      "bbox": [
+        51.02,
+        479.0,
+        219.36,
+        490.07
+      ]
+    },
+    {
+      "text": "The discovery of the adaptive DNA system known as\nCRISPR (Clustered Regularly Interspaced Short Palindrom-\nic Repeats) has cultivated the field of genetic engineering\n[73].  This  exploration  of  “programmable  endonucleases”\nhas simplified genetic engineering and has helped make the\nprocess of genetic modification and diagnosis easier, as well\nas dropping the cost of the procedure dramatically [74]. The\nrecent application of CRISPR to Cas (CRISPR-associated\nprotein) editing, such as Cas-9 [75] and Cas-13a [73], has\nchanged genetic editing, though the tool is not perfect. Re-\ncently, several machine learning techniques for predicting of-\nf-target  mutations  in  Cas9  gene  editing  have  emerged.  A\nnew program developed by Jiecong Lin and Ka-Chun Wong\nhas improved the quality of these machine learning predic-\ntions by using deep CNNs (AUC score: 97.2%) and deep\nFFs (AUC score: 97%) [76]. Considering the space for error\nand off-target mutations using the Cas9 tool, scientists are\nusing Cas9 for developing activity predictors and more reli-\nable  Cas9  variants  to  reduce error.  These models include\nhigher accuracy and fidelity Cas9 variants [77-79], hyper-ac-\n",
+      "page": 5,
+      "bbox": [
+        51.02,
+        495.0,
+        294.67,
+        715.07
+      ]
+    },
+    {
+      "text": "curate Cas9 variants [80], and guide RNA design tools using\ndeep learning [81-85].\n",
+      "page": 5,
+      "bbox": [
+        317.34,
+        68.03,
+        560.93,
+        90.13
+      ]
+    },
+    {
+      "text": "Outside of CRISPR gene editing, O'Brien and colleagues\nhave developed a service to provide efficiency in nucleotide\nediting using random forest algorithms (supervised learning)\nto investigate how different nucleotide compositions influ-\nence the HDR (homology-directed repair) efficiency [86].\nThey developed the Computational Universal Nucleotide Ed-\nitor (CUNE), used to find the most efficient method to identi-\nfy a precise location to enter a specific point mutation and\npredict HDR efficiency. Additionally, Pan and colleagues\nhave  developed  a  model  for  prediction  in  gene  editing\nnamed ToxDL that uses a CNN approach to predict protein\ntoxicity in-vivo using only the sequence data [87]. Another\nbranch of genetic engineering, pharmacogenomics, has also\nmade significant strides in the use of AI and machine learn-\ning to determine stable doses of medications that have be-\ncome  popular  [88-90].  In  one  such  study,  Tang  and  col-\nleagues implemented an ML-based approach to determine a\nstable Tacrolimus dose (the immunosuppressive drug) for pa-\ntients who received a renal transplant to reduce the risk of\nacute rejection [10]. The use of machine learning in phar-\nmacogenomics has recently been applied in psychiatry [90],\noncology [91], bariatrics [92], and neurology [93].\n",
+      "page": 5,
+      "bbox": [
+        317.34,
+        95.07,
+        561.06,
+        337.5
+      ]
+    },
+    {
+      "text": "Machine  learning  applications  of  genetic  engineering\nhave also been instrumental in the fight against COVID 19.\nIn a recent study, Malone and colleagues utilized software\nbased on machine learning algorithms to “predict which anti-\ngens have the required features of HLA-binding, processing,\npresentation to the cell surface, and the potential to be recog-\nnized by T cells to be good clinical targets for immunothera-\npy” [15]. The use of immunogenicity predictions from this\nsoftware, along with the presentation of antigen to infected\nhost-cells, allowed the team to successfully profile the “en-\ntire SARS-CoV2 proteome” as well as epitope hotspots. Th-\nese discoveries help predict blueprints for designing univer-\nsal vaccines against the virus that can be adapted across the\nglobal population.\n",
+      "page": 5,
+      "bbox": [
+        317.34,
+        342.44,
+        561.03,
+        496.74
+      ]
+    },
+    {
+      "text": "4. RISKS AND CHALLENGES\n",
+      "page": 5,
+      "bbox": [
+        317.34,
+        506.69,
+        453.47,
+        517.77
+      ]
+    },
+    {
+      "text": "While machine learning-based applications in healthcare\npresent unique and progressive opportunities, they also raise\nunique risk factors, challenges, and healthy skepticism. Here\nwe discuss the main risk factors including the probability of\nerror in prediction and its impact, the vulnerability of the sys-\ntems' protection and privacy, and even the lack of data avail-\nability to obtain reproducible results. Some of the challenges\ninclude  ethical  concerns,  loss  of  the  personal  element  of\nhealthcare, and the interpretability and practical application\nof the approaches to bedside setting.\n",
+      "page": 5,
+      "bbox": [
+        317.34,
+        522.71,
+        561.08,
+        632.95
+      ]
+    },
+    {
+      "text": "One  of  the  most  important  risks  of  machine  learn-\ning-based algorithms is the reliance on the probabilistic dis-\ntribution and the probability of error in diagnosis and predic-\ntion. This also gives rise to a healthy skepticism related to\nthe validity and veracity of predictions from ML-based ap-\nproaches. Even though the probability of error and reliance\non probability is deep-rooted in the various aspects of health\n",
+      "page": 5,
+      "bbox": [
+        317.34,
+        637.88,
+        560.97,
+        715.07
+      ]
+    },
+    {
+      "text": "296   Current Genomics, 2021, Vol. 22, No. 4\nHabehh and Gohel\n",
+      "page": 6,
+      "bbox": [
+        51.02,
+        37.22,
+        560.98,
+        46.08
+      ]
+    },
+    {
+      "text": "care, the implications of ML-based approaches resulting in a\nhuman fatality are severe. One solution is to subject these\nmachine learning-based approaches to strict institutional and\nlegal approval by several organizations before their applica-\ntion [94, 95]. Another approach that can be implemented is\nthe human intervention and oversight from an experienced\nhealthcare worker in highly sensitive applications to avoid\nfalse-positive or false-negative diagnoses (e.g., diagnosis of\ndepression or breast cancer). The inclusion of present health-\ncare professionals in developing and implementing these ap-\nproaches may increase adaption rates and decrease concerns\nrelated to fewer employment opportunities for humans or\nthe shrinking of the workforce [96].\n",
+      "page": 6,
+      "bbox": [
+        51.02,
+        68.0,
+        294.74,
+        211.07
+      ]
+    },
+    {
+      "text": "Another risk associated with the application of ML and\ndeep learning algorithms to health care is the availability of\nhigh-quality training and testing data with large enough sam-\nple sizes to ensure high reliability and reproducibility of the\npredictions. Given that the ML and deep learning-based ap-\nproaches 'learn' from data, the importance of quality data\ncannot be stressed enough. In addition, the large amounts of\nfeature-rich data required for these learning networks and ap-\nproaches are not readily available and may also represent a\nnarrow distribution of the population sample. Moreover, in\nseveral healthcare segments, data collected are incomplete,\nheterogeneous, and have a significantly higher number of\nfeatures  than  the  number  of  samples.  These  challenges\nshould be taken into great consideration when developing\nand interpreting the results of ML-based approaches. The\nopen science and recent push towards research data sharing\nmay assist in overcoming such challenges. One should also\nconsider the risk associated with privacy as well as ethical\nimplications of the application of ML-based approaches to\nhealthcare. With the understanding that these approaches re-\nquire large-scale, easily expandable data storage, and signifi-\ncantly high computing power, several ML-based approaches\nare developed and implemented using cloud-based technolo-\ngies.  Given  the  sensitive  nature  of  healthcare  data  along\nwith privacy concerns, increased data security and accounta-\nbility should be one of the first aspects to be considered well\nbefore model development.\n",
+      "page": 6,
+      "bbox": [
+        51.02,
+        216.0,
+        294.67,
+        513.07
+      ]
+    },
+    {
+      "text": "With respect to ethical concerns, researchers working on\napplying  ML-based  approaches  to  healthcare  can  readily\nlearn from the field of genetic engineering which has under-\ngone extensive ethical debate. The controversy surrounding\nthe use of genetic engineering to create long-lasting genetic\nadvancements and treatments is a continuous discourse. Iden-\ntification and editing of injurious genetic mutations, such as\nthe HTT mutation that causes Huntington’s disease, may pro-\nvide life-altering treatment for harmful diseases [97]. Con-\ntrarily,  creating  treatments  that  alter  the  individual’s\ngenome, as well as that of their offspring, while it is still in-\naccessible due to costs, may worsen the socio-economic di-\nvide for populations that are unable to afford such care [98].\nRecently, there has been an emergence of guidelines for the\ndevelopment of AI machinery. In 2019, Singapore proposed\na Model Artificial Intelligence Governance Framework to\nguide private sector organizations on developing and using\nAI ethically [99]. The US Administration has also released\n",
+      "page": 6,
+      "bbox": [
+        51.02,
+        518.0,
+        294.73,
+        716.07
+      ]
+    },
+    {
+      "text": "an executive order to regulate AI development and “main-\ntain American leadership in artificial intelligence” [100]. Th-\nese guidelines and regulations, though strict, have been put\nforth to ensure ethical research conduct and development.\n",
+      "page": 6,
+      "bbox": [
+        317.34,
+        68.03,
+        560.98,
+        112.17
+      ]
+    },
+    {
+      "text": "An important challenge with ML application to health-\ncare is associated with the interpretation and clinical applica-\nbility of the results. Given the complex structure of ML-\nbased approaches, especially deep learning-based methods,\nit becomes incredibly complex to distinguish and identify\nthe original features' contribution towards the prediction. Al-\nthough this may not present significant concern in other ap-\nplications of ML (such as web searches), lack of transparen-\ncy has created a huge barrier for the adaptability of ML-\nbased  approaches  in  healthcare.  As  clearly  understood  in\nhealthcare, the solution strategy is as important as the solu-\ntion itself. There must be a systematic shift towards identify-\ning and quantifying underlying data features used for predic-\ntion. The involvement of physicians and healthcare profes-\nsionals in the development, implementation, and testing of\nML-based approaches may also help improve the adoption\nrates. Additionally, although there is healthy skepticism relat-\ned to the potential of a decreased personal relationship be-\ntween a patient and PCP due to increased implementation of\nML-based approaches, they represent a unique opportunity\nto increase engagement. Studies have shown that the physi-\ncian-patient relationship has already become a fading con-\ncept, and nearly 25 percent of Americans do not have a PCP\n[101].  Here,  ML  can  provide  unique  opportunities  to  in-\ncrease engagement where patients discuss the results of po-\ntential diagnoses and increase the efficiency of outreach pro-\ngrams. Early prognosis due to ML-based approaches may al-\nso help patients develop a healthy lifestyle in consultations\nwith their PCPs. Finally, a physician-focused survey found\nthat 56 percent of physicians were spending 16 minutes or\nless with their patients, and 5 percent of them spent less than\n9 minutes [102]. The application of AI approaches in diag-\nnoses  and  symptom  monitoring  can  ease  stress  and  give\nphysicians more personal time with their patients, thus im-\nproving patient satisfaction and outcomes.\n",
+      "page": 6,
+      "bbox": [
+        317.34,
+        117.1,
+        561.07,
+        502.75
+      ]
+    },
+    {
+      "text": "CONCLUSION\n",
+      "page": 6,
+      "bbox": [
+        317.34,
+        512.7,
+        385.12,
+        523.78
+      ]
+    },
+    {
+      "text": "While  the  overview  demonstrates  how  much  progress\nhas been achieved with machine learning, there continues to\nbe potential for widescale advancement in the future. Many\nof the current machine learning advancements in healthcare\naim to support the physician’s or specialist's ability to pro-\nvide a more effective treatment to patients with increased\nquality, speed, and precision. The challenges of developing\nML algorithms can be solved by developing and implement-\ning improvements in data collection, storage, and dissemina-\ntion or by creating algorithms to process unstructured data to\naddress the lack of data availability. Future applications can\nalso bring forth inexpensive forms of medical imaging and\naffordable medical examinations, potentially ending health\ndisparities and creating more accessible services for coun-\ntries  and  lower-income  populations.  Scientists  expect  ad-\nvancement in the prediction of personalized drug response,\noptimization of medication selection and dosage, and an ap-\n",
+      "page": 6,
+      "bbox": [
+        317.34,
+        528.72,
+        560.97,
+        716.07
+      ]
+    },
+    {
+      "text": "Machine Learning in Healthcare\nCurrent Genomics, 2021, Vol. 22, No. 4   297\n",
+      "page": 7,
+      "bbox": [
+        51.02,
+        37.22,
+        560.98,
+        46.08
+      ]
+    },
+    {
+      "text": "plication of genetic modification to provide treatment for ge-\nnetic  disorders  and  mutations  [103].  With  its  application,\nML can augment the role of physicians and redefine patient\ncare. While the risks and challenges of the future application\nare addressed and corrected, the current ML algorithms can\nprovide  an  excellent  framework  for  future  advancements\nand applications of ML in healthcare.\n",
+      "page": 7,
+      "bbox": [
+        51.02,
+        68.0,
+        294.75,
+        145.07
+      ]
+    },
+    {
+      "text": "CONSENT FOR PUBLICATION\n",
+      "page": 7,
+      "bbox": [
+        51.02,
+        155.0,
+        196.03,
+        166.07
+      ]
+    },
+    {
+      "text": "Not applicable.\n",
+      "page": 7,
+      "bbox": [
+        66.02,
+        171.0,
+        127.12,
+        182.07
+      ]
+    },
+    {
+      "text": "FUNDING\n",
+      "page": 7,
+      "bbox": [
+        51.02,
+        192.0,
+        97.68,
+        203.07
+      ]
+    },
+    {
+      "text": "This  work  was  partly  supported  by  NIH/NCATS\nUL1TR003017. This work is solely the responsibility of the\nauthors and does not necessarily represent the official views\nof the NIH, NCATS.\n",
+      "page": 7,
+      "bbox": [
+        51.02,
+        208.0,
+        294.64,
+        252.07
+      ]
+    },
+    {
+      "text": "CONFLICT OF INTEREST\n",
+      "page": 7,
+      "bbox": [
+        51.02,
+        262.0,
+        173.26,
+        273.07
+      ]
+    },
+    {
+      "text": "The authors declare no conflict of interest, financial or\notherwise.\n",
+      "page": 7,
+      "bbox": [
+        51.02,
+        278.0,
+        294.58,
+        300.07
+      ]
+    },
+    {
+      "text": "ACKNOWLEDGEMENTS\n",
+      "page": 7,
+      "bbox": [
+        51.02,
+        310.0,
+        168.81,
+        321.07
+      ]
+    },
+    {
+      "text": "Declared none.\n",
+      "page": 7,
+      "bbox": [
+        66.02,
+        326.0,
+        126.55,
+        337.07
+      ]
+    },
+    {
+      "text": "REFERENCES\n",
+      "page": 7,
+      "bbox": [
+        51.02,
+        345.75,
+        118.25,
+        356.82
+      ]
+    },
+    {
+      "text": "Turing, A. Computing machinery and intelligence. Mind, 1950,\n[1]\n",
+      "page": 7,
+      "bbox": [
+        58.2,
+        365.05,
+        294.56,
+        373.91
+      ]
+    },
+    {
+      "text": "LIX(236), 433-460.\nhttp://dx.doi.org/10.1093/mind/LIX.236.433\nWati, D.A.R.; Abadianto, D. Design of face detection and recogni-\n[2]\n",
+      "page": 7,
+      "bbox": [
+        58.2,
+        373.85,
+        294.71,
+        400.31
+      ]
+    },
+    {
+      "text": "tion system for smart home security application. 2017 2nd Interna-\ntional conferences on Information Technology, Information Sys-\ntems and Electrical Engineering (ICITISEE), Yogyakarta, Indone-\nsia, November 1-2, 2018, pp. 342-347.\nEllis, K.; Godbole, S.; Marshall, S.; Lanckriet, G.; Staudenmayer,\n[3]\n",
+      "page": 7,
+      "bbox": [
+        58.2,
+        400.25,
+        294.66,
+        444.31
+      ]
+    },
+    {
+      "text": "J.; Kerr, J. Identifying active travel behaviors in challenging envi-\nronments using GPS, accelerometers, and machine learning algo-\nrithms. Front. Public Health, 2014, 2, 36.\nhttp://dx.doi.org/10.3389/fpubh.2014.00036 PMID: 24795875\nOmrani,  H.  Predicting  travel  mode  of  individuals  by  machine\n[4]\n",
+      "page": 7,
+      "bbox": [
+        58.2,
+        444.25,
+        294.66,
+        488.31
+      ]
+    },
+    {
+      "text": "learning. Transp. Res. Procedia, 2015, 10, 840-849.\nhttp://dx.doi.org/10.1016/j.trpro.2015.09.037\nSiddiqui, M.K.; Morales-Menendez, R.; Huang, X.; Hussain, N. A\n[5]\n",
+      "page": 7,
+      "bbox": [
+        58.2,
+        488.25,
+        294.6,
+        514.71
+      ]
+    },
+    {
+      "text": "review of epileptic seizure detection using machine learning classi-\nfiers. Brain Inform., 2020, 7(1), 5.\nhttp://dx.doi.org/10.1186/s40708-020-00105-1 PMID: 32451639\nWoldaregay, A.Z.; Årsand, E.; Botsis, T.; Albers, D.; Mamykina,\n[6]\n",
+      "page": 7,
+      "bbox": [
+        58.2,
+        514.65,
+        294.63,
+        549.91
+      ]
+    },
+    {
+      "text": "L.; Hartvigsen, G. Data-driven blood glucose pattern classification\nand anomalies detection: Machine-learning applications in type 1\ndiabetes. J. Med. Internet Res., 2019, 21(5), e11030.\nhttp://dx.doi.org/10.2196/11030 PMID: 31042157\nEsteva, A.; Kuprel, B.; Novoa, R.A.; Ko, J.; Swetter, S.M.; Blau,\n[7]\n",
+      "page": 7,
+      "bbox": [
+        58.2,
+        549.85,
+        294.65,
+        593.91
+      ]
+    },
+    {
+      "text": "H.M.; Thrun, S. Dermatologist-level classification of skin cancer\nwith deep neural networks. Nature, 2017, 542(7639), 115-118.\nhttp://dx.doi.org/10.1038/nature21056 PMID: 28117445\nRajpurkar,  P;  Irvin,  J;  Zhu,  K;  Yang,  B;  Mehta,  H;  Duan,  T\n[8]\n",
+      "page": 7,
+      "bbox": [
+        58.2,
+        593.85,
+        294.6,
+        629.11
+      ]
+    },
+    {
+      "text": "CheXNet: Radiologist-level pneumonia detection on chest X-rays\nwith deep learning. arXiv, 2017, 3-9.\nKaouk, J.H.; Garisto, J.; Eltemamy, M.; Bertolo, R. Robot-assist-\n[9]\n",
+      "page": 7,
+      "bbox": [
+        58.2,
+        629.05,
+        294.64,
+        655.51
+      ]
+    },
+    {
+      "text": "ed surgery for benign distal ureteral strictures: step-by-step tech-\nnique  using  the  SP\n",
+      "page": 7,
+      "bbox": [
+        81.02,
+        655.45,
+        294.62,
+        673.91
+      ]
+    },
+    {
+      "text": "®  surgical  system.  BJU  Int.,  2019,  123(4),\n733-739.\nhttp://dx.doi.org/10.1111/bju.14635 PMID: 30499629\nTang, J.; Liu, R.; Zhang, Y.L.; Liu, M.Z.; Hu, Y.F.; Shao, M.J.;\n[10]\n",
+      "page": 7,
+      "bbox": [
+        54.2,
+        661.06,
+        294.66,
+        700.31
+      ]
+    },
+    {
+      "text": "Zhu,  L.J.;  Xin,  H.W.;  Feng,  G.W.;  Shang,  W.J.;  Meng,  X.G.;\nZhang, L.R.; Ming, Y.Z.; Zhang, W. Application of machine-learn-\n",
+      "page": 7,
+      "bbox": [
+        81.02,
+        700.26,
+        294.71,
+        717.91
+      ]
+    },
+    {
+      "text": "ing models to predict tacrolimus stable dose in renal transplant re-\ncipients. Sci. Rep., 2017, 7, 42192.\nhttp://dx.doi.org/10.1038/srep42192 PMID: 28176850\nRao, S.R.; Desroches, C.M.; Donelan, K.; Campbell, E.G.; Mi-\n[11]\n",
+      "page": 7,
+      "bbox": [
+        320.51,
+        68.01,
+        560.9,
+        103.67
+      ]
+    },
+    {
+      "text": "ralles, P.D.; Jha, A.K. Electronic health records in small physician\npractices: availability, use, and perceived benefits. J. Am. Med. In-\nform. Assoc., 2011, 18(3), 271-275.\nhttp://dx.doi.org/10.1136/amiajnl-2010-000010 PMID: 21486885\nTian, L.; Zhang, D.; Bao, S.; Nie, P.; Hao, D.; Liu, Y. Radiomic-\n[12]\n",
+      "page": 7,
+      "bbox": [
+        320.51,
+        103.61,
+        560.97,
+        148.18
+      ]
+    },
+    {
+      "text": "s-based machine-learning method for prediction of distant metasta-\nsis  from  soft-tissue  sarcomas.  Clin.  Radiol.,  2020,  76(2),\n158.e19-158.e25.\nPMID: 33293024\nLanfranco,  A.R.;  Castellanos,  A.E.;  Desai,  J.P.;  Meyers,  W.C.\n[13]\n",
+      "page": 7,
+      "bbox": [
+        320.51,
+        148.12,
+        560.98,
+        192.69
+      ]
+    },
+    {
+      "text": "Robotic surgery: A current perspective. Ann. Surg., 2004, 239(1),\n14-21.\nhttp://dx.doi.org/10.1097/01.sla.0000103020.19595.7d\n PMID:\n14685095\nRoth, M. COVID-19: Oregon hospitals share data, create real-time\n[14]\n",
+      "page": 7,
+      "bbox": [
+        320.51,
+        192.64,
+        560.98,
+        237.2
+      ]
+    },
+    {
+      "text": "bed  capacity  system.  Health  Leaders  Media,  2020.  Available\nfrom:\n https://www.healthleadersmedia.com/innovation/-\ncovid-19-oregon-hospitals-share-data-create-real-time-bed-capaci-\nty-system\nMalone, B.; Simovski, B.; Moliné, C.; Cheng, J.; Gheorghe, M.;\n[15]\n",
+      "page": 7,
+      "bbox": [
+        320.51,
+        237.15,
+        560.98,
+        281.71
+      ]
+    },
+    {
+      "text": "Fontenelle, H.; Vardaxis, I.; Tennøe, S.; Malmberg, J.A.; Strat-\nford, R.; Clancy, T. Artificial intelligence predicts the immuno-\ngenic landscape of SARS-CoV-2 leading to universal blueprints\nfor vaccine designs. Sci. Rep., 2020, 10(1), 22375.\nhttp://dx.doi.org/10.1038/s41598-020-78758-5 PMID: 33361777\nLee, E.J.; Kim, Y.H.; Kim, N.; Kang, D.W. Deep into the brain:\n[16]\n",
+      "page": 7,
+      "bbox": [
+        320.51,
+        281.66,
+        560.93,
+        335.13
+      ]
+    },
+    {
+      "text": "Artificial intelligence in stroke imaging. J. Stroke, 2017, 19(3),\n277-285.\nhttp://dx.doi.org/10.5853/jos.2017.02054 PMID: 29037014\nMiotto,  R.;  Wang,  F.;  Wang,  S.;  Jiang,  X.;  Dudley,  J.T.  Deep\n[17]\n",
+      "page": 7,
+      "bbox": [
+        320.51,
+        335.07,
+        560.98,
+        370.73
+      ]
+    },
+    {
+      "text": "learning  for  healthcare:  Review,  opportunities  and  challenges.\nBrief. Bioinform., 2018, 19(6), 1236-1246.\nhttp://dx.doi.org/10.1093/bib/bbx044 PMID: 28481991\nAlloghani, M.; Al-Jumeily, D.; Mustafina, J.; Hussain, A.; Aljaaf,\n[18]\n",
+      "page": 7,
+      "bbox": [
+        320.51,
+        370.68,
+        560.94,
+        406.34
+      ]
+    },
+    {
+      "text": "A.J. A systematic review on supervised and unsupervised machine\nlearning algorithms for data science. In: Supervised and unsuper-\nvised learning for data science; Berry, M.; Mohamed, A.; Yap, B.,\nEds.; Springer, US, 2020; pp. 3-21.\nhttp://dx.doi.org/10.1007/978-3-030-22475-2_1\nSamuel, A.L. Some studies in machine learning using the game of\n[19]\n",
+      "page": 7,
+      "bbox": [
+        320.51,
+        406.29,
+        560.97,
+        459.75
+      ]
+    },
+    {
+      "text": "checkers. IBM J. Res. Develop., 2000, 44(1-2), 207-219.\nhttp://dx.doi.org/10.1147/rd.441.0206\nAlpaydin, E. Introduction to machine learning. MIT Press, 2020.\n[20]\n",
+      "page": 7,
+      "bbox": [
+        320.51,
+        459.7,
+        560.91,
+        486.46
+      ]
+    },
+    {
+      "text": "Available\n from:\n https://books.google.com/books?hl=en&l-\nr=&id=tZnSDwAAQBAJ&oi=fnd&pg=PR7&dq=Introduction+-\nto+machine+learning&ots=F3RWaXcwwf&sig=50DHyEjhVdDt-\nmXIxZ0C4tXOGsdw\nBhattacharjee,  B.;  Boag,  S.;  Doshi,  C.;  Dube,  P.;  Herta,  B.;\n[21]\n",
+      "page": 7,
+      "bbox": [
+        320.51,
+        486.4,
+        560.98,
+        530.97
+      ]
+    },
+    {
+      "text": "Ishakian, V. IBM deep learning service. arXiv, 2017, 1-22.\nQin, Z.; Ye, H.; Li, G.Y.; Juang, B.H.F. Deep learning in physical\n[22]\n",
+      "page": 7,
+      "bbox": [
+        320.51,
+        530.91,
+        560.9,
+        548.78
+      ]
+    },
+    {
+      "text": "layer communications. IEEE Wirel. Commun., 2019, 26(2), 93-99.\nhttp://dx.doi.org/10.1109/MWC.2019.1800601\nKamiński, B.; Jakubczyk, M.; Szufel, P. A framework for sensitivi-\n[23]\n",
+      "page": 7,
+      "bbox": [
+        320.51,
+        548.72,
+        561.06,
+        575.48
+      ]
+    },
+    {
+      "text": "ty analysis of decision trees. Cent. Eur. J. Oper. Res., 2018, 26(1),\n135-159.\nhttp://dx.doi.org/10.1007/s10100-017-0479-6 PMID: 29375266\nGaonkar, B.; Davatzikos, C. Analytic estimation of statistical sig-\n[24]\n",
+      "page": 7,
+      "bbox": [
+        320.51,
+        575.42,
+        560.98,
+        611.09
+      ]
+    },
+    {
+      "text": "nificance maps for support vector machine based multi-variate im-\nage analysis and classification. Neuroimage, 2013, 78, 270-283.\nhttp://dx.doi.org/10.1016/j.neuroimage.2013.03.066\n PMID:\n23583748\nLeijnen, S.; van Veen, F. The neural network zoo. Proceedings.,\n[25]\n",
+      "page": 7,
+      "bbox": [
+        320.51,
+        611.03,
+        560.97,
+        655.6
+      ]
+    },
+    {
+      "text": "2020, 47(1), 9.\nhttp://dx.doi.org/10.3390/proceedings2020047009\nLiang, Z.; Zhang, G.; Huang, J.X.; Hu, Q.V. Deep learning for\n[26]\n",
+      "page": 7,
+      "bbox": [
+        320.51,
+        655.54,
+        560.87,
+        682.31
+      ]
+    },
+    {
+      "text": "healthcare decision making with EMRs. Proc - 2014 IEEE Interna-\ntional Conference on Bioinformatics and Biomedicine (BIBM),\nBelfast, UK, November 2-5, 2014, pp. 556-559.\nhttp://dx.doi.org/10.1109/BIBM.2014.6999219\n",
+      "page": 7,
+      "bbox": [
+        347.34,
+        682.25,
+        561.01,
+        717.91
+      ]
+    },
+    {
+      "text": "298   Current Genomics, 2021, Vol. 22, No. 4\nHabehh and Gohel\n",
+      "page": 8,
+      "bbox": [
+        51.02,
+        37.22,
+        560.98,
+        46.08
+      ]
+    },
+    {
+      "text": "Patel, M.J.; Andreescu, C.; Price, J.C.; Edelman, K.L.; Reynolds,\n[27]\n",
+      "page": 8,
+      "bbox": [
+        54.2,
+        68.0,
+        294.58,
+        76.86
+      ]
+    },
+    {
+      "text": "C.F., III; Aizenstein, H.J. Machine learning approaches for inte-\ngrating clinical and imaging features in late-life depression classifi-\ncation and response prediction. Int. J. Geriatr. Psychiatr., 2015,\n30(10), 1056-1067.\nhttp://dx.doi.org/10.1002/gps.4262 PMID: 25689482\nCoates, A.; Lee, H.; Ng, A.Y. An analysis of single-layer net-\n[28]\n",
+      "page": 8,
+      "bbox": [
+        54.2,
+        76.8,
+        294.74,
+        129.66
+      ]
+    },
+    {
+      "text": "works  in  unsupervised  feature  learning.  J.  Mach.  Learn.  Res.,\n2011, 15, 215-223.\nRavi, D.; Wong, C.; Deligianni, F.; Berthelot, M.; Andreu-Perez,\n[29]\n",
+      "page": 8,
+      "bbox": [
+        54.2,
+        129.6,
+        294.66,
+        156.06
+      ]
+    },
+    {
+      "text": "J.; Lo, B.; Yang, G.Z. Deep learning for health informatics. IEEE\nJ. Biomed. Health Inform., 2017, 21(1), 4-21.\nhttp://dx.doi.org/10.1109/JBHI.2016.2636665 PMID: 28055930\nSutton, R.S.; Barto, A. Reinforcement Learning: An Introduction;\n[30]\n",
+      "page": 8,
+      "bbox": [
+        54.2,
+        156.0,
+        294.66,
+        191.26
+      ]
+    },
+    {
+      "text": "MIT Press, 2018.\nVabalas, A.; Gowen, E.; Poliakoff, E.; Casson, A.J. Machine learn-\n[31]\n",
+      "page": 8,
+      "bbox": [
+        54.2,
+        191.2,
+        294.74,
+        208.86
+      ]
+    },
+    {
+      "text": "ing algorithm validation with a limited sample size. PLoS One,\n2019, 14(11), e0224365.\nhttp://dx.doi.org/10.1371/journal.pone.0224365 PMID: 31697686\nCui, Z.; Gong, G. The effect of machine learning regression algo-\n[32]\n",
+      "page": 8,
+      "bbox": [
+        54.2,
+        208.8,
+        294.66,
+        244.06
+      ]
+    },
+    {
+      "text": "rithms and sample size on individualized behavioral prediction\nwith  functional  connectivity  features.  Neuroimage,  2018,  178,\n622-637.\nhttp://dx.doi.org/10.1016/j.neuroimage.2018.06.001\n PMID:\n29870817\nGu, L.; Zeng, D.; Li, P.; Guo, S. Cost minimization for big data\n[33]\n",
+      "page": 8,
+      "bbox": [
+        54.2,
+        244.0,
+        294.66,
+        296.86
+      ]
+    },
+    {
+      "text": "processing in geo-distributed data centers. IEEE Trans. Emerg.\nTop. Comput., 2014, 2(3), 314-323.\nhttp://dx.doi.org/10.1109/TETC.2014.2310456\nLi, W.; Jia, F.; Hu, Q. Automatic segmentation of liver tumor in ct\n[34]\n",
+      "page": 8,
+      "bbox": [
+        54.2,
+        296.8,
+        294.65,
+        332.06
+      ]
+    },
+    {
+      "text": "images with deep convolutional neural networks. J. Comput. Com-\nmun., 2015, 03(11), 146-151.\nhttp://dx.doi.org/10.4236/jcc.2015.311023\nGe, Y.; Wang, Q.; Wang, L.; Wu, H.; Peng, C.; Wang, J. Predict-\n[35]\n",
+      "page": 8,
+      "bbox": [
+        54.2,
+        332.0,
+        294.67,
+        367.26
+      ]
+    },
+    {
+      "text": "ing post-stroke pneumonia using deep neural network approaches.\nInt. J. Med. Inform., 2019, 132, 103986.\nhttp://dx.doi.org/10.1016/j.ijmedinf.2019.103986\nNguyen, B.P.; Pham, H.N.; Tran, H.; Nghiem, N.; Nguyen, Q.H.;\n[36]\n",
+      "page": 8,
+      "bbox": [
+        54.2,
+        367.2,
+        294.6,
+        402.46
+      ]
+    },
+    {
+      "text": "Do, T.T.T.; Tran, C.T.; Simpson, C.R. Predicting the onset of type\n2 diabetes using wide and deep learning with electronic health re-\ncords. Comput. Methods Programs Biomed., 2019, 182, 105055.\nhttp://dx.doi.org/10.1016/j.cmpb.2019.105055 PMID: 31505379\nFaturrahman, M.; Wasito, I.; Hanifah, N.; Mufidah, R. Structural\n[37]\n",
+      "page": 8,
+      "bbox": [
+        54.2,
+        402.4,
+        294.63,
+        446.46
+      ]
+    },
+    {
+      "text": "MRI classification for Alzheimer’s disease detection using deep\nbelief network. 2017 11th International Conference on Informa-\ntion Communication Technology and System (ICTS), 2017, pp.\n37-42.\nhttp://dx.doi.org/10.1109/ICTS.2017.8265643\nAtherton, J. Development of the electronic health record. Virtual\n[38]\n",
+      "page": 8,
+      "bbox": [
+        54.2,
+        446.4,
+        294.66,
+        499.26
+      ]
+    },
+    {
+      "text": "Mentor,\n 2011,\n 13(3),\n 186-189.\n Available\n from:\nhttp://virtualmentor.ama-assn.org/2011/03/msoc1-1103.html\nPMID: 23127323\nYang,  N.;  Hing,  E.  National  electronic  health  records  survey:\n[39]\n",
+      "page": 8,
+      "bbox": [
+        54.2,
+        499.2,
+        294.65,
+        534.46
+      ]
+    },
+    {
+      "text": "2015  specialty  and  overall  physicians  electronic  health  record\nadoption\n summary\n tables.\n 2017,\n (28)\n Available\n from:\nhttp://www.cdc.gov/nchs/ahcd/ahcd_questionnaires.htm\nLiu, J.; Zhang, Z.; Razavian, N. Deep EHR: Chronic disease pre-\n[40]\n",
+      "page": 8,
+      "bbox": [
+        54.2,
+        534.4,
+        294.66,
+        569.66
+      ]
+    },
+    {
+      "text": "diction using medical notes. arXiv, 2018, arXiv:1808.04928.\nAhmad, F.S.; Ali, L. A hybrid machine learning framework to pre-\n[41]\n",
+      "page": 8,
+      "bbox": [
+        54.2,
+        569.6,
+        294.66,
+        587.26
+      ]
+    },
+    {
+      "text": "dict mortality in paralytic ileus patients using electronic health re-\ncords (EHRs). J. Ambient Intell. Humaniz. Comput., 2020, 12(2),\n3283-3293.\nhttp://dx.doi.org/10.1007/s12652-020-02509-7\nTang, T.T.; Zawaski, J.A.; Francis, K.N.; Qutub, A.A.; Gaber,\n[42]\n",
+      "page": 8,
+      "bbox": [
+        54.2,
+        587.2,
+        294.66,
+        631.26
+      ]
+    },
+    {
+      "text": "M.W. Image-based classification of tumor type and growth rate us-\ning machine learning: A preclinical study. Sci. Rep., 2019, 9(1),\n12529.\nhttp://dx.doi.org/10.1038/s41598-019-48738-5 PMID: 31467303\nSharma, K.; Kaur, A.; Gujral, S. Brain tumor detection based on\n[43]\n",
+      "page": 8,
+      "bbox": [
+        54.2,
+        631.2,
+        294.73,
+        675.26
+      ]
+    },
+    {
+      "text": "machine learning algorithms. Int. J. Comput. Appl., 2014, 103(1),\n7-11.\nKarimi, D.; Peters, J.M.; Ouaalam, A.; Prabhu, S.P.; Sahin, M.;\n[44]\n",
+      "page": 8,
+      "bbox": [
+        54.2,
+        675.2,
+        294.66,
+        701.66
+      ]
+    },
+    {
+      "text": "Krueger, D.A. Learning to detect brain lesions from noisy annota-\n",
+      "page": 8,
+      "bbox": [
+        81.02,
+        701.6,
+        294.58,
+        710.46
+      ]
+    },
+    {
+      "text": "tions. 2020 IEEE 17th International Symposium on Biomedical\nImaging (ISBI), 2020, pp. 1910-4.\nhttp://dx.doi.org/10.1109/ISBI45749.2020.9098599\nFerizi, U.; Besser, H.; Hysi, P.; Jacobs, J.; Rajapakse, C.S.; Chen,\n[45]\n",
+      "page": 8,
+      "bbox": [
+        320.51,
+        68.0,
+        560.96,
+        103.26
+      ]
+    },
+    {
+      "text": "C.; Saha, P.K.; Honig, S.; Chang, G. Artificial intelligence applied\nto osteoporosis: A performance comparison of machine learning\nalgorithms in predicting fragility fractures from mri data. J. Magn.\nReson. Imaging, 2019, 49(4), 1029-1038.\nhttp://dx.doi.org/10.1002/jmri.26280 PMID: 30252971\nZuccon, G.; Wagholikar, A.S.; Nguyen, A.N.; Butt, L.; Chu, K.;\n[46]\n",
+      "page": 8,
+      "bbox": [
+        320.51,
+        103.2,
+        560.99,
+        156.06
+      ]
+    },
+    {
+      "text": "Martin, S. Automatic classification of free-text radiology reports\nto identify limb fractures using machine learning and the snomed\nct  ontology.  AMIA  Jt.  Summits  Transl.  Sci.,  2013,  2013,  pp.\n300-304.\nChang, P.D.; Wong, T.T.; Rasiej, M.J. Deep learning for detection\n[47]\n",
+      "page": 8,
+      "bbox": [
+        320.51,
+        156.0,
+        560.97,
+        200.06
+      ]
+    },
+    {
+      "text": "of  complete  anterior  cruciate  ligament  tear.  J.  Digit.  Imaging,\n2019, 32(6), 980-986.\nhttp://dx.doi.org/10.1007/s10278-019-00193-4 PMID: 30859341\nLao, Y.; Jia, B.; Yan, P.; Pan, M.; Hui, X.; Li, J.; Luo, W.; Li, X.;\n[48]\n",
+      "page": 8,
+      "bbox": [
+        320.51,
+        200.0,
+        560.98,
+        235.26
+      ]
+    },
+    {
+      "text": "Han, J.; Yan, P.; Yao, L. Diagnostic accuracy of machine-learn-\ning-assisted detection for anterior cruciate ligament injury based\non magnetic resonance imaging: Protocol for a systematic review\nand meta-analysis. Medicine (Baltimore), 2019, 98(50), e18324.\nhttp://dx.doi.org/10.1097/MD.0000000000018324\n PMID:\n31852123\nMcKinney, S.M.; Sieniek, M.; Godbole, V.; Godwin, J.; Antropo-\n[49]\n",
+      "page": 8,
+      "bbox": [
+        320.51,
+        235.2,
+        560.97,
+        296.86
+      ]
+    },
+    {
+      "text": "va, N.; Ashrafian, H.; Back, T.; Chesus, M.; Corrado, G.S.; Darzi,\nA.; Etemadi, M.; Garcia-Vicente, F.; Gilbert, F.J.; Halling-Brown,\nM.; Hassabis, D.; Jansen, S.; Karthikesalingam, A.; Kelly, C.J.;\nKing, D.; Ledsam, J.R.; Melnick, D.; Mostofi, H.; Peng, L.; Reich-\ner, J.J.; Romera-Paredes, B.; Sidebottom, R.; Suleyman, M.; Tse,\nD.; Young, K.C.; De Fauw, J.; Shetty, S. International evaluation\nof  an  AI  system  for  breast  cancer  screening.  Nature,  2020,\n577(7788),  89-94.\nhttp://dx.doi.org/10.1038/s41586-019-1799-6 PMID: 31894144\nWang, D.; Li, J.R.; Zhang, Y.H.; Chen, L.; Huang, T.; Cai, Y.D.\n[50]\n",
+      "page": 8,
+      "bbox": [
+        320.51,
+        296.8,
+        561.03,
+        384.86
+      ]
+    },
+    {
+      "text": "Identification of differentially expressed genes between original\nbreast cancer and xenograft using machine learning algorithms.\nGenes (Basel), 2018, 9(3), 1-16.\nhttp://dx.doi.org/10.3390/genes9030155 PMID: 29534550\nAmrane, M.; Oukid, S.; Gagaoua, I.; Ensar, İ.T. Breast cancer clas-\n[51]\n",
+      "page": 8,
+      "bbox": [
+        320.51,
+        384.8,
+        561.02,
+        428.86
+      ]
+    },
+    {
+      "text": "sification using machine learning. 2018 Electric Electronics, Com-\nputer Science, Biomedical Engineerings’ Meeting (EBBT), 2018,\npp. 1-4.\nhttp://dx.doi.org/10.1109/EBBT.2018.8391453\nAhmad, L.; Eshlaghy, A.; Poorebrahimi, A.; Ebrahimi, M.; Raza-\n[52]\n",
+      "page": 8,
+      "bbox": [
+        320.51,
+        428.8,
+        561.02,
+        472.86
+      ]
+    },
+    {
+      "text": "vi,  A.  Using  three  machine  learning  techniques  for  predicting\nbreast cancer recurrence. J. Health Med. Inform., 2013, 04(02),\n2-4.\nHuck, Y.C.H.; Liu, F.; Huang, J.H.; Tian, M.; Hung, I.; Lin, M.D.;\n[53]\n",
+      "page": 8,
+      "bbox": [
+        320.51,
+        472.8,
+        560.98,
+        508.06
+      ]
+    },
+    {
+      "text": "Liu,  YC  Auto-classification  of  retinal  diseases  in  the  limit  of\nsparse  data  using  a  two-streams  machine  learning  model.Lect\nNotes Comput. Sci; , 2018, pp. 323-338.\nRampasek, L.; Goldenberg, A. Learning from everyday images en-\n[54]\n",
+      "page": 8,
+      "bbox": [
+        320.51,
+        508.0,
+        561.03,
+        543.26
+      ]
+    },
+    {
+      "text": "ables expert-like diagnosis of retinal diseases. Cell, 2018, 172(5),\n893-895.\nhttp://dx.doi.org/10.1016/j.cell.2018.02.013 PMID: 29474917\nAlqudah, A.M. AOCT-NET: a convolutional network automated\n[55]\n",
+      "page": 8,
+      "bbox": [
+        320.51,
+        543.2,
+        560.98,
+        578.46
+      ]
+    },
+    {
+      "text": "classification of multiclass retinal diseases using spectral-domain\noptical coherence tomography images. Med. Biol. Eng. Comput.,\n2020, 58(1), 41-53.\nhttp://dx.doi.org/10.1007/s11517-019-02066-y PMID: 31728935\nArcadu, F.; Benmansour, F.; Maunz, A.; Willis, J.; Haskova, Z.;\n[56]\n",
+      "page": 8,
+      "bbox": [
+        320.51,
+        578.4,
+        560.98,
+        622.46
+      ]
+    },
+    {
+      "text": "Prunotto, M. Deep learning algorithm predicts diabetic retinopa-\nthy  progression  in  individual  patients.  NPJ  Digit.  Med.,  2019,\n2(1), 92.\nJansson, R.W.; Hufthammer, K.O.; Krohn, J. Diabetic retinopathy\n[57]\n",
+      "page": 8,
+      "bbox": [
+        320.51,
+        622.4,
+        560.98,
+        657.66
+      ]
+    },
+    {
+      "text": "in type 1 diabetes patients in Western Norway. Acta Ophthalmol.,\n2018, 96(5), 465-474.\nhttp://dx.doi.org/10.1111/aos.13654 PMID: 29369506\nTsai, M.; Tao, Y. Machine learning based common radiologist-lev-\n[58]\n",
+      "page": 8,
+      "bbox": [
+        320.51,
+        657.6,
+        561.03,
+        692.86
+      ]
+    },
+    {
+      "text": "el pneumonia detection on chest x-rays. 2019 13th International\nConference  on  Signal  Processing  and  Communication  Systems\n",
+      "page": 8,
+      "bbox": [
+        347.34,
+        692.8,
+        560.97,
+        710.46
+      ]
+    },
+    {
+      "text": "Machine Learning in Healthcare\nCurrent Genomics, 2021, Vol. 22, No. 4   299\n",
+      "page": 9,
+      "bbox": [
+        51.02,
+        37.22,
+        560.98,
+        46.08
+      ]
+    },
+    {
+      "text": "(ICSPCS), 2019, pp. 1-7.\nhttp://dx.doi.org/10.1109/ICSPCS47537.2019.9008684\nAsif, S.; Wenhui, Y.; Jin, H.; Tao, Y.; Jinhai, S. Classification of\n[59]\n",
+      "page": 9,
+      "bbox": [
+        54.2,
+        68.0,
+        294.54,
+        94.46
+      ]
+    },
+    {
+      "text": "covid-19 from chest radiography images using deep convolutional\nneural network. J. Xidian Univ., 2020, 14(8), 565-569.\nLiang, S.; Tang, F.; Huang, X.; Yang, K.; Zhong, T.; Hu, R.; Liu,\n[60]\n",
+      "page": 9,
+      "bbox": [
+        54.2,
+        94.4,
+        294.66,
+        120.86
+      ]
+    },
+    {
+      "text": "S.; Yuan, X.; Zhang, Y. Deep-learning-based detection and seg-\nmentation of organs at risk in nasopharyngeal carcinoma comput-\ned tomographic images for radiotherapy planning. Eur. Radiol.,\n2019, 29(4), 1961-1967.\nhttp://dx.doi.org/10.1007/s00330-018-5748-9 PMID: 30302589\nLee, K.S.; Kim, J.Y.; Jeon, E.T.; Choi, W.S.; Kim, N.H.; Lee,\n[61]\n",
+      "page": 9,
+      "bbox": [
+        54.2,
+        120.8,
+        294.66,
+        173.66
+      ]
+    },
+    {
+      "text": "K.Y. Evaluation of scalability and degree of fine-tuning of deep\nconvolutional neural networks for covid-19 screening on chest x-\nray images using explainable deep-learning algorithm. J. Pers.\nMed., 2020, 10(4), 1-14.\nhttp://dx.doi.org/10.3390/jpm10040213 PMID: 33171723\nLee, G.; Nho, K.; Kang, B.; Sohn, K.A.; Kim, D.; Weiner, M.W.\n[62]\n",
+      "page": 9,
+      "bbox": [
+        54.2,
+        173.6,
+        294.66,
+        226.46
+      ]
+    },
+    {
+      "text": "Predicting  Alzheimer’s  disease  progression  using  multi-modal\ndeep learning approach. Sci. Rep., 2019, 9(1), 1952.\nhttp://dx.doi.org/10.1038/s41598-018-37769-z PMID: 30760848\nMandal, I.; Sairam, N. New machine-learning algorithms for pre-\n[63]\n",
+      "page": 9,
+      "bbox": [
+        54.2,
+        226.4,
+        294.64,
+        261.66
+      ]
+    },
+    {
+      "text": "diction  of  Parkinson’s  disease.  Int.  J.  Syst.  Sci.,  2014,  45(3),\n647-666.\nhttp://dx.doi.org/10.1080/00207721.2012.724114\nAhmadi, R.D.; Ho, N.; Halliday, G.M.; Dzamko, N. Parkinson’s\n[64]\n",
+      "page": 9,
+      "bbox": [
+        54.2,
+        261.6,
+        294.66,
+        296.86
+      ]
+    },
+    {
+      "text": "progression  prediction  using  machine  learning  and  serum  cy-\ntokines. NPJ Park Dis., 2019, 5(1), 1-8.\nRamyead,  A.;  Studerus,  E.;  Kometer,  M.;  Uttinger,  M.;  Gsch-\n[65]\n",
+      "page": 9,
+      "bbox": [
+        54.2,
+        296.8,
+        294.61,
+        323.26
+      ]
+    },
+    {
+      "text": "wandtner, U.; Fuhr, P.; Riecher-Rössler, A. Prediction of psycho-\nsis using neural oscillations and machine learning in neuroleptic-\nnaïve  at-risk  patients.  World  J.  Biol.  Psychiatry,  2016,  17(4),\n285-295.\nhttp://dx.doi.org/10.3109/15622975.2015.1083614\n PMID:\n26453061\nCorcoran,  C.M.;  Carrillo,  F.;  Fernández-Slezak,  D.;  Bedi,  G.;\n[66]\n",
+      "page": 9,
+      "bbox": [
+        54.2,
+        323.2,
+        294.68,
+        384.86
+      ]
+    },
+    {
+      "text": "Klim, C.; Javitt, D.C.; Bearden, C.E.; Cecchi, G.A. Prediction of\npsychosis across protocols and risk cohorts using automated lan-\nguage analysis. World Psychiatry, 2018, 17(1), 67-75.\nhttp://dx.doi.org/10.1002/wps.20491 PMID: 29352548\nKessler, R.C.; van Loo, H.M.; Wardenaar, K.J.; Bossarte, R.M.;\n[67]\n",
+      "page": 9,
+      "bbox": [
+        54.2,
+        384.8,
+        294.63,
+        428.86
+      ]
+    },
+    {
+      "text": "Brenner, L.A.; Cai, T.; Ebert, D.D.; Hwang, I.; Li, J.; de Jonge, P.;\nNierenberg,  A.A.;  Petukhova,  M.V.;  Rosellini,  A.J.;  Sampson,\nN.A.; Schoevers, R.A.; Wilcox, M.A.; Zaslavsky, A.M. Testing a\nmachine-learning algorithm to predict the persistence and severity\nof  major  depressive  disorder  from  baseline  self-reports.  Mol.\nPsychiatry, 2016, 21(10), 1366-1371.\nhttp://dx.doi.org/10.1038/mp.2015.198 PMID: 26728563\nKim, Y.W.; Kim, S.; Shim, M.; Jin, M.J.; Jeon, H.; Lee, S.H.; Im,\n[68]\n",
+      "page": 9,
+      "bbox": [
+        54.2,
+        428.8,
+        294.68,
+        499.26
+      ]
+    },
+    {
+      "text": "C.H. Riemannian classifier enhances the accuracy of machine-\nlearning-based diagnosis of PTSD using resting EEG. Prog. Neu-\nropsychopharmacol. Biol. Psychiatry, 2020, 102(April), 109960.\nhttp://dx.doi.org/10.1016/j.pnpbp.2020.109960 PMID: 32376342\nWall, D.P.; Kosmicki, J.; Deluca, T.F.; Harstad, E.; Fusaro, V.A.\n[69]\n",
+      "page": 9,
+      "bbox": [
+        54.2,
+        499.2,
+        294.66,
+        543.26
+      ]
+    },
+    {
+      "text": "Use of machine learning to shorten observation-based screening\nand diagnosis of autism. Transl. Psychiatry, 2011, 2012, 2.\nPMID: 22832900\nThabtah, F.; Peebles, D. A new machine learning model based on\n[70]\n",
+      "page": 9,
+      "bbox": [
+        54.2,
+        543.2,
+        294.63,
+        578.46
+      ]
+    },
+    {
+      "text": "induction  of  rules  for  autism  detection.  Health  Informatics  J.,\n2020, 26(1), 264-286.\nhttp://dx.doi.org/10.1177/1460458218824711 PMID: 30693818\nMueller,  A.;  Candrian,  G.;  Kropotov,  J.D.;  Ponomarev,  V.A.;\n[71]\n",
+      "page": 9,
+      "bbox": [
+        54.2,
+        578.4,
+        294.66,
+        613.66
+      ]
+    },
+    {
+      "text": "Baschera, G.M. Classification of ADHD patients on the basis of in-\ndependent  ERP  components  using  a  machine  learning  system.\nNonlinear Biomed. Phys., 2010, 4(Suppl. 1), S1.\nhttp://dx.doi.org/10.1186/1753-4631-4-S1-S1 PMID: 20522259\nTenev, A.; Markovska-simoska, S.; Kocarev, L.; Pop-jordanov, J.\n[72]\n",
+      "page": 9,
+      "bbox": [
+        54.2,
+        613.6,
+        294.68,
+        657.66
+      ]
+    },
+    {
+      "text": "Machine learning approach for classification of ADHD adults. Int.\nJ. Psycophysiol., 2014, 93(1), 162-166.\nGootenberg, J.S.; Abudayyeh, O.O.; Lee, J.W.; Essletzbichler, P.;\n[73]\n",
+      "page": 9,
+      "bbox": [
+        54.2,
+        657.6,
+        294.66,
+        684.06
+      ]
+    },
+    {
+      "text": "Dy,  A.J.;  Joung,  J.  Nucleic  acid  detection  with  CRISPR--\nCas13a/C2c2.  Science  (80-  ).,  2017,  356(6336),  438-442.\nDNA sequencing costs: Data. National Human Genome Research\n[74]\n",
+      "page": 9,
+      "bbox": [
+        54.2,
+        684.0,
+        294.61,
+        710.46
+      ]
+    },
+    {
+      "text": "Institute,  2020.  Available  from:  https://www.genome.gov-\n/about-genomics/fact-sheets/DNA-Sequencing-Costs-Data\nCharpentier, E.; Dounda, J.A. Rewriting a genome An accurate\n[75]\n",
+      "page": 9,
+      "bbox": [
+        320.51,
+        68.0,
+        560.98,
+        94.46
+      ]
+    },
+    {
+      "text": "distance to the nearest galaxy. Nat. Biotechnol., 2013, 495, 50-51.\nAvailable from: https://www.nature.com/articles/495050a\nLin, J.; Wong, K.C. Off-target predictions in CRISPR-Cas9 gene\n[76]\n",
+      "page": 9,
+      "bbox": [
+        320.51,
+        94.4,
+        560.97,
+        120.86
+      ]
+    },
+    {
+      "text": "editing using deep learning. Bioinformatics, 2018, 34(17), i656-\ni663.\nhttp://dx.doi.org/10.1093/bioinformatics/bty554 PMID: 30423072\nCasini, A.; Olivieri, M.; Petris, G.; Montagna, C.; Reginato, G.;\n[77]\n",
+      "page": 9,
+      "bbox": [
+        320.51,
+        120.8,
+        560.97,
+        156.06
+      ]
+    },
+    {
+      "text": "Maule, G.; Lorenzin, F.; Prandi, D.; Romanel, A.; Demichelis, F.;\nInga, A.; Cereseto, A. A highly specific SpCas9 variant is identi-\nfied by in vivo screening in yeast. Nat. Biotechnol., 2018, 36(3),\n265-271.\nhttp://dx.doi.org/10.1038/nbt.4066 PMID: 29431739\nLee, J.K.; Jeong, E.; Lee, J.; Jung, M.; Shin, E.; Kim, Y.H.; Lee,\n[78]\n",
+      "page": 9,
+      "bbox": [
+        320.51,
+        156.0,
+        560.98,
+        208.86
+      ]
+    },
+    {
+      "text": "K.; Jung, I.; Kim, D.; Kim, S.; Kim, J.S. Directed evolution of\nCRISPR-Cas9  to  increase  its  specificity.  Nat.  Commun.,  2018,\n9(1), 3048.\nhttp://dx.doi.org/10.1038/s41467-018-05477-x PMID: 30082838\nVakulskas,  C.A.;  Dever,  D.P.;  Rettig,  G.R.;  Turk,  R.;  Jacobi,\n[79]\n",
+      "page": 9,
+      "bbox": [
+        320.51,
+        208.8,
+        560.98,
+        252.86
+      ]
+    },
+    {
+      "text": "A.M.; Collingwood, M.A.; Bode, N.M.; McNeill, M.S.; Yan, S.;\nCamarena, J.; Lee, C.M.; Park, S.H.; Wiebking, V.; Bak, R.O.;\nGomez-Ospina, N.; Pavel-Dinu, M.; Sun, W.; Bao, G.; Porteus,\nM.H.; Behlke, M.A. A high-fidelity Cas9 mutant delivered as a ri-\nbonucleoprotein complex enables efficient gene editing in human\nhematopoietic stem and progenitor cells. Nat. Med., 2018, 24(8),\n1216-1224.\nhttp://dx.doi.org/10.1038/s41591-018-0137-0 PMID: 30082871\nChen, J.S.; Dagdas, Y.S.; Kleinstiver, B.P.; Welch, M.M.; Sousa,\n[80]\n",
+      "page": 9,
+      "bbox": [
+        320.51,
+        252.8,
+        560.97,
+        332.06
+      ]
+    },
+    {
+      "text": "A.A.; Harrington, L.B.; Sternberg, S.H.; Joung, J.K.; Yildiz, A.;\nDoudna, J.A. Enhanced proofreading governs CRISPR-Cas9 tar-\ngeting accuracy. Nature, 2017, 550(7676), 407-410.\nhttp://dx.doi.org/10.1038/nature24268 PMID: 28931002\nRahman, M.K.; Rahman, M.S. CRISPRpred: A flexible and effi-\n[81]\n",
+      "page": 9,
+      "bbox": [
+        320.51,
+        332.0,
+        560.95,
+        376.06
+      ]
+    },
+    {
+      "text": "cient tool for sgRNAs on-target activity prediction in CRISPR/-\nCas9 systems. PLoS One, 2017, 12(8), e0181943.\nhttp://dx.doi.org/10.1371/journal.pone.0181943 PMID: 28767689\nChari, R.; Yeo, N.C.; Chavez, A.; Church, G.M. sgRNA scorer\n[82]\n",
+      "page": 9,
+      "bbox": [
+        320.51,
+        376.0,
+        560.92,
+        411.26
+      ]
+    },
+    {
+      "text": "2.0: A species-independent model to predict crispr/cas9 activity.\nACS Synth. Biol., 2017, 6(5), 902-904.\nhttp://dx.doi.org/10.1021/acssynbio.6b00343 PMID: 28146356\nKim, H.K.; Min, S.; Song, M.; Jung, S.; Choi, J.W.; Kim, Y.; Lee,\n[83]\n",
+      "page": 9,
+      "bbox": [
+        320.51,
+        411.2,
+        560.95,
+        446.46
+      ]
+    },
+    {
+      "text": "S.; Yoon, S.; Kim, H.H. Deep learning improves prediction of\nCRISPR-Cpf1 guide RNA activity. Nat. Biotechnol., 2018, 36(3),\n239-241.\nhttp://dx.doi.org/10.1038/nbt.4061 PMID: 29431740\nChuai, G.; Ma, H.; Yan, J.; Chen, M.; Hong, N.; Xue, D.; Zhou,\n[84]\n",
+      "page": 9,
+      "bbox": [
+        320.51,
+        446.4,
+        560.97,
+        490.46
+      ]
+    },
+    {
+      "text": "C.; Zhu, C.; Chen, K.; Duan, B.; Gu, F.; Qu, S.; Huang, D.; Wei,\nJ.; Liu, Q. DeepCRISPR: optimized CRISPR guide RNA design\nby deep learning. Genome Biol., 2018, 19(1), 80.\nhttp://dx.doi.org/10.1186/s13059-018-1459-4 PMID: 29945655\nWang, D.; Zhang, C.; Wang, B.; Li, B.; Wang, Q.; Liu, D.; Wang,\n[85]\n",
+      "page": 9,
+      "bbox": [
+        320.51,
+        490.4,
+        560.94,
+        534.46
+      ]
+    },
+    {
+      "text": "H.;  Zhou,  Y.;  Shi,  L.;  Lan,  F.;  Wang,  Y.  Optimized  CRISPR\nguide RNA design for two high-fidelity Cas9 variants by deep\nlearning. Nat. Commun., 2019, 10(1), 4284.\nhttp://dx.doi.org/10.1038/s41467-019-12281-8 PMID: 31537810\nO’Brien, A.R.; Wilson, L.O.W.; Burgio, G.; Bauer, D.C. Unlock-\n[86]\n",
+      "page": 9,
+      "bbox": [
+        320.51,
+        534.4,
+        560.97,
+        578.46
+      ]
+    },
+    {
+      "text": "ing HDR-mediated nucleotide editing by identifying high-efficien-\ncy target sites using machine learning. Sci. Rep., 2019, 9(1), 2788.\nhttp://dx.doi.org/10.1038/s41598-019-39142-0 PMID: 30808944\nPan,  X.;  Zuallaert,  J.;  Wang,  X.;  Shen,  H-B.;  Campos,  E.P.;\n[87]\n",
+      "page": 9,
+      "bbox": [
+        320.51,
+        578.4,
+        561.03,
+        613.66
+      ]
+    },
+    {
+      "text": "Marushchak, D.O.; De Neve, W. ToxDL: Deep learning using pri-\nmary structure and domain embeddings for assessing protein toxic-\nity. Bioinformatics, 2020, 36(21), 5159-5168.\nhttp://dx.doi.org/10.1093/bioinformatics/btaa656\n PMID:\n32692832\nCosgun, E.; Limdi, N.A.; Duarte, C.W. High-dimensional phar-\n[88]\n",
+      "page": 9,
+      "bbox": [
+        320.51,
+        613.6,
+        561.01,
+        666.46
+      ]
+    },
+    {
+      "text": "macogenetic prediction of a continuous trait using machine learn-\ning techniques with application to warfarin dose prediction in Afri-\ncan Americans. Bioinformatics, 2011, 27(10), 1384-1389.\nhttp://dx.doi.org/10.1093/bioinformatics/btr159 PMID: 21450715\nSharabiani, A.; Bress, A.; Douzali, E.; Darabi, H. Revisiting war-\n[89]\n",
+      "page": 9,
+      "bbox": [
+        320.51,
+        666.4,
+        560.96,
+        710.46
+      ]
+    },
+    {
+      "text": "300   Current Genomics, 2021, Vol. 22, No. 4\nHabehh and Gohel\n",
+      "page": 10,
+      "bbox": [
+        51.02,
+        37.22,
+        560.98,
+        46.08
+      ]
+    },
+    {
+      "text": "farin dosing using machine learning techniques. Comput. Math\nMethods Med., 2015, 2015, 560108.\nhttp://dx.doi.org/10.1155/2015/560108\nAthreya, A.P.; Neavin, D.; Carrillo-Roa, T.; Skime, M.; Biernac-\n[90]\n",
+      "page": 10,
+      "bbox": [
+        54.2,
+        68.0,
+        294.66,
+        103.26
+      ]
+    },
+    {
+      "text": "ka, J.; Frye, M.A.; Rush, A.J.; Wang, L.; Binder, E.B.; Iyer, R.K.;\nWeinshilboum, R.M.; Bobo, W.V. Pharmacogenomics-driven pre-\ndiction of antidepressant treatment outcomes: A machine-learning\napproach  with  multi-trial  replication.  Clin.  Pharmacol.  Ther.,\n2019, 106(4), 855-865.\nhttp://dx.doi.org/10.1002/cpt.1482 PMID: 31012492\nChiu, Y-C.; Chen, H-I.H.; Gorthi, A.; Mostavi, M.; Zheng, S.;\n[91]\n",
+      "page": 10,
+      "bbox": [
+        54.2,
+        103.2,
+        294.66,
+        164.86
+      ]
+    },
+    {
+      "text": "Huang, Y. Deep learning of pharmacogenomics resources: Mov-\ning towards precision oncology. Brief. Bioinform., 2019, 00(July),\n1-18.\nhttp://dx.doi.org/10.1093/bib/bbz144 PMID: 31813953\nRomero, A.; Carrier, P.L.; Erraqabi, A.; Sylvain, T.; Auvolat, A.;\n[92]\n",
+      "page": 10,
+      "bbox": [
+        54.2,
+        164.8,
+        294.67,
+        208.86
+      ]
+    },
+    {
+      "text": "Dejoie, E. Diet network: thin parameters for fat genomic. arXiv,\n2017, v3, 1-11.\nJain, S.; Danesh, A.; Laroche, M.; Bakhtiari, S.; Maxwell, C.; Al-\n[93]\n",
+      "page": 10,
+      "bbox": [
+        54.2,
+        208.8,
+        294.66,
+        235.26
+      ]
+    },
+    {
+      "text": "Khalili, Y. (335) Using pharmacogenomics as an effective tool in\nminimizing drug related side effects in patients with Chronic regio-\nnal pain syndrome: A feasibility study. J. Pain, 2017, 18(4), S58-\nS59.\nhttp://dx.doi.org/10.1016/j.jpain.2017.02.228\nCseko, G.C.; Tremaine, W.J. The role of the institutional review\n[94]\n",
+      "page": 10,
+      "bbox": [
+        54.2,
+        235.2,
+        294.67,
+        288.06
+      ]
+    },
+    {
+      "text": "board in the oversight of the ethical aspects of human studies re-\nsearch. Nutr. Clin. Pract., 2013, 28(2), 177-181.\nhttp://dx.doi.org/10.1177/0884533612474042 PMID: 23447409\nFinlayson, S.G.; Bowers, J.D.; Ito, J.; Zittrain, J.L.; Beam, L.; Ko-\n[95]\n",
+      "page": 10,
+      "bbox": [
+        54.2,
+        288.0,
+        294.6,
+        323.26
+      ]
+    },
+    {
+      "text": "hane, I.S. Emerging vulnerabilities demand new conversations.\nScience  (80),  2019,  363(6433),  1287-1290.  Available  from:\nhttp://science.sciencemag.org/content/363/6433/1287\n",
+      "page": 10,
+      "bbox": [
+        81.02,
+        323.2,
+        294.65,
+        349.66
+      ]
+    },
+    {
+      "text": "Meskó, B.; Hetényi, G.; Győrffy, Z. Will artificial intelligence\n[96]\n",
+      "page": 10,
+      "bbox": [
+        320.51,
+        68.0,
+        560.85,
+        76.86
+      ]
+    },
+    {
+      "text": "solve the human resource crisis in healthcare? BMC Health Serv.\nRes., 2018, 18(1), 545.\nhttp://dx.doi.org/10.1186/s12913-018-3359-4 PMID: 30001717\nNYU School of Medicine. High school bioethics project - compas-\n[97]\n",
+      "page": 10,
+      "bbox": [
+        320.51,
+        76.8,
+        561.01,
+        112.06
+      ]
+    },
+    {
+      "text": "sionate use. 2015, 15 Available from: https://med.nyu.edu/highs-\nchoolbioethics/sites/default/files/highschoolbioethics/Genetic Edit-\ning\n Module.pdf%0Ahttps://med.nyu.edu/highschoolbioethic-\ns/sites/default/files/highschoolbioethics/CompassionateUse_Mod-\nule.pdf\nHarding, J.R. Beyond abortion: human genetics and the new eu-\n[98]\n",
+      "page": 10,
+      "bbox": [
+        320.51,
+        112.0,
+        561.0,
+        164.86
+      ]
+    },
+    {
+      "text": "genics. Pepperdine Law Rev., 1991, 18(1), 471-512.\nPMID: 11659992\nNgiam, K.Y.; Khor, I.W. Big data and machine learning algo-\n[99]\n",
+      "page": 10,
+      "bbox": [
+        320.51,
+        164.8,
+        560.84,
+        191.26
+      ]
+    },
+    {
+      "text": "rithms for health-care delivery. Lancet Oncol., 2019, 20(5), e262-\ne273.\nhttp://dx.doi.org/10.1016/S1470-2045(19)30149-4\n PMID:\n31044724\nExecutive Office of the President. Maintaining american leader-\n[100]\n",
+      "page": 10,
+      "bbox": [
+        316.51,
+        191.2,
+        560.97,
+        235.26
+      ]
+    },
+    {
+      "text": "ship  in  artificial  intelligence:  Executive  order  13859.  2019,\n3967-3972. Available from: https://www.govinfo.gov/content/p-\nkg/FR-2019-02-14/pdf/2019-02544.pdf\nLevine, D.M.; Linder, J.A.; Landon, B.E. Characteristics of Ameri-\n[101]\n",
+      "page": 10,
+      "bbox": [
+        316.51,
+        235.2,
+        561.01,
+        270.46
+      ]
+    },
+    {
+      "text": "cans with primary care and changes over time, 2002-2015. Ann. In-\ntern. Med., 2019, 169(1), 36-43.\nKane, L. Medscape Physician Compensation Report 2018. 2018.\n[102]\n",
+      "page": 10,
+      "bbox": [
+        316.51,
+        270.4,
+        560.98,
+        296.86
+      ]
+    },
+    {
+      "text": "Available from: https://www.medscape.com/slideshow/2018-com-\npensation-overview-6009667#32\nKalinin, A.A.; Higgins, G.A.; Reamaroon, N.; Reza Soroushmehr,\n[103]\n",
+      "page": 10,
+      "bbox": [
+        316.51,
+        296.8,
+        560.96,
+        323.26
+      ]
+    },
+    {
+      "text": "S.M.; Allyn-Feuer, A.; Dinov, I.D. Deep learning in pharmacoge-\nnomics:  From  gene  regulation  to  patient  stratification.  arXiv,\n2018, 19, 629-650.\n",
+      "page": 10,
+      "bbox": [
+        347.34,
+        323.2,
+        560.98,
+        349.66
+      ]
+    }
+  ],
+  "metadata": {
+    "filename": "CG-22-291.pdf",
+    "file_size": 264823,
+    "block_count": 227,
+    "created_at": "2025-04-30T11:00:37.477471"
+  }
+}

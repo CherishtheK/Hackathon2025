@@ -217,9 +217,12 @@ const Summary = ({ onSentenceClick, currentDocument }) => {
     
     if (onSentenceClick) {
       if (typeof sentence === 'object' && sentence.citations) {
-        console.log('引用段落索引:', sentence.citations);
-        // 传递文本和引用
-        onSentenceClick(sentence.text, sentence.citations);
+        // 修正：确保所有引用索引为有效数字且不为NaN
+        const validCitations = Array.isArray(sentence.citations)
+          ? sentence.citations.filter(idx => typeof idx === 'number' && !isNaN(idx))
+          : [];
+        console.log('引用段落索引:', validCitations);
+        onSentenceClick(sentence.text, validCitations);
       } else {
         onSentenceClick(sentence);
       }
@@ -235,14 +238,14 @@ const Summary = ({ onSentenceClick, currentDocument }) => {
             onClick={() => generateSummary(false)}
             disabled={!currentDocument || loading}
           >
-            {loading ? "Generating..." : "Generate Detailed Summary"}
+            {loading ? "Generating..." : "Generate"}
           </button>
           <button 
             className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300"
             onClick={() => generateSummary(true)}
             disabled={!currentDocument || loading}
           >
-            Force Regenerate
+            Regenerate
           </button>
         </div>
         <button 
@@ -255,11 +258,11 @@ const Summary = ({ onSentenceClick, currentDocument }) => {
       
       {showConfig && (
         <div className="mb-4 p-3 bg-gray-100 rounded border border-gray-300">
-          <h3 className="text-sm font-medium mb-2">调整处理参数</h3>
+          <h3 className="text-sm font-medium mb-2">Adjust Processing Parameters</h3>
           <div className="space-y-2">
             <div>
               <label className="block text-sm text-gray-600">
-                处理块数限制 ({blockLimit} 块)
+                Block Limit ({blockLimit} blocks)
               </label>
               <input
                 type="range"
@@ -272,7 +275,7 @@ const Summary = ({ onSentenceClick, currentDocument }) => {
             </div>
             <div>
               <label className="block text-sm text-gray-600">
-                最大Token数 ({maxTokens})
+                Max Tokens ({maxTokens})
               </label>
               <input
                 type="range"
@@ -291,7 +294,7 @@ const Summary = ({ onSentenceClick, currentDocument }) => {
                 className="mr-2"
               />
               <label className="text-sm text-gray-600">
-                处理全文 (可能较慢)
+                Process full document (may be slow)
               </label>
             </div>
           </div>
@@ -306,8 +309,8 @@ const Summary = ({ onSentenceClick, currentDocument }) => {
 
       {processedTextInfo.blockCount > 0 && (
         <div className="text-xs text-gray-500 mb-4">
-          处理信息: {processedTextInfo.blockCount}/{processedTextInfo.totalBlocks} 块 | 
-          {processedTextInfo.wordCount} 词 | 
+          Processing info: {processedTextInfo.blockCount}/{processedTextInfo.totalBlocks} blocks | 
+          {processedTextInfo.wordCount} words | 
           {Math.round(processedTextInfo.characterCount/1024)}KB
         </div>
       )}
@@ -328,18 +331,26 @@ const Summary = ({ onSentenceClick, currentDocument }) => {
                 }`}
                 onClick={() => handleSentenceClick(sentence, index)}
                 data-sentence={sentence.text}
-                data-citations={JSON.stringify(sentence.citations)}
+                data-citations={JSON.stringify(
+                  Array.isArray(sentence.citations)
+                    ? sentence.citations.filter(idx => typeof idx === 'number' && !isNaN(idx))
+                    : []
+                )}
               >
                 <p className="text-gray-800">{sentence.text}</p>
                 <div className="text-xs text-gray-500 mt-1">
-                  Cited blocks: {sentence.citations.join(', ')}
+                  Cited blocks: {
+                    Array.isArray(sentence.citations)
+                      ? sentence.citations.filter(idx => typeof idx === 'number' && !isNaN(idx)).join(', ')
+                      : ''
+                  }
                 </div>
               </div>
             ))}
           </div>
         ) : (
           <div className="text-center py-4 text-gray-500">
-            {currentDocument ? 'Click "Generate Detailed Summary" to process the document' : 'Please select a document first'}
+            {currentDocument ? 'Click "Generate" to process the document' : 'Please select a document first'}
           </div>
         )}
       </div>
