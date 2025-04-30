@@ -39,35 +39,35 @@ const Summary = ({ onSentenceClick, currentDocument }) => {
       // 构建JSON文件路径
       const jsonFilename = currentDocument.name.replace(/\.pdf$/, '_structured.json');
       const jsonPath = `/json/${jsonFilename}`;
-      console.log("尝试加载JSON文件:", jsonPath);
+      console.log("Attempting to load JSON file:", jsonPath);
       
       // 获取PDF数据
       const response = await fetch(jsonPath);
-      console.log("JSON请求状态:", response.status, response.statusText);
+      console.log("JSON request status:", response.status, response.statusText);
       if (!response.ok) {
-        throw new Error(`加载JSON失败: ${response.status} ${response.statusText}`);
+        throw new Error(`Failed to load JSON: ${response.status} ${response.statusText}`);
       }
       
       const data = await response.json();
-      console.log("加载的JSON数据:", data);
+      console.log("Loaded JSON data:", data);
       
       if (!data.content || !Array.isArray(data.content)) {
-        throw new Error("JSON数据格式不正确，缺少content数组");
+        throw new Error("JSON data format is incorrect, missing content array");
       }
       
       const blocks = data.content;
-      console.log(`文档总块数: ${blocks.length}`);
+      console.log(`Total block count: ${blocks.length}`);
       
       // 根据配置决定处理多少文本块
       let limitedBlocks;
       if (processFullDocument) {
         // 处理全文，但限制在1000个块以防止过大调用
         limitedBlocks = blocks.slice(0, Math.min(blocks.length, 1000));
-        console.log(`处理全文: ${limitedBlocks.length}个块`);
+        console.log(`Processing full document: ${limitedBlocks.length} blocks`);
       } else {
         // 只处理用户指定数量的块
         limitedBlocks = blocks.slice(0, blockLimit);
-        console.log(`处理部分文档: ${limitedBlocks.length}个块`);
+        console.log(`Processing part of document: ${limitedBlocks.length} blocks`);
       }
       
       const textContent = limitedBlocks.map(block => block.text).join("\n");
@@ -84,7 +84,7 @@ const Summary = ({ onSentenceClick, currentDocument }) => {
       
       // 检查文本是否太大
       if (characterCount > 100000) {
-        setError("警告：文本太长，可能超过API限制。请减少处理块数或分段处理。");
+        setError("Warning: Text too long, may exceed API limit. Please reduce block count or process in segments.");
         setLoading(false);
         return;
       }
@@ -97,7 +97,7 @@ const Summary = ({ onSentenceClick, currentDocument }) => {
       
       // 检查缓存
       if (summaryCache[cacheKey] && !force) {
-        console.log('使用缓存的摘要结果');
+        console.log('Using cached summary result');
         setSummary(summaryCache[cacheKey].summary);
         setSentences(summaryCache[cacheKey].sentences);
         setLoading(false);
@@ -111,7 +111,7 @@ const Summary = ({ onSentenceClick, currentDocument }) => {
           messages: [
             { 
               role: "system", 
-              content: `生成全面的段落式摘要，确保涵盖文档的所有主要内容和观点,采用科普有趣的语言风格。
+              content: `Generate comprehensive paragraph-style summary, ensuring coverage of all main content and points of the document, using科普有趣的语言风格。
 注意：摘要必须严格按照以下格式：
 1. 第一段内容... [引用段落索引，如0,1,2]
 2. 第二段内容... [引用段落索引，如3,4,5]
@@ -124,7 +124,7 @@ const Summary = ({ onSentenceClick, currentDocument }) => {
             },
             { 
               role: "user", 
-              content: `请彻底分析以下标有索引的论文内容，生成详尽的段落式摘要，确保完整覆盖全文内容和所有关键点：
+              content: `Please thoroughly analyze the following papers content, generating detailed paragraph-style summary, ensuring complete coverage of the entire document and all key points:
               ${limitedBlocks.map((block, index) => `[${index}] ${block.text}`).join('\n\n')}` 
             }
           ],
@@ -235,21 +235,21 @@ const Summary = ({ onSentenceClick, currentDocument }) => {
             onClick={() => generateSummary(false)}
             disabled={!currentDocument || loading}
           >
-            {loading ? "生成中..." : "生成详细摘要"}
+            {loading ? "Generating..." : "Generate Detailed Summary"}
           </button>
           <button 
             className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300"
             onClick={() => generateSummary(true)}
             disabled={!currentDocument || loading}
           >
-            强制重新生成
+            Force Regenerate
           </button>
         </div>
         <button 
           className="text-sm text-gray-500 hover:text-gray-700"
           onClick={() => setShowConfig(!showConfig)}
         >
-          ⚙️ 配置
+          ⚙️ Config
         </button>
       </div>
       
@@ -316,7 +316,7 @@ const Summary = ({ onSentenceClick, currentDocument }) => {
         {loading ? (
           <div className="text-center py-4">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto mb-2"></div>
-            <p className="text-gray-500">正在生成摘要，请稍候...</p>
+            <p className="text-gray-500">Generating summary, please wait...</p>
           </div>
         ) : sentences.length > 0 ? (
           <div className="space-y-4">
@@ -332,14 +332,14 @@ const Summary = ({ onSentenceClick, currentDocument }) => {
               >
                 <p className="text-gray-800">{sentence.text}</p>
                 <div className="text-xs text-gray-500 mt-1">
-                  引用段落: {sentence.citations.join(', ')}
+                  Cited blocks: {sentence.citations.join(', ')}
                 </div>
               </div>
             ))}
           </div>
         ) : (
           <div className="text-center py-4 text-gray-500">
-            {currentDocument ? '点击"生成详细摘要"开始处理文档' : '请先选择一个文档'}
+            {currentDocument ? 'Click "Generate Detailed Summary" to process the document' : 'Please select a document first'}
           </div>
         )}
       </div>

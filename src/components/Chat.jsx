@@ -18,11 +18,11 @@ function Chat({ documentContent = '' }) {
     try {
       // 构建聊天上下文
       const context = documentContent ? 
-        `以下是文档内容片段：${documentContent.substring(0, 1000)}...` : 
-        "用户正在讨论当前文档";
+        `Here is a document excerpt: ${documentContent.substring(0, 1000)}...` : 
+        "User is discussing the current document";
       
       const chatMessages = [
-        { role: 'system', content: `你是一个助手，帮助用户理解文档内容。${context}` },
+        { role: 'system', content: `You are an assistant helping the user understand the document. ${context}` },
         ...messages,
         userMessage
       ];
@@ -44,10 +44,10 @@ function Chat({ documentContent = '' }) {
       };
       setMessages(prev => [...prev, aiMessage]);
     } catch (error) {
-      console.error("聊天请求失败:", error);
+      console.error("Chat request failed:", error);
       setMessages(prev => [...prev, { 
         role: 'assistant', 
-        content: '抱歉，处理您的请求时出错了。请稍后再试。' 
+        content: 'Sorry, there was an error processing your request. Please try again later.' 
       }]);
     } finally {
       setLoading(false);
@@ -72,7 +72,7 @@ function Chat({ documentContent = '' }) {
         {loading && (
           <div className="flex justify-start">
             <div className="bg-gray-200 px-4 py-2 rounded-lg">
-              <span className="animate-pulse">AI思考中...</span>
+              <span className="animate-pulse">AI is thinking...</span>
             </div>
           </div>
         )}
@@ -87,14 +87,14 @@ function Chat({ documentContent = '' }) {
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
             className="flex-1 px-3 py-2 border rounded-l text-sm focus:outline-none focus:ring"
-            placeholder="问点什么..."
+            placeholder="ask me anything..."
           />
           <button 
             onClick={sendMessage}
             disabled={loading}
             className="bg-blue-500 text-white px-4 py-2 rounded-r disabled:bg-blue-300"
           >
-            发送
+            Send
           </button>
         </div>
       </div>

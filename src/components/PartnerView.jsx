@@ -97,7 +97,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
       
       setIsEditingTitle(false);
     } catch (error) {
-      console.error('更新标题失败:', error);
+      console.error('Update title failed:', error);
     }
   };
 
@@ -247,7 +247,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
             return () => observer.disconnect();
           }
         } else {
-          console.log("初始化摘要");
+          console.log("Initializing summary");
           setTimeout(() => {
             const summaryButton = document.querySelector('.summary-container button:first-child');
             if (summaryButton) {
@@ -270,7 +270,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
           setBlocks(blocks);
           setDocumentText(blocks.map(block => block.text).join("\n"));
         } catch (error) {
-          console.error("获取文档失败:", error);
+          console.error("Fetch document failed:", error);
         }
       }
     };
@@ -281,30 +281,30 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
   const loadData = async () => {
     if (activeView === "library") {
       const projectList = await getAllProjects();
-      console.log("加载的项目:", projectList);
+      console.log("Loaded projects:", projectList);
       setProjects(projectList);
       
       const docList = await getUnsortedDocuments();
-      console.log("加载的文档:", docList);
+      console.log("Loaded documents:", docList);
       setUnsortedDocs(docList);
     }
   };
 
   const handleUpload = async (data) => {
     try {
-      console.log('开始处理上传:', data);
+      console.log('Starting to process upload:', data);
       if (data.type === 'project') {
         await createProject(data.name, data.description);
-        console.log("项目创建成功:", data.name);
+        console.log("Project created successfully:", data.name);
       } else if (data.type === 'document') {
         // 创建 File 对象
         const file = new File([data.file], data.name, {
           type: 'application/pdf'
         });
-        console.log('准备存储文件:', file);
+        console.log('Preparing to store file:', file);
         
         const docId = await storeDocument(file);
-        console.log("文档上传成功，ID:", docId);
+        console.log("Document uploaded successfully, ID:", docId);
         
         const newDoc = {
           id: docId,
@@ -312,7 +312,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
           name: data.name,
           uploadDate: new Date().toISOString()
         };
-        console.log('设置当前文档:', newDoc);
+        console.log('Setting current document:', newDoc);
         
         setCurrentDocument(newDoc);
         setActiveView("detail");
@@ -321,12 +321,12 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
       setShowUploadDialog(false);
       setShowFabMenu(false);
       
-      console.log('准备重新加载数据...');
+      console.log('Preparing to reload data...');
       await loadData();
-      console.log("数据重新加载完成");
+      console.log("Data reload completed");
     } catch (error) {
-      console.error("上传/创建失败:", error);
-      alert("操作失败：" + error.message);
+      console.error("Upload/create failed:", error);
+      alert("Operation failed: " + error.message);
     }
   };
 
@@ -339,7 +339,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
       <div className="flex-1 cursor-pointer" onClick={() => { setCurrentDocument(doc); setActiveView("detail"); }}>
         <h3 className="text-sm font-medium truncate">{doc.title || doc.name}</h3>
         <p className="text-xs text-gray-500 mt-1">
-          上传于 {new Date(doc.uploadDate).toLocaleDateString()}
+          Uploaded on {new Date(doc.uploadDate).toLocaleDateString()}
         </p>
       </div>
       <div className="ml-4">
@@ -354,7 +354,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
           }}
         >
           <option value="" disabled>
-            {projects.length === 0 ? "暂无项目可选" : "归档到项目"}
+            {projects.length === 0 ? "No project available" : "Archive to project"}
           </option>
           {projects.map(proj => (
             <option key={proj.id} value={proj.id}>{proj.name}</option>
@@ -394,7 +394,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
   }, []);
 
   const handleDeleteDocument = async () => {
-    if (!currentDocument?.id || !window.confirm('确定要删除这个文档吗？这个操作不可撤销。')) {
+    if (!currentDocument?.id || !window.confirm('Are you sure you want to delete this document? This operation cannot be undone.')) {
       return;
     }
 
@@ -418,11 +418,11 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
 
       // 显示成功消息，如果有警告则一并显示
       if (result.warnings?.length) {
-        alert(`${result.message}\n\n注意：\n${result.warnings.join('\n')}`);
+        alert(`${result.message}\n\nNote:\n${result.warnings.join('\n')}`);
       }
     } catch (error) {
-      console.error('删除文档失败:', error);
-      alert('删除文档失败: ' + error.message);
+      console.error('Delete document failed:', error);
+      alert('Delete document failed: ' + error.message);
     } finally {
       setIsDeleting(false);
       
@@ -441,7 +441,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
       // 刷新数据
       await loadData();
     } catch (error) {
-      alert("归档失败：" + error.message);
+      alert("Archive failed: " + error.message);
     }
   };
 
@@ -489,7 +489,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
                     {expandedProjectId === proj.id && (
                       <div className="ml-6 mt-1 space-y-1">
                         {(projectDocsMap[proj.id] || []).length === 0 ? (
-                          <div className="text-xs text-gray-400">暂无PDF</div>
+                          <div className="text-xs text-gray-400">No PDFs</div>
                         ) : (
                           projectDocsMap[proj.id].map(doc => (
                             <button
@@ -566,14 +566,14 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
                       onClick={handleDeleteDocument}
                       className="ml-4 px-3 py-1 text-sm text-red-600 hover:text-red-700 hover:bg-red-50 rounded"
                     >
-                      删除文档
+                      Delete Document
                     </button>
                   </div>
                 )}
               </div>
               <div className="flex flex-1 border border-gray-200 rounded overflow-hidden divide-x">
                 <div className="w-1/3 h-full overflow-auto bg-gray-50 p-4 flex flex-col">
-                  <h3 className="text-lg font-medium mb-2 flex-shrink-0">原始文档</h3>
+                  <h3 className="text-lg font-medium mb-2 flex-shrink-0">Original Document</h3>
                   <div 
                     className="flex-1 overflow-auto" 
                     style={{maxHeight: "calc(100vh - 200px)", border: "1px solid blue"}}
@@ -586,7 +586,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
                   </div>
                 </div>
                 <div className="w-1/3 h-full overflow-auto bg-white p-4 flex flex-col">
-                  <h3 className="text-lg font-medium mb-2 flex-shrink-0">AI摘要</h3>
+                  <h3 className="text-lg font-medium mb-2 flex-shrink-0">AI Summary</h3>
                   <div 
                     className="flex-1 overflow-auto" 
                     style={{maxHeight: "calc(100vh - 200px)", border: "1px solid green"}}
@@ -676,7 +676,7 @@ export default function PartnerView({ initialDocument, onUpdateDocument }) {
                           setShowFabMenu(false);
                         }}
                       >
-                        上传文档/创建项目
+                        Upload PDF/Create Project
                       </button>
                     </div>
                   )}

@@ -17,7 +17,7 @@ function UploadDialog({ onClose, onUpload, showProjectCreation = false }) {
     if (createProject && showProjectCreation) {
       // 创建项目模式
       if (!projectName.trim()) {
-        alert('请输入项目名称');
+        alert('Please enter project name');
         return;
       }
       try {
@@ -28,21 +28,21 @@ function UploadDialog({ onClose, onUpload, showProjectCreation = false }) {
         });
         onClose();
       } catch (error) {
-        alert('创建项目失败：' + error.message);
+        alert('Failed to create project: ' + error.message);
       }
       return;
     }
 
     // 上传文档模式
     if (selectedFile) {
-      console.log('开始处理文件上传:', selectedFile.name);
+      console.log('Starting file upload:', selectedFile.name);
       try {
         // 创建 FormData 对象
         const formData = new FormData();
         formData.append('file', selectedFile);
 
         // 发送文件到服务器
-        console.log('开始上传到服务器...');
+        console.log('Starting upload to server...');
         const response = await fetch('http://localhost:3000/upload', {
           method: 'POST',
           body: formData,
@@ -53,11 +53,11 @@ function UploadDialog({ onClose, onUpload, showProjectCreation = false }) {
         });
 
         if (!response.ok) {
-          throw new Error(`服务器响应错误: ${response.status}`);
+          throw new Error(`Server response error: ${response.status}`);
         }
 
         const result = await response.json();
-        console.log('服务器处理结果:', result);
+        console.log('Server processing result:', result);
 
         // 调用父组件的 onUpload 函数存储到 IndexedDB
         await onUpload({
@@ -67,14 +67,14 @@ function UploadDialog({ onClose, onUpload, showProjectCreation = false }) {
           uploadDate: new Date().toISOString()
         });
 
-        console.log('文件上传和处理完成');
+        console.log('File upload and processing completed');
         onClose(); // 上传成功后关闭对话框
       } catch (error) {
-        console.error('上传过程中出错:', error);
-        alert('上传失败：' + error.message);
+        console.error('Error during upload:', error);
+        alert('Upload failed: ' + error.message);
       }
     } else {
-      alert('请选择要上传的文件');
+      alert('Please select a file to upload');
     }
   };
 
@@ -84,8 +84,8 @@ function UploadDialog({ onClose, onUpload, showProjectCreation = false }) {
         <div className="flex justify-between items-center">
           <h2 className="text-lg font-semibold">
             {showProjectCreation 
-              ? (createProject ? '创建新项目' : '上传文档') 
-              : '上传文档'}
+              ? (createProject ? 'Create New Project' : 'Upload PDF') 
+              : 'Upload PDF'}
           </h2>
           <button onClick={onClose} className="text-gray-500 hover:text-gray-700">✕</button>
         </div>
@@ -96,13 +96,13 @@ function UploadDialog({ onClose, onUpload, showProjectCreation = false }) {
               onClick={() => setCreateProject(false)}
               className={`px-3 py-1 rounded text-sm ${!createProject ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
             >
-              上传文档
+              Upload PDF
             </button>
             <button
               onClick={() => setCreateProject(true)}
               className={`px-3 py-1 rounded text-sm ${createProject ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
             >
-              创建项目
+              Create Project
             </button>
           </div>
         )}
@@ -110,29 +110,29 @@ function UploadDialog({ onClose, onUpload, showProjectCreation = false }) {
         {createProject && showProjectCreation ? (
           <>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">项目名称</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Project Name</label>
               <input 
                 type="text" 
                 value={projectName}
                 onChange={(e) => setProjectName(e.target.value)}
                 className="w-full border rounded px-3 py-2 text-sm"
-                placeholder="输入项目名称"
+                placeholder="Enter project name"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">描述（可选）</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Description (optional)</label>
               <textarea
                 value={projectDescription}
                 onChange={(e) => setProjectDescription(e.target.value)}
                 className="w-full border rounded px-3 py-2 text-sm"
                 rows="3"
-                placeholder="简要描述项目内容..."
+                placeholder="Briefly describe the project..."
               />
             </div>
           </>
         ) : (
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">选择文件</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Select File</label>
             <div className="flex items-center">
               <input 
                 type="file" 
@@ -145,10 +145,10 @@ function UploadDialog({ onClose, onUpload, showProjectCreation = false }) {
                 onClick={() => fileInputRef.current.click()}
                 className="px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded border text-sm"
               >
-                选择PDF文件
+                Choose PDF File
               </button>
               <span className="ml-2 text-sm text-gray-600">
-                {selectedFile ? selectedFile.name : '未选择文件'}
+                {selectedFile ? selectedFile.name : 'No file selected'}
               </span>
             </div>
           </div>
@@ -159,13 +159,13 @@ function UploadDialog({ onClose, onUpload, showProjectCreation = false }) {
             onClick={onClose}
             className="px-4 py-2 text-gray-600 mr-2"
           >
-            取消
+            Cancel
           </button>
           <button 
             onClick={handleSubmit}
             className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
           >
-            {createProject && showProjectCreation ? '创建项目' : '上传文档'}
+            {createProject && showProjectCreation ? 'Create Project' : 'Upload PDF'}
           </button>
         </div>
       </div>
